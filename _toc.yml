@@ -1,0 +1,12 @@
+- file: intro 
+  numbered: true
+
+- part: Assignments
+  chapters:
+  - file: assignments/a1
+    title: Ramp Up
+
+- part: Lecture Notes
+  chapters:
+  - file: notes/wk1
+    title: Week 1
