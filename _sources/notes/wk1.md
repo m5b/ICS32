@@ -1,8 +1,6 @@
 
-Welcome to your Jupyter Book
+Welcome to ICS 32
 ============================
 
-This is a small sample book to give you a feel for how book content is
-structured.
+Welcome to ICS 32 and your week 1 lecture notes!
 
-Check out the content pages bundled with this sample book to get started.
