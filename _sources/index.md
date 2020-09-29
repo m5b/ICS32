@@ -1,7 +1,7 @@
 Programming with Software Libraries
 ============================
 
-# Course Overview
+## Course Overview
 
 Welcome to ICS 32: Programming with Software Libraries. Here you will find all learning materials for the course. Assignment descriptions, lecture notes, references, and other learning related information will be located here. 
 
@@ -25,7 +25,7 @@ Slack will be our primary tool for communication. You will be expected to join t
 Assignment details will be posted as the quarter progresses. When a new assignment overview page is posted, the corresponding assignment title below will be updated with a link to the assignment page. You will also see a link to the page appear in the navigation bar to the left.
 
 Assignments
-: A0 - [Getting to Know You and Getting Set Up](assignments/a0.html)
+: A0 - [Getting Started with Python](assignments/a0.html)
 : A1 - File Explorer
 : A2 - Chatting with Friends
 : A3 - Extending the Platform
