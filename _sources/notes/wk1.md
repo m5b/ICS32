@@ -52,7 +52,7 @@ Now here I have wrapped the two input functions with int() to cast them to integ
 	
   2
   5
-  >>> 25
+  >>> 7
 ```
 
 															
