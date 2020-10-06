@@ -215,8 +215,33 @@
 <h3>Some Thoughts<a class="headerlink" href="#some-thoughts" title="Permalink to this headline">¶</a></h3>
 <p>Overall, this weeks quiz was a good start! I was excited to see so many of you show up on Zoom and in Socrative. Although generally everyone performed well on the quiz, there were three questions that I think require some additional explanation.</p>
 <p><strong>Question 4</strong></p>
-<p>Input arguments are string types by default. So rather than perform a mathematical operation, when the python interpreter detects a string the + operator concatenates two arguments.</p>
+<p>Input arguments are string types by default. So rather than perform a mathematical operation, when the python interpreter detects a string the + operator concatenates two arguments. So for inputs 2 &amp; 5:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+		
+<span class="nb">print</span> <span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="nb">input</span><span class="p">(),</span><span class="nb">input</span><span class="p">()))</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">25</span>
+</pre></div>
+</div>
 <p>How would you go about changing the code to get the answer 7?</p>
+<p>Take a minute to think about it, then click the button on the right to reveal one answer.</p>
+<div class="toggle docutils container">
+<p>Now here I have wrapped the two input functions with int() to cast them to integer type. It will work for our scenario here, but what happens when a non-integer type is entered? Yep, the program will crash, but more on that soon!</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+		
+  <span class="nb">print</span> <span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()),</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())))</span>
+	
+  <span class="mi">2</span>
+  <span class="mi">5</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
 <p><strong>Question 5</strong></p>
 <p>A tuple is recognizable by it’s structure and use of parentheses to enclose values. If you weren’t sure about this one, take a look here:</p>
 <p><a href="https://www.learnbyexample.org/python-tuple/">More on Tuples</a></p>

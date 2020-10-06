@@ -22,9 +22,40 @@ Overall, this weeks quiz was a good start! I was excited to see so many of you s
 
 **Question 4**
 
-Input arguments are string types by default. So rather than perform a mathematical operation, when the python interpreter detects a string the + operator concatenates two arguments. 
-	
+Input arguments are string types by default. So rather than perform a mathematical operation, when the python interpreter detects a string the + operator concatenates two arguments. So for inputs 2 & 5:
+
+```ipython3
+def add(a,b):
+    return a + b
+		
+print (add(input(),input()))
+```
+															
+```ipython3
+2
+5
+>>> 25
+```
+															
 How would you go about changing the code to get the answer 7?
+
+Take a minute to think about it, then click the button on the right to reveal one answer.
+
+```{toggle}
+Now here I have wrapped the two input functions with int() to cast them to integer type. It will work for our scenario here, but what happens when a non-integer type is entered? Yep, the program will crash, but more on that soon!
+
+```ipython3
+  def add(a,b):
+      return a + b
+		
+  print (add(int(input()),int(input())))
+	
+  2
+  5
+  >>> 25
+```
+
+															
 
 
 **Question 5**
