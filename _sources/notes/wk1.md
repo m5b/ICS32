@@ -11,6 +11,9 @@ Here are the slides for the week 0 introduction lecture:
 
 <a href="../resources/Introduction-to-ICS32.pdf" >Introduction and History Slides</a>
 
+<a href="https://uci.yuja.com/V/Video?v=1975716&node=7594516&a=891585813&autoplay=1" >Exceptions and Files Lecture Part 1</a>
+
+<a href="https://uci.yuja.com/V/Video?v=1975640&node=7594284&a=1632415151&autoplay=1" >Exceptions and Files Lecture Part 2</a>
 
 ## Quiz Results
 
