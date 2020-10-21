@@ -3,7 +3,9 @@
 # ICS 32 Fall 2020
 # Assignment #2: Chatting with Friends
 #
-# v0.1
+# v0.1.1
+# Revisions:
+#   v0.1.1 - added property assignment for dsuserver during deserialization
 #
 # You should review this code to identify what features you need to support
 # in your program for assignment 2. I could tell you what they are, but
@@ -164,6 +166,7 @@ class Profile:
                 obj = json.load(f)
                 self.username = obj['username']
                 self.password = obj['password']
+                self.dsuserver = obj['dsuserver']
                 self.bio = obj['bio']
                 for post_obj in obj['_Profile__posts']:
                     post = Post(post_obj['entry'])
