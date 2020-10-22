@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 3 Notes &#8212; ICS 32 Fall 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 2 Notes" href="wk2.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_stacked.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Programming with Software Libraries
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a0.html">
+   Assignment 0
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a1.html">
+   Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a2.html">
+   Assignment 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk1.html">
+   Week 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk2.html">
+   Week 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 3
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/wk3.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-materials">
+   Lecture Materials
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-lecture">
+     Testing Lecture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#videos">
+       Videos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notes">
+       Notes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#so-how-do-we-start">
+         So how do we start?
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#so-how-do-we-test-at-the-level-of-functions">
+         So how do we test at the level of functions?
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiz-results">
+   Quiz Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-thoughts">
+     Some Thoughts
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="week-3-notes">
+<h1>Week 3 Notes<a class="headerlink" href="#week-3-notes" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep an eye weekly pages as they might be updated throughout the week.</p>
+</div>
+<div class="section" id="lecture-materials">
+<h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="testing-lecture">
+<h3>Testing Lecture<a class="headerlink" href="#testing-lecture" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="videos">
+<h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
+<p>I have decided not to record a video for this lecture. We will be diving into testing more formally after the mid-point of the quarter, but I wanted to give you some notes on how to go about thinking about tests. We can discuss the topics here in a bit more detail after quiz in our next class.</p>
+</div>
+<div class="section" id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
+<p>Now that you have assignment 1 wrapped up, let’s take a minute to reflect on the experience.</p>
+<p>Looking at the questions and conversations many of you have had over the past two weeks, my guess is that you now have a better understanding of the complexity that goes into writing even a small program.</p>
+<p>Interpreting and implementing program requirements is an essential part of the programming process that will become more familiar to you as you work through this course and many others. However, even with practice, you will find that it is important to develop strategies to reduce the uncertainty that accompanies the application of requirements.</p>
+<p>In a way, the validity checker for assignment 1 tested your program for you. It offered some sense of confidence that your program was functioning according to the assignment requirements. For the remaining assignments in this class, you will be responsible for checking the validity of your programs. So in this lecture, I want to talk about one of the ways that programmers go about accomplishing this goal.</p>
+<p>In large programming projects where teams of programmers work together to write software, the practice of writing tests is quite common. In fact, there are programming paradigms such as Agile, Cleanroom, Spiral, and Waterfall that have integrated testing directly into their methodologies. We won’t learning about paradigms and models in this class, but it’s important to recognize how pervasive testing is throughout the software development industry. As you might imagine, this pervasiveness exists because the process of writing tests against your code, works. Tests can significantly reduce the development time, code complexity, and bug tracking.</p>
+<div class="section" id="so-how-do-we-start">
+<h5>So how do we start?<a class="headerlink" href="#so-how-do-we-start" title="Permalink to this headline">¶</a></h5>
+<p>Well, the first thing we do is create a hypothesis about how our program and the functions within it, are expected to behave. For example, one test might be to input a value and observe the output. Does the output align with the expectations set in the program requirements? If so, then the test can be said to ‘pass.’ If it doesn’t, then obviously the test fails, but how do we determine why? This was a source of confusion for many of you while using the assignment 1 validity checker as the validity checker could only report a failure when the program did not return an expected output. A better test might have examined the input and output at the level of functions rather than the program.</p>
+<p>Testing individual functions, however, does require some planning. If the functions in your program perform many operations, it can be difficult to configure a test that can be relied upon. So one of the benefits of thinking about tests before or in tandem with your program design is that the responsibilities of your functions will inevitably be scoped to a manageable size.</p>
+</div>
+<div class="section" id="so-how-do-we-test-at-the-level-of-functions">
+<h5>So how do we test at the level of functions?<a class="headerlink" href="#so-how-do-we-test-at-the-level-of-functions" title="Permalink to this headline">¶</a></h5>
+<p>Let’s take, for example, a program that manages an email list. We’ll assume that one of the requirements for this program is to support removing certain email addresses from the mail list.</p>
+<p>We’ll start by adapting this small function written by Alex Thornton for ICS 32. The <strong>‘remove_from’</strong> function accepts two parameters: a list and a value. It returns the same list, except without the passed value, if it exists.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_from</span><span class="p">(</span><span class="n">the_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+	<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">element</span> <span class="o">!=</span> <span class="n">value</span><span class="p">:</span>
+			<span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+		
+	<span class="k">return</span> <span class="n">new_list</span>
+</pre></div>
+</div>
+<p>At least, that’s what we hope it does. Rather than assume it does and continue to build our email list management program, we should test it first:</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>
+&gt;&gt;&gt; emails = [&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+&gt;&gt;&gt; remove_from(emails, &quot;user2@example.com&quot;)
+[&quot;user1@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+&gt;&gt;&gt; emails
+[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+&gt;&gt;&gt; remove_from(emails, &quot;user4@example.com&quot;)
+[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;]
+&gt;&gt;&gt; emails
+[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+
+</pre></div>
+</div>
+<p>So far so good. We start with a test list, then pass some test conditions to the function to see if it returns the results we expect. Here, after each call to <strong><code class="docutils literal notranslate"><span class="pre">remove_from</span></code></strong> we receive a new list with the value we passed to it missing. But have we tested every possible condition? What happens if a passed value does not exist?</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>
+&gt;&gt;&gt; emails = [&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+&gt;&gt;&gt; remove_from(emails, &quot;user5@example.com&quot;)
+[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+
+</pre></div>
+</div>
+<p>Is that what we want to happen? What if our program needs to confirm that a removal actually occurred? Well, we could compare <strong><code class="docutils literal notranslate"><span class="pre">emails</span></code></strong> to the results, or we could give that responsibility to the <strong><code class="docutils literal notranslate"><span class="pre">remove_from</span></code></strong> function:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_from</span><span class="p">(</span><span class="n">the_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+	<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">element</span> <span class="o">!=</span> <span class="n">value</span><span class="p">:</span>
+			<span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;value not found in list&#39;</span><span class="p">)</span>
+		
+	<span class="k">return</span> <span class="n">new_list</span>
+</pre></div>
+</div>
+<p>So now we have a function that will raise an exception if the passed value does not exist, providing us with a convention (exceptions) that we can use to handle this new condition.</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>
+&gt;&gt;&gt; emails = [&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+&gt;&gt;&gt; remove_from(emails, &quot;user5@example.com&quot;)
+Traceback (most recent call last):
+  File &quot;maillist.py&quot;, line 39, in &lt;module&gt; 
+		remove_from(emails, &quot;user5@example.com&quot;)
+	File &quot;maillist.py&quot;, line 33, in remove_from
+		raise ValueError(&#39;value not found in list&#39;)
+ValueError: value not found in list
+
+</pre></div>
+</div>
+<p>Can you think of any others? What happens if the email list has multiple emails with the same address? Currently, all instances of value will be removed from the new list, but what if we only wanted to remove duplicates? By writing tests against our functions, we expose conditions that we might not otherwise think to consider.</p>
+<p>Now, having to write create these tests cases each time we want to test a program can quickly become unwieldy. Fortunately, Python gives us a way to automate much of the work!</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">assert</span></code></strong> statement are a convenient shortcut for inserting debugging tests into your program. Here we test a normal case, or case that represents typical behavior for the remove_from function:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And here we test an error case, or case that generates a result we don’t expect:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+	<span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user5@example.com&quot;</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;ValueError should have been thrown&quot;</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+	<span class="k">pass</span>
+</pre></div>
+</div>
+<p>If both assertions pass, then we should not expect to see anything from the shell when running the program. However, if an assertion fails, the debugger will notify you of the failure:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">]</span>
+
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;maillist.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">38</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+	    <span class="k">assert</span> <span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">]</span>
+<span class="ne">AssertionError</span>
+</pre></div>
+</div>
+<p>We will get into the more formal test driven approach to software development in a few more weeks, once you have had a chance to experience working with larger, more complex programs. But for now, focus on thinking about the how the code you write should behave, and then write some assertion statements to confirm that it behaves as you expected. I think you will find that new edge conditions will arise that you might not have otherwise considered. And remember, testing is not about quantity! A program with 100 tests is not necessarily better than one with 10. Your goal should be to identify <em>different</em> conditions worth testing, not <em>variations</em> on the same test.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quiz-results">
+<h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
+<p><a href="../resources/QZ_Week_3_Quiz_Results.pdf">Quiz Results</a></p>
+<div class="section" id="some-thoughts">
+<h3>Some Thoughts<a class="headerlink" href="#some-thoughts" title="Permalink to this headline">¶</a></h3>
+<p>Some pretty straightforward questions this week. The majority of you answered correctly on the three multiple choice questions. Questions 6 &amp; 7 were primarily used as a metric for gauging your experience with debugging, but still worth checking out if you missed the class.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="wk2.html" title="previous page">Week 2 Notes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mark S. Baldwin<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
