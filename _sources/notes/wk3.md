@@ -5,8 +5,24 @@ Week 3 Notes
 Keep an eye weekly pages as they might be updated throughout the week.
 ```
 
+## Week 3 Overview
+
+For week 3, you have finally turned in your first program for ICS 32. Congrats! Now it's time to start building that first program into a real application. Be sure to read the overview for [Assignment 2](../assignments/a1.html) before you dive into the lecture materials.
+
+Quick Links:
+: {ref}`lecture-materials`
+: {ref}`quiz-results`
+
+(lecture-materials)=
 ## Lecture Materials
 
+Lectures for Week 3
+: {ref}`lectures:testing`
+: {ref}`lectures:modules`
+: {ref}`lectures:protocols`
+: {ref}`lectures:networks`
+
+(lectures:testing)=
 ### Testing Lecture
 
 #### Videos
@@ -138,10 +154,37 @@ AssertionError
 
 We will get into the more formal test driven approach to software development in a few more weeks, once you have had a chance to experience working with larger, more complex programs. But for now, focus on thinking about the how the code you write should behave, and then write some assertion statements to confirm that it behaves as you expected. I think you will find that new edge conditions will arise that you might not have otherwise considered. And remember, testing is not about quantity! A program with 100 tests is not necessarily better than one with 10. Your goal should be to identify _different_ conditions worth testing, not _variations_ on the same test.
 
+(lectures:modules)=
+### Modules
 
+Material Coming Soon.
+
+#### Videos
+
+#### Notes
+
+(lectures:protocols)=
+### Protocols
+
+Material Coming Soon.
+
+#### Videos
+
+#### Notes
+
+(lectures:networks)=
+### Networks and Sockets
+
+Material Coming Soon.
+
+#### Videos
+
+#### Notes
+
+(quiz-results)=
 ## Quiz Results
 
-<a href="../resources/QZ_Week_3_Quiz_Results.pdf">Quiz Results</a>
+<a href="../resources/QZ_Week_3_Quiz_Results.pdf">Quiz Results PDF</a>
 
 ### Some Thoughts
 
