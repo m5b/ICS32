@@ -157,7 +157,215 @@ We will get into the more formal test driven approach to software development in
 (lectures:modules)=
 ### Modules
 
-Material Coming Soon.
+In assignment 2, one of the requirements for your program is to divide your code across a minimum of three modules. In this lecture, we'll be focusing on how you should go about fulfilling this requirement.
+
+The code that we write to create a program in Python is stored in plain text files. Aside from some common conventions such as file extensions (**`.py`**), syntax, and indentation, Python files are no different then any other plain text file that you might write. So far, you have probably written most of your Python programs in a single file with a **`.py`** extension. Generally speaking, this is a good practice. Having all of your code in a single file simplifies things quite a bit. All of your code (and tests!) is in one location and you don't have worry about connecting multiple files. However, as your programs grow in complexity, and therefore size, you will discover that managing all of your code in a single file quickly becomes a time consuming challenge.
+
+#### Working with Modules
+
+In Python, a module is nothing more than a file with the **`.py`** extension. However, unlike the programs you have written so far, a module does not produce output when executed directly from the shell. Let's take a look at the following example:
+
+
+```ipython3
+# basicmath.py
+
+def add(a: int, b: int) -> int:
+	result = int(a) + int(b)
+	return result
+		
+def subtract(a: int, b: int) -> int:
+	result = int(a) - int(b)
+	return result
+```
+
+If we were to run this program, **`basicmath.py`**, on the shell we would not receive any output from the Python interpreter. We would, however, be able to call the modules functions directly:
+
+```ipython3
+>>> add(2, 5)
+7
+>>> subtract(9, 3)
+6
+```
+
+If we attempt to call these functions before we load **`basicmath.py`** the interpreter will return a **`Traceback`** that tells us that 'add' (or 'subtract') is not defined. So what is the difference? Well, by executing the **`basicmath.py`** module first we have loaded it into our program, which in this case is the Python shell. The Python programs that we write in **`.py`** files, operate in much the same way. Let's write a small program that makes use of the **`basicmath.py`** module:
+
+```ipython3
+# mathrunner.py
+
+import basicmath
+
+a = input("Enter your first value: ")
+b = input("Enter your second value: ")
+
+result = basicmath.add(a,b)
+print(result)
+
+result = basicmath.subtract(a,b)
+print(result)
+
+```
+
+Notice that the first line of code is an **`import`** statement followed by the name of our basicmath python module. We don't need to specify the **`.py`** extension as it is implied that we are importing Python files. So, in the same way that you "imported" the **`Path`** module into your program for a1, we are able to import python files that we write. 
+
+##### Scope
+
+Another important convention to consider in this code is how the add and subtract functions are accessed. You will see that when the variables are passed to the basicmath functions, the name of the module must first be referenced. Python, as well as most programming languages, operate under a concept called _scope_. Scope refers to the availability of classes (we will cover these in more detail later in the quarter), functions, and variables at a given point of execution in a program. In the example above, notice how the variable **`result`** is used in the add and subtract functions of the **`basicmath`** module as well as the **`mathrunner`** program. We can reuse variable names in this way due to Python's scoping rules. **`result`** is locally scoped to the add and subtract functions, meaning that it only exists in the moment that each of those functions is being called. Now, if we wanted to make use of **`result`** outside of the add and subtract functions, we could modify the basicmath program like so:
+
+```ipython3
+# basicmath.py
+
+result = 0
+
+def add(a: int, b: int) -> int:
+	result = int(a) + int(b)
+	return result
+		
+def subtract(a: int, b: int) -> int:
+	result = int(a) - int(b)
+	return result
+
+def get_last_result() -> int:
+	return result
+```
+
+```ipython3
+# mathrunner.py
+
+import basicmath
+
+a = input("Enter your first value: ")
+b = input("Enter your second value: ")
+
+result = basicmath.add(a,b)
+print(result)
+
+result = basicmath.subtract(a,b)
+print(result)
+
+print(basicmath.get_last_result())
+
+```
+
+Which will output:
+
+
+```ipython3
+Enter your first value: 5
+Enter your second value: 2
+7
+3
+0
+```
+
+Wait, why is the value of **`result`** still zero? Well, even though the variable **`result`** is scoped outside of both functions, or _global_, Python still gives precedence to the _local_ instance of **`result`**. So the add and subtract functions create a local instance of **`result`** while get_last_result, in absence of any instantiation of a local **`result`** instance, defers to the global instance of **`result`**. To use the globally scoped variable, we need to tell Python that is our intention:
+
+```ipython3
+# basicmath.py
+
+result = 0
+
+def add(a: int, b: int) -> int:
+	global result 
+	result = int(a) + int(b)
+	return result
+		
+def subtract(a: int, b: int) -> int:
+	global result
+	result = int(a) - int(b)
+	return result
+
+def get_last_result() -> int:
+	return result
+```
+
+Which will output:
+
+
+```ipython3
+Enter your first value: 5
+Enter your second value: 2
+7
+3
+3
+```
+
+There we go! So by setting the scope of the **`result`** variable inside each function to _global_ we change the scope from _local_ to _global_, allowing us to store a value in a shared variable. So scope can be thought of as consisting at two levels: _global_ and _local_. The Python interpreter assumes a _local_ first stance when interpreting program code and when a local instance is unavailable it assumes _global_.
+
+```{important}
+Scope refers to the availability of a particular object in a program. That availability is interepreted locally first and then globally.
+```
+
+##### Definition Access
+
+When writing modules that contain many functions performing many different types of operations you will find that you need some of those functions to perform operations _within_ your module, but you might not necessarily want those functions to be called _outside_ of your module. In programming terms, we describe these two types of functions as _private_ and _public_. While some programming languages do provide modifiers for declaring this intention at the point of compilation, Python does not. Rather, all functions in Python are public by default. There is no way to prevent another program from calling functions in your module that should not be called!
+
+To get around this feature, and the absence of such modifiers is considered a feature in Python, programmers have adopted some formal conventions for communicating _intent_. When writing functions that you don't intend to be used outside your module, they should be prepended with a single underscore (**`_`**) character. This convention is used for functions, constants, and classes in Python:
+
+```ipython3
+# Specifying private intent
+
+def _myprivatefunction():
+
+_myprivateconstant = "525600" # minutes in a year
+
+class _myprivateclass():
+```
+
+We will be looking more closely at your use of naming conventions like private and public access as we move forward with assignments this quarter. Not only do we want to you to continue to adopt formal Python programming conventions, but thinking about access will help you to improve the structure of your modules. So start considering what operations in your program need to be conducted outside the scope of your module and more importantly, what code should not be accessed.
+
+
+##### Namespaces
+
+As your programs grow in size and complexity the importance of understanding scope will become increasingly relevant. Without the ability to scope the objects that we create, every Python programmer would have to create unique object names! Imagine if object naming behaved like Internet domain names, each one having to be recorded in a central registry to avoid duplicates. Through scope, and a convention called _namespaces_, most programming languages can avoid this unnecessary complication. A namespace is a dictionary-like collection of symbolic names tied to the object in which they are currently defined.
+
+Namespaces are not a perfect solution, but they serve well to help programmers identify and differentiate the modules and programs that they write. It is important to avoid using known namespaces, particularly those that are used by Python's built-in objects. For example, you should avoid creating an object named **`int`** or **`tuple`** because they already exist in every instance of a Python program. Imagine if we had named our **`basicmath`** module **`math`**, which is part of the standard library! To put it more concretely, what if we also had an **`add`** function in our **`mathrunner.py`** program? Namespaces allow us to differentiate between like named objects:
+
+```ipython3
+# mathrunner.py
+
+import basicmath as m
+
+def add(a, b): 
+	print(a + b)
+
+a = input("Enter your first value: ")
+b = input("Enter your second value: ")
+
+print(m.add(a,b))
+print(add(a,b))
+
+```
+
+The two **`add`** functions being printed will produce distinctly different results, namespaces allow us to differentiate between them in the code we write. Python also provides us with a naming convention for the modules that we import. Notice how the import statement and subsequent use of namespace differ in this revised version of **`mathrunner.py`**. This can be useful when the modules you are importing make use of a longer namespace that you might not want to type every time it is used.
+
+Python makes use of four types of namespaces, listed in order of precedence:
+
+Local
+: Inside a class method or function
+
+Enclosed
+: Inside an enclosing function in instances when one function is nested within another
+
+Global
+: Outside all functions or class methods
+
+Built-In
+: The built-in namespace consists of all of the Python objects that are available to your program at runtime. Try running **`dir(__builtins__)`** on the IDLE shell to see the full list of built-ins. Many of the names should look familiar to you.
+
+I have included the following tip originally written by Alex Thornton, who also teaches this class at UCI. I think it's a great explanation of how modules make use of the **`__name__`** variable in Python and wanted to share it with you.
+
+```{admonition} Alex Thornton's Explanation of Executable Modules
+:class: tip
+When you load a module in IDLE and execute it (by pressing F5), the code in that module is executed. If it generates any observable result, like printing output or asking the user for input, you'll see that in the interpreter. Otherwise, you'll see a standard >>> interpreter prompt, and all of the module's definitions will now be available — so, for example, if the module defines a function, you could now call it.
+
+As we've seen, modules in Python have names. We can check the name of the currently-executing module at any time by accessing the global variable **`__name__`**, which is present in every module.
+
+In general, the names of modules are indicated by their filenames; a module written in a file **`boo.py`** has the name **`boo`**. But there's one special case that we haven't talked about: When you execute a module in Python (i.e., by pressing F5 in IDLE), it's given the special name **`__main__`** while it runs. (Anything you define in the Python interpreter will be considered part of the **`__main__`** module, as well.)
+
+This little fact can be a useful way of differentiating between whether a module has been executed (i.e., is it the "entry point" of a program?) or whether it's been imported. In general, importing a module shouldn't suddenly cause things to happen — output to be generated, input to be read, and so on — but should, instead, simply make definitions available that weren't previously. Even executable modules, the ones we expect to be able to execute as programs, should behave differently when imported than they do when executed.
+
+To facilitate this distinction, we can simply check the module's name by accessing the **`__name__`** variable. If its value is **`__main__`**, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an **`if __name__ == '__main__':`** block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.
+```
 
 #### Videos
 
