@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 4 Notes &#8212; ICS 32 Fall 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 3 Notes" href="wk3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_stacked.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2020</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Programming with Software Libraries
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a0.html">
+   Assignment 0
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a1.html">
+   Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a2.html">
+   Assignment 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk1.html">
+   Week 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk2.html">
+   Week 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk3.html">
+   Week 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 4
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/wk4.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#week-4-overview">
+   Week 4 Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-materials">
+   Lecture Materials
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networks-and-sockets">
+     Networks and Sockets
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#videos">
+       Videos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notes">
+       Notes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#protocols">
+     Protocols
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Videos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Notes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiz-results">
+   Quiz Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-thoughts">
+     Some Thoughts
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="week-4-notes">
+<h1>Week 4 Notes<a class="headerlink" href="#week-4-notes" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep an eye weekly pages as they might be updated throughout the week.</p>
+</div>
+<div class="section" id="week-4-overview">
+<h2>Week 4 Overview<a class="headerlink" href="#week-4-overview" title="Permalink to this headline">¶</a></h2>
+<p>It’s week 4. You should be wrapping with Part 1 of assignment 2 right about now and getting ready to start Part 2. The lectures for this week will help you accomplish that goal.</p>
+<dl class="simple myst">
+<dt>Quick Links:</dt><dd><p><a class="reference internal" href="#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
+</dd>
+<dd><p><a class="reference internal" href="#quiz-results"><span class="std std-ref">Quiz Results</span></a></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="lecture-materials">
+<span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
+<dl class="simple myst">
+<dt>Lectures for Week 3</dt><dd><p><a class="reference internal" href="#lectures-protocols"><span class="std std-ref">Protocols</span></a></p>
+</dd>
+<dd><p><a class="reference internal" href="#lectures-networks"><span class="std std-ref">Networks and Sockets</span></a></p>
+</dd>
+</dl>
+<div class="section" id="networks-and-sockets">
+<span id="lectures-networks"></span><h3>Networks and Sockets<a class="headerlink" href="#networks-and-sockets" title="Permalink to this headline">¶</a></h3>
+<p>In a1 and a2, you are tasked with storing and retrieving data from the file system by opening, reading or writing, and closing a file using Python’s built-in functions for file management. <strong><code class="docutils literal notranslate"><span class="pre">open()</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">close()</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">read()</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">write()</span></code></strong>, as examples, allow us to open a <em>stream</em> to a file to send and receive data to a file located in our computer’s file system</p>
+<p>But what if we wanted to send and receive data to a different computer? We could continue to use the file system to store the data and then find a way to transfer the file over a network connection. Or, we could create a direct connection to a networked computer and <em>stream</em> the data directly. Since we are not going to concern ourselves with the transfer of files just yet, let’s look at how we can use Python’s networking interface to send data to another computer.</p>
+<p>In Python, we can think of a <em>networking</em> interface as any tool that facilitates communication with another computer over an ethernet connection. In the following diagram, a network connection has been established between two computers. Although the diagram does not specify, we can assume that the client (laptop) and server (box) are both connected to a common network (<em>e.g.,</em> a corporate lan, wan, or the Internet). In order to communicate with each other, the server exposes a unique IP address (168.235.86.101, as depicted here for example) and the client must know of that IP address.</p>
+<p><img alt="networking" src="../_images/sockets_overview.png" /></p>
+<p>When the client is ready to connect, it first checks to see if the server’s address is available for connections. If available, the server sends a <em>response</em> to confirm and then waits for data to be sent from the client. Communication is performed using a socket, which in Python, is a wrapper on many of the underlying details that computers must establish to stream data. For the purposes of this lecture, we will focus on a fairly narrow set of the many ways that sockets can be used. So our primary concern here is how sockets send and receive data. Notice in the diagram above, that each computing system has two sockets: a response socket and a send socket, which represent the <em>input stream</em> of data from a remote computer and the <em>output stream</em> of data that is sent from the local computer. When data is streamed to the socket, Python’s socket library attempts to ensure that all data is sent or received arrives intact and in the order it was written.</p>
+<p>The following diagram illustrates the primary Python functions required to establish a socket between two computers. Notice how the <strong><code class="docutils literal notranslate"><span class="pre">send()</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">recv()</span></code></strong> functions at the end are iterative. In this example, after a response is sent, the server waits until the client sends data again, establish a send and receive loop until either the client disconnects or the server rejects the connection.</p>
+<p><img alt="networking" src="../_images/python_sockets_diagram.png" /></p>
+<p>So now let’s take a look at how the code for these two computer systems could be written using Python’s <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> library.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+
+<span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">srv</span><span class="p">:</span>
+	<span class="n">srv</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+	<span class="n">srv</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;server listening on port&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span>
+
+	<span class="n">connection</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="n">srv</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+	<span class="k">with</span> <span class="n">connection</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client connected&quot;</span><span class="p">)</span>
+		
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">rec_msg</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+			
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span> <span class="n">rec_msg</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">rec_msg</span><span class="p">:</span>
+				<span class="k">break</span>
+			<span class="n">connection</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">rec_msg</span><span class="p">)</span>
+			
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client disconnected&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the code above, we start by importing the socket module to the program, and set a <strong><code class="docutils literal notranslate"><span class="pre">PORT</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">HOST</span></code></strong> variable that contain the IP address of the server and the desired port (port numbers are unrestricted, however, there are some common conventions for ports where you might find conflicts, so choose wisely).</p>
+<p>Then, a <strong><code class="docutils literal notranslate"><span class="pre">with</span></code></strong> statement is used to instantiate a socket object and assign it to the variable <strong><code class="docutils literal notranslate"><span class="pre">srv</span></code></strong>. <strong><code class="docutils literal notranslate"><span class="pre">with</span></code></strong> will handle the responsibility of properly closing the socket and connection. The socket is first bound to the desired address and port, then set to listen for incoming socket connection requests. The code, as is, will block at this point until a it <em>hears</em> a remote connection, at which point the socket will <em>accept</em> the connection and store the socket connection and remote address in the variables <strong><code class="docutils literal notranslate"><span class="pre">connection</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">address</span></code></strong> respectively.</p>
+<p>Now that a connection between a remote computer and server is established, the program can begin to exchange data. The server depicted by the code here is a lightweight <em>echo</em> server whose only responsibility is to send the data it receives as a response. Because Python sockets use the same underlying tools for establishing network connections as other programming languages and networking tools, we can connect to this server in a number of different ways. If you are on Windows, you can download a program called “PUTTY” to connect to this server and send it messages. If you are on Linux or OSX, you should have a preinstalled tool called <em>ncat</em> that will allow you to connect. In the following example, I use ncat to connect to the server and send a few messages.</p>
+<p><img alt="networking" src="../_images/ncat_echo_test.gif" /></p>
+<p>Take a minute and try it for yourself. Grab <a class="reference external" href="https://www.putty.org/">PUTTY</a> or fire up ncat, copy the server code sample into IDLE, and send some messages!</p>
+<p>Oh, one more thing before we move on. In networking, there are some IP addresses that have special meaning. One of those address that will be relevant to you here is the <em>loopback</em> address:</p>
+<p><img alt="networking" src="../_images/sockets_loopback.png" /></p>
+<p>The loopback address, <strong><code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code></strong> is networking convention that allows a computer to connect to itself using its network connection. And just like domain names on the Internet, the ‘name’ <strong><code class="docutils literal notranslate"><span class="pre">localhost</span></code></strong> is an alphanumeric map to the loopback IP address. In the example above, I bind the Python server to the loopback address and connect to it using ncat. This provides a simple and straightforward way to test our socket programming without having to maintain code on two separate systems.</p>
+<p>Okay, so we have seen how we can connect to the Python server with an existing client, now let’s take a look at how we can write our own.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+
+<span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+	<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client connected to </span><span class="si">{HOST}</span><span class="s2"> on </span><span class="si">{PORT}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to send: &quot;</span><span class="p">)</span>
+
+		<span class="n">client</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+		<span class="n">srv_msg</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span><span class="n">srv_msg</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>So in the client example, just like the server code, we first instantiate a <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> object and assign it to a variable, in this case we will use <strong><code class="docutils literal notranslate"><span class="pre">client</span></code></strong> for differentiation. However, rather than <strong><code class="docutils literal notranslate"><span class="pre">bind()</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">listen()</span></code></strong> on an address and port, we tell the socket to <strong><code class="docutils literal notranslate"><span class="pre">connect()</span></code></strong> to the location that we expect to be listening. Then we simply create a <strong><code class="docutils literal notranslate"><span class="pre">while</span></code></strong> loop to continuously collect user input, send it using the connected socket, and print the response from the server.</p>
+<p>Go ahead, take a minute to copy the client code into a new instance of IDLE. You should be to run both the server and client at the same time. Just make sure that you start the server first so the client can connect.</p>
+<p>One final concern that we have not discussed yet is the format in which we are sending and receiving data. You have probably noticed that prior to the client sending the user input string, it is encoded. The <strong><code class="docutils literal notranslate"><span class="pre">encode()</span></code></strong> function converts the its string object to bytes in the format that is passed as a parameter (utf-8) in our example. Likewise, the response from the server is decoded again before printing to the shell. This process can become quite burdensome when a program needs to send and receive larger, complex data sets. Fortunately, Python makes this process much easier for us by exposing some additional functions that abstract much of the work for us. Let’s take a look at the revised code first:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+
+<span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+	<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+
+	<span class="n">send</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+	<span class="n">recv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client connected to </span><span class="si">{HOST}</span><span class="s2"> on </span><span class="si">{PORT}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to send: &quot;</span><span class="p">)</span>
+
+		<span class="n">send</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msg</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+		<span class="n">send</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+		<span class="n">srv_msg</span> <span class="o">=</span> <span class="n">recv</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span><span class="n">srv_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we make use of the <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> module’s <strong><code class="docutils literal notranslate"><span class="pre">makefile</span></code></strong> function to create a read and write convention that more closely resembles what we have learned from file operations. Makefile abstracts much of the work required to convert string-like data into bytes. Notice, we no longer have to conduct any encoding or decoding operations. Rather, we simply create readable (<strong><code class="docutils literal notranslate"><span class="pre">.makefile('r')</span></code></strong>) and writeable (<strong><code class="docutils literal notranslate"><span class="pre">.makefile('w')</span></code></strong>) <em>file objects</em> on our connected socket. The only additional responsibility required here is to tell the remote connection when we have completed writing operations. Write operations will typically store data in a buffer prior to sending, often, buffered data will not be sent until the buffer is full. Therefore, it is always important to remember <em>flush</em> the buffer when write operations have completed. The socket’s <strong><code class="docutils literal notranslate"><span class="pre">.flush()</span></code></strong> function will conduct this operation for you.</p>
+<div class="section" id="videos">
+<h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="protocols">
+<span id="lectures-protocols"></span><h3>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h3>
+<p>In assignment 2, you are provided with the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module for storing and loading user data. In this module, we make use of a particular format for storing information called <a class="reference external" href="https://www.json.org/json-en.html">JSON</a>, which wraps Profile object data in a particular style of notation using the rules and conventions set forth by the creators of the format. All the files that you find on your computer adhere to a similar process: a format is created that specifies how data should be stored and retrieved and programs that make use of the format adhere to the format conventions. A file’s format is typically specified by it’s extension, or suffix (<em>e.g.</em>, .jpg, .doc, .py), providing the program that wants to use it with some clue as to how to interpret the file contents. A good example of this is an image editing program that can display different image formats.</p>
+<p>Programs that talk to each other over networks follow the same process. A format is agreed upon and the programs that want to talk to each other must follow this format to successfully communicate. In networking, this format is called a <em>protocol</em>. The Hypertext Transfer Protocol or HTTP, for example, is one way that servers and the clients that connect to them can communicate (if you are reading this web page right now, you have no doubt accessed it using HTTP).</p>
+<p>So, we now that we have established a preliminary understanding of what constitutes a protocol. Let’s create one of our own. After all, there is really nothing special about a protocol, it’s just a set of requests and responses agreed upon by two or more programs.</p>
+<p>Let’s with our code from the Networks and Sockets lecture:</p>
+<div class="section" id="id2">
+<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id3">
+<h4>Notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="quiz-results">
+<span id="id4"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
+<p>No quiz this week</p>
+<div class="section" id="some-thoughts">
+<h3>Some Thoughts<a class="headerlink" href="#some-thoughts" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="wk3.html" title="previous page">Week 3 Notes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mark S. Baldwin<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

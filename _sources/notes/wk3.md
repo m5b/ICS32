@@ -19,8 +19,11 @@ Quick Links:
 Lectures for Week 3
 : {ref}`lectures:testing`
 : {ref}`lectures:modules`
-: {ref}`lectures:protocols`
-: {ref}`lectures:networks`
+
+```{note}
+Networks and Protocol lectures moved to week 4 page.
+```
+
 
 (lectures:testing)=
 ### Testing Lecture
@@ -367,27 +370,9 @@ As we've seen, modules in Python have names. We can check the name of the curren
 In general, the names of modules are indicated by their filenames; a module written in a file **`boo.py`** has the name **`boo`**. But there's one special case that we haven't talked about: When you execute a module in Python (i.e., by pressing F5 in IDLE), it's given the special name **`__main__`** while it runs. (Anything you define in the Python interpreter will be considered part of the **`__main__`** module, as well.)
 
 This little fact can be a useful way of differentiating between whether a module has been executed (i.e., is it the "entry point" of a program?) or whether it's been imported. In general, importing a module shouldn't suddenly cause things to happen — output to be generated, input to be read, and so on — but should, instead, simply make definitions available that weren't previously. Even executable modules, the ones we expect to be able to execute as programs, should behave differently when imported than they do when executed.
-
+s
 To facilitate this distinction, we can simply check the module's name by accessing the **`__name__`** variable. If its value is **`__main__`**, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an **`if __name__ == '__main__':`** block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.
 ```
-
-(lectures:protocols)=
-### Protocols
-
-Material Coming Soon.
-
-#### Videos
-
-#### Notes
-
-(lectures:networks)=
-### Networks and Sockets
-
-Material Coming Soon.
-
-#### Videos
-
-#### Notes
 
 (quiz-results)=
 ## Quiz Results
