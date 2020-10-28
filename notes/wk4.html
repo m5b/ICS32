@@ -215,6 +215,11 @@
        Videos
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#working-with-sockets">
+       Working with Sockets
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -277,6 +282,12 @@
 </dl>
 <div class="section" id="networks-and-sockets">
 <span id="lectures-networks"></span><h3>Networks and Sockets<a class="headerlink" href="#networks-and-sockets" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="videos">
+<h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2093512&amp;node=7861887&amp;a=1763099740&amp;autoplay=1">Networking and Sockets Lecture</a></p>
+</div>
+<div class="section" id="working-with-sockets">
+<h4>Working with Sockets<a class="headerlink" href="#working-with-sockets" title="Permalink to this headline">¶</a></h4>
 <p>In a1 and a2, you are tasked with storing and retrieving data from the file system by opening, reading or writing, and closing a file using Python’s built-in functions for file management. <strong><code class="docutils literal notranslate"><span class="pre">open()</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">close()</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">read()</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">write()</span></code></strong>, as examples, allow us to open a <em>stream</em> to a file to send and receive data to a file located in our computer’s file system</p>
 <p>But what if we wanted to send and receive data to a different computer? We could continue to use the file system to store the data and then find a way to transfer the file over a network connection. Or, we could create a direct connection to a networked computer and <em>stream</em> the data directly. Since we are not going to concern ourselves with the transfer of files just yet, let’s look at how we can use Python’s networking interface to send data to another computer.</p>
 <p>In Python, we can think of a <em>networking</em> interface as any tool that facilitates communication with another computer over an ethernet connection. In the following diagram, a network connection has been established between two computers. Although the diagram does not specify, we can assume that the client (laptop) and server (box) are both connected to a common network (<em>e.g.,</em> a corporate lan, wan, or the Internet). In order to communicate with each other, the server exposes a unique IP address (168.235.86.101, as depicted here for example) and the client must know of that IP address.</p>
@@ -371,8 +382,6 @@
 </pre></div>
 </div>
 <p>Here we make use of the <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> module’s <strong><code class="docutils literal notranslate"><span class="pre">makefile</span></code></strong> function to create a read and write convention that more closely resembles what we have learned from file operations. Makefile abstracts much of the work required to convert string-like data into bytes. Notice, we no longer have to conduct any encoding or decoding operations. Rather, we simply create readable (<strong><code class="docutils literal notranslate"><span class="pre">.makefile('r')</span></code></strong>) and writeable (<strong><code class="docutils literal notranslate"><span class="pre">.makefile('w')</span></code></strong>) <em>file objects</em> on our connected socket. The only additional responsibility required here is to tell the remote connection when we have completed writing operations. Write operations will typically store data in a buffer prior to sending, often, buffered data will not be sent until the buffer is full. Therefore, it is always important to remember <em>flush</em> the buffer when write operations have completed. The socket’s <strong><code class="docutils literal notranslate"><span class="pre">.flush()</span></code></strong> function will conduct this operation for you.</p>
-<div class="section" id="videos">
-<h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="protocols">

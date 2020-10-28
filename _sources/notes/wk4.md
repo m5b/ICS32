@@ -23,6 +23,12 @@ Lectures for Week 3
 (lectures:networks)=
 ### Networks and Sockets
 
+#### Videos
+
+[Networking and Sockets Lecture](https://uci.yuja.com/V/Video?v=2093512&node=7861887&a=1763099740&autoplay=1)
+
+#### Working with Sockets
+
 In a1 and a2, you are tasked with storing and retrieving data from the file system by opening, reading or writing, and closing a file using Python's built-in functions for file management. **`open()`**, **`close()`**, **`read()`**, and **`write()`**, as examples, allow us to open a _stream_ to a file to send and receive data to a file located in our computer's file system
 
 But what if we wanted to send and receive data to a different computer? We could continue to use the file system to store the data and then find a way to transfer the file over a network connection. Or, we could create a direct connection to a networked computer and _stream_ the data directly. Since we are not going to concern ourselves with the transfer of files just yet, let's look at how we can use Python's networking interface to send data to another computer.
@@ -140,9 +146,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
 ```
 
 Here we make use of the **`socket`** module's **`makefile`** function to create a read and write convention that more closely resembles what we have learned from file operations. Makefile abstracts much of the work required to convert string-like data into bytes. Notice, we no longer have to conduct any encoding or decoding operations. Rather, we simply create readable (**`.makefile('r')`**) and writeable (**`.makefile('w')`**) _file objects_ on our connected socket. The only additional responsibility required here is to tell the remote connection when we have completed writing operations. Write operations will typically store data in a buffer prior to sending, often, buffered data will not be sent until the buffer is full. Therefore, it is always important to remember _flush_ the buffer when write operations have completed. The socket's **`.flush()`** function will conduct this operation for you.
-
-
-#### Videos
 
 
 (lectures:protocols)=
