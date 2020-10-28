@@ -144,18 +144,11 @@ Here we make use of the **`socket`** module's **`makefile`** function to create 
 
 #### Videos
 
-#### Notes
 
 (lectures:protocols)=
 ### Protocols
 
-In assignment 2, you are provided with the **`Profile`** module for storing and loading user data. In this module, we make use of a particular format for storing information called [JSON](https://www.json.org/json-en.html), which wraps Profile object data in a particular style of notation using the rules and conventions set forth by the creators of the format. All the files that you find on your computer adhere to a similar process: a format is created that specifies how data should be stored and retrieved and programs that make use of the format adhere to the format conventions. A file's format is typically specified by it's extension, or suffix (_e.g._, .jpg, .doc, .py), providing the program that wants to use it with some clue as to how to interpret the file contents. A good example of this is an image editing program that can display different image formats.
-
-Programs that talk to each other over networks follow the same process. A format is agreed upon and the programs that want to talk to each other must follow this format to successfully communicate. In networking, this format is called a _protocol_. The Hypertext Transfer Protocol or HTTP, for example, is one way that servers and the clients that connect to them can communicate (if you are reading this web page right now, you have no doubt accessed it using HTTP).
-
-So, we now that we have established a preliminary understanding of what constitutes a protocol. Let's create one of our own. After all, there is really nothing special about a protocol, it's just a set of requests and responses agreed upon by two or more programs.
-
-Let's with our code from the Networks and Sockets lecture:
+Coming soon.
 
 #### Videos
 
@@ -167,4 +160,3 @@ Let's with our code from the Networks and Sockets lecture:
 
 No quiz this week
 
-### Some Thoughts
