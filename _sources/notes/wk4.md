@@ -17,8 +17,8 @@ Quick Links:
 ## Lecture Materials
 
 Lectures for Week 3
-: {ref}`lectures:protocols`
 : {ref}`lectures:networks`
+: {ref}`lectures:protocols`
 
 (lectures:networks)=
 ### Networks and Sockets
@@ -156,7 +156,6 @@ Coming soon.
 #### Videos
 
 #### Notes
-
 
 (quiz-results)=
 ## Quiz Results
