@@ -151,11 +151,226 @@ Here we make use of the **`socket`** module's **`makefile`** function to create 
 (lectures:protocols)=
 ### Protocols
 
-Coming soon.
+The protocols lecture makes use of three Python programs. While various parts of the programs are included in this section, you will want to download the actual files if you plan on running them yourself in IDLE.
+
+<a href="../resources/symptom_monitoring.py">SMP Protocol</a>
+
+<a href="../resources/symptom_monitoring_ui.py">SMP Client Program</a>
+
+<a href="../resources/symptom_monitoring_server.py">SMP Server Program</a>
 
 #### Videos
 
 #### Notes
+
+In assignment 2, you are provided with the **`Profile`** module for storing and loading user data. In this module, we make use of a particular format for storing information called [JSON](https://www.json.org/json-en.html), which wraps Profile object data in a style of notation using the rules and conventions set forth by the creators of the format. 
+
+All the files that you find on your computer adhere to a similar process: a format is created that specifies how data should be stored and retrieved and programs that make use of the format adhere to the format conventions. A file's format is typically specified by it's extension, or suffix (_e.g._, .jpg, .doc, .py), providing the program that wants to use it with some clue as to how to interpret the file contents. A good example of this is an image editing program that can display different image formats.
+
+Programs that talk to each other over networks follow a similar process. A format is agreed upon and the programs that want to talk to each other must follow this format to successfully communicate. In networking, this format is called a _protocol_. The Hypertext Transfer Protocol or HTTP, for example, is one way that servers and the clients that connect to them can communicate (if you are reading this web page right now, you have no doubt accessed it using HTTP).
+
+So, now that we have established a preliminary understanding of what constitutes a protocol. Let's create one of our own. After all, there is really nothing special about a protocol, it's just a set of requests and responses agreed upon by two or more programs.
+
+Let's start by building a protocol for UCI's Working Well Daily Symptom check tool. Now, I am not sure if you receive these emails as a student, but employees at UCI are required to answer these emails everyday. How might we go about converting this tool to a program?  And how might we extract some common language to be used by the program (_e.g._, create a protocol)?
+
+![uciemail](../resources/symptomcheck_email.png)			
+
+(watch the lecture for more detail about the wellness check email. [Download the full email](../resources/smp.pdf))
+
+Well, we can start by asking a few high level questions: What information does the tool need to collect? What are the conditions that need to be handled? What actions must be taken in response to those conditions? Certainly, there are many different ways to answer these questions, so the path we take here is likely not the only direction we could go, but it should be sufficient to demonstrate the underlying concepts of networking protocols.
+
+First, we need to know who is submitting a daily wellness check. Then, by reading through the email we can determine which conditions determine the next steps required by the user. Notice in the email how every question is constructed to respond to either a yes or no answer. We can use this boolean like response to construct the type of data we need for the protocol. Also notice how there are only two actions for each response: no further action is required, or continue to next question.
+
+The following table lays out what we can expect from a typical client-server interaction using the protocol. We first assume the typical handshaking process that must occur when sockets are establishing a connection. The handshake process is then followed by the first requirement of the transaction: identification (or authentication) of the user. We then proceed to check off the various steps as laid out in the original email. Since we only need to give the server a yes or no answer, the structure for the protocol messages can be fairly simple. Here, we construct a command using the following schema:
+
+```code
+SMP_[TYPE] [VALUE]
+```
+
+The only command that we do not require a 1 or 0 value for is **`SMP_AUTH`** since we must pass some form of user identification to the server.
+
+```code
+
+| client          | server     |
+|-----------------|------------|
+| connect         |            |
+|                 | accept     |
+| SMP_AUTH userid |            |
+|                 | WELCOME    |
+| SMP_STATUS 0    |            |
+|                 | COMPLETE   |
+| SMP_STATUS 1    |            |
+|                 | CONTINUE   |
+| SMP_SYMPTOMS 0  |            |
+|                 | COMPLETE   |
+| SMP_SYMPTOMS 1  |            |
+|                 | CONTINUE   |
+| SMP_TESTED 0    |            |
+|                 | CONTINUE   |
+| SMP_PROXIMITY 0 |            |
+|                 | COMPLETE   |
+| disconnect      |            |
+|                 | disconnect |
+
+
+```
+
+And that's our protocol. There are a few more conditions not listed in the previous table, such as when the **`SMP_TESTED`** or **`SMP_PROXIMITY`** commands are 1 on 0, that if we wanted to provide a formal protocol specification we would probably want to explain in greater detail.
+
+You may be wondering why we even need a protocol for this program. Why not just collect the required data from the user and send it over to a server all at once? While that might work fine within the constraints of the UC system wellness checking needs, what if we needed to support other universities, organizations, and governments around the world? Perhaps it would be easier to give all of those outlets the ability to build their own platforms, rather than modify a single program to support all of them. By creating (and standardizing) a protocol, we don't have to depend on the capabilities of a single program from a single source. Rather, as long as a program adheres to the protocol, anyone can create their own custom interfaces, programs, and platforms.
+
+Okay, so now that we have a protocol, let's take a look at how it is implemented in Python. I won't be putting the entire project into the notes here, but you can download the protocol file at the top of this section. We will be calling this protocol the Symptom Monitoring Protocol (SMP).
+
+```{note}
+Unlike previous snippets, those used in this lecture are not feature complete. They will not run on their own if you copy and paste from here. To run the programs and view all of the code, please download the files listed at the top of this section.
+```
+
+```ipython3
+AUTH = "SMP_AUTH"
+STATUS = "SMP_STATUS"
+SYMPTOMS = "SMP_SYMPTOMS"
+TESTED = "SMP_TESTED"
+PROXIMITY = "SMP_PROXIMITY"
+
+WELCOME = "WELCOME"
+CONTINUE = "CONTINUE"
+COMPLETE = "COMPLETE"
+NOUSER = "NOUSER"
+ERROR = "ERROR"
+```
+Here we specify some constant variables to hold the commands we created for the protocol. Constant variables will help us keep the string representations of the commands together and make updating the protocol commands a little easier if the need arises.
+
+In the following section, we create a namedtuple object to hold the objects derived from the socket. A namedtuple is a convenient way to pass multiple objects without having to manage individual variables for each one. The protocol is first initialized by placing a call to the init method and passing it a socket that has been connected to the desired SMP supported endpoint (a client, or a server). 
+
+```ipython3
+
+SMPConnection = namedtuple('SMPConnection',['socket','send','recv'])
+
+def init(sock:socket) -> SMPConnection:
+    '''
+    The init method should be called for every program that uses the SMP Protocol. The calling program should first establish a connection with a socket object, then pass that open socket to init. init will then create file objects to handle input and output.
+    '''
+    try:
+        f_send = sock.makefile('w')
+        f_recv = sock.makefile('r')
+    except:
+        raise SMPProtocolError("Invalid socket connection")
+
+    return SMPConnection(
+        socket = sock,
+        send = f_send,
+        recv = f_recv
+    )
+
+def listen(smp_conn: SMPConnection) -> str:
+    '''
+    listen will block until a new message has been received
+    '''
+    return _read_command(smp_conn)
+
+
+def authenticate(smp_conn: SMPConnection, userid: str) -> str:
+    '''
+    a helper method to authenticate a userid with a server
+    '''
+    cmd = '{} {}'.format(AUTH, userid)
+    _write_command(smp_conn, cmd)
+    result = _read_command(smp_conn)
+    
+    return result
+
+def report(smp_conn: SMPConnection, report: str, status: str) -> str:
+    '''
+    report will send the command specified by the parameters and return a response to the command using the SMP Protocol.
+
+    report: one of the SMP_X commands provided by the module
+    status: either 0 or 1 to indicate the status of the command specified in the report parameter
+    '''
+    cmd = '{} {}'.format(report, status)
+    _write_command(smp_conn, cmd)
+    return _read_command(smp_conn)
+
+
+def nouser(smp_conn: SMPConnection):
+    '''
+    a send only wrapper for the NOUSER command
+    '''
+    _write_command(smp_conn, NOUSER)
+
+def _write_command(smp_conn: SMPConnection, cmd: str):
+    '''
+    performs the required steps to send a message, including appending a newline sequence and flushing the socket to ensure
+    the message is sent immediately.
+    '''
+    try:
+        smp_conn.send.write(cmd + '\r\n')
+        smp_conn.send.flush()
+    except:
+        raise SMPProtocolError
+
+def _read_command(smp_conn: SMPConnection) -> str:
+    '''
+    performs the required steps to receive a message. Trims the 
+    newline sequence before returning
+    '''
+    cmd = smp_conn.recv.readline()[:-1]
+    return cmd
+```
+
+This code contains just a few of the functions in the protocol, however, most of the remaining functions are similar to the ones represented here. In particular, the function **`nouser`** is one of several helper functions that send specific commands. Also notice how the write and read operations have been abstracted to their own function (**`_write_command`**, **`_read_command`**). By moving this required, but repetitive code to its own function, we can consolidate purely structural operations (_e.g._, appending or trimming socket messages) to a single location.
+
+Okay, so that is the bulk of the SMP protocol module. Now let's take a look at how we might go about incorporating it into our programs. We will be building upon the code used in the Networks and Sockets lecture, so be sure to watch it before continuing.
+
+
+```ipython3
+PORT = 2020
+HOST = "127.0.0.1"
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((HOST, PORT))
+_smp_conn = smp.init(sock)
+
+try:
+		while True:
+				userid = input()
+
+				res = smp.authenticate(_smp_conn, userid)
+				if res == smp.NOUSER:
+						print('Unable to find user. Check your ID and try again.')
+				else:
+						break
+		
+		while True:
+				if _report_status(_smp_conn) == smp.COMPLETE:
+						print('Thank you. No further action is required.')
+						break
+				
+				if _report_symptoms(_smp_conn) == smp.COMPLETE:
+						print('Thank you. No further action is required.')
+						break
+				
+				if _report_tested(_smp_conn) == smp.CONTINUE:
+						if _report_proximity(_smp_conn) == smp.COMPLETE:
+								print('Thank you. It is advised that you do not come to campus today.')
+								break
+						else:
+								print('Thank you. No further action is required.')
+								break
+				else:
+						print('Thank you. No further action is required.')
+						break
+except SMPProtocolError:
+		print("An error occurred while attempting to communicate with the remote server.")    
+else:
+		# only disconnect if an SMPProtocolError did not occur
+		smp.disconnect(_smp_conn)
+finally:
+		sock.close()
+```
+
+Just as with the client server we created, we start by connecting a socket to the desired host and port. Once we have a connected socket, we can use that socket to initialize the SMP protocol. Recall that upon initialization, the protocol module returns a namedtuple called **`SMPConnection`** that contains the socket, a writable file object, and a readable file object. Now that we have an SMPConnection, we can begin conducting operations using the protocol module. If we refer to the table from earlier, we know that the first thing we need to do is authenticate as a user. So the program first collects the required data from the user and then sends it to the remote endpoint for processing. An invalid id will cause the user to be prompted again, otherwise, the program will continue with the protocol.
+
+For more detail on how the client program works, as well as a peak at the server program, please watch the lecture videos!
 
 (quiz-results)=
 ## Quiz Results
