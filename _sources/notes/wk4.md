@@ -161,6 +161,8 @@ The protocols lecture makes use of three Python programs. While various parts of
 
 #### Videos
 
+[Protocols Lecture](https://uci.yuja.com/V/Video?v=2102790&node=7910449&a=3002510&autoplay=1)
+
 #### Notes
 
 In assignment 2, you are provided with the **`Profile`** module for storing and loading user data. In this module, we make use of a particular format for storing information called [JSON](https://www.json.org/json-en.html), which wraps Profile object data in a style of notation using the rules and conventions set forth by the creators of the format. 

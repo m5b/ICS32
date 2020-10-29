@@ -126,7 +126,7 @@ def _write_command(smp_conn: SMPConnection, cmd: str):
     the message is sent immediately.
     '''
     try:
-        smp_conn.send.write(cmd + '\r\n')
+        smp_conn.send.write(cmd + '\n')
         smp_conn.send.flush()
     except:
         raise SMPProtocolError
