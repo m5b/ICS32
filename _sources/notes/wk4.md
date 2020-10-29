@@ -175,7 +175,7 @@ Let's start by building a protocol for UCI's Working Well Daily Symptom check to
 
 ![uciemail](../resources/symptomcheck_email.png)			
 
-(watch the lecture for more detail about the wellness check email. [Download the full email](../resources/smp.pdf))
+(watch the lecture for more detail about the wellness check email. <a href="../resources/smp.pdf">Download the full email</a>)
 
 Well, we can start by asking a few high level questions: What information does the tool need to collect? What are the conditions that need to be handled? What actions must be taken in response to those conditions? Certainly, there are many different ways to answer these questions, so the path we take here is likely not the only direction we could go, but it should be sufficient to demonstrate the underlying concepts of networking protocols.
 
@@ -321,51 +321,53 @@ This code contains just a few of the functions in the protocol, however, most of
 
 Okay, so that is the bulk of the SMP protocol module. Now let's take a look at how we might go about incorporating it into our programs. We will be building upon the code used in the Networks and Sockets lecture, so be sure to watch it before continuing.
 
-
 ```ipython3
-PORT = 2020
-HOST = "127.0.0.1"
+print("Welcome to the UCI Working Well Daily Symptom Checker")
+print()
+print("To get started, enter your UCI provided email address")
+
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect((HOST, PORT))
 _smp_conn = smp.init(sock)
 
 try:
-		while True:
-				userid = input()
+  while True:
+    userid = input()
 
-				res = smp.authenticate(_smp_conn, userid)
-				if res == smp.NOUSER:
-						print('Unable to find user. Check your ID and try again.')
-				else:
-						break
-		
-		while True:
-				if _report_status(_smp_conn) == smp.COMPLETE:
-						print('Thank you. No further action is required.')
-						break
-				
-				if _report_symptoms(_smp_conn) == smp.COMPLETE:
-						print('Thank you. No further action is required.')
-						break
-				
-				if _report_tested(_smp_conn) == smp.CONTINUE:
-						if _report_proximity(_smp_conn) == smp.COMPLETE:
-								print('Thank you. It is advised that you do not come to campus today.')
-								break
-						else:
-								print('Thank you. No further action is required.')
-								break
-				else:
-						print('Thank you. No further action is required.')
-						break
+    res = smp.authenticate(_smp_conn, userid)
+    if res == smp.NOUSER:
+        print('Unable to find user. Check your ID and try again.')
+    else:
+        break
+
+  while True:
+    if _report_status(_smp_conn) == smp.COMPLETE:
+        print('Thank you. No further action is required.')
+        break
+    
+    if _report_symptoms(_smp_conn) == smp.COMPLETE:
+        print('Thank you. No further action is required.')
+        break
+    
+    if _report_tested(_smp_conn) == smp.CONTINUE:
+        if _report_proximity(_smp_conn) == smp.COMPLETE:
+            print('Thank you. It is advised that you do not come to campus today.')
+            break
+        else:
+            print('Thank you. No further action is required.')
+            break
+    else:
+        print('Thank you. No further action is required.')
+        break
 except SMPProtocolError:
-		print("An error occurred while attempting to communicate with the remote server.")    
+  print("An error occurred while attempting to communicate with the remote server.")    
 else:
-		# only disconnect if an SMPProtocolError did not occur
-		smp.disconnect(_smp_conn)
+  # only disconnect if an SMPProtocolError did not occur
+  smp.disconnect(_smp_conn)
 finally:
-		sock.close()
+  sock.close()
+
 ```
 
 Just as with the client server we created, we start by connecting a socket to the desired host and port. Once we have a connected socket, we can use that socket to initialize the SMP protocol. Recall that upon initialization, the protocol module returns a namedtuple called **`SMPConnection`** that contains the socket, a writable file object, and a readable file object. Now that we have an SMPConnection, we can begin conducting operations using the protocol module. If we refer to the table from earlier, we know that the first thing we need to do is authenticate as a user. So the program first collects the required data from the user and then sends it to the remote endpoint for processing. An invalid id will cause the user to be prompted again, otherwise, the program will continue with the protocol.

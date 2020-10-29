@@ -400,8 +400,8 @@
 <p>Programs that talk to each other over networks follow a similar process. A format is agreed upon and the programs that want to talk to each other must follow this format to successfully communicate. In networking, this format is called a <em>protocol</em>. The Hypertext Transfer Protocol or HTTP, for example, is one way that servers and the clients that connect to them can communicate (if you are reading this web page right now, you have no doubt accessed it using HTTP).</p>
 <p>So, now that we have established a preliminary understanding of what constitutes a protocol. Let’s create one of our own. After all, there is really nothing special about a protocol, it’s just a set of requests and responses agreed upon by two or more programs.</p>
 <p>Let’s start by building a protocol for UCI’s Working Well Daily Symptom check tool. Now, I am not sure if you receive these emails as a student, but employees at UCI are required to answer these emails everyday. How might we go about converting this tool to a program?  And how might we extract some common language to be used by the program (<em>e.g.</em>, create a protocol)?</p>
-<p><img alt="uciemail" src="notes/../resources/symptomcheck_email.png" /></p>
-<p>(watch the lecture for more detail about the wellness check email. <span class="xref myst">Download the full email</span>)</p>
+<p><img alt="uciemail" src="../_images/symptomcheck_email.png" /></p>
+<p>(watch the lecture for more detail about the wellness check email. <a href="../resources/smp.pdf">Download the full email</a>)</p>
 <p>Well, we can start by asking a few high level questions: What information does the tool need to collect? What are the conditions that need to be handled? What actions must be taken in response to those conditions? Certainly, there are many different ways to answer these questions, so the path we take here is likely not the only direction we could go, but it should be sufficient to demonstrate the underlying concepts of networking protocols.</p>
 <p>First, we need to know who is submitting a daily wellness check. Then, by reading through the email we can determine which conditions determine the next steps required by the user. Notice in the email how every question is constructed to respond to either a yes or no answer. We can use this boolean like response to construct the type of data we need for the protocol. Also notice how there are only two actions for each response: no further action is required, or continue to next question.</p>
 <p>The following table lays out what we can expect from a typical client-server interaction using the protocol. We first assume the typical handshaking process that must occur when sockets are establishing a connection. The handshake process is then followed by the first requirement of the transaction: identification (or authentication) of the user. We then proceed to check off the various steps as laid out in the original email. Since we only need to give the server a yes or no answer, the structure for the protocol messages can be fairly simple. Here, we construct a command using the following schema:</p>
@@ -531,49 +531,51 @@
 </div>
 <p>This code contains just a few of the functions in the protocol, however, most of the remaining functions are similar to the ones represented here. In particular, the function <strong><code class="docutils literal notranslate"><span class="pre">nouser</span></code></strong> is one of several helper functions that send specific commands. Also notice how the write and read operations have been abstracted to their own function (<strong><code class="docutils literal notranslate"><span class="pre">_write_command</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">_read_command</span></code></strong>). By moving this required, but repetitive code to its own function, we can consolidate purely structural operations (<em>e.g.</em>, appending or trimming socket messages) to a single location.</p>
 <p>Okay, so that is the bulk of the SMP protocol module. Now let’s take a look at how we might go about incorporating it into our programs. We will be building upon the code used in the Networks and Sockets lecture, so be sure to watch it before continuing.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
-<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the UCI Working Well Daily Symptom Checker&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To get started, enter your UCI provided email address&quot;</span><span class="p">)</span>
+
 
 <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
 <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
 <span class="n">_smp_conn</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">sock</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
-		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-				<span class="n">userid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">userid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 
-				<span class="n">res</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">,</span> <span class="n">userid</span><span class="p">)</span>
-				<span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">NOUSER</span><span class="p">:</span>
-						<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unable to find user. Check your ID and try again.&#39;</span><span class="p">)</span>
-				<span class="k">else</span><span class="p">:</span>
-						<span class="k">break</span>
-		
-		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-				<span class="k">if</span> <span class="n">_report_status</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
-						<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
-						<span class="k">break</span>
-				
-				<span class="k">if</span> <span class="n">_report_symptoms</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
-						<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
-						<span class="k">break</span>
-				
-				<span class="k">if</span> <span class="n">_report_tested</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">:</span>
-						<span class="k">if</span> <span class="n">_report_proximity</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
-								<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. It is advised that you do not come to campus today.&#39;</span><span class="p">)</span>
-								<span class="k">break</span>
-						<span class="k">else</span><span class="p">:</span>
-								<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
-								<span class="k">break</span>
-				<span class="k">else</span><span class="p">:</span>
-						<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
-						<span class="k">break</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">,</span> <span class="n">userid</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">NOUSER</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unable to find user. Check your ID and try again.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">_report_status</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="k">if</span> <span class="n">_report_symptoms</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="k">if</span> <span class="n">_report_tested</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_report_proximity</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. It is advised that you do not come to campus today.&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
 <span class="k">except</span> <span class="n">SMPProtocolError</span><span class="p">:</span>
-		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred while attempting to communicate with the remote server.&quot;</span><span class="p">)</span>    
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred while attempting to communicate with the remote server.&quot;</span><span class="p">)</span>    
 <span class="k">else</span><span class="p">:</span>
-		<span class="c1"># only disconnect if an SMPProtocolError did not occur</span>
-		<span class="n">smp</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span>
+  <span class="c1"># only disconnect if an SMPProtocolError did not occur</span>
+  <span class="n">smp</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
-		<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+  <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Just as with the client server we created, we start by connecting a socket to the desired host and port. Once we have a connected socket, we can use that socket to initialize the SMP protocol. Recall that upon initialization, the protocol module returns a namedtuple called <strong><code class="docutils literal notranslate"><span class="pre">SMPConnection</span></code></strong> that contains the socket, a writable file object, and a readable file object. Now that we have an SMPConnection, we can begin conducting operations using the protocol module. If we refer to the table from earlier, we know that the first thing we need to do is authenticate as a user. So the program first collects the required data from the user and then sends it to the remote endpoint for processing. An invalid id will cause the user to be prompted again, otherwise, the program will continue with the protocol.</p>
