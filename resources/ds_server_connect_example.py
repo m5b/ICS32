@@ -14,7 +14,7 @@ string format required by the DSU server.
 
 """
 def joinmsg(username, pwd):
-    msg = '{"join": {"entry":"'+username+'", "password":"'+pwd+'"}}'
+    msg = '{"join": {"username":"'+username+'", "password":"'+pwd+'"}}'
     return msg 
 
 def biomsg(msg):
