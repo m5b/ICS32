@@ -384,9 +384,13 @@ For those of you that are struggling a little bit with Part 2 of Assignment 2, I
 
 <a href="../resources/ds_server_connect_example.py">DS Server Example</a>
 
+```{admonition} A Note on Using the Websocket Module
+:class: tip
+If your program throws an error stating that the websockets module does not exist, you will need to install it from the command line using pip (C:\>pip install websockets), which should have been added to your computer when you installed Python. I also cover this process in the Websocket Helper Video.
+```
 #### Videos
 
-Coming soon.
+[Websocket Helper Overview](https://uci.yuja.com/V/Video?v=2116509&node=7943921&a=1717284112&autoplay=1)
 
 #### Notes
 (quiz-results)=
