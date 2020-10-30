@@ -16,9 +16,10 @@ Quick Links:
 (lecture-materials)=
 ## Lecture Materials
 
-Lectures for Week 3
+Lectures for Week 4
 : {ref}`lectures:networks`
 : {ref}`lectures:protocols`
+: {ref}`lectures:websocket`
 
 (lectures:networks)=
 ### Networks and Sockets
@@ -376,6 +377,18 @@ Just as with the client server we created, we start by connecting a socket to th
 
 For more detail on how the client program works, as well as a peak at the server program, please watch the lecture videos!
 
+(lectures:websockets)=
+### Websocket Helper
+
+For those of you that are struggling a little bit with Part 2 of Assignment 2, I have prepared a small helper program for you to build upon in your code. You can download the file from the link below and run it. Check the #a2-qa Slack channel for the IP address to use (this is not filled out in the example code yet). This program uses the JSON templates provided in the assignment overview to communicate with a DSU server. The DSU server will respond with either an ok or error message packaged in JSON. If you are getting either of those messages from the server, you are on the right track with your program.
+
+<a href="../resources/ds_server_connect_example.py">DS Server Example</a>
+
+#### Videos
+
+Coming soon.
+
+#### Notes
 (quiz-results)=
 ## Quiz Results
 
