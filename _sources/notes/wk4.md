@@ -19,7 +19,7 @@ Quick Links:
 Lectures for Week 4
 : {ref}`lectures:networks`
 : {ref}`lectures:protocols`
-: {ref}`lectures:websocket`
+: {ref}`lectures:websockets`
 
 (lectures:networks)=
 ### Networks and Sockets
