@@ -44,7 +44,7 @@ For Part 2, you will execute the plan created and approved in Part 1. You will s
 
 The majority of your grade will be based on whether or not you completed the "core" requirements listed in your project requirements document.
 
-Requirements (20 points)
+Requirements (25 points)
 : Does the program fulfill the requirements agreed upon by the client (your Professor and TA's). Requirements will be assessed on implementation (does it exist) and functionality (does it work).
 
 Validity (2.5 points)
