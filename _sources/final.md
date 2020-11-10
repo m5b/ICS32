@@ -5,6 +5,10 @@ Final Project
 
 As discussed in the course overview, you will not be required to take a midterm or final exam. Rather, we will be assessing your understanding of the course material by asking you to apply what you have learned through a final project. At this point in the class you have learned how to work with the computer file system, modules, and sockets. You have also learned how to write simple tests for your code, apply recursive function calls, and handle exceptions that occur when your program runs. Therefore, at a minimum your final project should build upon and extend the what you have learned so far and completed for assignments 1 and 2.
 
+```{note}
+There have been some questions about what is meant by the last sentence above. To clarify, your final project should apply the concepts you have learned so far. You do not have to use the exact same modules, for example, but you should use a module of some kind.
+```
+
 The final project is worth a total of 35 points, more than double what you will earn for all course assignments, which means you should target a project workload that is equal to or greater than what you have completed for any two assignments in the course. You will have roughly five and a half weeks to complete your final project, so take this into account when planning your work. To help you manage the final project alongside your remaining three assignments, you will be allowed to work in groups. Working in a group is __optional__ and will be limited to a __maximum of three__.
 
 The final project will be divided into two parts. For Part 1, you will submit a 1 page project overview and requirements document and for Part 2, you will satisfy those requirements by building a python program using the concepts learned throughout this course.
