@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2: Extending the Platform &#8212; ICS 32 Fall 2020</title>
+    <title>Week 6 Notes &#8212; ICS 32 Fall 2020</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project" href="../final.html" />
+    <link rel="prev" title="Week 5 Notes" href="wk5.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -103,17 +105,17 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="a0.html">
+  <a class="reference internal" href="../assignments/a0.html">
    Assignment 0
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="a1.html">
+  <a class="reference internal" href="../assignments/a1.html">
    Assignment 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="a2.html">
+  <a class="reference internal" href="../assignments/a2.html">
    Assignment 2
   </a>
  </li>
@@ -123,34 +125,34 @@
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk1.html">
+  <a class="reference internal" href="wk1.html">
    Week 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
+  <a class="reference internal" href="wk2.html">
    Week 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
+  <a class="reference internal" href="wk3.html">
    Week 3
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
+  <a class="reference internal" href="wk4.html">
    Week 4
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
+  <a class="reference internal" href="wk5.html">
    Week 5
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk6.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Week 6
   </a>
  </li>
@@ -208,7 +210,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/assignments/a3.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notes/wk6.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -239,48 +241,62 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
+  <a class="reference internal nav-link" href="#week-6-overview">
+   Week 6 Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-materials">
+   Lecture Materials
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary-of-program-requirements">
-     Summary of Program Requirements
+    <a class="reference internal nav-link" href="#final-project-discussion">
+     Final Project Discussion
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-goals">
-     Learning Goals
+    <a class="reference internal nav-link" href="#classes">
+     Classes
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#videos">
+       Videos
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#http-and-urls">
+     HTTP and URLs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Videos
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-apis">
+     Web APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Videos
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-requirements">
-   Program Requirements
+  <a class="reference internal nav-link" href="#quiz-results">
+   Quiz Results
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#find-your-own-api">
-     Find your own API
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integrate-your-api-s-into-your-ics32-distributed-social-program">
-     Integrate your API’s into your ICS32 Distributed Social Program
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extra-credit">
-     Extra Credit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
-     How we will grade your submission
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -293,69 +309,61 @@
         
               <div>
                 
-  <div class="section" id="assignment-2-extending-the-platform">
-<h1>Assignment 2: Extending the Platform<a class="headerlink" href="#assignment-2-extending-the-platform" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="summary-of-program-requirements">
-<h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
+  <div class="section" id="week-6-notes">
+<h1>Week 6 Notes<a class="headerlink" href="#week-6-notes" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep an eye weekly pages as they might be updated throughout the week.</p>
 </div>
-<div class="section" id="learning-goals">
-<h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="program-requirements">
-<h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Create an account at: https://home.openweathermap.org/users/sign_up</p>
-<ol class="simple">
-<li><p>If you are prompted to input a reason, just enter UCI and Education/Science.</p></li>
-</ol>
-</li>
-<li><p>Find your API by clicking the “API Keys” link on your account page. Copy your API key and store it somewhere (as a comment in your code, for example).</p></li>
-<li><p>Next visit the https://openweathermap.org/current current weather page. Read through the instructions and build your API call. A basic call should look like this:</p>
-<ol class="simple">
-<li><p>api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&amp;appid={API key}</p></li>
-<li><p>You will need to customize this based on your personal preferences.</p></li>
-</ol>
-</li>
-<li><p>Once complete, add your api call to your program code as a comment, for now.</p></li>
-</ol>
-<div class="section" id="find-your-own-api">
-<h3>Find your own API<a class="headerlink" href="#find-your-own-api" title="Permalink to this headline">¶</a></h3>
-<p>Using the approach in part 1, you will now need to find and implement your own API.</p>
-</div>
-<div class="section" id="integrate-your-api-s-into-your-ics32-distributed-social-program">
-<h3>Integrate your API’s into your ICS32 Distributed Social Program<a class="headerlink" href="#integrate-your-api-s-into-your-ics32-distributed-social-program" title="Permalink to this headline">¶</a></h3>
-<p>Wow, awesome! How cool would it be if your users could enter a keyword into their posts to include third-party information? For this part of the assignment, you will be required to update your user interface to support keywords that work with the weather API and your custom API.</p>
-</div>
-<div class="section" id="extra-credit">
-<h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>We will be awarding 1 extra credit point for the successful inclusion of a third API. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit.</p>
-</div>
-<div class="section" id="how-we-will-grade-your-submission">
-<h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 12-point scale, with the 12 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<div class="section" id="week-6-overview">
+<h2>Week 6 Overview<a class="headerlink" href="#week-6-overview" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
-<dt>Requirements and Function | 10 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+<dt>Quick Links:</dt><dd><p><a class="reference internal" href="#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
 </dd>
-<dd><p>Are there any bugs or errors?</p>
-</dd>
-<dt>Quality and Design        | 2 pts</dt><dd><p>Is the code well designed?</p>
-</dd>
-<dd><p>Is the code clearly documented?</p>
+<dd><p><a class="reference internal" href="#quiz-results"><span class="std std-ref">Quiz Results</span></a></p>
 </dd>
 </dl>
-<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will be taking a much stricter stance on quality and design than we have in previous assignments.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span> <span class="p">[[</span><span class="o">-</span><span class="p">]</span><span class="n">OPTION</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span>
-</pre></div>
 </div>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>Extend the ‘C’ create DSU file command to collect profile information about the user and store the profile information using the Profile module.</p>
+<div class="section" id="lecture-materials">
+<span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
+<dl class="simple myst">
+<dt>Lectures for Week 6</dt><dd><p><a class="reference internal" href="#lectures-classes"><span class="std std-ref">Classes</span></a></p>
+</dd>
+<dd><p><a class="reference internal" href="#lectures-http"><span class="std std-ref">HTTP and URLs</span></a></p>
+</dd>
+<dd><p><a class="reference internal" href="#lectures-webapi"><span class="std std-ref">Web APIs</span></a></p>
+</dd>
+</dl>
+<div class="section" id="final-project-discussion">
+<span id="lectures-finalproject"></span><h3>Final Project Discussion<a class="headerlink" href="#final-project-discussion" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2173451&amp;node=8053285&amp;a=493975201&amp;autoplay=1">Live Discussion/Q&amp;A</a></p>
 </div>
-<p><a href="../resources/Profile.py">The DSU Profile Module</a></p>
+<div class="section" id="classes">
+<span id="lectures-classes"></span><h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<p>Will release Tuesday.</p>
+<div class="section" id="videos">
+<h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
 </div>
+</div>
+<div class="section" id="http-and-urls">
+<span id="lectures-http"></span><h3>HTTP and URLs<a class="headerlink" href="#http-and-urls" title="Permalink to this headline">¶</a></h3>
+<p>Will release Wednesday</p>
+<div class="section" id="id2">
+<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="web-apis">
+<span id="lectures-webapi"></span><h3>Web APIs<a class="headerlink" href="#web-apis" title="Permalink to this headline">¶</a></h3>
+<p>Will release Wednesday</p>
+<div class="section" id="id3">
+<h4>Videos<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="quiz-results">
+<span id="id4"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
+<p>The attendance quiz for this week was just a single question regarding the difficulty of assignment two. View the PDF for results.</p>
+<p><a href="../resources/QZ_Week_6_Quiz_Results.pdf">Quiz Results PDF</a></p>
 </div>
 </div>
 
@@ -372,7 +380,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./assignments"
+            path: "./notes"
         },
         predefinedOutput: true
     }
@@ -387,6 +395,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="wk5.html" title="previous page">Week 5 Notes</a>
+    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
