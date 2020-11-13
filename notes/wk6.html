@@ -287,6 +287,30 @@
        Videos
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Notes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#urllib">
+         urllib
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#urllib-parse">
+           urllib.parse
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#urllib-request">
+           urllib.request
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -295,7 +319,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id4">
        Videos
       </a>
      </li>
@@ -452,21 +476,141 @@
 </div>
 <div class="section" id="http-and-urls">
 <span id="lectures-http"></span><h3>HTTP and URLs<a class="headerlink" href="#http-and-urls" title="Permalink to this headline">¶</a></h3>
-<p>Will release Wednesday</p>
 <div class="section" id="id2">
 <h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2192198&amp;node=8090501&amp;a=890308300&amp;autoplay=1">HTTP and URLs Lecture</a></p>
+</div>
+<div class="section" id="id3">
+<h4>Notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>In the protocols lecture, we used the HyperText Transfer Protocol (HTTP) as an example of a common type of protocol that is used to send and receive data between a client and server computer. HTTP is a request/response protocol that is used by nearly all web traffic for communication and behaves roughly according to the following diagram:</p>
+<p><img alt="http diagram" src="../_images/http_diagram.png" /></p>
+<p>A client (the laptop) initiates a connection with a server (the black box) to which the server can either accept or, for a variety of reasons, reject. If the server accepts the connection, the client then proceeds to issue requests. Each request issued by the client receives a response from the server. This basic request/response dialogue is occurring every time you visit a website. The URLs that you type into your browser represent the address or location of the server you would like to connect to. Now digging into the underlying infrastructure of the Internet is a bit beyond the scope of this course, but it’s important to understand that the textual URLs that we use are primarily designed to make finding and recalling servers easier for humans. The actual identifier the server responds to is a numerical address called an Internet Protocol Address, or IP Address. Every URL that we type into a browser is associated with an IP Address. You can discover this for yourself by using the <strong><code class="docutils literal notranslate"><span class="pre">ping</span></code></strong> program that is packaged with most operating systems:</p>
+<p><img alt="ping" src="../_images/ping.png" /></p>
+<p>The association between IP Address and the human readable URLs that we use is called a Domain Name Server or DNS. DNS is operated by numerous third party organizations who ensure that the human readable domain names are unique and connect to the correct server IP Addresses.</p>
+<p>Alright, now that we have a basic understanding of HTTP, URLs, and IP Addresses, let’s take a closer look at how HTTP actually works. In the example below, a program called telnet was used to issue a GET request to the ICS 32 Distributed Social website. The response from the server begins with the following line that reads “HTTP/1.1 200 OK”. Everything before that was input and output with the telnet program. (If you are on Linux or OSX you should have telnet installed by default. On Windows you can try this with a program called <a class="reference external" href="https://putty.org">Putty</a>.</p>
+<p><img alt="telnet" src="../_images/telnet_get.png" /></p>
+<p>The server responds with an HTTP header that contains some information about the web page we are requesting. What we are primarily concerned with here is the first line, particularly the use of the status code 200. The specification for HTTP 1.1 includes over forty status codes that a fully featured program that makes use of HTTP should be able to handle. However, for our discussion here, as well as the work required in assignment 3, you will only need to be concerned with a few of the most common status codes:</p>
+<dl class="simple myst">
+<dt>200 OK</dt><dd><p>Indicates the status is OK.</p>
+</dd>
+<dt>400 Bad Request</dt><dd><p>Indicates the HTTP request sent to the server contains invalid syntax</p>
+</dd>
+<dt>401 Unauthorized</dt><dd><p>Indicates that the requested resource is not authorized to be returned in a response</p>
+</dd>
+<dt>403 Forbidden</dt><dd><p>Indicates that a requested resource is protected by the server</p>
+</dd>
+<dt>404 Not Found</dt><dd><p>Indicates that a requested resource is not available on the server</p>
+</dd>
+<dt>500 Internal Server Error</dt><dd><p>Indicates that the server is unable to process the request</p>
+</dd>
+<dt>504 Gateway Timeout</dt><dd><p>Indicates that the server was unable to respond to a request within the allowed time period</p>
+</dd>
+</dl>
+<p>You have likely encountered at least one of these while browsing the web (and the 400 level errors might sound familiar if you watched the final season of Mr. Robot!).</p>
+<p>So far we have been discussing HTTP within the context of programs like telnet, Putty, and your web browser. However, there is nothing particularly special about any of these programs. They are just programs, written in a programming language, and understand how to communicate with servers using HTTP. So, just like your browser, we can use a programming language to accomplish the same goals. While Python does have libraries available for building robust programs that leverage the full HTTP specification, it also includes some higher level abstractions modules that can be used by programs that only need to perform some basic HTTP requests with a server. So for the remainder of this lecture, we will focus on working with the simplest of those modules, <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong>.</p>
+<div class="section" id="urllib">
+<h5>urllib<a class="headerlink" href="#urllib" title="Permalink to this headline">¶</a></h5>
+<p>The urllib package contains several modules that are useful for working with and requesting information from URLs:</p>
+<ul class="simple">
+<li><p>urllib.request</p></li>
+<li><p>urllib.error</p></li>
+<li><p>urllib.parse</p></li>
+<li><p>urllib.robotparser</p></li>
+</ul>
+<p>You can read more about each in detail at the <a class="reference external" href="https://docs.python.org/3/library/urllib.html">Python Documentation website</a>. For this lecture, we will be focusing on the <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">urllibparse</span></code></strong>, however, you will want to familiarize your self with the <strong><code class="docutils literal notranslate"><span class="pre">urllib.error</span></code></strong> module as well for handling exceptions raised by <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong>.</p>
+<div class="section" id="urllib-parse">
+<h6>urllib.parse<a class="headerlink" href="#urllib-parse" title="Permalink to this headline">¶</a></h6>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">urllib.parse</span></code></strong> module provides functions for parsing URLs:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;https://ics32-fa20.markbaldw.in/notes/wk6.html&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;ics32-fa20.markbaldw.in&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/notes/wk6.html&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">urlparse</span></code></strong> function accepts a URL string as a parameter and returns a named tuple containing the attributes and values of the supplied url. You can read more about what each of the attributes means at the Python Documentation page linked above.</p>
+<p>In the classes lecture, we learned about how to use constructor parameters to control how the classes we write are instantiated. We discussed the <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> parameter and how we might want to validate the parameter before we allow the Profile class to be instantiated. Well, the <strong><code class="docutils literal notranslate"><span class="pre">urllib.parse</span></code></strong> module provides one way to go about performing that validation. Let’s try and parse our URL for the Distributed Social server:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;ws://168.235.86.101:9996/ws&quot;</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;ws&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;168.235.86.101:9996&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/ws&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice how when the correct URL is specified we receive a named tuple with the scheme attribute set to ‘ws’ (because we are using the websocket protocol for communication). Yet, when an empty string is supplied, the scheme is an empty string. So this is just one way we could ensure that the <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> parameter is valid. Of course, it would be much simpler just to check if the parameter is an empty string, however, that is only one of many possible error conditions that may arise when someone uses the Profile class. Therefore, applying a robust validation process like <strong><code class="docutils literal notranslate"><span class="pre">urlparse</span></code></strong> can protect us from a variety of error conditions.</p>
+<p>Let’s try to parse one more URL, but this time something a little more complex. In the next example I will borrow a URL from the assignment 3 overview:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;https://api.openweathermap.org/data/2.5/weather?zip=92697,US&amp;appid=b64a375a083d857905dad51eb470980a&quot;</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hostname</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">scheme</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;api.openweathermap.org&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/data/2.5/weather&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;zip=92697,US&amp;appid=b64a375a083d857905dad51eb470980a&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">openweathermap</span><span class="o">.</span><span class="n">org</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">https</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">zip</span><span class="o">=</span><span class="mi">92697</span><span class="p">,</span><span class="n">US</span><span class="o">&amp;</span><span class="n">appid</span><span class="o">=</span><span class="n">b64a375a083d857905dad51eb470980a</span>
+</pre></div>
+</div>
+<p>Now the <strong><code class="docutils literal notranslate"><span class="pre">ParseResult</span></code></strong> named tuple also contains a value for the <strong><code class="docutils literal notranslate"><span class="pre">query</span></code></strong> attribute. And because we are working with a named tuple, using dot notation, we have direct access to each of the values parsed from the supplied URL. Alright, in the next section we will conclude with a closer look at <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong>.</p>
+</div>
+<div class="section" id="urllib-request">
+<h6>urllib.request<a class="headerlink" href="#urllib-request" title="Permalink to this headline">¶</a></h6>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong> module provides a variety of functions for creating and working with HTTP requests. Most of these functions support features that we will not be concerned with in this course. Instead, we will focus on the core function in module, <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong>, that accepts a URL as a parameter and returns an <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> object that contains the response from the server specified by the URL. Let’s start by calling <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> on the ICS32 Distributed Social website:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://168.235.86.101:9996&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">res</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">b</span><span class="s1">&#39;&lt;html lang=&quot;en&quot;&gt;</span><span class="se">\n</span><span class="s1">  &lt;head&gt;</span><span class="se">\n</span><span class="s1">    &lt;title&gt;ICS 32 Distributed Social&lt;/title&gt;</span><span class="se">\n</span><span class="s1">    &lt;meta name=</span><span class="se">\&#39;</span><span class="s1">viewport</span><span class="se">\&#39;</span><span class="s1"> content=</span><span class="se">\&#39;</span><span class="s1">width=device-width initial-scale=1</span><span class="se">\&#39;</span><span class="s1"> /&gt;</span><span class="se">\n</span><span class="s1">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;</span><span class="se">\n</span><span class="s1">    &lt;link rel=</span><span class="se">\&#39;</span><span class="s1">stylesheet</span><span class="se">\&#39;</span><span class="s1"> href=</span><span class="se">\&#39;</span><span class="s1">./css/source-sans-pro.min.css</span><span class="se">\&#39;</span><span class="s1"> type=</span><span class="se">\&#39;</span><span class="s1">text/css</span><span class="se">\&#39;</span><span class="s1"> /&gt;...</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>First, notice that the <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> object is closed when operations on it are complete. As with file objects and sockets, <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> makes use of a binary stream to retrieve and store data. Since it is a stream, we have access to many of the same operations, like <strong><code class="docutils literal notranslate"><span class="pre">read()</span></code></strong>. Calling the <strong><code class="docutils literal notranslate"><span class="pre">read</span></code></strong> function returns the response body returned from the <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> request. The response body is basically whatever content existed at the specified URL, which in this case is the HTML stored in the root file on the server. Looking at the print out of the response data, however, you will notice that it is prepended by the character ‘b’ (also note that the response data has been manually trimmed down for aesthetic purposes, indicated by the addition of the ‘…’ characters). When we print data to the shell, the addition of the ‘b’ character indicates that what we are looking are bytes, not a string. To work with the bytes stored in the variable <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> like a string, we must first convert from a type of bytes to a type of string:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; &lt;class &#39;bytes&#39;&gt;
+&gt;&gt;&gt; &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">decode</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">encode</span></code></strong> are built-in functions of the <strong><code class="docutils literal notranslate"><span class="pre">bytes</span></code></strong> type that support converting between bytes and strings. The encoding type of UTF-8 tells the encoding and decoding functions what type of bytes we expect. For the most part, in the work we do in this course, it is safe to assume that strings will be encoded using UTF-8. However, in the real world, different computing systems and regions of the world quite frequently use different types of encoding, so it is always good practice to ensure you are using the right encoding. How do we know? Well, take a minute to scroll back up to the telnet example. You will notice in the screen shot that the HTTP header we received from our GET request has an attribute called <strong><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></strong> which specifies the encoding character set for the page! Fortunately, <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> makes it easy to retrieve the header content:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+</pre></div>
+</div>
+<p>So now, with a little string manipulation on the header value, we can specify our encoding type without having to guess.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="web-apis">
 <span id="lectures-webapi"></span><h3>Web APIs<a class="headerlink" href="#web-apis" title="Permalink to this headline">¶</a></h3>
-<p>Will release Wednesday</p>
-<div class="section" id="id3">
-<h4>Videos<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Will try to release by Saturday. Might get bumped to Week 7, Monday.</p>
+<div class="section" id="id4">
+<h4>Videos<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 </div>
 <div class="section" id="quiz-results">
-<span id="id4"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
 <p>The attendance quiz for this week was just a single question regarding the difficulty of assignment two. View the PDF for results.</p>
 <p><a href="../resources/QZ_Week_6_Quiz_Results.pdf">Quiz Results PDF</a></p>
 </div>
