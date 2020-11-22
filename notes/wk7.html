@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project" href="../final.html" />
+    <link rel="prev" title="Week 6 Notes" href="wk6.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -128,7 +130,7 @@
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wk1.html">
    Week 1
@@ -157,6 +159,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="wk6.html">
    Week 6
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 7
   </a>
  </li>
 </ul>
@@ -270,6 +277,23 @@
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inheritance">
+     Inheritance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Videos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Notes
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -306,28 +330,202 @@
 <div class="section" id="lecture-materials">
 <span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
-<dt>Lectures for Week 6</dt><dd><p><a class="reference internal" href="#lectures-webapi"><span class="std std-ref">Web APIs</span></a></p>
+<dt>Lectures for Week 7</dt><dd><p><a class="reference internal" href="#lectures-webapi"><span class="std std-ref">Web APIs</span></a></p>
 </dd>
-<dd><p><a class="reference internal" href="#lectures-webapi"><span class="std std-ref">Web APIs</span></a></p>
+<dd><p><a class="reference internal" href="#lectures-inheritance"><span class="std std-ref">Inheritance</span></a></p>
 </dd>
 </dl>
 <div class="section" id="web-apis">
 <span id="lectures-webapi"></span><h3>Web APIs<a class="headerlink" href="#web-apis" title="Permalink to this headline">¶</a></h3>
-<p>Will try to release by Saturday. Might get bumped to Week 7, Monday.</p>
 <div class="section" id="videos">
 <h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2242261&amp;node=8181682&amp;a=1186819191&amp;autoplay=1">Web API Lecture Part 1</a></p>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2242265&amp;node=8181686&amp;a=238466118&amp;autoplay=1">Web API Lecture Part 2</a></p>
 </div>
 <div class="section" id="notes">
 <h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
-<p>In the previous lecture, we learned about the urllib.urlopen function, which provides a simple way to get content from a given web resource (URL). In many cases, as you saw with the OpenWeatherMap API, urlopen is sufficient for performing basic get requests.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+<p>Finally! Now that you have had some time to practice working with API’s, let’s take a close look at some of the ways we can use the <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong> module to expand the types of API’s at our disposal.</p>
+<p>Some API’s, particularly those that are open or don’t require a key, reject requests because they don’t like the way it looks. For example, one of your classmates was attempting to work with the following API:</p>
+<p>https://api.kanye.rest/</p>
+<p>Which, when viewed in the browser works fine, but when requested using <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> does not (it returns a 403 forbidden message).  What this tells us is that the API is likely looking for a little more information from the request. Requests without traditional HTTP headers are often interpreted as potential bot/malicious attack threats and so they are often automatically blocked by most API servers. So, we need to modify the request to behave more like a web browser.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span><span class="n">error</span>
+
+<span class="k">def</span> <span class="nf">yeezy</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.kanye.rest/&quot;</span>
+    <span class="n">user_agent</span> <span class="o">=</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64)&quot;</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">}</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    
+    <span class="n">json_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">r_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_results</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r_obj</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">yeezy</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>In the code above, notice that a <strong><code class="docutils literal notranslate"><span class="pre">Request</span></code></strong> object is created using the <strong><code class="docutils literal notranslate"><span class="pre">url</span></code></strong> variable and a <strong><code class="docutils literal notranslate"><span class="pre">headers</span></code></strong> object that contains the same user agent that FireFox on Windows 10 would send. The request object is then passed to <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> rather than the raw URL that we’ve used in previous examples. Now, with more a ‘browser-like’ appearance, the API can successfully return a quote from Kanye Rest:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;quote&#39;</span><span class="p">:</span> <span class="s2">&quot;I love sleep; it&#39;s my favorite.&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You may have also noticed the use of <strong><code class="docutils literal notranslate"><span class="pre">None</span></code></strong> in the <strong><code class="docutils literal notranslate"><span class="pre">Request</span></code></strong> object parameter list. We’ve used <strong><code class="docutils literal notranslate"><span class="pre">None</span></code></strong> here, because we are only interesting in <strong>getting</strong> something from the supplied URL. But what if we also want to <strong>send</strong> something? Let’s take a look at the object definition adopted from <a class="reference external" href="https://docs.python.org/3/library/urllib.request.html#urllib.request.Request">docs.python.org</a>:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">class</span> <span class="nc">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{},</span> 
+	<span class="n">origin_req_host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unverifiable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The data parameter, specified here, can used to send data to a URL. Since Yeezy doesn’t require any particular information from us there was no need for us to use this parameter, however, there are cases where sending data might be necessary. If you’ve ever filled out and submitted a form in a browser, for example, you are sending data to a URL. Recall from the HTTP and URLs lecture that we talked about how HTTP is used to make GET requests to retrieve the content from a URL. Well, GET is one of many request methods made available in the HTTP specification. When data is submitted to a server using HTTP, the POST method is used to inform the server to expect a packet of data in the HTTP request. Let’s take a look at how we can add data to a <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong> request and send it to a server:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span><span class="n">error</span>
+
+<span class="k">def</span> <span class="nf">send_data</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="c1"># the url and port of the ICSHTTP Simple Server:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:8000&#39;</span>
+
+    <span class="c1"># create some data to send, we&#39;ll use json format</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span> <span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+
+    <span class="c1"># properly encode the data for the request object</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> 
+
+    <span class="c1"># set a header, with content type. We don&#39;t need to specify user agent here</span>
+    <span class="c1"># since we are just sending to a custom server</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+    <span class="c1"># make the call, and print the response</span>
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">send_data</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What would you like to send? &quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In this program, we add JSON data to the <strong><code class="docutils literal notranslate"><span class="pre">Request</span></code></strong> object, though it doesn’t have to be JSON. We could have also sent XML, HTML, a file, plain text, and <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">many more</a>. Once we have determined the type of data to send, the <strong><code class="docutils literal notranslate"><span class="pre">content-type</span></code></strong> should be set to match. <strong><code class="docutils literal notranslate"><span class="pre">content-type</span></code></strong> is specified in the header and accepts a descriptive value that follows very specific formatting rules (see the previous link for a table of the various types and how they match to data). Once the request object is prepared, as with the previous example, it is sent to the desired server using the <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> function. In the example above, we use the <strong><code class="docutils literal notranslate"><span class="pre">with</span></code></strong> statement to handle the state of the response object.</p>
+<p>To demonstrate how data is transferred over HTTP, let’s create a simple HTTP server to listen for POST requests.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">http</span><span class="o">,</span> <span class="nn">socketserver</span>
+<span class="kn">from</span> <span class="nn">http</span> <span class="kn">import</span> <span class="n">server</span> 
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This is a subclass of the BaseHTTPRequestHandler class which provdies methods</span>
+<span class="sd">for various aspects of HTTP request management. Since our only goal is to </span>
+<span class="sd">show how POST data works, this class simply renders and prints data when a </span>
+<span class="sd">POST request is received.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span> <span class="nc">ICSHTTPRequestHandler</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s2">&quot; received.&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;content-length&#39;</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This is just basic startup code to run the TCPServer that accompanies</span>
+<span class="sd">the Python standard library.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">8000</span>
+
+<span class="n">handler</span> <span class="o">=</span> <span class="n">ICSHTTPRequestHandler</span>
+<span class="n">httpd</span> <span class="o">=</span> <span class="n">socketserver</span><span class="o">.</span><span class="n">TCPServer</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">),</span> <span class="n">handler</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;serving at port&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span>
+<span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are conducting a deep dive into the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.</p>
+<p>To build a minimal viable HTTP server in Python, we can rely on the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">socketserver</span></code></strong> modules to manage most of the heavy lifting. The only code we will need to create is a custom request handler and a few lines to start the TCPServer that is included in the <strong><code class="docutils literal notranslate"><span class="pre">socketserver</span></code></strong> module. Python’s <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> module includes a couple of request handlers for basic requests (<strong><code class="docutils literal notranslate"><span class="pre">SimpleHTTPRequestHandler</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">CGIHTTPRequestHandler</span></code></strong>), but neither of these support POST requests by default. So we have to create our own! Fortunately, the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> module also provides a <strong><code class="docutils literal notranslate"><span class="pre">BaseHTTPRequestHandler</span></code></strong> that we can build upon (more on that in the Inheritance lecture).</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">ICSHTTPRequestHandler</span></code></strong> class overrides the inherited method <strong><code class="docutils literal notranslate"><span class="pre">do_POST</span></code></strong> to process incoming POST requests. The details of how this is done, are bit out of scope for this course, but you’ll notice that we are essentially extracting the data from the request, preparing and sending a response to the client, and then printing the data to the console. In a real application, we would likely need to do something other than print to console though. A traditional HTTP server might send that data to another process to be interpreted or stored somewhere.</p>
+<p>The lecture video will contain a running example of all of these programs, but you are STRONGLY encouraged to try running them yourself too! If you would like to learn a little bit more about how to work with HTTP data in Python, you can start by <a class="reference external" href="https://docs.python.org/3/howto/urllib2.html#data">reading the overview at docs.python.org</a>.</p>
+<p>I have included one additional look at Web API’s using the Spotify API. A walkthrough can be found in Part 2 of the lecture. I don’t plan on writing up notes for the Spotify API, but the files for the program are included below.</p>
+<p><a href="../resources/music_finder.py">MusicFinder</a></p>
+<p><a href="../resources/spotify_credentials.py">Spotify Credentials</a></p>
+</div>
+</div>
+<div class="section" id="inheritance">
+<span id="lectures-inheritance"></span><h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2242269&amp;node=8181690&amp;a=1610946088&amp;autoplay=1">Inheritance Lecture Video</a></p>
+</div>
+<div class="section" id="id3">
+<h4>Notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Did you know that a class can be a child of another class? That a child class can <strong>inherit</strong> the attributes and methods of its parent? It can, and the process, which we call <strong>inheritance</strong> is one of the fundamental paradigms of object oriented programming. Let’s dive in to some code first, then we’ll break down what all of this means.</p>
+<p>In the Web API lecture, you may have noticed something odd with the way the <strong>ICSHTTPRequestHanlder`</strong> object was declared:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ICSHTTPRequestHandler</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>It looks like the class is specifying a parameter! Well, it sort of is, but notice that the parameter only contains a type of object–it’s missing a parameter name. This is the syntactic convention that Python uses to subclass, or inherit, from other classes. When a class <strong>subclasses</strong> another class in this way, it becomes a <strong>type</strong> of that class, thereby inheriting all of the parent classes members (attributes and methods). Let’s take a quick look at how we can use inheritance to improve reusability of our code.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_attr</span> <span class="o">=</span> <span class="s2">&quot;I am a base attribute!&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the base method number is: &quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">SubClass</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">sub_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span> 
+
+<span class="k">class</span> <span class="nc">AnotherSubClass</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the custom base method number is: &quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">sc</span> <span class="o">=</span> <span class="n">SubClass</span><span class="p">()</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">sub_method</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+
+<span class="n">ac</span> <span class="o">=</span> <span class="n">AnotherSubClass</span><span class="p">()</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">base_attr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sc</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">BaseClass</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; the base method number is:  0
+&gt;&gt;&gt; the base method number is:  5
+&gt;&gt;&gt; the custom base method number is:  0
+&gt;&gt;&gt; I am a base attribute!
+&gt;&gt;&gt; &lt;class &#39;__main__.SubClass&#39;&gt;
+&gt;&gt;&gt; True
+</pre></div>
+</div>
+<p>In this example, we have a <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong> which implements some initialization code and a method that prints the value of its data attribute member, <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong>. We have a <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong> which inherits from <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong> and implements its own method for changing the <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> attribute. And we have a <strong><code class="docutils literal notranslate"><span class="pre">AnotherSubClass</span></code></strong> which <strong>overrides</strong> the <strong><code class="docutils literal notranslate"><span class="pre">base_method</span></code></strong> of the <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong> and implements its own print statement.</p>
+<p>There is a lot to breakdown here, so let’s go through the shell statement’s one by one. First, notice that the <strong><code class="docutils literal notranslate"><span class="pre">base_method()</span></code></strong> method is a member of the <strong><code class="docutils literal notranslate"><span class="pre">sc</span></code></strong> object that we instantiated from <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong>. This is because, as we discussed earlier, the subclass inherits all of the members of the parent class. Next, notice that the new method that is created in the subclass can act upon the data attributes of the parent class, so here the <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> object is updated according to value passed into the <strong><code class="docutils literal notranslate"><span class="pre">base_method</span></code></strong>, therefore the next time that <strong><code class="docutils literal notranslate"><span class="pre">base_method</span></code></strong> is called the print statement reflects this change.</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">AnotherSubClass</span></code></strong> class demonstrates one of the more powerful examples of inheritance, overriding. A subclass can override, or change the expected behavior, of a parent class method by implementing its own version of the same method, with the same signature.</p>
+<p>The final three print statements simply demonstrate how Python treats subclasses. Notice how even though the object <strong><code class="docutils literal notranslate"><span class="pre">sc</span></code></strong> is of type <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong>, it is also an instance of <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong>. Why is that important? Let’s take a look:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MessageClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">print_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bc</span><span class="p">:</span><span class="n">BaseClass</span><span class="p">):</span>
+        <span class="n">bc</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">MessageClass</span><span class="p">()</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">print_message</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">print_message</span><span class="p">(</span><span class="n">ac</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">the</span> <span class="n">base</span> <span class="n">method</span> <span class="n">number</span> <span class="ow">is</span><span class="p">:</span>  <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">the</span> <span class="n">custom</span> <span class="n">base</span> <span class="n">method</span> <span class="n">number</span> <span class="ow">is</span><span class="p">:</span>  <span class="mi">0</span>
+</pre></div>
+</div>
+<p>In this example, we have created a new class called <strong><code class="docutils literal notranslate"><span class="pre">MessageClass</span></code></strong>. This class is responsible for printing messages of the type <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong>. But notice that we never actually passed an object instantiated from <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong>, rather we passed it <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">AnotherSubClass</span></code></strong> and it worked! This is another fundamental concept of object-oriented programming called <strong>composition</strong>. Composing classes this way can be used to structure and organize the programs that we write while also reducing the amount of code we write. Code reuse is one of the best ways to reduce the likelihood of bugs in our programs.</p>
+<p>A good way to think about composition is to consider some of the things we already know about the different types of objects we interact with every day. Take the smartphone for example. At an abstract level, every smartphone has a few common properties like a screen, buttons, microphone, speaker, cpu, gps, etc. So we can might think of all of those common attributes as members of a base class. So we could write a base class, let’s call it <strong><code class="docutils literal notranslate"><span class="pre">SmartPhone</span></code></strong>, that will manage common attributes for us. Next, we might want to create a class that can do some things that only certain types of smartphones can do, let’s call these classes <strong><code class="docutils literal notranslate"><span class="pre">iPhone</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">Android</span></code></strong>. Both classes can inherit from <strong><code class="docutils literal notranslate"><span class="pre">smartphone</span></code></strong> to make use of the common attributes. But each class will also implement its own attributes that are unique to it like touch interactions and apps. We can also go further and compose individual classes for all of the different types of iPhone’s and Android phones that exist.</p>
 </div>
 </div>
 </div>
 <div class="section" id="quiz-results">
-<span id="id2"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
 <p>The attendance quiz for this week was just a single question regarding the difficulty of assignment two. View the PDF for results.</p>
 <p><a href="../resources/QZ_Week_6_Quiz_Results.pdf">Quiz Results PDF</a></p>
 </div>
@@ -361,6 +559,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="wk6.html" title="previous page">Week 6 Notes</a>
+    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
