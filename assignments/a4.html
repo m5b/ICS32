@@ -336,7 +336,7 @@
 <p>So for this assignment you will need to update your program to support the new authentication process for the DS server.</p>
 <div class="warning admonition">
 <p class="admonition-title"> New Version of Profile Module Available</p>
-<p>This program makes use of a new version of the Profile module. It is backwards compatible, so you can safely replace previous versions used in your program. You can download the new version here: <a class="reference external" href="https://ics32.markbaldw.in/resources/Profile.py">Profile v0.1.2</a></p>
+<p>This program makes use of a new version of the Profile module. It is backwards compatible, so you can safely replace previous versions used in your program. You can download the new version here: <a class="reference external" href="https://ics32-fa20.markbaldw.in/resources/Profile.py">Profile v0.1.2</a></p>
 </div>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
@@ -377,7 +377,7 @@
 <div class="section" id="prepare-your-environment">
 <h4>Prepare your Environment<a class="headerlink" href="#prepare-your-environment" title="Permalink to this headline">¶</a></h4>
 <p>Fortunately, the DS org has released a module to abstract away some of the steps required to interact with their new encrypted platform. So the next thing you will want to do is download the module and test it. A simple test harness is included in the following snippet, you are free to use it to validate that your environment is properly configured.</p>
-<p><a class="reference external" href="https://ics32.markbaldw.in/resources/nacldsencoder.py">ICS32 Distributed Social NaCl Encoder</a></p>
+<p><a class="reference external" href="https://ics32-fa20.markbaldw.in/resources/nacldsencoder.py">ICS32 Distributed Social NaCl Encoder</a></p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new NaClDSEncoder object</span>
 <span class="n">ds_enc</span> <span class="o">=</span> <span class="n">NaClDSEncoder</span><span class="p">()</span>
 <span class="c1"># generate a new keypair</span>
@@ -482,7 +482,7 @@
         <span class="k">pass</span>
 </pre></div>
 </div>
-<p>You can also download the <a class="reference external" href="https://ics32.markbaldw.in/resources/naclprofile.py">code directly if you prefer</a>.</p>
+<p>You can also download the <a class="reference external" href="https://ics32-fa20.markbaldw.in/resources/NaClProfile.py">code directly if you prefer</a>.</p>
 <p>Since we will be required to send encrypted messages to the new DS server, we might as well add support for local encryption as well to prevent unwanted parties from reading our journal entries. Therefore, in this class you will extend the Profile module to not only encrypt messages that will be sent to the DS server, but also messages stored in the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file.</p>
 <p>The comments in the skeleton code will provide you with some guidance on what you need to do. In addition to the incomplete methods, you will also need to override two methods from the Profile class. If done correctly, all of your new data attributes as well as your encrypted messages will be saved to the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file passed to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method, without having to change anything else!</p>
 <p>To learn how to encrypt and decrypt information using a keypair, you will need to consult the documentation for the module. The <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/">main page for the docs</a> is a good place to start if you want to learn more about PyNaCl. However, since you are only required to implement a small portion of the overall PyNaCl module, you may find the examples on the <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/public/#examples">Public Key Encryption</a> page to be the most helpful.</p>
