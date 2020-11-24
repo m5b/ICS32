@@ -3,8 +3,10 @@
 # ICS 32 Fall 2020
 # Assignment #2: Chatting with Friends
 #
-# v0.1.1
+# v0.1.2
 # Revisions:
+#   v0.1.2 - changed load_profile to add posts directly to __posts list, rather than through add_posts.
+#          - changed Post initialization behavior to fix timestamp overwriting on saving.
 #   v0.1.1 - added property assignment for dsuserver during deserialization
 #
 # You should review this code to identify what features you need to support
@@ -48,8 +50,10 @@ class Post(dict):
 
     """
     def __init__(self, message = None):
-        self.timestamp = time.time()
-        self.__entry = message
+        self.__entry = ''
+        self.timestamp = None
+        if message is not None:
+            self.setpost(message)
 
         # We must subclass dict to expose Post properties for serialization
         # Don't worry about this!
@@ -171,7 +175,7 @@ class Profile:
                 for post_obj in obj['_Profile__posts']:
                     post = Post(post_obj['entry'])
                     post.timestamp = post_obj['timestamp']
-                    self.add_post(post)
+                    self.__posts.append(post)
                 f.close()
             except Exception as ex:
                 raise DsuProfileError(ex)
