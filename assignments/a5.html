@@ -313,6 +313,11 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-support-for-dsu-server-location-editing">
+       Add support for DSU server location editing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#custom-feature">
        Custom feature
       </a>
@@ -385,6 +390,7 @@
 <li><p>Add a toolbar with quick buttons to insert your API keywords into the editor.</p></li>
 <li><p>Add a bio menu item and interface for editing the user bio.</p></li>
 <li><p>Add support for editing existing posts.</p></li>
+<li><p>Add support for editing the location of the DSU server.</p></li>
 <li><p>Add a custom feature (must complete at least one of the above first).</p></li>
 </ol>
 <div class="section" id="add-title-support-for-posts">
@@ -435,6 +441,18 @@
 <ol class="simple">
 <li><p>Detect when an existing post has been selected and edited and change the operation of the Save Post click event to update rather than add when appropriate.</p></li>
 <li><p>Add new buttons to perform different operations. An ‘edit’ button, for example, would update a post. Whereas a ‘new’ button would add a post.</p></li>
+</ol>
+</div>
+<div class="section" id="add-support-for-dsu-server-location-editing">
+<h4>Add support for DSU server location editing<a class="headerlink" href="#add-support-for-dsu-server-location-editing" title="Permalink to this headline">¶</a></h4>
+<p>The current implementation of the program requires you to hard code in the URL for the DSU server. However, servers come and go, and in the future your users may want to move their posts to a new location. So for this feature you will be required to add a text entry widget that allows your user to edit the URL of the DSU server. (HINT: This feature pairs nicely with feature 2 and 4 in terms of the type and organization of code you will need to write).</p>
+<ol class="simple">
+<li><p>Add a new ‘server’ item to the menu.</p></li>
+<li><p>Open a new window when the server item is clicked.</p></li>
+<li><p>Display current server URL in the server window.</p></li>
+<li><p>Add a Tkinter Text or Entry widget to allow the user to change their server.</p></li>
+<li><p>Add a Tkinter button to save and close the server window.</p></li>
+<li><p>Save edited server URL to the DSU file.</p></li>
 </ol>
 </div>
 <div class="section" id="custom-feature">
