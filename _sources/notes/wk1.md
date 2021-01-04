@@ -7,9 +7,7 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Lecture Materials
 
-Here are the slides for the live introduction lecture:
 
-<a href="../../resources/Introduction-to-ICS32.pdf" >Introduction and History Slides</a>
 
 ### Recorded Lectures
 <a href="https://uci.yuja.com/V/Video?v=1975716&node=7594516&a=891585813&autoplay=1" >Exceptions and Files Lecture Part 1</a>
