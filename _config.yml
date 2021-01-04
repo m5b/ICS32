@@ -4,7 +4,11 @@ author: Mark S. Baldwin
 logo: logo_stacked.png
 copyright: "2020"
   #exclude_patterns: []
-
+parse:
+    myst_extended_syntax: true
+repository:
+    url: http://ics32-fa20.markbaldw.in/
+    path_to_book: /
 latex:
   latex_documents:
     targetname: book.tex
