@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 0: Getting Started with Python &#8212; ICS 32 Winter 2021</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 1: File Explorer" href="a1.html" />
+    <link rel="prev" title="Programming with Software Libraries" href="../index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_stacked.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ICS 32 Winter 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Programming with Software Libraries
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assignment 0
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1.html">
+   Assignment 1
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Lecture Notes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notes/wk1.html">
+   Week 1
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Final Project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../final.html">
+   Project Requirements
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/assignments/a0.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-development-environment">
+   Setting up your development environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-a-short-program">
+   Writing a short program
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-ics-32-development-environment">
+   The ICS 32 development environment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-do-i-do-to-get-things-set-up">
+     What do I do to get things set up?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-program">
+   The program
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naming-and-organizational-requirements">
+     Naming and organizational requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validity-checking-your-output">
+     Validity-checking your output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
+     How we will grade your submission
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="assignment-0-getting-started-with-python">
+<h1>Assignment 0: Getting Started with Python<a class="headerlink" href="#assignment-0-getting-started-with-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this course, you will continue to develop the programming skills you began building in ICS 31, with an ever-sharpening focus on solving larger, more complex problems at a level of quality that edges closer to work done by professionals. While the projects we’ll work on this quarter might be simple for someone who has years of prior experience, we will nonetheless attack these problems with the same approach that a professional software engineer might. We’ll consider each problem in its full depth, think about how to work on it incrementally, spend some time testing our solution to ensure that it works correctly, and make sure that we’ve got the little details correct and not just the big ideas. Larger programs that solve real-world problems succeed or fail on being completely correct, and even a one-character mistake in input or output can sometimes make all the difference, so we need to get accustomed to that level of scrutiny, so that we can apply it when it is warranted.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This first assignment is adapted directly from the previous version of this course. Alex Thornton has done an excellent job of writing up the installation process and first steps required to get started with python. So rather than reinvent the wheel, I will ask that you follow his instructions here.</p>
+</div>
+<p>This assignment will consist of two parts:</p>
+<ol class="simple">
+<li><p>Set up your development environment, so you will be ready to work on your assignments this quarter.</p></li>
+<li><p>Write a short program and submit it, to ensure that you’re aware of the mechanisms of the course — how to write short Python programs, how to submit your work — and so you can become acclimated to how automated testing will be used to grade at least some of your work this quarter.</p></li>
+</ol>
+</div>
+<div class="section" id="setting-up-your-development-environment">
+<h2>Setting up your development environment<a class="headerlink" href="#setting-up-your-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>It is very common in real-world software development jobs to be given, at the outset of a new job, a list of tools that you will be required to use. Flexibility is great, and it’s nice to be able to choose one’s own toolset, but, unfortunately, many software tools introduce constraints on how a program can be written, how its components can be arranged, what functions can be called, what documentation can be written and how, what additional software it can be combined with, how it can be “built” to be distributed to end users, and so on. So, like it or not, real-world software development usually requires at least some of the tools to be set in stone and used by all members of a team, even if not all members have the same preferences; this is simply a reality that software developers have to face.</p>
+<p>Since we will be poking our heads into a fair number of darker “real-world” corners in this course, it becomes necessary for us to agree on the set of development tools that we’ll use. Not only will it be important to agree on the right tools, but it will be important to agree to use the right versions of those tools, as each differs in not-insignificant ways. One goal of this assignment is to introduce you to those tools, provide instructions on how to install and configure them on your own machines, and get you ready to use them for your work this quarter.</p>
+</div>
+<div class="section" id="writing-a-short-program">
+<h2>Writing a short program<a class="headerlink" href="#writing-a-short-program" title="Permalink to this headline">¶</a></h2>
+<p>This assignment will also require you to write and submit a short program. Unlike most of our assignments, we’re less concerned about how you solve the problem than we normally will be. There are no points for what we call “quality of solution,” meaning that issues like style, organization of your program, and so on, are not relevant on this assignment. All that matters is that the program works, but that is a very precise requirement: The output of your program has to be correct to the character to receive full credit. Paying attention to the exact requirements, then, will be paramount.</p>
+</div>
+<div class="section" id="the-ics-32-development-environment">
+<h2>The ICS 32 development environment<a class="headerlink" href="#the-ics-32-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>The development environment for this course may seem quite familiar if you took ICS 31 recently. As a standard, we will use the IDLE environment that is included with Python. However, we will be using a particular version of Python (3.8.5) and certain configuration that was less important previously will become more important to us this quarter. So rather than installing the tools yourself, I’d like each of you to follow these instructions, even if you think there is a better way to do it; this way, everyone is on an equal footing, and later needs you may not be aware of — if, for example, we start installing and using third-party libraries — will be met.</p>
+<p>Note that Python 3.8.5 was released in July 2020, and that’s the version you’ll want to obtain for your use this quarter. It’s fine, in principle, to use anything greater than 3.8.0 instead, if you’ve already got it installed — I wouldn’t expect there to be any differences that are all that meaningful to us, though it is possible that 3.8.3 will have fixed a bug or two that affects us, so you might still consider upgrading. If you have a version older than 3.8.0, you’ll definitely need to upgrade, though, as there are some differences that will potentially affect your work this quarter.</p>
+<div class="section" id="what-do-i-do-to-get-things-set-up">
+<h3>What do I do to get things set up?<a class="headerlink" href="#what-do-i-do-to-get-things-set-up" title="Permalink to this headline">¶</a></h3>
+<p>Assuming that you will be wanting to do at least some of your work on your own machine, how you prepare your environment depends on what operating system you’re running on your machine.</p>
+<p><a class="reference external" href="https://www.ics.uci.edu/~thornton/ics32/ProjectGuide/Project0/InstallWindows.html">Installing and Configuring the ICS 32 Development Environment on Windows</a></p>
+<p><a class="reference external" href="https://www.ics.uci.edu/~thornton/ics32/ProjectGuide/Project0/InstallMac.html">Installing and Configuring the ICS 32 Development Environment on macOS</a></p>
+<p>Once you’re done following the installation instructions for your chosen operating system, you’re ready to proceed with your work in this course, beginning with this assignment.</p>
+</div>
+</div>
+<div class="section" id="the-program">
+<h2>The program<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h2>
+<p>Your program is required to read a single line of input from the user (without printing any input prompt), which is expected to be a positive integer n (i.e., n will be neither zero nor negative). You can freely assume that your program will be given a positive integer, and it’s not important what you do in any other case; we’ll only test your program with positive integer input. You can also freely assume that n will not be greater than 999.</p>
+<p>After reading the input, your program will print a downward block diagonal of size n. The precise format of a downward block diagonal is best demonstrated with an example. If the input to the program was 4, the output would look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+-+</span>
+<span class="o">|</span> <span class="o">|</span>
+<span class="o">+-+-+</span>
+  <span class="o">|</span> <span class="o">|</span>
+  <span class="o">+-+-+</span>
+    <span class="o">|</span> <span class="o">|</span>
+    <span class="o">+-+-+</span>
+      <span class="o">|</span> <span class="o">|</span> 
+      <span class="o">+-+</span>
+</pre></div>
+</div>
+<p>A few additional requirements apply:</p>
+<ul class="simple">
+<li><p>Though I’ve indented the text above to set it apart from the rest of the project write-up, note that the left edge of the topmost block must begin in the leftmost column of the output (i.e., it should not be indented at all).</p></li>
+<li><p>There must be no whitespace (e.g., spaces or tabs) at the end of each line of output.</p></li>
+<li><p>There must be a newline on the end of each line, including the last one.</p></li>
+</ul>
+<p>This is a complete specification of the structure of a downward block diagonal; the description is enough to solve the problem, so we will not be answering any additional questions about its structure. However, we are providing a tool that will give you a basic understanding of whether your program is reading the correct input and generating output in the correct format.</p>
+<div class="section" id="naming-and-organizational-requirements">
+<h3>Naming and organizational requirements<a class="headerlink" href="#naming-and-organizational-requirements" title="Permalink to this headline">¶</a></h3>
+<p>How you organize your program is, for the most part, up to you, with a couple of requirements that you’ll need to follow.</p>
+<p>Your program must be written entirely in a single Python module, in a file named a0.py. Note that capitalization and spacing are important here (i.e., no letters in the filename are capitalized and there are no spaces); they’re part of the requirement.</p>
+<p>Executing your a0 module — by, for example, pressing F5 or selecting Run Module from the Run menu in IDLE — must cause your program to read its input and then print its output. It must not be necessary to call a function manually to make your program run.</p>
+<p>Other than that, anything goes; you can organize your solution in any way you’d like. Note that future assignments will take what we call “quality of solution” a lot more seriously, but the name of the game in this warm-up assignment is simply to submit a program that works.</p>
+</div>
+<div class="section" id="validity-checking-your-output">
+<h3>Validity-checking your output<a class="headerlink" href="#validity-checking-your-output" title="Permalink to this headline">¶</a></h3>
+<p>We are also providing a tool that you can use to sanity-check whether you’ve followed the basic requirements above. It will only give you a “passing” result in these circumstances:</p>
+<p>You’ve named your file a0.py.
+Executing that module is enough to execute your program.
+Your program reads its input and generates character-by-character correct input for one test scenario.</p>
+<p>Note that additional test inputs will be used when we grade your assignment. The way to understand the sanity checker’s output is to think of it this way: Just because the sanity checker says your program passes doesn’t mean it’s perfect, but if you cannot get the sanity checker to report that your program passes, it surely will not pass all of our automated tests.</p>
+<p>Running the sanity checker is simple. First, download the Python module linked below:</p>
+<p><a href="../resources/a0_sanitycheck.py" >a0_sanitycheck.py</a></p>
+<p>Put that file into the same directory as your a0.py file. Running the a0_sanitycheck.py module — for example, by loading it in IDLE and pressing F5 (or selecting Run Module from the Run menu) — will run the sanity checker and report a result, which will be printed to the Python shell.</p>
+</div>
+<div class="section" id="how-we-will-grade-your-submission">
+<h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
+<p>Unlike other assignments, this assignment will be graded on a 2-point scale, with the 2 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<ul class="simple">
+<li><p>If all of our automated tests pass, you will receive 2 points.</p></li>
+<li><p>If any of our automated tests pass (i.e., at least one of them passes, even if all the others fail), you will receive 1.5 points.</p></li>
+<li><p>If none of our automated tests pass, but you did submit a file named a0.py, you will receive 1 point.</p></li>
+<li><p>If you did not submit a file named a0.py, but you did submit a Python module in a file whose name ends in .py, you will receive 0.5 points.</p></li>
+<li><p>If you did not submit a Python module at all, you will receive 0 points.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Programming with Software Libraries</a>
+    <a class='right-next' id="next-link" href="a1.html" title="next page">Assignment 1: File Explorer</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mark S. Baldwin<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
