@@ -209,4 +209,7 @@ The computer file system! (ahem, a1)
 
 ## Quiz Results
 
-Quiz results will be posted on Wednesday.
+<a href="../resources/QZ_Week_1_Quiz_Results.pdf">Quiz Results</a>
+
+
+
