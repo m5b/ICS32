@@ -344,8 +344,10 @@ Q - Quit the program.</p>
 </div>
 <p>Applying the ‘r’ option to the directory list command, will print the contents of the source directory as well as all subdirectories:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span>
-
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
@@ -361,29 +363,37 @@ Q - Quit the program.</p>
 <p>Notice how that in addition to the output of files within the ‘assets’ directory, the subdirectory ‘logos’ is also printed along with the files contained within.</p>
 <p>Okay, so far so good. Now let’s see what happens when we apply the ‘f’ option:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">f</span>
-
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>As you may have expected, by adding the ‘f’ option to the ‘L’ command, the program will only list the files in the specified directory.</p>
 <p>The two remaining options, ‘s’ and ‘e’, allow us to further refine our results by specifying search parameters. Unlike the ‘r’ and ‘f’ options, these options will also need to accept a user input parameter. So let’s say we want to find all files in a given directory with the name ‘readme.txt’:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">s</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>Notice that we combined options here to recursively check all subdirectories as well, so our results return two instances of the file ‘readme.txt’ that exist within the ‘a1’ directory. If we had left the ‘r’ option off, the results would be slightly different:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">s</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>Now let’s try another search using the ‘e’ option. As I described earlier, the ‘e’ option allows us to filter results by file extension, so:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">e</span> <span class="n">jpg</span>
-
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo1</span><span class="o">.</span><span class="n">jpg</span>
 <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo2</span><span class="o">.</span><span class="n">jpg</span>
@@ -418,8 +428,10 @@ R - Read the contents of a file.</p>
 </div>
 <p>The ‘D’ command will allow the user to delete a DSU file. If the user specified file is not a DSU file, then the program should print ERROR and wait for corrected input from the user. Once the DSU file has been successfully deleted, the program should print a confirmation:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
-
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span> <span class="n">DELETED</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span> <span class="n">DELETED</span>
 </pre></div>
 </div>
 <div class="admonition-program-feature admonition">
@@ -428,14 +440,18 @@ R - Read the contents of a file.</p>
 </div>
 <p>The ‘R’ command will print the contents of a DSU file. As with the ‘D’ command, if the user specified file is not a DSU file, the program should print ERROR and wait for corrected input from the user. If the file is empty, then the program should print EMPTY and wait for corrected input from the user:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
-
-<span class="n">EMPTY</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EMPTY</span>
 </pre></div>
 </div>
 <p>Otherwise, the program will print the contents of the file:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>R c:\users\mark\a1\mark.dsu
-
-Hello World!
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Hello World!
 </pre></div>
 </div>
 <div class="admonition-program-feature admonition">
