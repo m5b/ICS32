@@ -370,4 +370,8 @@ To facilitate this distinction, we can simply check the module's name by accessi
 (quiz-results-2)=
 ## Quiz Results
 
-To be posted on 1/13
+If you are participating in the late quiz, feel free to watch the video linked below as you move through the quiz. Link to the late quiz can be found in Zulip #announcements. If you get any of the answers wrong, watch the video as there may be useful discussion related to the answers available!
+
+[Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=2400773&node=8654349&a=872326213&autoplay=1)
+
+Quiz results will be posted on 1/13 after late quizzes are complete.
