@@ -24,7 +24,6 @@ Lectures for Week 3
 Networks and Protocol lectures moved to week 4 page.
 ```
 
-
 (lectures:testing)=
 ### Testing Lecture
 
