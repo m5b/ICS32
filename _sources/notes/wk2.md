@@ -10,13 +10,13 @@ Keep an eye weekly pages as they might be updated throughout the week.
 By now you should have turned in your first python program for ICS 32. Congrats! Now that you have your development environment setup and functioning properly, it's time to get to work on building your first real application. Completing Assignment 1 will require that you start to build a fundamental understanding of concepts that are a bit more complex than what you have learned so far. If you haven't already, be sure to read the overview for [Assignment 1](../assignments/a1.html) and watched the lectures posted in the [Week 1 Notes](../notes/wk1) before you dive into the lecture materials for this week.
 
 Quick Links:
-: {ref}`lecture-materials`
-: {ref}`quiz-results`
+: {ref}`lecture-materials-2`
+: {ref}`quiz-results-2`
 
-(lecture-materials)=
+(lecture-materials-2)=
 ## Lecture Materials
 
-Lectures for Week 3
+Lectures for Week 2
 : {ref}`lectures:testing`
 : {ref}`lectures:modules`
 
@@ -367,7 +367,7 @@ s
 To facilitate this distinction, we can simply check the module's name by accessing the **`__name__`** variable. If its value is **`__main__`**, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an **`if __name__ == '__main__':`** block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.
 ```
 
-(quiz-results)=
+(quiz-results-2)=
 ## Quiz Results
 
 To be posted on 1/13
