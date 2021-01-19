@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project" href="../final.html" />
+    <link rel="prev" title="Week 2 Notes" href="wk2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -112,7 +114,7 @@
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wk1.html">
    Week 1
@@ -121,6 +123,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="wk2.html">
    Week 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 3
   </a>
  </li>
 </ul>
@@ -216,8 +223,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-lecture">
-     Testing Lecture
+    <a class="reference internal nav-link" href="#networks-and-sockets">
+     Networks and Sockets
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -226,27 +233,15 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#notes">
-       Notes
+      <a class="reference internal nav-link" href="#working-with-sockets">
+       Working with Sockets
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#so-how-do-we-start">
-         So how do we start?
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#so-how-do-we-test-at-the-level-of-functions">
-         So how do we test at the level of functions?
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
+    <a class="reference internal nav-link" href="#protocols">
+     Protocols
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -255,26 +250,14 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#working-with-modules">
-       Working with Modules
+      <a class="reference internal nav-link" href="#notes">
+       Notes
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#scope">
-         Scope
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#definition-access">
-         Definition Access
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#namespaces">
-         Namespaces
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Notes
+      </a>
      </li>
     </ul>
    </li>
@@ -284,13 +267,6 @@
   <a class="reference internal nav-link" href="#quiz-results">
    Quiz Results
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-thoughts">
-     Some Thoughts
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -311,7 +287,7 @@
 </div>
 <div class="section" id="week-3-overview">
 <h2>Week 3 Overview<a class="headerlink" href="#week-3-overview" title="Permalink to this headline">¶</a></h2>
-<p>For week 3, you have finally turned in your first program for ICS 32. Congrats! Now it’s time to start building that first program into a real application. Be sure to read the overview for <span class="xref myst">Assignment 2</span> before you dive into the lecture materials.</p>
+<p>It’s week 3. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2.</p>
 <dl class="simple myst">
 <dt>Quick Links:</dt><dd><p><a class="reference internal" href="wk9.html#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
 </dd>
@@ -322,309 +298,321 @@
 <div class="section" id="lecture-materials">
 <span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
-<dt>Lectures for Week 3</dt><dd><p><a class="reference internal" href="#lectures-testing"><span class="std std-ref">Testing Lecture</span></a></p>
+<dt>Lectures for Week 3</dt><dd><p><a class="reference internal" href="wk4.html#lectures-networks"><span class="std std-ref">Networks and Sockets</span></a></p>
 </dd>
-<dd><p><a class="reference internal" href="#lectures-modules"><span class="std std-ref">Modules</span></a></p>
+<dd><p><a class="reference internal" href="wk4.html#lectures-protocols"><span class="std std-ref">Protocols</span></a></p>
 </dd>
 </dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Networks and Protocol lectures moved to week 4 page.</p>
-</div>
-<div class="section" id="testing-lecture">
-<span id="lectures-testing"></span><h3>Testing Lecture<a class="headerlink" href="#testing-lecture" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="networks-and-sockets">
+<span id="lectures-networks"></span><h3>Networks and Sockets<a class="headerlink" href="#networks-and-sockets" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="videos">
 <h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
-<p>I have decided not to record a video for this lecture. We will be diving into testing more formally after the mid-point of the quarter, but I wanted to give you some notes on how to go about thinking about tests. We can discuss the topics here in a bit more detail after quiz in our next class.</p>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2093512&amp;node=7861887&amp;a=1763099740&amp;autoplay=1">Networking and Sockets Lecture</a></p>
+</div>
+<div class="section" id="working-with-sockets">
+<h4>Working with Sockets<a class="headerlink" href="#working-with-sockets" title="Permalink to this headline">¶</a></h4>
+<p>In a1 and a2, you are tasked with storing and retrieving data from the file system by opening, reading or writing, and closing a file using Python’s built-in functions for file management. <strong><code class="docutils literal notranslate"><span class="pre">open()</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">close()</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">read()</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">write()</span></code></strong>, as examples, allow us to open a <em>stream</em> to a file to send and receive data to a file located in our computer’s file system</p>
+<p>But what if we wanted to send and receive data to a different computer? We could continue to use the file system to store the data and then find a way to transfer the file over a network connection. Or, we could create a direct connection to a networked computer and <em>stream</em> the data directly. Since we are not going to concern ourselves with the transfer of files just yet, let’s look at how we can use Python’s networking interface to send data to another computer.</p>
+<p>In Python, we can think of a <em>networking</em> interface as any tool that facilitates communication with another computer over an ethernet connection. In the following diagram, a network connection has been established between two computers. Although the diagram does not specify, we can assume that the client (laptop) and server (box) are both connected to a common network (<em>e.g.,</em> a corporate lan, wan, or the Internet). In order to communicate with each other, the server exposes a unique IP address (168.235.86.101, as depicted here for example) and the client must know of that IP address.</p>
+<p><img alt="networking" src="../_images/sockets_overview.png" /></p>
+<p>When the client is ready to connect, it first checks to see if the server’s address is available for connections. If available, the server sends a <em>response</em> to confirm and then waits for data to be sent from the client. Communication is performed using a socket, which in Python, is a wrapper on many of the underlying details that computers must establish to stream data. For the purposes of this lecture, we will focus on a fairly narrow set of the many ways that sockets can be used. So our primary concern here is how sockets send and receive data. Notice in the diagram above, that each computing system has two sockets: a response socket and a send socket, which represent the <em>input stream</em> of data from a remote computer and the <em>output stream</em> of data that is sent from the local computer. When data is streamed to the socket, Python’s socket library attempts to ensure that all data is sent or received arrives intact and in the order it was written.</p>
+<p>The following diagram illustrates the primary Python functions required to establish a socket between two computers. Notice how the <strong><code class="docutils literal notranslate"><span class="pre">send()</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">recv()</span></code></strong> functions at the end are iterative. In this example, after a response is sent, the server waits until the client sends data again, establish a send and receive loop until either the client disconnects or the server rejects the connection.</p>
+<p><img alt="networking" src="../_images/python_sockets_diagram.png" /></p>
+<p>So now let’s take a look at how the code for these two computer systems could be written using Python’s <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> library.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+
+<span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">srv</span><span class="p">:</span>
+	<span class="n">srv</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+	<span class="n">srv</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;server listening on port&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span>
+
+	<span class="n">connection</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="n">srv</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+	<span class="k">with</span> <span class="n">connection</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client connected&quot;</span><span class="p">)</span>
+		
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">rec_msg</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+			
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span> <span class="n">rec_msg</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">rec_msg</span><span class="p">:</span>
+				<span class="k">break</span>
+			<span class="n">connection</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">rec_msg</span><span class="p">)</span>
+			
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client disconnected&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the code above, we start by importing the socket module to the program, and set a <strong><code class="docutils literal notranslate"><span class="pre">PORT</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">HOST</span></code></strong> variable that contain the IP address of the server and the desired port (port numbers are unrestricted, however, there are some common conventions for ports where you might find conflicts, so choose wisely).</p>
+<p>Then, a <strong><code class="docutils literal notranslate"><span class="pre">with</span></code></strong> statement is used to instantiate a socket object and assign it to the variable <strong><code class="docutils literal notranslate"><span class="pre">srv</span></code></strong>. <strong><code class="docutils literal notranslate"><span class="pre">with</span></code></strong> will handle the responsibility of properly closing the socket and connection. The socket is first bound to the desired address and port, then set to listen for incoming socket connection requests. The code, as is, will block at this point until a it <em>hears</em> a remote connection, at which point the socket will <em>accept</em> the connection and store the socket connection and remote address in the variables <strong><code class="docutils literal notranslate"><span class="pre">connection</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">address</span></code></strong> respectively.</p>
+<p>Now that a connection between a remote computer and server is established, the program can begin to exchange data. The server depicted by the code here is a lightweight <em>echo</em> server whose only responsibility is to send the data it receives as a response. Because Python sockets use the same underlying tools for establishing network connections as other programming languages and networking tools, we can connect to this server in a number of different ways. If you are on Windows, you can download a program called “PUTTY” to connect to this server and send it messages. If you are on Linux or OSX, you should have a preinstalled tool called <em>ncat</em> that will allow you to connect. In the following example, I use ncat to connect to the server and send a few messages.</p>
+<p><img alt="networking" src="../_images/ncat_echo_test.gif" /></p>
+<p>Take a minute and try it for yourself. Grab <a class="reference external" href="https://www.putty.org/">PUTTY</a> or fire up ncat, copy the server code sample into IDLE, and send some messages!</p>
+<p>Oh, one more thing before we move on. In networking, there are some IP addresses that have special meaning. One of those address that will be relevant to you here is the <em>loopback</em> address:</p>
+<p><img alt="networking" src="../_images/sockets_loopback.png" /></p>
+<p>The loopback address, <strong><code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code></strong> is networking convention that allows a computer to connect to itself using its network connection. And just like domain names on the Internet, the ‘name’ <strong><code class="docutils literal notranslate"><span class="pre">localhost</span></code></strong> is an alphanumeric map to the loopback IP address. In the example above, I bind the Python server to the loopback address and connect to it using ncat. This provides a simple and straightforward way to test our socket programming without having to maintain code on two separate systems.</p>
+<p>Okay, so we have seen how we can connect to the Python server with an existing client, now let’s take a look at how we can write our own.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+
+<span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+	<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client connected to </span><span class="si">{HOST}</span><span class="s2"> on </span><span class="si">{PORT}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to send: &quot;</span><span class="p">)</span>
+
+		<span class="n">client</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+		<span class="n">srv_msg</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span><span class="n">srv_msg</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>So in the client example, just like the server code, we first instantiate a <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> object and assign it to a variable, in this case we will use <strong><code class="docutils literal notranslate"><span class="pre">client</span></code></strong> for differentiation. However, rather than <strong><code class="docutils literal notranslate"><span class="pre">bind()</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">listen()</span></code></strong> on an address and port, we tell the socket to <strong><code class="docutils literal notranslate"><span class="pre">connect()</span></code></strong> to the location that we expect to be listening. Then we simply create a <strong><code class="docutils literal notranslate"><span class="pre">while</span></code></strong> loop to continuously collect user input, send it using the connected socket, and print the response from the server.</p>
+<p>Go ahead, take a minute to copy the client code into a new instance of IDLE. You should be to run both the server and client at the same time. Just make sure that you start the server first so the client can connect.</p>
+<p>One final concern that we have not discussed yet is the format in which we are sending and receiving data. You have probably noticed that prior to the client sending the user input string, it is encoded. The <strong><code class="docutils literal notranslate"><span class="pre">encode()</span></code></strong> function converts the its string object to bytes in the format that is passed as a parameter (utf-8) in our example. Likewise, the response from the server is decoded again before printing to the shell. This process can become quite burdensome when a program needs to send and receive larger, complex data sets. Fortunately, Python makes this process much easier for us by exposing some additional functions that abstract much of the work for us. Let’s take a look at the revised code first:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">2020</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+
+<span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+	<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+
+	<span class="n">send</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+	<span class="n">recv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;client connected to </span><span class="si">{HOST}</span><span class="s2"> on </span><span class="si">{PORT}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to send: &quot;</span><span class="p">)</span>
+
+		<span class="n">send</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msg</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+		<span class="n">send</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+		<span class="n">srv_msg</span> <span class="o">=</span> <span class="n">recv</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span><span class="n">srv_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we make use of the <strong><code class="docutils literal notranslate"><span class="pre">socket</span></code></strong> module’s <strong><code class="docutils literal notranslate"><span class="pre">makefile</span></code></strong> function to create a read and write convention that more closely resembles what we have learned from file operations. Makefile abstracts much of the work required to convert string-like data into bytes. Notice, we no longer have to conduct any encoding or decoding operations. Rather, we simply create readable (<strong><code class="docutils literal notranslate"><span class="pre">.makefile('r')</span></code></strong>) and writeable (<strong><code class="docutils literal notranslate"><span class="pre">.makefile('w')</span></code></strong>) <em>file objects</em> on our connected socket. The only additional responsibility required here is to tell the remote connection when we have completed writing operations. Write operations will typically store data in a buffer prior to sending, often, buffered data will not be sent until the buffer is full. Therefore, it is always important to remember <em>flush</em> the buffer when write operations have completed. The socket’s <strong><code class="docutils literal notranslate"><span class="pre">.flush()</span></code></strong> function will conduct this operation for you.</p>
+</div>
+</div>
+<div class="section" id="protocols">
+<span id="lectures-protocols"></span><h3>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h3>
+<p>The protocols lecture makes use of three Python programs. While various parts of the programs are included in this section, you will want to download the actual files if you plan on running them yourself in IDLE.</p>
+<p><a href="../resources/symptom_monitoring.py">SMP Protocol</a></p>
+<p><a href="../resources/symptom_monitoring_ui.py">SMP Client Program</a></p>
+<p><a href="../resources/symptom_monitoring_server.py">SMP Server Program</a></p>
+<div class="section" id="id2">
+<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2102790&amp;node=7910449&amp;a=3002510&amp;autoplay=1">Protocols Lecture</a></p>
 </div>
 <div class="section" id="notes">
 <h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
-<p>Now that you have assignment 1 wrapped up, let’s take a minute to reflect on the experience.</p>
-<p>Looking at the questions and conversations many of you have had over the past two weeks, my guess is that you now have a better understanding of the complexity that goes into writing even a small program.</p>
-<p>Interpreting and implementing program requirements is an essential part of the programming process that will become more familiar to you as you work through this course and many others. However, even with practice, you will find that it is important to develop strategies to reduce the uncertainty that accompanies the application of requirements.</p>
-<p>In a way, the validity checker for assignment 1 tested your program for you. It offered some sense of confidence that your program was functioning according to the assignment requirements. For the remaining assignments in this class, you will be responsible for checking the validity of your programs. So in this lecture, I want to talk about one of the ways that programmers go about accomplishing this goal.</p>
-<p>In large programming projects where teams of programmers work together to write software, the practice of writing tests is quite common. In fact, there are programming paradigms such as Agile, Cleanroom, Spiral, and Waterfall that have integrated testing directly into their methodologies. We won’t learning about paradigms and models in this class, but it’s important to recognize how pervasive testing is throughout the software development industry. As you might imagine, this pervasiveness exists because the process of writing tests against your code, works. Tests can significantly reduce the development time, code complexity, and bug tracking.</p>
-<div class="section" id="so-how-do-we-start">
-<h5>So how do we start?<a class="headerlink" href="#so-how-do-we-start" title="Permalink to this headline">¶</a></h5>
-<p>Well, the first thing we do is create a hypothesis about how our program and the functions within it, are expected to behave. For example, one test might be to input a value and observe the output. Does the output align with the expectations set in the program requirements? If so, then the test can be said to ‘pass.’ If it doesn’t, then obviously the test fails, but how do we determine why? This was a source of confusion for many of you while using the assignment 1 validity checker as the validity checker could only report a failure when the program did not return an expected output. A better test might have examined the input and output at the level of functions rather than the program.</p>
-<p>Testing individual functions, however, does require some planning. If the functions in your program perform many operations, it can be difficult to configure a test that can be relied upon. So one of the benefits of thinking about tests before or in tandem with your program design is that the responsibilities of your functions will inevitably be scoped to a manageable size.</p>
-</div>
-<div class="section" id="so-how-do-we-test-at-the-level-of-functions">
-<h5>So how do we test at the level of functions?<a class="headerlink" href="#so-how-do-we-test-at-the-level-of-functions" title="Permalink to this headline">¶</a></h5>
-<p>Let’s take, for example, a program that manages an email list. We’ll assume that one of the requirements for this program is to support removing certain email addresses from the mail list.</p>
-<p>We’ll start by adapting this small function written by Alex Thornton for ICS 32. The <strong>‘remove_from’</strong> function accepts two parameters: a list and a value. It returns the same list, except without the passed value, if it exists.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_from</span><span class="p">(</span><span class="n">the_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-	<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
-		<span class="k">if</span> <span class="n">element</span> <span class="o">!=</span> <span class="n">value</span><span class="p">:</span>
-			<span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-		
-	<span class="k">return</span> <span class="n">new_list</span>
+<p>In assignment 2, you are provided with the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module for storing and loading user data. In this module, we make use of a particular format for storing information called <a class="reference external" href="https://www.json.org/json-en.html">JSON</a>, which wraps Profile object data in a style of notation using the rules and conventions set forth by the creators of the format.</p>
+<p>All the files that you find on your computer adhere to a similar process: a format is created that specifies how data should be stored and retrieved and programs that make use of the format adhere to the format conventions. A file’s format is typically specified by it’s extension, or suffix (<em>e.g.</em>, .jpg, .doc, .py), providing the program that wants to use it with some clue as to how to interpret the file contents. A good example of this is an image editing program that can display different image formats.</p>
+<p>Programs that talk to each other over networks follow a similar process. A format is agreed upon and the programs that want to talk to each other must follow this format to successfully communicate. In networking, this format is called a <em>protocol</em>. The Hypertext Transfer Protocol or HTTP, for example, is one way that servers and the clients that connect to them can communicate (if you are reading this web page right now, you have no doubt accessed it using HTTP).</p>
+<p>So, now that we have established a preliminary understanding of what constitutes a protocol. Let’s create one of our own. After all, there is really nothing special about a protocol, it’s just a set of requests and responses agreed upon by two or more programs.</p>
+<p>Let’s start by building a protocol for UCI’s Working Well Daily Symptom check tool. Now, I am not sure if you receive these emails as a student, but employees at UCI are required to answer these emails everyday. How might we go about converting this tool to a program?  And how might we extract some common language to be used by the program (<em>e.g.</em>, create a protocol)?</p>
+<p><img alt="uciemail" src="../_images/symptomcheck_email.png" /></p>
+<p>(watch the lecture for more detail about the wellness check email. <a href="../resources/smp.pdf">Download the full email</a>)</p>
+<p>Well, we can start by asking a few high level questions: What information does the tool need to collect? What are the conditions that need to be handled? What actions must be taken in response to those conditions? Certainly, there are many different ways to answer these questions, so the path we take here is likely not the only direction we could go, but it should be sufficient to demonstrate the underlying concepts of networking protocols.</p>
+<p>First, we need to know who is submitting a daily wellness check. Then, by reading through the email we can determine which conditions determine the next steps required by the user. Notice in the email how every question is constructed to respond to either a yes or no answer. We can use this boolean like response to construct the type of data we need for the protocol. Also notice how there are only two actions for each response: no further action is required, or continue to next question.</p>
+<p>The following table lays out what we can expect from a typical client-server interaction using the protocol. We first assume the typical handshaking process that must occur when sockets are establishing a connection. The handshake process is then followed by the first requirement of the transaction: identification (or authentication) of the user. We then proceed to check off the various steps as laid out in the original email. Since we only need to give the server a yes or no answer, the structure for the protocol messages can be fairly simple. Here, we construct a command using the following schema:</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>SMP_[TYPE] [VALUE]
 </pre></div>
 </div>
-<p>At least, that’s what we hope it does. Rather than assume it does and continue to build our email list management program, we should test it first:</p>
+<p>The only command that we do not require a 1 or 0 value for is <strong><code class="docutils literal notranslate"><span class="pre">SMP_AUTH</span></code></strong> since we must pass some form of user identification to the server.</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>
-&gt;&gt;&gt; emails = [&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
-&gt;&gt;&gt; remove_from(emails, &quot;user2@example.com&quot;)
-[&quot;user1@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
-&gt;&gt;&gt; emails
-[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
-&gt;&gt;&gt; remove_from(emails, &quot;user4@example.com&quot;)
-[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;]
-&gt;&gt;&gt; emails
-[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+| client          | server     |
+|-----------------|------------|
+| connect         |            |
+|                 | accept     |
+| SMP_AUTH userid |            |
+|                 | WELCOME    |
+| SMP_STATUS 0    |            |
+|                 | COMPLETE   |
+| SMP_STATUS 1    |            |
+|                 | CONTINUE   |
+| SMP_SYMPTOMS 0  |            |
+|                 | COMPLETE   |
+| SMP_SYMPTOMS 1  |            |
+|                 | CONTINUE   |
+| SMP_TESTED 0    |            |
+|                 | CONTINUE   |
+| SMP_PROXIMITY 0 |            |
+|                 | COMPLETE   |
+| disconnect      |            |
+|                 | disconnect |
+
 
 </pre></div>
 </div>
-<p>So far so good. We start with a test list, then pass some test conditions to the function to see if it returns the results we expect. Here, after each call to <strong><code class="docutils literal notranslate"><span class="pre">remove_from</span></code></strong> we receive a new list with the value we passed to it missing. But have we tested every possible condition? What happens if a passed value does not exist?</p>
-<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>
-&gt;&gt;&gt; emails = [&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
-&gt;&gt;&gt; remove_from(emails, &quot;user5@example.com&quot;)
-[&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
+<p>And that’s our protocol. There are a few more conditions not listed in the previous table, such as when the <strong><code class="docutils literal notranslate"><span class="pre">SMP_TESTED</span></code></strong> or <strong><code class="docutils literal notranslate"><span class="pre">SMP_PROXIMITY</span></code></strong> commands are 1 on 0, that if we wanted to provide a formal protocol specification we would probably want to explain in greater detail.</p>
+<p>You may be wondering why we even need a protocol for this program. Why not just collect the required data from the user and send it over to a server all at once? While that might work fine within the constraints of the UC system wellness checking needs, what if we needed to support other universities, organizations, and governments around the world? Perhaps it would be easier to give all of those outlets the ability to build their own platforms, rather than modify a single program to support all of them. By creating (and standardizing) a protocol, we don’t have to depend on the capabilities of a single program from a single source. Rather, as long as a program adheres to the protocol, anyone can create their own custom interfaces, programs, and platforms.</p>
+<p>Okay, so now that we have a protocol, let’s take a look at how it is implemented in Python. I won’t be putting the entire project into the notes here, but you can download the protocol file at the top of this section. We will be calling this protocol the Symptom Monitoring Protocol (SMP).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike previous snippets, those used in this lecture are not feature complete. They will not run on their own if you copy and paste from here. To run the programs and view all of the code, please download the files listed at the top of this section.</p>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AUTH</span> <span class="o">=</span> <span class="s2">&quot;SMP_AUTH&quot;</span>
+<span class="n">STATUS</span> <span class="o">=</span> <span class="s2">&quot;SMP_STATUS&quot;</span>
+<span class="n">SYMPTOMS</span> <span class="o">=</span> <span class="s2">&quot;SMP_SYMPTOMS&quot;</span>
+<span class="n">TESTED</span> <span class="o">=</span> <span class="s2">&quot;SMP_TESTED&quot;</span>
+<span class="n">PROXIMITY</span> <span class="o">=</span> <span class="s2">&quot;SMP_PROXIMITY&quot;</span>
 
+<span class="n">WELCOME</span> <span class="o">=</span> <span class="s2">&quot;WELCOME&quot;</span>
+<span class="n">CONTINUE</span> <span class="o">=</span> <span class="s2">&quot;CONTINUE&quot;</span>
+<span class="n">COMPLETE</span> <span class="o">=</span> <span class="s2">&quot;COMPLETE&quot;</span>
+<span class="n">NOUSER</span> <span class="o">=</span> <span class="s2">&quot;NOUSER&quot;</span>
+<span class="n">ERROR</span> <span class="o">=</span> <span class="s2">&quot;ERROR&quot;</span>
 </pre></div>
 </div>
-<p>Is that what we want to happen? What if our program needs to confirm that a removal actually occurred? Well, we could compare <strong><code class="docutils literal notranslate"><span class="pre">emails</span></code></strong> to the results, or we could give that responsibility to the <strong><code class="docutils literal notranslate"><span class="pre">remove_from</span></code></strong> function:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_from</span><span class="p">(</span><span class="n">the_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-	<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+<p>Here we specify some constant variables to hold the commands we created for the protocol. Constant variables will help us keep the string representations of the commands together and make updating the protocol commands a little easier if the need arises.</p>
+<p>In the following section, we create a namedtuple object to hold the objects derived from the socket. A namedtuple is a convenient way to pass multiple objects without having to manage individual variables for each one. The protocol is first initialized by placing a call to the init method and passing it a socket that has been connected to the desired SMP supported endpoint (a client, or a server).</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMPConnection</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;SMPConnection&#39;</span><span class="p">,[</span><span class="s1">&#39;socket&#39;</span><span class="p">,</span><span class="s1">&#39;send&#39;</span><span class="p">,</span><span class="s1">&#39;recv&#39;</span><span class="p">])</span>
 
-	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
-		<span class="k">if</span> <span class="n">element</span> <span class="o">!=</span> <span class="n">value</span><span class="p">:</span>
-			<span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;value not found in list&#39;</span><span class="p">)</span>
-		
-	<span class="k">return</span> <span class="n">new_list</span>
+<span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">sock</span><span class="p">:</span><span class="n">socket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMPConnection</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    The init method should be called for every program that uses the SMP Protocol. The calling program should first establish a connection with a socket object, then pass that open socket to init. init will then create file objects to handle input and output.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">f_send</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f_recv</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SMPProtocolError</span><span class="p">(</span><span class="s2">&quot;Invalid socket connection&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">SMPConnection</span><span class="p">(</span>
+        <span class="n">socket</span> <span class="o">=</span> <span class="n">sock</span><span class="p">,</span>
+        <span class="n">send</span> <span class="o">=</span> <span class="n">f_send</span><span class="p">,</span>
+        <span class="n">recv</span> <span class="o">=</span> <span class="n">f_recv</span>
+    <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">listen</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">:</span> <span class="n">SMPConnection</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    listen will block until a new message has been received</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">_read_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">authenticate</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">:</span> <span class="n">SMPConnection</span><span class="p">,</span> <span class="n">userid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    a helper method to authenticate a userid with a server</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">AUTH</span><span class="p">,</span> <span class="n">userid</span><span class="p">)</span>
+    <span class="n">_write_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">,</span> <span class="n">cmd</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_read_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">:</span> <span class="n">SMPConnection</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    report will send the command specified by the parameters and return a response to the command using the SMP Protocol.</span>
+
+<span class="sd">    report: one of the SMP_X commands provided by the module</span>
+<span class="sd">    status: either 0 or 1 to indicate the status of the command specified in the report parameter</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+    <span class="n">_write_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">,</span> <span class="n">cmd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_read_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">nouser</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">:</span> <span class="n">SMPConnection</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    a send only wrapper for the NOUSER command</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">_write_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">,</span> <span class="n">NOUSER</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_write_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">:</span> <span class="n">SMPConnection</span><span class="p">,</span> <span class="n">cmd</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    performs the required steps to send a message, including appending a newline sequence and flushing the socket to ensure</span>
+<span class="sd">    the message is sent immediately.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">smp_conn</span><span class="o">.</span><span class="n">send</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">smp_conn</span><span class="o">.</span><span class="n">send</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SMPProtocolError</span>
+
+<span class="k">def</span> <span class="nf">_read_command</span><span class="p">(</span><span class="n">smp_conn</span><span class="p">:</span> <span class="n">SMPConnection</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    performs the required steps to receive a message. Trims the </span>
+<span class="sd">    newline sequence before returning</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="n">smp_conn</span><span class="o">.</span><span class="n">recv</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">cmd</span>
 </pre></div>
 </div>
-<p>So now we have a function that will raise an exception if the passed value does not exist, providing us with a convention (exceptions) that we can use to handle this new condition.</p>
-<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>
-&gt;&gt;&gt; emails = [&quot;user1@example.com&quot;, &quot;user2@example.com&quot;, &quot;user3@example.com&quot;, &quot;user4@example.com&quot;]
-&gt;&gt;&gt; remove_from(emails, &quot;user5@example.com&quot;)
-Traceback (most recent call last):
-  File &quot;maillist.py&quot;, line 39, in &lt;module&gt; 
-		remove_from(emails, &quot;user5@example.com&quot;)
-	File &quot;maillist.py&quot;, line 33, in remove_from
-		raise ValueError(&#39;value not found in list&#39;)
-ValueError: value not found in list
+<p>This code contains just a few of the functions in the protocol, however, most of the remaining functions are similar to the ones represented here. In particular, the function <strong><code class="docutils literal notranslate"><span class="pre">nouser</span></code></strong> is one of several helper functions that send specific commands. Also notice how the write and read operations have been abstracted to their own function (<strong><code class="docutils literal notranslate"><span class="pre">_write_command</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">_read_command</span></code></strong>). By moving this required, but repetitive code to its own function, we can consolidate purely structural operations (<em>e.g.</em>, appending or trimming socket messages) to a single location.</p>
+<p>Okay, so that is the bulk of the SMP protocol module. Now let’s take a look at how we might go about incorporating it into our programs. We will be building upon the code used in the Networks and Sockets lecture, so be sure to watch it before continuing.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the UCI Working Well Daily Symptom Checker&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To get started, enter your UCI provided email address&quot;</span><span class="p">)</span>
 
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+<span class="n">_smp_conn</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">sock</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">userid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">,</span> <span class="n">userid</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">NOUSER</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unable to find user. Check your ID and try again.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">_report_status</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="k">if</span> <span class="n">_report_symptoms</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="k">if</span> <span class="n">_report_tested</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_report_proximity</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span> <span class="o">==</span> <span class="n">smp</span><span class="o">.</span><span class="n">COMPLETE</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. It is advised that you do not come to campus today.&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Thank you. No further action is required.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+<span class="k">except</span> <span class="n">SMPProtocolError</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred while attempting to communicate with the remote server.&quot;</span><span class="p">)</span>    
+<span class="k">else</span><span class="p">:</span>
+  <span class="c1"># only disconnect if an SMPProtocolError did not occur</span>
+  <span class="n">smp</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">_smp_conn</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+  <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Can you think of any others? What happens if the email list has multiple emails with the same address? Currently, all instances of value will be removed from the new list, but what if we only wanted to remove duplicates? By writing tests against our functions, we expose conditions that we might not otherwise think to consider.</p>
-<p>Now, having to write create these tests cases each time we want to test a program can quickly become unwieldy. Fortunately, Python gives us a way to automate much of the work!</p>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">assert</span></code></strong> statement are a convenient shortcut for inserting debugging tests into your program. Here we test a normal case, or case that represents typical behavior for the remove_from function:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">]</span>
-</pre></div>
+<p>Just as with the client server we created, we start by connecting a socket to the desired host and port. Once we have a connected socket, we can use that socket to initialize the SMP protocol. Recall that upon initialization, the protocol module returns a namedtuple called <strong><code class="docutils literal notranslate"><span class="pre">SMPConnection</span></code></strong> that contains the socket, a writable file object, and a readable file object. Now that we have an SMPConnection, we can begin conducting operations using the protocol module. If we refer to the table from earlier, we know that the first thing we need to do is authenticate as a user. So the program first collects the required data from the user and then sends it to the remote endpoint for processing. An invalid id will cause the user to be prompted again, otherwise, the program will continue with the protocol.</p>
+<p>For more detail on how the client program works, as well as a peak at the server program, please watch the lecture videos!</p>
 </div>
-<p>And here we test an error case, or case that generates a result we don’t expect:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-	<span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user5@example.com&quot;</span><span class="p">)</span>
-	<span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;ValueError should have been thrown&quot;</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-	<span class="k">pass</span>
-</pre></div>
-</div>
-<p>If both assertions pass, then we should not expect to see anything from the shell when running the program. However, if an assertion fails, the debugger will notify you of the failure:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">]</span>
-
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;maillist.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">38</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-	    <span class="k">assert</span> <span class="n">remove_from</span><span class="p">([</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user3@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">],</span> <span class="s2">&quot;user4@example.com&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user2@example.com&quot;</span><span class="p">]</span>
-<span class="ne">AssertionError</span>
-</pre></div>
-</div>
-<p>We will get into the more formal test driven approach to software development in a few more weeks, once you have had a chance to experience working with larger, more complex programs. But for now, focus on thinking about the how the code you write should behave, and then write some assertion statements to confirm that it behaves as you expected. I think you will find that new edge conditions will arise that you might not have otherwise considered. And remember, testing is not about quantity! A program with 100 tests is not necessarily better than one with 10. Your goal should be to identify <em>different</em> conditions worth testing, not <em>variations</em> on the same test.</p>
-</div>
-</div>
-</div>
-<div class="section" id="modules">
-<span id="lectures-modules"></span><h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
-<p>In assignment 2, one of the requirements for your program is to divide your code across a minimum of three modules. In this lecture, we’ll be focusing on how you should go about fulfilling this requirement.</p>
-<p>The code that we write to create a program in Python is stored in plain text files. Aside from some common conventions such as file extensions (<strong><code class="docutils literal notranslate"><span class="pre">.py</span></code></strong>), syntax, and indentation, Python files are no different then any other plain text file that you might write. So far, you have probably written most of your Python programs in a single file with a <strong><code class="docutils literal notranslate"><span class="pre">.py</span></code></strong> extension. Generally speaking, this is a good practice. Having all of your code in a single file simplifies things quite a bit. All of your code (and tests!) is in one location and you don’t have worry about connecting multiple files. However, as your programs grow in complexity, and therefore size, you will discover that managing all of your code in a single file quickly becomes a time consuming challenge.</p>
-<div class="section" id="id2">
-<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2060971&amp;node=7796023&amp;a=1224073848&amp;autoplay=1">Modules Lecture</a></p>
-</div>
-<div class="section" id="working-with-modules">
-<h4>Working with Modules<a class="headerlink" href="#working-with-modules" title="Permalink to this headline">¶</a></h4>
-<p>In Python, a module is nothing more than a file with the <strong><code class="docutils literal notranslate"><span class="pre">.py</span></code></strong> extension. However, unlike the programs you have written so far, a module does not produce output when executed directly from the shell. Let’s take a look at the following example:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># basicmath.py</span>
-
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">result</span>
-		
-<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-<p>If we were to run this program, <strong><code class="docutils literal notranslate"><span class="pre">basicmath.py</span></code></strong>, on the shell we would not receive any output from the Python interpreter. We would, however, be able to call the modules functions directly:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">subtract</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="mi">6</span>
-</pre></div>
-</div>
-<p>If we attempt to call these functions before we load <strong><code class="docutils literal notranslate"><span class="pre">basicmath.py</span></code></strong> the interpreter will return a <strong><code class="docutils literal notranslate"><span class="pre">Traceback</span></code></strong> that tells us that ‘add’ (or ‘subtract’) is not defined. So what is the difference? Well, by executing the <strong><code class="docutils literal notranslate"><span class="pre">basicmath.py</span></code></strong> module first we have loaded it into our program, which in this case is the Python shell. The Python programs that we write in <strong><code class="docutils literal notranslate"><span class="pre">.py</span></code></strong> files, operate in much the same way. Let’s write a small program that makes use of the <strong><code class="docutils literal notranslate"><span class="pre">basicmath.py</span></code></strong> module:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mathrunner.py</span>
-
-<span class="kn">import</span> <span class="nn">basicmath</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your first value: &quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your second value: &quot;</span><span class="p">)</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">basicmath</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">basicmath</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Notice that the first line of code is an <strong><code class="docutils literal notranslate"><span class="pre">import</span></code></strong> statement followed by the name of our basicmath python module. We don’t need to specify the <strong><code class="docutils literal notranslate"><span class="pre">.py</span></code></strong> extension as it is implied that we are importing Python files. So, in the same way that you “imported” the <strong><code class="docutils literal notranslate"><span class="pre">Path</span></code></strong> module into your program for a1, we are able to import python files that we write.</p>
-<div class="section" id="scope">
-<h5>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h5>
-<p>Another important convention to consider in this code is how the add and subtract functions are accessed. You will see that when the variables are passed to the basicmath functions, the name of the module must first be referenced. Python, as well as most programming languages, operate under a concept called <em>scope</em>. Scope refers to the availability of classes (we will cover these in more detail later in the quarter), functions, and variables at a given point of execution in a program. In the example above, notice how the variable <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> is used in the add and subtract functions of the <strong><code class="docutils literal notranslate"><span class="pre">basicmath</span></code></strong> module as well as the <strong><code class="docutils literal notranslate"><span class="pre">mathrunner</span></code></strong> program. We can reuse variable names in this way due to Python’s scoping rules. <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> is locally scoped to the add and subtract functions, meaning that it only exists in the moment that each of those functions is being called. Now, if we wanted to make use of <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> outside of the add and subtract functions, we could modify the basicmath program like so:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># basicmath.py</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">result</span>
-		
-<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">result</span>
-
-<span class="k">def</span> <span class="nf">get_last_result</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mathrunner.py</span>
-
-<span class="kn">import</span> <span class="nn">basicmath</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your first value: &quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your second value: &quot;</span><span class="p">)</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">basicmath</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">basicmath</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">basicmath</span><span class="o">.</span><span class="n">get_last_result</span><span class="p">())</span>
-</pre></div>
-</div>
-<p>Which will output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">first</span> <span class="n">value</span><span class="p">:</span> <span class="mi">5</span>
-<span class="n">Enter</span> <span class="n">your</span> <span class="n">second</span> <span class="n">value</span><span class="p">:</span> <span class="mi">2</span>
-<span class="mi">7</span>
-<span class="mi">3</span>
-<span class="mi">0</span>
-</pre></div>
-</div>
-<p>Wait, why is the value of <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> still zero? Well, even though the variable <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> is scoped outside of both functions, or <em>global</em>, Python still gives precedence to the <em>local</em> instance of <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong>. So the add and subtract functions create a local instance of <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> while get_last_result, in absence of any instantiation of a local <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> instance, defers to the global instance of <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong>. To use the globally scoped variable, we need to tell Python that is our intention:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># basicmath.py</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="k">global</span> <span class="n">result</span> 
-	<span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">result</span>
-		
-<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="k">global</span> <span class="n">result</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">result</span>
-
-<span class="k">def</span> <span class="nf">get_last_result</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-	<span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-<p>Which will output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">first</span> <span class="n">value</span><span class="p">:</span> <span class="mi">5</span>
-<span class="n">Enter</span> <span class="n">your</span> <span class="n">second</span> <span class="n">value</span><span class="p">:</span> <span class="mi">2</span>
-<span class="mi">7</span>
-<span class="mi">3</span>
-<span class="mi">3</span>
-</pre></div>
-</div>
-<p>There we go! So by setting the scope of the <strong><code class="docutils literal notranslate"><span class="pre">result</span></code></strong> variable inside each function to <em>global</em> we change the scope from <em>local</em> to <em>global</em>, allowing us to store a value in a shared variable. So scope can be thought of as consisting at two levels: <em>global</em> and <em>local</em>. The Python interpreter assumes a <em>local</em> first stance when interpreting program code and when a local instance is unavailable it assumes <em>global</em>.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Scope refers to the availability of a particular object in a program. That availability is interepreted locally first and then globally.</p>
-</div>
-</div>
-<div class="section" id="definition-access">
-<h5>Definition Access<a class="headerlink" href="#definition-access" title="Permalink to this headline">¶</a></h5>
-<p>When writing modules that contain many functions performing many different types of operations you will find that you need some of those functions to perform operations <em>within</em> your module, but you might not necessarily want those functions to be called <em>outside</em> of your module. In programming terms, we describe these two types of functions as <em>private</em> and <em>public</em>. While some programming languages do provide modifiers for declaring this intention at the point of compilation, Python does not. Rather, all functions in Python are public by default. There is no way to prevent another program from calling functions in your module that should not be called!</p>
-<p>To get around this feature, and the absence of such modifiers is considered a feature in Python, programmers have adopted some formal conventions for communicating <em>intent</em>. When writing functions that you don’t intend to be used outside your module, they should be prepended with a single underscore (<strong><code class="docutils literal notranslate"><span class="pre">_</span></code></strong>) character. This convention is used for functions, constants, and classes in Python:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifying private intent</span>
-
-<span class="k">def</span> <span class="nf">_myprivatefunction</span><span class="p">():</span>
-
-<span class="n">_myprivateconstant</span> <span class="o">=</span> <span class="s2">&quot;525600&quot;</span> <span class="c1"># minutes in a year</span>
-
-<span class="k">class</span> <span class="nc">_myprivateclass</span><span class="p">():</span>
-</pre></div>
-</div>
-<p>We will be looking more closely at your use of naming conventions like private and public access as we move forward with assignments this quarter. Not only do we want to you to continue to adopt formal Python programming conventions, but thinking about access will help you to improve the structure of your modules. So start considering what operations in your program need to be conducted outside the scope of your module and more importantly, what code should not be accessed.</p>
-</div>
-<div class="section" id="namespaces">
-<h5>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h5>
-<p>As your programs grow in size and complexity the importance of understanding scope will become increasingly relevant. Without the ability to scope the objects that we create, every Python programmer would have to create unique object names! Imagine if object naming behaved like Internet domain names, each one having to be recorded in a central registry to avoid duplicates. Through scope, and a convention called <em>namespaces</em>, most programming languages can avoid this unnecessary complication. A namespace is a dictionary-like collection of symbolic names tied to the object in which they are currently defined.</p>
-<p>Namespaces are not a perfect solution, but they serve well to help programmers identify and differentiate the modules and programs that they write. It is important to avoid using known namespaces, particularly those that are used by Python’s built-in objects. For example, you should avoid creating an object named <strong><code class="docutils literal notranslate"><span class="pre">int</span></code></strong> or <strong><code class="docutils literal notranslate"><span class="pre">tuple</span></code></strong> because they already exist in every instance of a Python program. Imagine if we had named our <strong><code class="docutils literal notranslate"><span class="pre">basicmath</span></code></strong> module <strong><code class="docutils literal notranslate"><span class="pre">math</span></code></strong>, which is part of the standard library! To put it more concretely, what if we also had an <strong><code class="docutils literal notranslate"><span class="pre">add</span></code></strong> function in our <strong><code class="docutils literal notranslate"><span class="pre">mathrunner.py</span></code></strong> program? Namespaces allow us to differentiate between like named objects:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mathrunner.py</span>
-
-<span class="kn">import</span> <span class="nn">basicmath</span> <span class="k">as</span> <span class="nn">m</span>
-
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
-	<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your first value: &quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your second value: &quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>The two <strong><code class="docutils literal notranslate"><span class="pre">add</span></code></strong> functions being printed will produce distinctly different results, namespaces allow us to differentiate between them in the code we write. Python also provides us with a naming convention for the modules that we import. Notice how the import statement and subsequent use of namespace differ in this revised version of <strong><code class="docutils literal notranslate"><span class="pre">mathrunner.py</span></code></strong>. This can be useful when the modules you are importing make use of a longer namespace that you might not want to type every time it is used.</p>
-<p>Python makes use of four types of namespaces, listed in order of precedence:</p>
-<dl class="simple myst">
-<dt>Local</dt><dd><p>Inside a class method or function</p>
-</dd>
-<dt>Enclosed</dt><dd><p>Inside an enclosing function in instances when one function is nested within another</p>
-</dd>
-<dt>Global</dt><dd><p>Outside all functions or class methods</p>
-</dd>
-<dt>Built-In</dt><dd><p>The built-in namespace consists of all of the Python objects that are available to your program at runtime. Try running <strong><code class="docutils literal notranslate"><span class="pre">dir(__builtins__)</span></code></strong> on the IDLE shell to see the full list of built-ins. Many of the names should look familiar to you.</p>
-</dd>
-</dl>
-<p>I have included the following tip originally written by Alex Thornton, who also teaches this class at UCI. I think it’s a great explanation of how modules make use of the <strong><code class="docutils literal notranslate"><span class="pre">__name__</span></code></strong> variable in Python and wanted to share it with you.</p>
-<div class="tip admonition">
-<p class="admonition-title">Alex Thornton’s Explanation of Executable Modules</p>
-<p>When you load a module in IDLE and execute it (by pressing F5), the code in that module is executed. If it generates any observable result, like printing output or asking the user for input, you’ll see that in the interpreter. Otherwise, you’ll see a standard &gt;&gt;&gt; interpreter prompt, and all of the module’s definitions will now be available — so, for example, if the module defines a function, you could now call it.</p>
-<p>As we’ve seen, modules in Python have names. We can check the name of the currently-executing module at any time by accessing the global variable <strong><code class="docutils literal notranslate"><span class="pre">__name__</span></code></strong>, which is present in every module.</p>
-<p>In general, the names of modules are indicated by their filenames; a module written in a file <strong><code class="docutils literal notranslate"><span class="pre">boo.py</span></code></strong> has the name <strong><code class="docutils literal notranslate"><span class="pre">boo</span></code></strong>. But there’s one special case that we haven’t talked about: When you execute a module in Python (i.e., by pressing F5 in IDLE), it’s given the special name <strong><code class="docutils literal notranslate"><span class="pre">__main__</span></code></strong> while it runs. (Anything you define in the Python interpreter will be considered part of the <strong><code class="docutils literal notranslate"><span class="pre">__main__</span></code></strong> module, as well.)</p>
-<p>This little fact can be a useful way of differentiating between whether a module has been executed (i.e., is it the “entry point” of a program?) or whether it’s been imported. In general, importing a module shouldn’t suddenly cause things to happen — output to be generated, input to be read, and so on — but should, instead, simply make definitions available that weren’t previously. Even executable modules, the ones we expect to be able to execute as programs, should behave differently when imported than they do when executed.
-s
-To facilitate this distinction, we can simply check the module’s name by accessing the <strong><code class="docutils literal notranslate"><span class="pre">__name__</span></code></strong> variable. If its value is <strong><code class="docutils literal notranslate"><span class="pre">__main__</span></code></strong>, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an <strong><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code></strong> block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.</p>
-</div>
-</div>
+<div class="section" id="id3">
+<h4>Notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 </div>
 <div class="section" id="quiz-results">
-<span id="id3"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
-<p><a href="../resources/QZ_Week_3_Quiz_Results.pdf">Quiz Results PDF</a></p>
-<div class="section" id="some-thoughts">
-<h3>Some Thoughts<a class="headerlink" href="#some-thoughts" title="Permalink to this headline">¶</a></h3>
-<p>Some pretty straightforward questions this week. The majority of you answered correctly on the three multiple choice questions. Questions 6 &amp; 7 were primarily used as a metric for gauging your experience with debugging, but still worth checking out if you missed the class.</p>
-</div>
+<span id="id4"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
+<p>[TO BE POSTED on 1/20/21]</p>
 </div>
 </div>
 
@@ -656,6 +644,8 @@ To facilitate this distinction, we can simply check the module’s name by acces
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="wk2.html" title="previous page">Week 2 Notes</a>
+    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
