@@ -10,17 +10,17 @@ Keep an eye weekly pages as they might be updated throughout the week.
 It's week 3. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2. 
 
 Quick Links:
-: {ref}`lecture-materials`
-: {ref}`quiz-results`
+: {ref}`lecture-materials3`
+: {ref}`quiz-results3`
 
 (lecture-materials)=
 ## Lecture Materials
 
 Lectures for Week 3
-: {ref}`lectures:networks`
-: {ref}`lectures:protocols`
+: {ref}`lectures:networks3`
+: {ref}`lectures:protocols3`
 
-(lectures:networks)=
+(lectures:networks3)=
 ### Networks and Sockets
 
 #### Videos
@@ -148,7 +148,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
 Here we make use of the **`socket`** module's **`makefile`** function to create a read and write convention that more closely resembles what we have learned from file operations. Makefile abstracts much of the work required to convert string-like data into bytes. Notice, we no longer have to conduct any encoding or decoding operations. Rather, we simply create readable (**`.makefile('r')`**) and writeable (**`.makefile('w')`**) _file objects_ on our connected socket. The only additional responsibility required here is to tell the remote connection when we have completed writing operations. Write operations will typically store data in a buffer prior to sending, often, buffered data will not be sent until the buffer is full. Therefore, it is always important to remember _flush_ the buffer when write operations have completed. The socket's **`.flush()`** function will conduct this operation for you.
 
 
-(lectures:protocols)=
+(lectures:protocols3)=
 ### Protocols
 
 The protocols lecture makes use of three Python programs. While various parts of the programs are included in this section, you will want to download the actual files if you plan on running them yourself in IDLE.
