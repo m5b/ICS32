@@ -374,4 +374,5 @@ If you are participating in the late quiz, feel free to watch the video linked b
 
 [Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=2400773&node=8654349&a=872326213&autoplay=1)
 
-Quiz results will be posted on 1/13 after late quizzes are complete.
+<a href="../resources/QZ_Week_2_Quiz_Results.pdf">Quiz Results</a>
+

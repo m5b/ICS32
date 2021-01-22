@@ -510,5 +510,7 @@ The **`get_posts`** and **`add_post`** methods in the example above are taken di
 (quiz-results3)=
 ## Quiz Results
 
-[TO BE POSTED on 1/20/21]
+[Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=2451055&node=8933130&a=898240521&autoplay=1)
+
+<a href="../resources/QZ_Week_3_Quiz_Results.pdf">Quiz Results</a>
 
