@@ -1,10 +1,13 @@
 # Profile.py
 #
-# ICS 32 Fall 2020
+# ICS 32 Winter 2020
 # Assignment #2: Chatting with Friends
 #
-# v0.1.2
+# Author: Mark S. Baldwin
+#
+# v0.1.3
 # Revisions:
+#   v0.1.3 - added properties for setting and getting timestamp attribute in Post object
 #   v0.1.2 - changed load_profile to add posts directly to __posts list, rather than through add_posts.
 #          - changed Post initialization behavior to fix timestamp overwriting on saving.
 #   v0.1.1 - added property assignment for dsuserver during deserialization
@@ -20,8 +23,6 @@
 # YOU DO NOT NEED TO READ OR UNDERSTAND THE JSON SERIALIZATION ASPECTS OF THIS CODE, 
 # though can you certainly feel free to take a look at it.
 #
-# NOTE: There may be bugs in this module! I have only conducted some light testing
-# so far. If there are, I will revise the file and send an announcement.
 import json, time, os
 from pathlib import Path
 
@@ -46,72 +47,93 @@ class DsuProfileError(Exception):
 class Post(dict):
     """ 
 
-    The Post class is responsible for working with individual user posts. It currently supports two features: A timestamp property that is set upon instantiation and when the entry object is set, or updated, and an entry property that stores the post message.
+    The Post class is responsible for working with individual user posts. It currently supports two features: 
+    A timestamp property that is set upon instantiation and when the entry object is set and an 
+    entry property that stores the post message.
 
     """
-    def __init__(self, message = None):
-        self.__entry = ''
-        self.timestamp = None
-        if message is not None:
-            self.setpost(message)
+    def __init__(self, entry:str = None, timestamp:float = 0):
+        self._timestamp = timestamp
+        self._entry = entry
 
-        # We must subclass dict to expose Post properties for serialization
+        # Subclass dict to expose Post properties for serialization
         # Don't worry about this!
-        dict.__init__(self, entry=self.__entry, timestamp=self.timestamp)
+        dict.__init__(self, entry=self._entry, timestamp=self._timestamp)
     
-    def setpost(self, message):
-        self.__entry = message
-        dict.__setitem__(self, 'entry', message)
-        self.timestamp = time.time()
+    def set_entry(self, entry):
+        self._entry = entry 
+        dict.__setitem__(self, 'entry', entry)
 
-    def getpost(self):
-        return self.__entry
+        # If timestamp has not been set, generate a new from time module
+        if self._timestamp == 0:
+            self._timestamp = time.time()
+
+    def get_entry(self):
+        return self._entry
+    
+    def set_time(self, time:float):
+        self._timestamp = time
+        dict.__setitem__(self, 'timestamp', time)
+    
+    def get_time(self):
+        return self._timestamp
 
     """
 
-    The property method is used to support get and set capability for the entry object.
+    The property method is used to support get and set capability for entry and time values.
     When the value for entry is changed, or set, the timestamp field is updated to the
     current time.
 
     """ 
-    entry = property(getpost, setpost)
+    entry = property(get_entry, set_entry)
+    timestamp = property(get_time, set_time)
     
     
 class Profile:
     """
-    The Profile class exposes the properties required to join an ICS 32 DSU server. You will need to use this class to manage the information provided by each new user created within your program for a2. Pay close attention to the properties and functions in this class as you will need to make use of each of them in your program.
+    The Profile class exposes the properties required to join an ICS 32 DSU server. You will need to 
+    use this class to manage the information provided by each new user created within your program for a2. 
+    Pay close attention to the properties and functions in this class as you will need to make use of 
+    each of them in your program.
 
-    When creating your program you will need to collect user input for the properties exposed by this class. A Profile class should ensure that a username and password are set, but contains no conventions to do so. You should make sure that your code checks that required properties are set.
+    When creating your program you will need to collect user input for the properties exposed by this class. 
+    A Profile class should ensure that a username and password are set, but contains no conventions to do so. 
+    You should make sure that your code verifies that required properties are set.
 
     """
 
-    def __init__(self, dsuserver, username=None, password=None):
+    def __init__(self, dsuserver=None, username=None, password=None):
         self.dsuserver = dsuserver # REQUIRED
         self.username = username # REQUIRED
         self.password = password # REQUIRED
         self.bio = ''            # OPTIONAL
-        self.__posts = []         # OPTIONAL
+        self._posts = []         # OPTIONAL
     
     """
 
-    add_post accepts a Post object as parameter and appends it to the posts list. Posts are stored in a list object in the order they are added. So if multiple Posts objects are created, but added to the Profile in a different order, it is possible for the list to not be sorted by the Post.timestamp property. So take caution as to how you implement your add_post code.
+    add_post accepts a Post object as parameter and appends it to the posts list. Posts are stored in a 
+    list object in the order they are added. So if multiple Posts objects are created, but added to the 
+    Profile in a different order, it is possible for the list to not be sorted by the Post.timestamp property. 
+    So take caution as to how you implement your add_post code.
 
     """
 
     def add_post(self, post: Post) -> None:
-        self.__posts.append(post)
+        self._posts.append(post)
 
     """
 
-    del_post removes a Post at a given index and returns True if successful and False if an invalid index was supplied. 
+    del_post removes a Post at a given index and returns True if successful and False if an invalid 
+    index was supplied. 
 
-    To determine which post to delete you must implement your own search operation on the posts returned from the get_posts function to find the correct index.
+    To determine which post to delete you must implement your own search operation on the posts 
+    returned from the get_posts function to find the correct index.
 
     """
 
     def del_post(self, index: int) -> bool:
         try:
-            del self.__posts[index]
+            del self._posts[index]
             return True
         except IndexError:
             return False
@@ -122,7 +144,7 @@ class Profile:
 
     """
     def get_posts(self) -> list:
-        return self.__posts
+        return self._posts
 
     """
 
@@ -173,9 +195,8 @@ class Profile:
                 self.dsuserver = obj['dsuserver']
                 self.bio = obj['bio']
                 for post_obj in obj['_Profile__posts']:
-                    post = Post(post_obj['entry'])
-                    post.timestamp = post_obj['timestamp']
-                    self.__posts.append(post)
+                    post = Post(post_obj['entry'], post_obj['timestamp'])
+                    self._posts.append(post)
                 f.close()
             except Exception as ex:
                 raise DsuProfileError(ex)
