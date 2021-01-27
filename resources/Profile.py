@@ -43,6 +43,9 @@ is raised when attempting to deserialize a dsu file to a Profile object.
 class DsuProfileError(Exception):
     pass
 
+send.write(msg1)
+send.write(msg2)
+send.write(msg3 + '\r\n')
 
 class Post(dict):
     """ 
@@ -87,8 +90,8 @@ class Post(dict):
     """ 
     entry = property(get_entry, set_entry)
     timestamp = property(get_time, set_time)
-    
-    
+   
+  
 class Profile:
     """
     The Profile class exposes the properties required to join an ICS 32 DSU server. You will need to 
@@ -130,7 +133,6 @@ class Profile:
     returned from the get_posts function to find the correct index.
 
     """
-
     def del_post(self, index: int) -> bool:
         try:
             del self._posts[index]
@@ -182,6 +184,7 @@ class Profile:
 
     Raises DsuProfileError, DsuFileError
 
+    R /path/to/file -l file.dsu
     """
     def load_profile(self, path: str) -> None:
         p = Path(path)
