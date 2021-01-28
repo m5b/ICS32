@@ -5,8 +5,10 @@
 #
 # Author: Mark S. Baldwin
 #
-# v0.1.4
+# v0.1.6
 # Revisions:
+#   v0.1.6 - fixed timestamp assignment
+#   v0.1.5 - removed debug code
 #   v0.1.4 - fixed typo in post reading loop in load_profile function
 #   v0.1.3 - added properties for setting and getting timestamp attribute in Post object
 #   v0.1.2 - changed load_profile to add posts directly to __posts list, rather than through add_posts.
@@ -55,7 +57,7 @@ class Post(dict):
     """
     def __init__(self, entry:str = None, timestamp:float = 0):
         self._timestamp = timestamp
-        self._entry = entry
+        self.set_entry(entry)
 
         # Subclass dict to expose Post properties for serialization
         # Don't worry about this!
@@ -191,8 +193,6 @@ class Profile:
             try:
                 f = open(p, 'r')
                 obj = json.load(f)
-                print(obj)
-                input("wait")
                 self.username = obj['username']
                 self.password = obj['password']
                 self.dsuserver = obj['dsuserver']
