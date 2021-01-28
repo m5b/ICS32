@@ -43,10 +43,6 @@ is raised when attempting to deserialize a dsu file to a Profile object.
 class DsuProfileError(Exception):
     pass
 
-send.write(msg1)
-send.write(msg2)
-send.write(msg3 + '\r\n')
-
 class Post(dict):
     """ 
 
