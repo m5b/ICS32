@@ -199,7 +199,6 @@ So now, with a little string manipulation on the header value, we can specify ou
 
 [Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=2476234&node=9030272&a=362320989&autoplay=1)
 
-Link will be updated on 1/27 after late quiz is complete.
 
 <a href="../resources/QZ_Week_4_Quiz_Results.pdf">Quiz Results</a>
 
