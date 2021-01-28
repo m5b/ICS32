@@ -5,8 +5,9 @@
 #
 # Author: Mark S. Baldwin
 #
-# v0.1.3
+# v0.1.4
 # Revisions:
+#   v0.1.4 - fixed typo in post reading loop in load_profile function
 #   v0.1.3 - added properties for setting and getting timestamp attribute in Post object
 #   v0.1.2 - changed load_profile to add posts directly to __posts list, rather than through add_posts.
 #          - changed Post initialization behavior to fix timestamp overwriting on saving.
@@ -42,6 +43,7 @@ is raised when attempting to deserialize a dsu file to a Profile object.
 """
 class DsuProfileError(Exception):
     pass
+
 
 class Post(dict):
     """ 
@@ -86,8 +88,8 @@ class Post(dict):
     """ 
     entry = property(get_entry, set_entry)
     timestamp = property(get_time, set_time)
-   
-  
+    
+    
 class Profile:
     """
     The Profile class exposes the properties required to join an ICS 32 DSU server. You will need to 
@@ -129,6 +131,7 @@ class Profile:
     returned from the get_posts function to find the correct index.
 
     """
+
     def del_post(self, index: int) -> bool:
         try:
             del self._posts[index]
@@ -180,7 +183,6 @@ class Profile:
 
     Raises DsuProfileError, DsuFileError
 
-    R /path/to/file -l file.dsu
     """
     def load_profile(self, path: str) -> None:
         p = Path(path)
@@ -189,11 +191,13 @@ class Profile:
             try:
                 f = open(p, 'r')
                 obj = json.load(f)
+                print(obj)
+                input("wait")
                 self.username = obj['username']
                 self.password = obj['password']
                 self.dsuserver = obj['dsuserver']
                 self.bio = obj['bio']
-                for post_obj in obj['_Profile__posts']:
+                for post_obj in obj['_posts']:
                     post = Post(post_obj['entry'], post_obj['timestamp'])
                     self._posts.append(post)
                 f.close()
