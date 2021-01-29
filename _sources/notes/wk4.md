@@ -13,6 +13,10 @@ If you missed live class or want to review the assignment 2 overview, here is th
 
 [Assignment 2 Overview](https://uci.yuja.com/V/Video?v=2476247&node=9030309&a=2105505015&autoplay=1)
 
+[Discussion on Profile Module](https://uci.yuja.com/V/Video?v=2491170&node=9074322&a=857186104&autoplay=1)
+
+[Discussion on Protocol Module](https://uci.yuja.com/V/Video?v=2491162&node=9074304&a=1879480748&autoplay=1)
+
 Quick Links:
 : {ref}`lecture-materials`
 : {ref}`quiz-results3`
