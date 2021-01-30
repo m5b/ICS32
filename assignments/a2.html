@@ -352,17 +352,17 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ds_client.py</span>
 
 <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="n">server</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">bio</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-	<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">	The send function joins a ds server and sends a message, bio, or both</span>
-<span class="sd">	</span>
-<span class="sd">	:param server: The ip address for the ICS 32 DS server.</span>
-<span class="sd">	:param port: The port where the ICS 32 DS server is accepting connections.</span>
-<span class="sd">	:param username: The user name to be assigned to the message.</span>
-<span class="sd">	:param password: The password associated with the username.</span>
-<span class="sd">	:param message: The message to be sent to the server.</span>
-<span class="sd">	:param bio: Optional, a bio for the user.</span>
-<span class="sd">	&#39;&#39;&#39;</span>
-	<span class="k">pass</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  The send function joins a ds server and sends a message, bio, or both</span>
+
+<span class="sd">  :param server: The ip address for the ICS 32 DS server.</span>
+<span class="sd">  :param port: The port where the ICS 32 DS server is accepting connections.</span>
+<span class="sd">  :param username: The user name to be assigned to the message.</span>
+<span class="sd">  :param password: The password associated with the username.</span>
+<span class="sd">  :param message: The message to be sent to the server.</span>
+<span class="sd">  :param bio: Optional, a bio for the user.</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">pass</span>
 </pre></div>
 </div>
 <p>The validity checking tool that we will use for grading will import your <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module and call this function with randomly generated values. When called, the information we supply should either successfully transmit the data to the DS Server or, in the case of incorrect data, gracefully inform our program what went wrong.</p>
