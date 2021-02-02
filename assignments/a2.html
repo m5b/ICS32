@@ -453,6 +453,8 @@
 <span class="c1"># Example Test</span>
 <span class="n">json_msg</span> <span class="o">=</span> <span class="s1">&#39;{&quot;foo&quot;:&quot;value1&quot;, &quot;bar&quot;: {&quot;baz&quot;: &quot;value2&quot;}}&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">extract_json</span><span class="p">(</span><span class="n">json_msg</span><span class="p">))</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">DataTuple</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Finally, if you have made it this far, you are probably wondering about the information required to connect to the DSP server. I will have the server up and running very soon. In the meantime, you should be able to test using the echo server covered in lecture. Since this project page is public and I would like to avoid undesirable traffic aimed at my server, I will be communicating server details via Zulip only.</p>
