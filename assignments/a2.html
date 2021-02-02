@@ -426,6 +426,10 @@
 </pre></div>
 </div>
 <p>In your Python code, you will treat JSON messages as type string. In the snippets above, you will likely need to replace the hard coded values (<em>e.g.,</em> ohhimark, password123, etc.) with the variables in your program that store the actual data you intend to send to the DSP server. There are many ways to do this, but you should focus your efforts on using the string formatting functions found in the Python Standard Library.</p>
+<div class="warning admonition">
+<p class="admonition-title">DS Server Protocol Helper Code</p>
+<p>The following code was added on 2/1 to help you process json formatted messages sent by the server. NOTE: You will need to adapt the example code to work with protocol messages.</p>
+</div>
 <p>To process the messages from the DS server, you may adapt the following code to reduce some of the extra work of parsing strings:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
