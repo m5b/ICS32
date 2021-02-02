@@ -1,6 +1,14 @@
 Final Project
 ============================
 
+* complete extra credit items
+* code doc generated
+* write and pass your own tests
+* assessment:
+	* program works
+	* all module code documented
+	* use of try/except
+
 ## Overview
 
 As discussed in the course overview, you will not be required to take a midterm or final exam. Rather, we will be assessing your understanding of the course material by asking you to apply what you have learned through a final project. At this point in the class you have learned how to work with the computer file system, modules, and sockets. You have also learned how to write simple tests for your code, apply recursive function calls, and handle exceptions that occur when your program runs. Therefore, at a minimum your final project should build upon and extend the what you have learned so far and completed for assignments 1 and 2.
