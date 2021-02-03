@@ -54,6 +54,10 @@ def process_input(usr_input) -> InputCommand:
         # the last option.
         elif ' -n ' in seg:
             name = usr_input[(l-i):l]
+        # no options detected
+        else:
+            r_pos = l #set current position to end of line to determine end of path
+
 
     ic = InputCommand(usr_input[:1], usr_input[2:r_pos],
                       name,param,suffix,r,s,e,f)
@@ -94,6 +98,7 @@ def regex_processor(usr_input) -> InputCommand:
     
 
 TEST_INPUTS = [
+    "L /home/mark 2",
     "L /home/mark -f",
     "L /home/mark -r",
     "L /home/mark -r -f",
@@ -110,8 +115,8 @@ def main():
     for t in TEST_INPUTS:
         print(t)
         #uncomment to use regex or string manip
-        #result = process_input(t)
-        result = regex_processor(t)
+        result = process_input(t)
+        #result = regex_processor(t)
         print("------")
         print("command", result.cmd)
         print("path", result.path)
