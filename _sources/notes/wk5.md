@@ -14,6 +14,12 @@ Quick Links:
 (lecture-materials)=
 ## Lecture Materials
 
+```{note}
+I am putting this weeks live quiz lecture at the top today, rather than in the Quiz Results section. Note, we spent almost the entire class time discussing design strategies and requirements for a2. Please watch if you are still uncertain about how to proceed.
+```
+
+[Program Design and A2 Discussion](https://uci.yuja.com/V/Video?v=2520602&node=9151903&a=1996610766&autoplay=1)
+
 Lectures for Week 5
 : {ref}`lectures:webapi`
 : {ref}`lectures:inheritance`
