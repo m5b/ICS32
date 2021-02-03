@@ -12,6 +12,7 @@ Right to left input processor using string manipulation
 def process_input(usr_input) -> InputCommand:
     r_pos = 0
     es_pos = 0
+    end_post = 0
     r = False
     e = False
     s = False
@@ -42,24 +43,34 @@ def process_input(usr_input) -> InputCommand:
             s = True
             # set current position and assign remaining characters to name
             param = usr_input[(l-i):l]
+            es_pos = (l-i)-4
         elif ' -e ' in seg:
             e = True
             # set current position and assign remaining characters to suffix
             suffix = usr_input[(l-i):l]
+            es_pos = (l-i)-4
         # the f option will never have whitespace after it as it is always
         # the last option.
         elif ' -f' in seg:
             f = True
+            es_pos = (l-i)-3
         # the f option will never have whitespace after it as it is always
         # the last option.
         elif ' -n ' in seg:
             name = usr_input[(l-i):l]
-        # no options detected
-        else:
-            r_pos = l #set current position to end of line to determine end of path
+            es_pos = (l-i)-4
 
+    #check results of loop, if no r was detected, then use es_pos
+    if r_pos == 0:
+        end_pos = es_pos
+    else:
+        end_pos = r_pos
 
-    ic = InputCommand(usr_input[:1], usr_input[2:r_pos],
+    #if end_pos is still 0, then assume no options and set length of input as end point of path
+    if end_pos == 0:
+        end_pos = l
+
+    ic = InputCommand(usr_input[:1], usr_input[2:end_pos],
                       name,param,suffix,r,s,e,f)
     return ic
 
@@ -100,6 +111,8 @@ def regex_processor(usr_input) -> InputCommand:
 TEST_INPUTS = [
     "L /home/mark 2",
     "L /home/mark -f",
+    "L /home/mark -s bar.py",
+    "L /home/mark -e py",
     "L /home/mark -r",
     "L /home/mark -r -f",
     "L /home/mark -r /foo -r -f",
