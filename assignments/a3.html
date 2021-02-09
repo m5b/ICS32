@@ -436,14 +436,24 @@
 </div></blockquote>
 <p>Okay, that’s a pretty bad example, but you get the idea:) Here, the OpenWeather API feature ‘description’ was assigned to the &#64;weather keyword so that when the message was transcluded the keyword was replaced with the description ‘sunny.’ You ARE NOT REQUIRED to bind ‘description’ to the &#64;weather keyword, but you are required to bind some data from the OpenWeather API to the <strong><code class="docutils literal notranslate"><span class="pre">&#64;weather</span></code></strong> keyword.</p>
 <p>When your user writes a post, you will also want to inform them about the keywords your program makes available. There are a number of ways to go about accomplishing this task, the most straightforward being a print out of the keywords. However, you might also consider making keyword selection a little more interactive. Either way, you will not be graded on how you inform your user about keyword options, only that you have added this feature.</p>
-<p>Finally, so that we may accurately test your program, all of your API classes (<strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong>, and extra credit) must implement the following function:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transclude</span><span class="p">(</span><span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<p>Finally, so that we may accurately test your program, all of your API classes (<strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong>, and extra credit) must implement the following functions:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Sets the apikey required to make requests to a web API.</span>
+<span class="sd">	:param apikey: The apikey supplied by the API service</span>
+<span class="sd">	</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+	<span class="c1">#TODO: assign apikey value to a class data attribute that can be accessed by class members</span>
+  <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">transclude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Replaces keywords in a message with associated API data.</span>
 <span class="sd">	:param message: The message to transclude</span>
 <span class="sd">	</span>
 <span class="sd">	:returns: The transcluded message</span>
 <span class="sd">  &#39;&#39;&#39;</span>
+	<span class="c1">#TODO: write code necessary to transclude keywords in the message parameter with appropriate data from API</span>
   <span class="k">pass</span>
 </pre></div>
 </div>
