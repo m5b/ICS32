@@ -326,6 +326,18 @@
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Your main entry point to your program will be from a module called <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>. As with a2, you will not have a validity checker to use for testing and you will be largely responsible for program input and output. You are encouraged to continue to bring the user interface and other functions you created in your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong> modules, but you will not be re-graded on the features you implemented for those assignments.</p>
+<p>Your final program should contain the following new modules:</p>
+<ol class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the Last.FM API.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit.</p></li>
+</ol>
+<p>Since the code you write for this assignment will still be dependent on communication with the server, you should also include all modules you created or used for assignment 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you were unable to complete the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function requirement in a2, let us know. We will walk you through the steps required to send and receive messages with the DS server.</p>
+</div>
 <div class="section" id="part-1">
 <h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
 <p>When introducing new features to a program or learning a new tool that is unfamiliar, a good place to start is with a test program. So for Part 1, you will temporarily set aside your DS program and focus on building a small test program that can successfully connect to and retrieve data from a public API. You are welcome to use the sample code below to get started.</p>
@@ -436,7 +448,7 @@
 </div></blockquote>
 <p>Okay, that’s a pretty bad example, but you get the idea:) Here, the OpenWeather API feature ‘description’ was assigned to the &#64;weather keyword so that when the message was transcluded the keyword was replaced with the description ‘sunny.’ You ARE NOT REQUIRED to bind ‘description’ to the &#64;weather keyword, but you are required to bind some data from the OpenWeather API to the <strong><code class="docutils literal notranslate"><span class="pre">&#64;weather</span></code></strong> keyword.</p>
 <p>When your user writes a post, you will also want to inform them about the keywords your program makes available. There are a number of ways to go about accomplishing this task, the most straightforward being a print out of the keywords. However, you might also consider making keyword selection a little more interactive. Either way, you will not be graded on how you inform your user about keyword options, only that you have added this feature.</p>
-<p>Finally, so that we may accurately test your program, all of your API classes (<strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong>, and extra credit) must implement the following functions:</p>
+<p>Finally, so that we may accurately test your program, all of your API classes (<strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI</span></code></strong>) must implement the following functions:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Sets the apikey required to make requests to a web API.</span>
@@ -461,7 +473,10 @@
 </div>
 <div class="section" id="extra-credit">
 <h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>We will be awarding 1 extra credit point for the successful inclusion of a third API from a source that has not been used for this class. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit.</p>
+<p>We will be awarding 1 extra credit point for the successful inclusion of a third API from a source that has not been used for this class. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit. Your API should be built in a module named <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong> and make use of at least one keyword named:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@extracredit</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
