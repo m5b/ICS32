@@ -16,6 +16,10 @@ Quick Links:
 
 Lecture materials for this week will be recorded live during class time. Check back here for recordings after class on Thursday.
 
+[Discussion on Classes and Inheritance](https://uci.yuja.com/V/Video?v=2577424&node=9297394&a=889741904&autoplay=1)
+
+[Discussion on Custom Exceptions](https://uci.yuja.com/V/Video?v=2577406&node=9297354&a=1959048446&autoplay=1)
+
 
 (quiz-results6)=
 ## Quiz Results
