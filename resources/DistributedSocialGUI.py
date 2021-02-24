@@ -223,6 +223,8 @@ class MainApp(tk.Frame):
         # HINT: You will probably need to do things like create a new Post object,
         # fill it with text, add it to the active profile, save the profile, and
         # clear the editor_entry UI for a new post.
+        # This might also be a good place to check if the user has selected the online
+        # checkbox and if so send the message to the server.
         pass
 
     """
