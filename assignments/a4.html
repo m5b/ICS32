@@ -564,7 +564,7 @@
 <p>To learn how to encrypt and decrypt information using a keypair, you will need to consult the documentation for the module. The <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/">main page for the docs</a> is a good place to start if you want to learn more about PyNaCl. However, since you are only required to implement a small portion of the overall PyNaCl module, you may find the examples on the <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/public/#examples">Public Key Encryption</a> page to be the most helpful. Feel free to discuss your findings on Zulip with your classmates.</p>
 <p>Once your new <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> subclass has been completed, you can validate it by running the following program:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Profile</span> <span class="kn">import</span> <span class="n">Profile</span><span class="p">,</span> <span class="n">Post</span>
-<span class="kn">from</span> <span class="nn">NaClProfile_solution</span> <span class="kn">import</span> <span class="n">NaClProfile</span>
+<span class="kn">from</span> <span class="nn">NaClProfile</span> <span class="kn">import</span> <span class="n">NaClProfile</span>
 
 <span class="n">np</span> <span class="o">=</span> <span class="n">NaClProfile</span><span class="p">()</span>
 <span class="n">kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">generate_keypair</span><span class="p">()</span>
