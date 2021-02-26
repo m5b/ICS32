@@ -31,6 +31,8 @@ In the discussion for this week, we discussed:
 
 [Send function lecture](https://uci.yuja.com/V/Video?v=2643567&node=9565796&a=1428315759&autoplay=1)
 
+[Deep dive on Pynacl](https://uci.yuja.com/V/Video?v=2691836&node=9631032&a=412941434&autoplay=1)
+
 (quiz-results8)=
 ## Quiz Results
 
