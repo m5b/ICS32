@@ -31,7 +31,7 @@ class DirectMessage:
 
 class DirectMessenger:
   def __init__(self, dsuserver=None, username=None, password=None):
-    token = None
+    self.token = None
 		
   def send(self, message:str, recipient:str) -> bool:
     pass
