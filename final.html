@@ -313,6 +313,14 @@
 <li><p>Must be named <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong></p></li>
 <li><p>Must implement the following classes and methods</p></li>
 </ul>
+<div class="warning admonition">
+<p class="admonition-title">Direct Messenger Module Update</p>
+<p>Update 2/27:</p>
+<ol class="simple">
+<li><p>Fixed one small oversight in the required code and messaging below. <strong><code class="docutils literal notranslate"><span class="pre">retrieve_new</span></code></strong> no longer returns a singe DirectMessage, it now returns a list. This change also means that you will only receive two types of directmessage ok responses now.</p></li>
+<li><p>Added code comments to describe intent for each method. You should update these comments to adhere to docstring format for your final submission.</p></li>
+</ol>
+</div>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DirectMessage</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">recipient</span> <span class="o">=</span> <span class="kc">None</span>
@@ -325,12 +333,15 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="kc">None</span>
 		
   <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">recipient</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># returns true if message successfully sent, false if send failed.</span>
     <span class="k">pass</span>
 		
-  <span class="k">def</span> <span class="nf">retrieve_new</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DirectMessage</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">retrieve_new</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="c1"># returns a list of DirectMessage objects containing all new messages</span>
     <span class="k">pass</span>
  
-  <span class="k">def</span> <span class="nf">retrieve_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">retrieve_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="c1"># returns a list of DirectMessage objects containing all messages</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -354,11 +365,8 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sending of direct message was successful</span>
 <span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct message sent&quot;</span><span class="p">,</span> <span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">}}</span>
 
-<span class="c1"># Response to request for **`new`** message. Timestamp is time in seconds </span>
+<span class="c1"># Response to request for **`all`** and **`new`** messages. Timestamp is time in seconds </span>
 <span class="c1"># of when the message was originally sent.</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello User!&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;markb&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
-
-<span class="c1"># Response to request for **`all`** messages.</span>
 <span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Hello User 1!&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;markb&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">},{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Bzzzzz&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;thebeemoviescript&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}]}}</span>
 </pre></div>
 </div>

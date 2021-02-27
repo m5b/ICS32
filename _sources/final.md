@@ -20,6 +20,16 @@ The first thing you will do is write the direct messenger module. Your module mu
 * Must be named **`ds_messenger.py`**
 * Must implement the following classes and methods
 
+```{admonition} Direct Messenger Module Update
+:class: warning
+
+Update 2/27: 
+1. Fixed one small oversight in the required code and messaging below. **`retrieve_new`** no longer returns a singe DirectMessage, it now returns a list. This change also means that you will only receive two types of directmessage ok responses now.
+
+2. Added code comments to describe intent for each method. You should update these comments to adhere to docstring format for your final submission.
+
+```
+
 ```ipython3
 
 class DirectMessage:
@@ -34,12 +44,15 @@ class DirectMessenger:
     self.token = None
 		
   def send(self, message:str, recipient:str) -> bool:
+    # returns true if message successfully sent, false if send failed.
     pass
 		
-  def retrieve_new(self) -> DirectMessage:
+  def retrieve_new(self) -> list:
+    # returns a list of DirectMessage objects containing all new messages
     pass
  
-  def retrieve_all(self) -> List:
+  def retrieve_all(self) -> list:
+    # returns a list of DirectMessage objects containing all messages
     pass
 
 ```
@@ -68,11 +81,8 @@ The DS server will respond to **`directmessage`** requests with the following **
 # Sending of direct message was successful
 {"response": {"type": "ok", "message": "Direct message sent", "token":"user_token"}}
 
-# Response to request for **`new`** message. Timestamp is time in seconds 
+# Response to request for **`all`** and **`new`** messages. Timestamp is time in seconds 
 # of when the message was originally sent.
-{"response": {"type": "ok", "message": "Hello User!", "from":"markb" "timestamp":"1603167689.3928561"}}
-
-# Response to request for **`all`** messages.
 {"response": {"type": "ok", "messages": [{"message":"Hello User 1!", "from":"markb" "timestamp":"1603167689.3928561"},{"message":"Bzzzzz", "from":"thebeemoviescript" "timestamp":"1603167689.3928561"}]}}
 ```
 
