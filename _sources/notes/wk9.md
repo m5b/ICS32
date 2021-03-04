@@ -141,7 +141,7 @@ self.body.reset_ui()
 ```
 We can test that our code works by printing out the keypair to the shell:
 ```python3
-print(**`self._current_profile.keypair`**)
+**`print(self._current_profile.keypair)`**
 ```
 And that's it! Not so bad, right?
 
@@ -161,7 +161,7 @@ self._current_profile.load_profile(self._profile_filename)
 self._current_profile.import_keypair(self._current_profile.keypair)
 ```
 
-2. Next we need to add our profile data to the UI. So we reset the UI just as with the new_profile method, and then send all exisiting posts to the set_posts method:
+2. Next we need to add our profile data to the UI. So we reset the UI just as with the new_profile method, and then send all existing posts to the set_posts method:
 
 ```python3
 self.body.set_posts(self._current_profile.get_posts())

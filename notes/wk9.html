@@ -477,7 +477,7 @@
 </pre></div>
 </div>
 <p>We can test that our code works by printing out the keypair to the shell:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>print(**`self._current_profile.keypair`**)
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>**`print(self._current_profile.keypair)`**
 </pre></div>
 </div>
 <p>And that’s it! Not so bad, right?</p>
@@ -498,7 +498,7 @@
 </pre></div>
 </div>
 <ol class="simple">
-<li><p>Next we need to add our profile data to the UI. So we reset the UI just as with the new_profile method, and then send all exisiting posts to the set_posts method:</p></li>
+<li><p>Next we need to add our profile data to the UI. So we reset the UI just as with the new_profile method, and then send all existing posts to the set_posts method:</p></li>
 </ol>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">set_posts</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">get_posts</span><span class="p">())</span>
 </pre></div>
