@@ -122,7 +122,7 @@ Use of try/except
 
 Commenting and Documentation 
 : Your overall final program should contain sufficient code comments for a new programmer to be able to understand what your code does.
-: All methods and classes in your **`ds_messenger`** module _must_ adhere to the reStructuredText (reST) docstring format. You will be required to generate your own module documentation in HTML format and submit alongside your program. All HTML documention should be placed in a **`doc`** folder located at the root of you main program directory.
+: All methods and classes in your **`ds_messenger`** module _must_ adhere to the reStructuredText (reST) docstring format. You will be required to generate your own module documentation in HTML format and submit alongside your program. All HTML documention should be placed in a **`doc`** folder located at the root of you main program directory. You can learn more about the format and tool at the [pdoc project page](https://pdoc3.github.io/pdoc/)
 
 Function
 : Your program must work. Functionality of your program will be assessed in two ways. First, a user should be able to run your program and send and receive direct messages with a DS server. Second, your **`ds_messenger.py`** module must work outsider of your main program. We will use a validity checker program for grading that imports your module and makes calls on the required classes and methods.
