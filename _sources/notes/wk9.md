@@ -29,6 +29,13 @@ In the discussion for this week, we discussed:
 
 [Week 9 Recording](https://uci.yuja.com/V/Video?v=2721695&node=9695839&a=857146068&autoplay=1)
 
+In live class on Thursday, we discussed:
+: QA for Assignment 5
+: How to create documentation for Final Project (starts around the 20 min mark)
+: Final Project demo and discussion
+
+[Week 9 Thursday Recording](https://uci.yuja.com/V/Video?v=2732124&node=9715729&a=1869060719&autoplay=1)
+
 (lectures:assignment5)=
 
 ### Notes on Completing Assignment 5
