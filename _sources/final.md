@@ -34,9 +34,9 @@ Update 2/27:
 
 class DirectMessage:
   def __init__(self):
-    recipient = None
-    message = None
-    timestamp = None
+    self.recipient = None
+    self.message = None
+    self.timestamp = None
 
 
 class DirectMessenger:
