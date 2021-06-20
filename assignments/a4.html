@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 4: Encrypting the Platform &#8212; ICS 32 Winter 2021</title>
+    <title>Assignment 4: A Graphical User Interface &#8212; ICS 32 Summer 1 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 5: A Graphical User Interface" href="a5.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
     <link rel="prev" title="Assignment 3: Extending the Platform" href="a3.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +77,7 @@
   <img src="../_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Winter 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -123,11 +123,6 @@
    Assignment 4
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a5.html">
-   Assignment 5
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -138,51 +133,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk6.html">
-   Week 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk7.html">
-   Week 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk8.html">
-   Week 8
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk9.html">
-   Week 9
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk10.html">
-   Week 10
   </a>
  </li>
 </ul>
@@ -290,35 +240,45 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-1">
-     Part 1
+    <a class="reference internal nav-link" href="#extra-credit">
+     Extra Credit
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#installing-the-pynacl-package">
-       Installing the PyNaCl Package
+      <a class="reference internal nav-link" href="#add-title-support-for-posts">
+       Add title support for posts
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#prepare-your-environment">
-       Prepare your Environment
+      <a class="reference internal nav-link" href="#add-settings-menu-item-and-interface">
+       Add settings menu item and interface
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-a-quick-button-toolbar-for-keywords">
+       Add a quick button toolbar for keywords
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-a-bio-menu-item-and-editor">
+       Add a bio menu item and editor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-support-for-post-editing">
+       Add support for post editing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-support-for-dsu-server-location-editing">
+       Add support for DSU server location editing
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-2">
-     Part 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-3">
-     Part 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extra-credit">
-     Extra Credit
+    <a class="reference internal nav-link" href="#submitting">
+     Submitting
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -339,319 +299,124 @@
         
               <div>
                 
-  <div class="section" id="assignment-4-encrypting-the-platform">
-<h1>Assignment 4: Encrypting the Platform<a class="headerlink" href="#assignment-4-encrypting-the-platform" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="assignment-4-a-graphical-user-interface">
+<h1>Assignment 4: A Graphical User Interface<a class="headerlink" href="#assignment-4-a-graphical-user-interface" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>When working with 3rd party platforms, changes can occur that break backwards compatibility with the programs we create. An organization might decide to move in a new direction, fix a critical security flaw, or change system behavior. When these types of breaking changes occur, the systems and services that consume 3rd party platforms are responsible for updating their code to ensure future compatibility.</p>
-<p>For the past two months, partnering organizations (e.g., ICS 32 students :) ) have been raising concerns over the poor security and privacy of the ICS 32 Distributed Social platform. In response to the concerns raised by its partners, the ICS32 Distributed Social organization has implemented a new authentication scheme. Rather than rely on a user name and password, users will now be required to supply an <a class="reference external" href="https://ed25519.cr.yp.to/">ed25519</a> public-key with each message. Additionally, all messages sent to the server must be encrypted with the DS server’s public key.</p>
-<p>So for this assignment you will need to update your program to support the new authentication process for the DS server.</p>
+<p>So we have finally arrived at the end. Over the course of the last four assignments you have built, from the ground up, a feature rich program in Python. The code that you have written enables a person to write personal journal entries, publish entries to an online server, enrich journal entries with data from web API’s, and encrypt journal data to keep it secure. Now it’s time to bring all of these features together by moving them from the command line to the windowed world of the graphical user interface.</p>
+<p>For this assignment we will be using the Tkinter graphical toolkit to build a Graphical User Interface or GUI (like gooey) for the ICS 32 Distributed Social program.</p>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Subclass the Profile class in your DS program to support encryption and public key authentication.</p></li>
-<li><p>Read and understand documentation for a 3rd party library.</p></li>
-<li><p>Update your DS program to communicate with the new DS Server.</p></li>
+<li><p>Modify and extend the ICS 32 DS Demo Tkinter interface.</p></li>
+<li><p>Integrate existing code with Tkinter widgets.</p></li>
+<li><p>Modify and update Tkinter widgets to display program information to a user.</p></li>
 </ul>
 </div>
 <div class="section" id="learning-goals">
 <h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use inheritance to extend class functionality</p></li>
-<li><p>Install and use of 3rd party libraries</p></li>
-<li><p>Solidify understanding of modules and classes in Python</p></li>
+<li><p>Learn how to build basic Graphical User Interfaces with Tkinter and Python.</p></li>
+<li><p>Write event handlers and callback functions.</p></li>
+<li><p>Structure and organize a GUI program with classes.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<p>The ICS32 Distributed Social organization has decided to implement the <a class="reference external" href="https://nacl.cr.yp.to/">NaCl</a> networking and encryption library to help strengthen the security of its social messaging platform. Rather than implement the NaCl specification directly, the DS org will use a 3rd party library that is already written in Python called <a class="reference external" href="https://github.com/pyca/pynacl">PyNaCl</a>. The PyNaCl library supports the use of public key encryption using public and private keys. The following diagram depicts the basic process for using public and private keys to encrypt and decrypt data.</p>
-<p><img alt="encryption1" src="../_images/enc_ex1.png" /></p>
-<p>You can think of the role of public and private keys in public key encryption like a username and password. While it is safe to share a public key (username), you would never want to share a private key (password). When both public and private keys are combined, the public key encryption algorithm will use them to encrypt data into a format that can only be decrypted with the same public and private keys. This is the method you will use to add encryption to all posts entries and bio stored in your programs <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file.</p>
-<p>However, since we still want our messages to be readable from the DS website, we will also need to add support for encrypting our post information using a key that the DS server can use to decrypt messages. Fortunately, this process is nearly identical to what you will use for local encryption to your <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file. The following diagram depicts the basic process for using public and private keys to share encrypted data.</p>
-<p><img alt="encryption2" src="../_images/enc_ex2.png" /></p>
-<p>Rather than encrypt a message using a public key that we create, we encrypt using the public key of the source where we want to share our message. This means that we need a way to exchange public keys with the DS server. To keep things as consistent as possible, the DS organization has modified the <strong><code class="docutils literal notranslate"><span class="pre">token</span></code></strong> key used by its protocol to store the public encryption keys exchanged between client programs and the server. But more on this change a little bit later.</p>
-<p>Your final program will contain the following new modules:</p>
-<ol class="simple">
-<li><p>NaClDSEncoder.py: A helper module provided for you, complete.</p></li>
-<li><p>NaClProfile.py: A template class provided for you, incomplete.</p></li>
-<li><p>a4.py: The main entry point to your program. You may continue to migrate your code from a2.py and a3.py or you start fresh. If you do start fresh, you will still need to make use of the code you have written to send messages to the DS server.</p></li>
-</ol>
-<p>To prepare your ICS32 DS program for network communication using NaCl, there are a number of tasks you must complete. They have been divided into individual parts below to help you prioritize your program requirements.</p>
-<div class="section" id="part-1">
-<h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="installing-the-pynacl-package">
-<h4>Installing the PyNaCl Package<a class="headerlink" href="#installing-the-pynacl-package" title="Permalink to this headline">¶</a></h4>
-<p>The first thing you will need to do is install the PyNaCl package to your instance of Python:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pynacl</span>
-</pre></div>
-</div>
-<p>If all goes well, you should see a message that is similar to “Successfully installed pynacl-1.4.0”. To verify that the package was installed, open up your Python shell and type:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">nacl</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></div>
-</div>
-<p>If you receive any response other than a new line of input, it’s likely that pip installed the package to a different version of Python. Check your messages and make sure that you are testing the package in the same instance of the Python shell as where you installed the package.</p>
-</div>
-<div class="section" id="prepare-your-environment">
-<h4>Prepare your Environment<a class="headerlink" href="#prepare-your-environment" title="Permalink to this headline">¶</a></h4>
-<p>Thankfully, the DS org has released a module to abstract away some of the steps required to interact with their new encrypted platform. So the next thing you will want to do is download the module and test it.</p>
-<p><a class="reference external" href="https://ics32.markbaldw.in/resources/NaClDSEncoder.py">ICS32 Distributed Social NaCl Encoder</a></p>
-<p>A simple test is included in the following snippet, you are free to use it to validate that your environment is properly configured. You may also find the use of the <strong><code class="docutils literal notranslate"><span class="pre">NaClDSEncoder</span></code></strong> class in the test class a useful reference for your assignment code.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NaClDSEncoder_test.py</span>
-<span class="c1"># Simple test harness for the NaClDSEncoder class</span>
-<span class="c1"># </span>
-<span class="c1"># ICS 32</span>
-<span class="c1"># Mark S. Baldwin</span>
-
-<span class="kn">import</span> <span class="nn">unittest</span>
-<span class="kn">from</span> <span class="nn">NaClDSEncoder</span> <span class="kn">import</span> <span class="n">NaClDSEncoder</span>
-<span class="kn">from</span> <span class="nn">nacl.public</span> <span class="kn">import</span> <span class="n">PrivateKey</span><span class="p">,</span> <span class="n">PublicKey</span><span class="p">,</span> <span class="n">Box</span>
-
-<span class="k">class</span> <span class="nc">TestNaClDSEncoder</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">test_generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># create an NaClDSEncoder object</span>
-        <span class="n">nacl_enc</span> <span class="o">=</span> <span class="n">NaClDSEncoder</span><span class="p">()</span>
-        <span class="c1"># generate new keys</span>
-        <span class="n">nacl_enc</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
-
-        <span class="c1"># typically in a unittest printing this way is unnecessary</span>
-        <span class="c1"># including here for demonstration purposes...</span>
-        <span class="c1"># use print to display the keys, notice how the keypair is </span>
-        <span class="c1"># just the public and private keys combined.</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;keypair: </span><span class="si">{</span><span class="n">nacl_enc</span><span class="o">.</span><span class="n">keypair</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;public key: </span><span class="si">{</span><span class="n">nacl_enc</span><span class="o">.</span><span class="n">public_key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;private key: </span><span class="si">{</span><span class="n">nacl_enc</span><span class="o">.</span><span class="n">private_key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nacl_enc</span><span class="o">.</span><span class="n">keypair</span><span class="p">),</span> <span class="mi">88</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">nacl_enc</span><span class="o">.</span><span class="n">public_key</span><span class="p">,</span> <span class="n">nacl_enc</span><span class="o">.</span><span class="n">keypair</span><span class="p">[:</span><span class="mi">44</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">nacl_enc</span><span class="o">.</span><span class="n">private_key</span><span class="p">,</span> <span class="n">nacl_enc</span><span class="o">.</span><span class="n">keypair</span><span class="p">[</span><span class="mi">44</span><span class="p">:])</span>
-    
-    <span class="k">def</span> <span class="nf">test_encode_public</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Use the NaClDSEncoder to create new keys</span>
-        <span class="n">test_keys</span> <span class="o">=</span> <span class="n">NaClDSEncoder</span><span class="p">()</span>
-        <span class="n">test_keys</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
-
-        <span class="c1"># Test the NaClDSEncoder using the test_keys</span>
-        <span class="n">nacl_enc</span> <span class="o">=</span> <span class="n">NaClDSEncoder</span><span class="p">()</span>
-        <span class="n">pkey</span> <span class="o">=</span> <span class="n">nacl_enc</span><span class="o">.</span><span class="n">encode_public_key</span><span class="p">(</span><span class="n">test_keys</span><span class="o">.</span><span class="n">public_key</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">pkey</span><span class="p">),</span> <span class="n">PublicKey</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">test_encode_private</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Use the NaClDSEncoder to create new keys</span>
-        <span class="n">test_keys</span> <span class="o">=</span> <span class="n">NaClDSEncoder</span><span class="p">()</span>
-        <span class="n">test_keys</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
-
-        <span class="c1"># Test the NaClDSEncoder using the test_keys</span>
-        <span class="n">nacl_enc</span> <span class="o">=</span> <span class="n">NaClDSEncoder</span><span class="p">()</span>
-        <span class="n">prvkey</span> <span class="o">=</span> <span class="n">nacl_enc</span><span class="o">.</span><span class="n">encode_private_key</span><span class="p">(</span><span class="n">test_keys</span><span class="o">.</span><span class="n">private_key</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">prvkey</span><span class="p">),</span> <span class="n">PrivateKey</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>If you have everything set up properly, you should see some output that will look similar to the following (NOTE: your values will be different every time you run the <strong><code class="docutils literal notranslate"><span class="pre">generate()</span></code></strong> function!):</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">..</span>
-
-<span class="n">keypair</span><span class="p">:</span> <span class="n">ziq0wkuDE0n0i</span><span class="o">+</span><span class="n">SFBtTEE1w9y</span><span class="o">/</span><span class="n">gG9C19NuAE8b8d</span><span class="o">/</span><span class="n">Qo</span><span class="o">=</span><span class="mi">8</span><span class="n">ldBMVgC8QkOPl9nBKikIc</span><span class="o">+</span><span class="n">fLxUCuadqfAOXl90MoiA</span><span class="o">=</span>
-<span class="n">public</span> <span class="n">key</span><span class="p">:</span> <span class="n">ziq0wkuDE0n0i</span><span class="o">+</span><span class="n">SFBtTEE1w9y</span><span class="o">/</span><span class="n">gG9C19NuAE8b8d</span><span class="o">/</span><span class="n">Qo</span><span class="o">=</span>
-<span class="n">private</span> <span class="n">key</span><span class="p">:</span> <span class="mi">8</span><span class="n">ldBMVgC8QkOPl9nBKikIc</span><span class="o">+</span><span class="n">fLxUCuadqfAOXl90MoiA</span><span class="o">=</span>
-<span class="o">.</span>
-<span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">3</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
-
-<span class="n">OK</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="part-2">
-<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>For part 2, you will need to write a new class to handle the new encryption policies required by the DS org. Since the DS server will now expect your program to authenticate with a public key and send posts that have been encrypted using the DS public key, you are going to need to rethink the way your current program works. Fortunately, the Profile module that you have been using in your DS program, is still quite useful. Therefore, the best course of action is probably to subclass the Profile class. To help you with this task, you will use the following skeleton to get started:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Install the pynacl library so that the following modules are available</span>
-<span class="c1"># to your program.</span>
-<span class="kn">import</span> <span class="nn">nacl.utils</span>
-<span class="kn">from</span> <span class="nn">nacl.public</span> <span class="kn">import</span> <span class="n">PrivateKey</span><span class="p">,</span> <span class="n">PublicKey</span><span class="p">,</span> <span class="n">Box</span>
-
-<span class="c1"># TODO: Import the Profile and Post classes</span>
-<span class="c1"># TODO: Import the NaClDSEncoder module</span>
-    
-<span class="c1"># TODO: Subclass the Profile class</span>
-<span class="k">class</span> <span class="nc">NaClProfile</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        TODO: Complete the initializer method. Your initializer should create the follow three </span>
-<span class="sd">        public data attributes:</span>
-
-<span class="sd">        public_key:str</span>
-<span class="sd">        private_key:str</span>
-<span class="sd">        keypair:str</span>
-
-<span class="sd">        Whether you include them in your parameter list is up to you. Your decision will frame </span>
-<span class="sd">        how you expect your class to be used though, so think it through.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
-
-    <span class="k">def</span> <span class="nf">generate_keypair</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates a new public encryption key using NaClDSEncoder.</span>
-
-<span class="sd">        TODO: Complete the generate_keypair method.</span>
-
-<span class="sd">        This method should use the NaClDSEncoder module to generate a new keypair and populate</span>
-<span class="sd">        the public data attributes created in the initializer.</span>
-
-<span class="sd">        :return: str    </span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
-
-    <span class="k">def</span> <span class="nf">import_keypair</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keypair</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Imports an existing keypair. Useful when keeping encryption keys in a location other than the</span>
-<span class="sd">        dsu file created by this class.</span>
-
-<span class="sd">        TODO: Complete the import_keypair method.</span>
-
-<span class="sd">        This method should use the keypair parameter to populate the public data attributes created by</span>
-<span class="sd">        the initializer. </span>
-<span class="sd">        </span>
-<span class="sd">        NOTE: you can determine how to split a keypair by comparing the associated data attributes generated</span>
-<span class="sd">        by the NaClDSEncoder</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
-
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    TODO: Override the add_post method to encrypt post entries.</span>
-
-<span class="sd">    Before a post is added to the profile, it should be encrypted. Remember to take advantage of the</span>
-<span class="sd">    code that is already written in the parent class.</span>
-
-<span class="sd">    NOTE: To call the method you are overriding as it exists in the parent class, you can use the built-in super keyword:</span>
-<span class="sd">    </span>
-<span class="sd">    super().add_post(...)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    TODO: Override the get_posts method to decrypt post entries.</span>
-
-<span class="sd">    Since posts will be encrypted when the add_post method is used, you will need to ensure they are </span>
-<span class="sd">    decrypted before returning them to the calling code.</span>
-
-<span class="sd">    :return: Post</span>
-<span class="sd">    </span>
-<span class="sd">    NOTE: To call the method you are overriding as it exists in the parent class you can use the built-in super keyword:</span>
-<span class="sd">    super().get_posts()</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    TODO: Override the load_profile method to add support for storing a keypair.</span>
-
-<span class="sd">    Since the DS Server is now making use of encryption keys rather than username/password attributes, you will </span>
-<span class="sd">    need to add support for storing a keypair in a dsu file. The best way to do this is to override the </span>
-<span class="sd">    load_profile module and add any new attributes you wish to support.</span>
-
-<span class="sd">    NOTE: The Profile class implementation of load_profile contains everything you need to complete this TODO. Just add</span>
-<span class="sd">    support for your new attributes.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">encrypt_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">public_key</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Used to encrypt messages using a 3rd party public key, such as the one that</span>
-<span class="sd">        the DS server provides.</span>
-
-<span class="sd">        TODO: Complete the encrypt_entry method.</span>
-
-<span class="sd">        NOTE: A good design approach might be to create private encrypt and decrypt methods that your add_post, </span>
-<span class="sd">        get_posts and this method can call.</span>
-<span class="sd">        </span>
-<span class="sd">        :return: bytes </span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
-</pre></div>
-</div>
-<p>You can also download the <a class="reference external" href="https://ics32.markbaldw.in/resources/NaClProfile.py">code directly if you prefer</a>.</p>
-<p>Since we will be required to send encrypted messages to the new DS server, we might as well add support for local encryption as well to prevent unwanted parties from reading our journal entries. Therefore, in this class you will extend the Profile module to not only encrypt messages that will be sent to the DS server, but also messages stored in the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file.</p>
-<p>The comments in the skeleton code will provide you with some guidance on what you need to do. In addition to the incomplete methods, you will also need to override two methods from the Profile class. If done correctly, all of your new data attributes as well as your encrypted messages will be saved to the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file passed to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method, without having to change anything else!</p>
-<p>To learn how to encrypt and decrypt information using a keypair, you will need to consult the documentation for the module. The <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/">main page for the docs</a> is a good place to start if you want to learn more about PyNaCl. However, since you are only required to implement a small portion of the overall PyNaCl module, you may find the examples on the <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/public/#examples">Public Key Encryption</a> page to be the most helpful. Feel free to discuss your findings on Zulip with your classmates.</p>
-<p>Once your new <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> subclass has been completed, you can validate it by running the following program:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Profile</span> <span class="kn">import</span> <span class="n">Profile</span><span class="p">,</span> <span class="n">Post</span>
-<span class="kn">from</span> <span class="nn">NaClProfile</span> <span class="kn">import</span> <span class="n">NaClProfile</span>
-
-<span class="n">np</span> <span class="o">=</span> <span class="n">NaClProfile</span><span class="p">()</span>
-<span class="n">kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">generate_keypair</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">public_key</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">private_key</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">keypair</span><span class="p">)</span>
-
-<span class="c1"># Test encryption with 3rd party public key</span>
-<span class="n">ds_pubkey</span> <span class="o">=</span> <span class="s2">&quot;jIqYIh2EDibk84rTp0yJcghTPxMWjtrt5NW4yPZk3Cw=&quot;</span>
-<span class="n">ee</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">encrypt_entry</span><span class="p">(</span><span class="s2">&quot;Encrypted Message for DS Server&quot;</span><span class="p">,</span> <span class="n">ds_pubkey</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ee</span><span class="p">)</span>
-
-<span class="c1"># Add a post to the profile and check that it is decrypted.</span>
-<span class="n">np</span><span class="o">.</span><span class="n">add_post</span><span class="p">(</span><span class="n">Post</span><span class="p">(</span><span class="s2">&quot;Hello Salted World!&quot;</span><span class="p">))</span>
-<span class="n">p_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">get_posts</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_entry</span><span class="p">())</span>
-
-<span class="c1"># Save the profile</span>
-<span class="n">np</span><span class="o">.</span><span class="n">save_profile</span><span class="p">(</span><span class="n">PATH</span><span class="o">/</span><span class="n">TO</span><span class="o">/</span><span class="n">DSU</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Open DSU file to check if message is encrypted.&quot;</span><span class="p">)</span>
-<span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press Enter to Continue&quot;</span><span class="p">)</span>
-
-<span class="c1"># Create a new NaClProfile object and load the dsu file.</span>
-<span class="n">np2</span> <span class="o">=</span> <span class="n">NaClProfile</span><span class="p">()</span>
-<span class="n">np2</span><span class="o">.</span><span class="n">load_profile</span><span class="p">(</span><span class="n">PATH</span><span class="o">/</span><span class="n">TO</span><span class="o">/</span><span class="n">DSU</span><span class="p">)</span>
-<span class="c1"># Import the keys</span>
-<span class="n">np2</span><span class="o">.</span><span class="n">import_keypair</span><span class="p">(</span><span class="n">kp</span><span class="p">)</span>
-
-<span class="c1"># Verify the post decrypts properly</span>
-<span class="n">p_list</span> <span class="o">=</span> <span class="n">np2</span><span class="o">.</span><span class="n">get_posts</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_entry</span><span class="p">())</span>
-</pre></div>
-</div>
-<p>Just remember that once post entries have been encrypted with a keypair, they can <strong>only</strong> be decrypted with the same keypair!</p>
-</div>
-<div class="section" id="part-3">
-<h3>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">¶</a></h3>
-<p>For the final part of this assignment, you will need to make sure your new authentication and encryption interface works with the udpated DS Server. There have been a few changes to the DS Server.</p>
-<p><del>First, it is no longer running at the previous URL. A new URL will be provided via Slack.</del> This information is no longer relevant. Continue using the same server/port that you have been using all quarter.</p>
-<p>Second, you will receive a slightly revised response message:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># join as existing or new user</span>
-<span class="p">{</span><span class="s2">&quot;join&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span><span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123&quot;</span><span class="p">,</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;my_public_key&quot;</span><span class="p">}}</span>
-</pre></div>
-</div>
-<p>You might recall from previous assignments, the token key was not used during join requests with the DS server. With the new public key encryption in place, you must now perform a join request using a public key that you have generated. The DS server will then use this public key to decrypt all of the messages that you send moving forward.</p>
-<p>You will also need to slightly adjust the way in which you use the <strong><code class="docutils literal notranslate"><span class="pre">token</span></code></strong> value that you receive from the DS Server. Under the rules of the non-encrypted DS server you were required to send the token you received from the server in all of your messages. Now, rather than send back the server token, you will send <strong>your public key</strong> as the value of the token key.</p>
+<p>For this assignment you will be given a mostly functional Tkinter program framework to get you started. Learning graphical toolkits is a big undertaking that is typically filled with a lot of trial and error. We could spend an entire quarter mastering the Tkinter toolkit if we so desired. So, rather than get bogged down attempting to work through all of the nuances of getting a Tkinter GUI to function the way we want, you will be spending your remaining time in this class extending an existing program that already works pretty well. The following image depicts the ICS 32 DS program in it’s default state with a DSU file loaded.</p>
+<p><img alt="dsugui" src="../_images/ics32dsu_gui.png" /></p>
+<p>However, the version that is available for you, does not yet have the features required to get to the state pictured. To make this program fully functional, you will have to download the template and complete all of the TODO items described in the code.</p>
+<p><a href="../resources/DistributedSocialGUI.py">The Distributed Social GUI Starter Code</a></p>
+<p>To get a better understanding of how this program was built, watch the lecture and walkthrough posted in the weekly notes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The token key in DS Protocol messages should be used to store the value of your public encryption key.</p>
-</div>
-<p>Finally, the only thing we are missing is a public key from the DS server. When you successfully join the server your response will now contain the public key used by the server to decrypt your messages:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;server_public_key&quot;</span><span class="p">}}</span>
-</pre></div>
-</div>
-<p>So rather than return this response token to the server like you did in previous assignments, you will now need to store this value in your program somewhere and use it to encrypt your messages before sending. The <strong><code class="docutils literal notranslate"><span class="pre">encrypted_entry</span></code></strong> function that is part of the <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong> skeleton class is designed to support this requirement.</p>
-<p>If you have implemented your <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong> class and modified your communication with the DS Server successfully, your program should continue to work as expected, just a little more secure.</p>
+<p>There is a lecture on Tkinter in the weekly notes page that covers the process for building this program, as well as some of the aspects of Tkinter you will need to know to complete the assignment.</p>
 </div>
 <div class="section" id="extra-credit">
 <h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>There is no extra credit for this assignment.</p>
+<p>For this final assignment in ICS32 you will have the opportunity to receive up to 3 extra credit points. To receive a signal extra credit point you must add at least one of the following features to your Tkinter GUI. You may <strong>add up to 3</strong> features for extra credit.</p>
+<ol class="simple">
+<li><p>Add title support for posts.</p></li>
+<li><p>Add a settings menu item and interface for encryption key management.</p></li>
+<li><p>Add a toolbar with quick buttons to insert your API keywords into the editor.</p></li>
+<li><p>Add a bio menu item and interface for editing the user bio.</p></li>
+<li><p>Add support for editing existing posts.</p></li>
+<li><p>Add support for editing the location of the DSU server.</p></li>
+<li><p>Add a custom feature (must complete at least one of the above first).</p></li>
+</ol>
+<div class="section" id="add-title-support-for-posts">
+<h4>Add title support for posts<a class="headerlink" href="#add-title-support-for-posts" title="Permalink to this headline">¶</a></h4>
+<p>Currently, the GUI for the ICS 32 DS program extracts the titles for the post tree viewer from the first few characters of the post. It might be nice to provide users with the ability to write a proper title for each post and use that in the post tree viewer as well. To accomplish this feature a couple of changes must happen:</p>
+<ol class="simple">
+<li><p>The Profile and Post classes must be updated to include an additional title attribute.</p></li>
+<li><p>The GUI must be modified to support text editing for the title.</p></li>
+<li><p>The post tree viewer widget must be updated to display post titles.</p></li>
+</ol>
+</div>
+<div class="section" id="add-settings-menu-item-and-interface">
+<h4>Add settings menu item and interface<a class="headerlink" href="#add-settings-menu-item-and-interface" title="Permalink to this headline">¶</a></h4>
+<p>Without encryption keys, all post entries saved in a DSU file can never be decrypted. So if something were to happen to these keys, a user would never be able to recover their writing! Given the importance of these encryption keys, some users may want to keep a backup of them somewhere outside of the ICS 32 DS program. To support this, you will need to create a settings window that gives the user access to these keys. This feature will require the following changes to be made:</p>
+<ol class="simple">
+<li><p>Add a new ‘settings’ item to the menu.</p></li>
+<li><p>Open a new window when the settings item is clicked.</p></li>
+<li><p>Display current keys in the settings window.</p></li>
+<li><p>Add a Tkinter Text or Entry widget to allow the user to change their keys.</p></li>
+<li><p>Add a Tkinter button to save and close the settings window.</p></li>
+<li><p>Save edited keys to the DSU file.</p></li>
+</ol>
+</div>
+<div class="section" id="add-a-quick-button-toolbar-for-keywords">
+<h4>Add a quick button toolbar for keywords<a class="headerlink" href="#add-a-quick-button-toolbar-for-keywords" title="Permalink to this headline">¶</a></h4>
+<p>In assignment 3, you introduced support for adding content from 3rd party API’s to your assignments. For this feature, you will add Tkinter buttons that insert your API data into the post entry editor. To complete this feature you will need to:</p>
+<ol class="simple">
+<li><p>Add buttons to the GUI. You may either add them in the footer frame between the status label and online checkbox, create a new ‘Toolbar’ frame class and add it above the entry editor, or add a new menu dropdown with menu items for your keywords.</p></li>
+<li><p>You must implement the &#64;weather feature, but you may also want to include any additional API keywords you created for assignment 3.</p></li>
+<li><p>When a keyword is selected, the API data should be placed at the position of the cursor in the entry editor window.</p></li>
+</ol>
+</div>
+<div class="section" id="add-a-bio-menu-item-and-editor">
+<h4>Add a bio menu item and editor<a class="headerlink" href="#add-a-bio-menu-item-and-editor" title="Permalink to this headline">¶</a></h4>
+<p>This feature adds support for viewing and editing the profile bio. (HINT: This feature pairs nicely with feature 2 in terms of the type and organization of code you will need to write).</p>
+<ol class="simple">
+<li><p>Add a new ‘bio’ item to the menu.</p></li>
+<li><p>Open a new window when the bio item is clicked.</p></li>
+<li><p>Display current bio in the bio window.</p></li>
+<li><p>Add a Tkinter Text or Entry widget to allow the user to change their bio.</p></li>
+<li><p>Add a Tkinter button to save and close the bio window.</p></li>
+<li><p>Save edited bio to the DSU file.</p></li>
+</ol>
+</div>
+<div class="section" id="add-support-for-post-editing">
+<h4>Add support for post editing<a class="headerlink" href="#add-support-for-post-editing" title="Permalink to this headline">¶</a></h4>
+<p>Currently, the post editor only adds new posts. When the Save Post button is clicked, whatever content is in the entry editor widget will be saved as a new post. A more realistic way of using this program would be to allow a user to also edit their post. There are a number of ways to go about adding this feature, here are a two:</p>
+<ol class="simple">
+<li><p>Detect when an existing post has been selected and edited and change the operation of the Save Post click event to update rather than add when appropriate.</p></li>
+<li><p>Add new buttons to perform different operations. An ‘edit’ button, for example, would update a post. Whereas a ‘new’ button would add a post.</p></li>
+</ol>
+</div>
+<div class="section" id="add-support-for-dsu-server-location-editing">
+<h4>Add support for DSU server location editing<a class="headerlink" href="#add-support-for-dsu-server-location-editing" title="Permalink to this headline">¶</a></h4>
+<p>The current implementation of the program requires you to hard code in the URL for the DSU server. However, servers come and go, and in the future your users may want to move their posts to a new location. So for this feature you will be required to add a text entry widget that allows your user to edit the URL of the DSU server. (HINT: This feature pairs nicely with feature 2 and 4 in terms of the type and organization of code you will need to write).</p>
+<ol class="simple">
+<li><p>Add a new ‘server’ item to the menu.</p></li>
+<li><p>Open a new window when the server item is clicked.</p></li>
+<li><p>Display current server URL in the server window.</p></li>
+<li><p>Add a Tkinter Text or Entry widget to allow the user to change their server.</p></li>
+<li><p>Add a Tkinter button to save and close the server window.</p></li>
+<li><p>Save edited server URL to the DSU file.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="submitting">
+<h3>Submitting<a class="headerlink" href="#submitting" title="Permalink to this headline">¶</a></h3>
+<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong>. If you complete any of the extra credit items, be sure to add a README file that describes exactly which features you implemented. You can include the README in your zipped submission, but YOU MUST ALSO LEAVE A COMMENT IN CANVAS ON YOUR SUBMISSION THAT INDICATES YOU HAVE EXTRA CREDIT FEATURES IN YOUR PROGRAM. Failure to leave a comment means that we may not notice the extra credit features when grading.</p>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>To grade this assignment we will be evaluating the functionality of your <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong> class, modifications to your <strong><code class="docutils literal notranslate"><span class="pre">ds_client</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol</span></code></strong> classes to support encrypted messaging with the DS Server, and successful operation of your <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong> program.</p>
-<p>This assignment will be graded on a 12-point scale, with the 12 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>This assignment will be graded on a 15-point scale, with the 15 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <dl class="simple myst">
-<dt>Requirements and Function | 9 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
-</dd>
-<dd><p>Does the program make use of the required 3rd Party module?</p>
-</dd>
-<dd><p>Does the NaClProfile module function properly?</p>
+<dt>Requirements and Function | 12 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
@@ -659,8 +424,14 @@
 </dd>
 <dd><p>Is the code clearly documented?</p>
 </dd>
+<dt>Extra Credit | 3 pts</dt><dd><p>Is one extra credit feature implemented and functioning as intended? 1 pt</p>
+</dd>
+<dd><p>Is a second extra credit feature implemented and functioning as intended? 1 pt</p>
+</dd>
+<dd><p>Is a third extra credit feature implemented and functioning as intended? 1 pt</p>
+</dd>
 </dl>
-<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will continue increasing the strictness of our stance on quality and design than we have in previous assignments.</p>
+<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will be taking a much stricter stance on quality and design than we have in previous assignments.</p>
 </div>
 </div>
 </div>
@@ -694,7 +465,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="a3.html" title="previous page">Assignment 3: Extending the Platform</a>
-    <a class='right-next' id="next-link" href="a5.html" title="next page">Assignment 5: A Graphical User Interface</a>
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

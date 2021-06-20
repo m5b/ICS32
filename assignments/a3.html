@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 3: Extending the Platform &#8212; ICS 32 Winter 2021</title>
+    <title>Assignment 3: Extending the Platform &#8212; ICS 32 Summer 1 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 4: Encrypting the Platform" href="a4.html" />
+    <link rel="next" title="Assignment 4: A Graphical User Interface" href="a4.html" />
     <link rel="prev" title="Assignment 2: Chatting with Friends" href="a2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +77,7 @@
   <img src="../_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Winter 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -123,11 +123,6 @@
    Assignment 4
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a5.html">
-   Assignment 5
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -138,51 +133,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk6.html">
-   Week 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk7.html">
-   Week 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk8.html">
-   Week 8
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk9.html">
-   Week 9
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk10.html">
-   Week 10
   </a>
  </li>
 </ul>
@@ -271,57 +221,6 @@
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary-of-program-requirements">
-     Summary of Program Requirements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-goals">
-     Learning Goals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-requirements">
-   Program Requirements
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-1">
-     Part 1
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#connecting-to-the-openweather-api">
-       Connecting to the OpenWeather API
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#connect-to-the-last-fm-api">
-       Connect to the Last.FM API
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-2">
-     Part 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extra-credit">
-     Extra Credit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
-     How we will grade your submission
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -340,198 +239,9 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>In assignment 2, you learned how to write a program that connects to and shares information with a program running on another computer. The systems we write programs for today are almost always connected to other computers in some capacity. Whether it is your computer operating system sending data back to its creator, your web browser automatically downloading updates, or you reaching out to friends and family for a video chat, nearly all the programs we use today rely on networked communication to extend their capabilities.</p>
 <p>While your Distributed Social (DS) program has the ability to accept, store, and distribute information written by your users, it doesn’t yet take advantage of the vast wealth of information available to networked programs today. So for this assignment we are going to be extending the DS platform by adding some new features for the users of your program.</p>
-<p>You have probably noticed how in programs like Slack, Discord, and Facebook Messenger, keywords can be entered into chat conversations that trigger some sort of automatic inclusion or formatting. In Computer Science, this process is called <strong>transclusion</strong>, which basically refers to the process of using a linking syntax to connect or include content from one source into the content of another. For this assignment, you will be enhancing the post writing feature you created in assignment 2 by adding support for keyword transclusion.</p>
-<p>By now, you should have had a chance to digest some of the core principles of networked communication. You have learned about protocols, sockets, and request/response communication with a server. Your work for assignment 3 will focus on locking in these concepts as well as exploring some new ones.</p>
-<div class="section" id="summary-of-program-requirements">
-<h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Connect to and retrieve data from at least 2 web API’s using Python’s <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong> module.</p></li>
-<li><p>Use transclusion to parse and replace keywords in a journal entry with content from web API’s.</p></li>
-<li><p>Write classes to manage your APIs.</p></li>
-</ul>
-</div>
-<div class="section" id="learning-goals">
-<h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>How to work with public API’s</p></li>
-<li><p>Know when and how to write a class</p></li>
-<li><p>Understand and handle failures when communicating over HTTP</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="program-requirements">
-<h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<p>Your main entry point to your program will be from a module called <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>. As with a2, you will not have a validity checker to use for testing and you will be largely responsible for program input and output. You are encouraged to continue to bring the user interface and other functions you created in your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong> modules, but you will not be re-graded on the features you implemented for those assignments.</p>
-<p>Your final program should contain the following new modules:</p>
-<ol class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the Last.FM API.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit.</p></li>
-</ol>
-<p>Since the code you write for this assignment will still be dependent on communication with the server, you should also include all modules you created or used for assignment 2.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you were unable to complete the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function requirement in a2, let us know. We will walk you through the steps required to send and receive messages with the DS server.</p>
-</div>
-<div class="section" id="part-1">
-<h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
-<p>When introducing new features to a program or learning a new tool that is unfamiliar, a good place to start is with a test program. So for Part 1, you will temporarily set aside your DS program and focus on building a small test program that can successfully connect to and retrieve data from a public API. You are welcome to use the sample code below to get started.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span><span class="n">error</span>
-
-<span class="k">def</span> <span class="nf">_download_url</span><span class="p">(</span><span class="n">url_to_download</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">r_obj</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url_to_download</span><span class="p">)</span>
-        <span class="n">json_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">r_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_results</span><span class="p">)</span>
-
-    <span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to download contents of URL&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status code: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">))</span>
-
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">response</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    
-    <span class="k">return</span> <span class="n">r_obj</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="nb">zip</span> <span class="o">=</span> <span class="s2">&quot;92697&quot;</span>
-    <span class="n">ccode</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span>
-    <span class="n">apikey</span> <span class="o">=</span> <span class="s2">&quot;YOUR API KEY&quot;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.openweathermap.org/data/2.5/weather?zip=</span><span class="si">{</span><span class="nb">zip</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">ccode</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">{</span><span class="n">apikey</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="n">weather_obj</span> <span class="o">=</span> <span class="n">_download_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">weather_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">weather_obj</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="section" id="connecting-to-the-openweather-api">
-<h4>Connecting to the OpenWeather API<a class="headerlink" href="#connecting-to-the-openweather-api" title="Permalink to this headline">¶</a></h4>
-<p>To use the sample code, you must first create an account and generate an API key at <a class="reference external" href="https://openweathermap.org/">OpenWeather</a>:</p>
-<ul class="simple">
-<li><p>Create an account at: <a class="reference external" href="https://home.openweathermap.org/users/sign_up">https://home.openweathermap.org/users/sign_up</a>. If you are prompted to input a reason, just enter UCI and Education/Science.</p></li>
-<li><p>Once registered, find your API by clicking the “API Keys” link on your account page. Copy your API key and store it somewhere (as a comment in your code, for example).</p></li>
-<li><p>Next visit the <a class="reference external" href="https://openweathermap.org/current">current weather page</a>. Read through the instructions and build your API call. A basic call should look like this:</p></li>
-</ul>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&amp;appid={API key}
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>You will likely want to customize this based on your personal preferences, so read through the documentation thoroughly to understand the various options for weather data available through the API.</p></li>
-</ul>
-<p>Once you have your own API key, copy it into the <strong><code class="docutils literal notranslate"><span class="pre">apikey</span></code></strong> variable in the sample code above and run the program to see the result. Notice that the data response from the API is in JSON format. Most web API’s use the JSON format for storing and sending data and since we are already familiar with JSON from a2, we will continue using it here (though it’s worth noting that the OpenWeather API does support HTML and XML formats too). The <strong><code class="docutils literal notranslate"><span class="pre">loads</span></code></strong> function in Python’s json module should be all you need to use for converting the JSON responses you received into a Python object (you are free to adapt the DS Server Protocol Helper Code example provided in a2). Also notice, that in the sample code, the print out only contains the <strong><code class="docutils literal notranslate"><span class="pre">description</span></code></strong> attribute for the weather. A more complete output might contain detailed information like temperature, barometric pressure, and humidity. To see all the data available from the API response, you can update the sample code to simply print the <strong><code class="docutils literal notranslate"><span class="pre">weather_obj</span></code></strong> variable.</p>
-<p>Now that you have a functioning API call in place, you should start thinking about how to make this information more accessible for your DS program. A good way to go about doing this is to create a class that abstracts away the processing logic you need to write to gain access to weather data. So for the remainder of this part of the assignment, you will write a weather class called <strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>  that accepts location information and an API key as parameters and returns an object containing weather data. Your class should be written such that the following validity code runs without error:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">OpenWeather</span> <span class="kn">import</span> <span class="n">OpenWeather</span>
-
-<span class="n">zipcode</span> <span class="o">=</span> <span class="s2">&quot;92697&quot;</span>
-<span class="n">ccode</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span>
-<span class="n">apikey</span> <span class="o">=</span> <span class="s2">&quot;YOUR API KEY&quot;</span>
-
-<span class="n">open_weather</span> <span class="o">=</span> <span class="n">OpenWeather</span><span class="p">(</span><span class="n">zipcode</span><span class="p">,</span><span class="n">ccode</span><span class="p">,</span><span class="n">apikey</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The temperature for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2"> degrees&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The high for today in </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> will be </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">high_temperature</span><span class="si">}</span><span class="s2"> degrees&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The low for today in </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> will be </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">low_temperature</span><span class="si">}</span><span class="s2"> degrees&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The coordinates for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> are </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">longitude</span><span class="si">}</span><span class="s2"> longitude and </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">latitude</span><span class="si">}</span><span class="s2"> latitude&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The current weather for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The current humidity for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">humidity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sun will set in </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">city</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">sunset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Although the sample code that I have supplied does have some error handling, you will likely want to attend to the various errors that can arise when connecting to remote API’s more gracefully than what I have supplied. Therefore, you will need to understand the different types of errors that occur when communicating over HTTP. Many different conditions can arise that your program may or may not need to communicate to your end user. For example, an invalid API key requires a different set of action than the remote server going down. Therefore, your OpenWeather class should be able to cleanly handle and inform a user about the following conditions:</p>
-<ul class="simple">
-<li><p>Loss of local connection to the Internet</p></li>
-<li><p>404 or 503 HTTP response codes (indicating that the remote API is unavailable)</p></li>
-<li><p>Invalid data formatting from the remote API</p></li>
-</ul>
-<p>We will run code that creates these error conditions to evaluate your OpenWeather class as well as your second API (see next section).</p>
-</div>
-<div class="section" id="connect-to-the-last-fm-api">
-<h4>Connect to the Last.FM API<a class="headerlink" href="#connect-to-the-last-fm-api" title="Permalink to this headline">¶</a></h4>
-<p>Once you have finished creating your OpenWeather class, you will repeat the process with a new API from <a class="reference external" href="https://www.last.fm/api#getting-started">Last.FM</a>. The Last.FM API is large and full of interesting bits of data about music that you can pull into your DS Program. The main consideration here is to think about how you will present your API data in a DS journal post. The current limitations of the DS server and journaling platform, for example, would prevent you from using the search feature of the API. Take a few minutes to look through the documentation and decide on what type of information you want to support with your keyword.</p>
-<p>Once you settle on at least one API method from the <a class="reference external" href="https://www.last.fm/api#getting-started">Last.FM website</a>, you will repeat the steps used in the previous section. Read through the API documentation, register to get an API key, and build a supporting class called <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong> to abstract the underlying API complexities from your program (and don’t forget the error handling!).</p>
-<p>You are free to include as many methods from the Last.FM API as you like, each assigned to their own keyword. However, you must connect one method to the predefined keyword listed in Part 2 so that our automated tests can verify that you successfully connected to the API.</p>
-<p>Finally, since we are not specifying how to write the class for your custom API, you will need to ensure that your class is documented sufficiently enough for us to understand how it works.</p>
-</div>
-</div>
-<div class="section" id="part-2">
-<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>Alright, at this point you should have two classes that retrieve data from web API’s. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left of after a2).</p>
-<p>You goal for part 2 should be to allow your user to write journal posts with optional keywords that are transcluded into data from your API classes. You must create at least two keywords, one for each API, using the keywords listed below:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@weather</span>
-<span class="nd">@lastfm</span>
-</pre></div>
-</div>
-<p>You may discover that once you have one keyword connected to an API method that adding more is pretty easy. So, if you choose, you may create your own keywords for any additional API methods that you want to support as long as they adhere to the following format:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">@</span><span class="p">[</span><span class="n">KEYWORD</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>So for example, the following journal post:</p>
-<blockquote>
-<div><p>Hello World! Today is the first day of the rest of my life. It is &#64;weather outside and I am thrilled!</p>
-</div></blockquote>
-<p>Should transclude to:</p>
-<blockquote>
-<div><p>Hello World! Today is the first day of the rest of my life. It is sunny outside and I am thrilled!</p>
-</div></blockquote>
-<p>Okay, that’s a pretty bad example, but you get the idea:) Here, the OpenWeather API feature ‘description’ was assigned to the &#64;weather keyword so that when the message was transcluded the keyword was replaced with the description ‘sunny.’ You ARE NOT REQUIRED to bind ‘description’ to the &#64;weather keyword, but you are required to bind some data from the OpenWeather API to the <strong><code class="docutils literal notranslate"><span class="pre">&#64;weather</span></code></strong> keyword.</p>
-<p>When your user writes a post, you will also want to inform them about the keywords your program makes available. There are a number of ways to go about accomplishing this task, the most straightforward being a print out of the keywords. However, you might also consider making keyword selection a little more interactive. Either way, you will not be graded on how you inform your user about keyword options, only that you have added this feature.</p>
-<p>Finally, so that we may accurately test your program, all of your API classes (<strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI</span></code></strong>) must implement the following functions:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Sets the apikey required to make requests to a web API.</span>
-<span class="sd">  :param apikey: The apikey supplied by the API service</span>
-<span class="sd">	</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="c1">#TODO: assign apikey value to a class data attribute that can be accessed by class members</span>
-  <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">transclude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Replaces keywords in a message with associated API data.</span>
-<span class="sd">  :param message: The message to transclude</span>
-<span class="sd">	</span>
-<span class="sd">  :returns: The transcluded message</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="c1">#TODO: write code necessary to transclude keywords in the message parameter with appropriate data from API</span>
-  <span class="k">pass</span>
-</pre></div>
-</div>
-<p>Although it is not required for this assignment, it may be a good time to make use of <strong><code class="docutils literal notranslate"><span class="pre">inheritance</span></code></strong> in your program. For example, since OpenWeather, LastFM, and any other API classes you create must include the transclude function AND the transclusion process can be abstracted to work with any given set of transclusion rules (e.g., keyword to API data mapping), you might consider creating a parent class that can be used by all of your API classes.</p>
-</div>
-<div class="section" id="extra-credit">
-<h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>We will be awarding 1 extra credit point for the successful inclusion of a third API from a source that has not been used for this class. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit. Your API should be built in a module named <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong> and make use of at least one keyword named:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@extracredit</span>
-</pre></div>
-</div>
-<p>Since it will be near impossible for us to create a unique key for every extra credit API, you MUST hard code your key into your <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI</span></code></strong> class. So your extra credit module should work without requiring an external program to call the <strong><code class="docutils literal notranslate"><span class="pre">set_apikey</span></code></strong> function.</p>
-</div>
-<div class="section" id="how-we-will-grade-your-submission">
-<h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 12-point scale, with the 12 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
-<dl class="simple myst">
-<dt>Requirements and Function | 9 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
-</dd>
-<dd><p>Does the program make use of required APIs?</p>
-</dd>
-<dd><p>Are there any bugs or errors?</p>
-</dd>
-<dt>Quality and Design        | 3 pts</dt><dd><p>Is the code well designed?</p>
-</dd>
-<dd><p>Is the code clearly documented?</p>
-</dd>
-<dt>Extra Credit							| 1 pt</dt><dd><p>Does the program makes use of a third API?</p>
-</dd>
-</dl>
-<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will continue increasing the strictness of our stance on quality and design than we have in previous assignments.</p>
+<div class="warning admonition">
+<p class="admonition-title">Notice</p>
+<p>This is a draft assignment. I will be updating this page with full details by end of week 1.</p>
 </div>
 </div>
 </div>
@@ -565,7 +275,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="a2.html" title="previous page">Assignment 2: Chatting with Friends</a>
-    <a class='right-next' id="next-link" href="a4.html" title="next page">Assignment 4: Encrypting the Platform</a>
+    <a class='right-next' id="next-link" href="a4.html" title="next page">Assignment 4: A Graphical User Interface</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

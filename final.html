@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Final Project &#8212; ICS 32 Winter 2021</title>
+    <title>Final Project &#8212; ICS 32 Summer 1 2021</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Week 10 Notes" href="notes/wk10.html" />
+    <link rel="prev" title="Week 1 Notes" href="notes/wk1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -76,7 +76,7 @@
   <img src="_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Winter 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -122,11 +122,6 @@
    Assignment 4
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="assignments/a5.html">
-   Assignment 5
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -137,51 +132,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk5.html">
-   Week 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk6.html">
-   Week 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk7.html">
-   Week 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk8.html">
-   Week 8
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk9.html">
-   Week 9
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk10.html">
-   Week 10
   </a>
  </li>
 </ul>
@@ -272,16 +222,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-the-ds-direct-messenger-module">
-   Part 1: The DS Direct Messenger Module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-the-graphical-user-interface">
-   Part 2: The Graphical User Interface
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#final-submission">
    Final Submission
   </a>
@@ -309,95 +249,16 @@
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>As discussed in the course overview, you will not be required to take a midterm or final exam. Rather, we will be assessing your understanding of the course material by asking you to apply what you have learned through a final project. At this point in the class you have learned how to work with the computer file system, modules, sockets, and APIs. You have also learned how to write simple tests for your code, classes, apply recursive function calls, and handle exceptions that occur when your program runs. Therefore, your final project should build upon and extend what you have learned so far and completed in your assignments.</p>
-<p>The final project is worth a total of 30 points, more than double what you will earn for all course assignments, which means you should target an individual project workload that is equal to or greater than what you have completed for any two assignments in the course. You will have roughly five and a half weeks to complete your final project, so take this into account when planning your work. To help you manage the final project alongside your remaining three assignments, you will be allowed to work in groups. Working in a group is <strong>optional</strong> and will be limited to a <strong>maximum of three</strong>.</p>
+<p>The final project is worth a total of 25 points, more than what you earn for all course assignments, which means you should target an individual project workload that is equal to or greater than what you have completed for any two assignments in the course. You will have roughly five and a half weeks to complete your final project, so take this into account when planning your work. To help you manage the final project alongside your remaining three assignments, you will be allowed to work in groups. Working in a group is <strong>optional</strong> and will be limited to a <strong>maximum of three</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you choose to work in a group you must create a team name and nominate a leader. The leader will be responsible for communication and submission. Once you have a group and name, notify your TA so that they can create a final project group for you in Canvas. DO NOT wait until the last week of class to formalize your group. Take care of this step as soon as possible.</p>
 </div>
 <p>For your final project you will develop your own module that enables a program to send and receive direct messages with another user on the DS platform. You will then incorporate this module into a graphical user interface (GUI) using Tkinter.</p>
-</div>
-<div class="section" id="part-1-the-ds-direct-messenger-module">
-<h2>Part 1: The DS Direct Messenger Module<a class="headerlink" href="#part-1-the-ds-direct-messenger-module" title="Permalink to this headline">¶</a></h2>
-<p>The first thing you will do is write the direct messenger module. Your module must adhere to the following rules:</p>
-<ul class="simple">
-<li><p>Must be named <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong></p></li>
-<li><p>Must implement the following classes and methods</p></li>
-</ul>
 <div class="warning admonition">
-<p class="admonition-title">Direct Messenger Module Update</p>
-<p>Update 2/27:</p>
-<ol class="simple">
-<li><p>Fixed one small oversight in the required code and messaging below. <strong><code class="docutils literal notranslate"><span class="pre">retrieve_new</span></code></strong> no longer returns a singe DirectMessage, it now returns a list. This change also means that you will only receive two types of directmessage ok responses now.</p></li>
-<li><p>Added code comments to describe intent for each method. You should update these comments to adhere to docstring format for your final submission.</p></li>
-</ol>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DirectMessage</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">recipient</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="kc">None</span>
-
-
-<span class="k">class</span> <span class="nc">DirectMessenger</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsuserver</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="kc">None</span>
-		
-  <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">recipient</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="c1"># returns true if message successfully sent, false if send failed.</span>
-    <span class="k">pass</span>
-		
-  <span class="k">def</span> <span class="nf">retrieve_new</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="c1"># returns a list of DirectMessage objects containing all new messages</span>
-    <span class="k">pass</span>
- 
-  <span class="k">def</span> <span class="nf">retrieve_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="c1"># returns a list of DirectMessage objects containing all messages</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-<p>You are free to add as many supporting methods to either of these classes that you need, but a program should be able to import your module and use these functions to send direct messages with a DS server.</p>
-<p>To support this new feature, the DSP protocol will be expanded to support direct messaging using the following commands:</p>
-<dl class="simple myst">
-<dt>directmessage</dt><dd><p>Accepts a message to be sent directly to another user.</p>
-</dd>
-</dl>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Send a directmessage to another DS user</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="s2">&quot;recipient&quot;</span><span class="p">:</span><span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
-
-<span class="c1"># Request unread message from the DS server</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">}</span>
-
-<span class="c1"># Request all messages from the DS server</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>The DS server will respond to <strong><code class="docutils literal notranslate"><span class="pre">directmessage</span></code></strong> requests with the following <strong><code class="docutils literal notranslate"><span class="pre">ok</span></code></strong> response messages:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sending of direct message was successful</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct message sent&quot;</span><span class="p">}}</span>
-
-<span class="c1"># Response to request for **`all`** and **`new`** messages. Timestamp is time in seconds </span>
-<span class="c1"># of when the message was originally sent.</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Hello User 1!&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;markb&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">},{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Bzzzzz&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;thebeemoviescript&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}]}}</span>
-</pre></div>
-</div>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong> module should stand on its own. You may reuse the code you have written for other modules like <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong>, but they should not be required to use the direct message feature of the DS server. You will also need to migrate existing message protocol formats to perform join operations and parse error messages used in previous assignments.</p>
-</div>
-<div class="section" id="part-2-the-graphical-user-interface">
-<h2>Part 2: The Graphical User Interface<a class="headerlink" href="#part-2-the-graphical-user-interface" title="Permalink to this headline">¶</a></h2>
-<p>For the second part of the assignment you will write a graphical user interface (GUI) for your module using Tkinter. You are free to implement the interface however you like or adapt the Tkinter GUI that you were given in assignment 5.</p>
-<p>There are many ways to create a graphical interface for a direct messaging program. You are not required to follow the example below. However, if you are not sure where to start the following wireframe should point you in the right direction.</p>
-<p><img alt="tkinterexample" src="_images/final_project_tk_example.png" /></p>
-<p>In the wireframe model presented above, there are 5 widgets that are responsible for all of the input and output in the program:</p>
-<ol class="simple">
-<li><p>On the left is a treeview widget that displays all of the DS users that have sent you messages.Selecting a user will display the messages that they have sent in (2).</p></li>
-<li><p>On the upper right is the display widget that contains the messages sent by the user selected in (1).</p></li>
-<li><p>On the lower right is the text input widget where new messages are written.</p></li>
-<li><p>The ‘Add User’ button is where new users can be added for direct messages.</p></li>
-<li><p>The ‘Send’ button sends the message entered in (3).</p></li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The layout used in this wireframe is nearly identical to the layout provided to you in assignment 5. You may reuse that existing code to save you some steps.</p>
+<p class="admonition-title">Notice</p>
+<p>This is a draft assignment. I have included it now so that you have a chance to assess the difficulty and decide whether or not to find a partner.</p>
+<p>Final requirements and additional details for this assignment will be released in week 2!</p>
 </div>
 </div>
 <div class="section" id="final-submission">
@@ -406,15 +267,13 @@
 <dl class="simple myst">
 <dt>Classes</dt><dd><p>You have been provided with some skeletal classes to use in your module. However, there will undoubtedly be other areas of the program where a class improves your program design. You must use at least one new class in addition to what has already been provided for you.</p>
 </dd>
-<dt>Custom Exceptions</dt><dd><p>Your <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong> module should implement <em>at least one</em> custom exception class.</p>
+<dt>Custom Exceptions</dt><dd><p>Your program should implement <em>at least one</em> custom exception class.</p>
 </dd>
 <dt>Use of try/except</dt><dd><p>Areas of code prone to exceptions (sockets, file i/o, etc.) should be wrapped in try/except statements.</p>
 </dd>
 <dt>Commenting and Documentation</dt><dd><p>Your overall final program should contain sufficient code comments for a new programmer to be able to understand what your code does.</p>
 </dd>
-<dd><p>All methods and classes in your <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger</span></code></strong> module <em>must</em> adhere to the reStructuredText (reST) docstring format. You will be required to generate your own module documentation in HTML format and submit alongside your program. All HTML documention should be placed in a <strong><code class="docutils literal notranslate"><span class="pre">doc</span></code></strong> folder located at the root of you main program directory. You can learn more about the format and tool at the <a class="reference external" href="https://pdoc3.github.io/pdoc/">pdoc project page</a>. There is also a brief lecture and discussion in the <a class="reference internal" href="notes/wk9.html"><span class="doc std std-doc">weekly notes for week 9</span></a> that covers how to install, edit, and submit your documentation.</p>
-</dd>
-<dt>Function</dt><dd><p>Your program must work. Functionality of your program will be assessed in two ways. First, a user should be able to run your program and send and receive direct messages with a DS server. Second, your <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong> module must work outsider of your main program. We will use a validity checker program for grading that imports your module and makes calls on the required classes and methods.</p>
+<dt>Function</dt><dd><p>Your program must work. Functionality of your program will be assessed in two ways. First, a user should be able to run your program and send and receive direct messages with a DS server. Second, your module must work outside of your main program. We will use a validity checker program for grading that imports your module and makes calls on the required classes and methods.</p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -426,14 +285,14 @@
 <h3>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h3>
 <p>The majority of your grade will be based on whether or not you completed the “core” requirements listed in your project requirements document.</p>
 <dl class="simple myst">
-<dt>Requirements (25 points)</dt><dd><p>Does the program fulfill the requirements agreed upon by the client (your Professor and TA’s). Requirements will be assessed on implementation (does it exist) and functionality (does it work).</p>
+<dt>Requirements (20 points)</dt><dd><p>Does the program fulfill the requirements agreed upon by the client (your Professor and TA’s). Requirements will be assessed on implementation (does it exist) and functionality (does it work).</p>
 </dd>
 <dt>Validity (2.5 points)</dt><dd><p>Does the project adhere to the principles taught in class for creating robust and bug free code.</p>
 </dd>
 <dt>Documentation (2.5 points)</dt><dd><p>Does the project provide sufficient documentation. Your code should be well commented so that we can understand what purpose it serves in your project. Your README should clearly explain how to run your project. And when run, the functionality of your project should be clear and intuitive.</p>
 </dd>
 </dl>
-<p>In total you will be able to receive 30/30 points for this final project. Your final submission should include all materials described in Parts 1 and 2, zipped and uploaded to the Canvas submission page by the due date. Since this is the last assignment for the course, there will be no late submissions accepted.</p>
+<p>In total you will be able to receive 25/25 points for this final project. Your final submission should include all materials described in Parts 1 and 2, zipped and uploaded to the Canvas submission page by the due date. Since this is the last assignment for the course, there will be no late submissions accepted.</p>
 </div>
 </div>
 </div>
@@ -466,7 +325,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="notes/wk10.html" title="previous page">Week 10 Notes</a>
+    <a class='left-prev' id="prev-link" href="notes/wk1.html" title="previous page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
