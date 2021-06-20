@@ -27,10 +27,9 @@ Assignment details will be posted as the quarter progresses. When a new assignme
 Assignments
 : [A0 - Getting Started with Python](../assignments/a0)
 : [A1 - File Explorer](../assignments/a1)
-: A2 - Chatting with Friends
-: A3 - Extending the Platform
-: A4 - Encrypting the Platform
-: A5 - A Graphical User Interface
+: [A2 - Chatting with Friends](../assignments/a2.md)
+: [A3 - Extending the Platform](../assignments/a3.md)
+: [A4 - A Graphical User Interface](../assignments/a4.md)
 
 
 ### Exams
