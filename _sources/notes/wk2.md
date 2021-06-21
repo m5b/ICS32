@@ -16,7 +16,9 @@ Quick Links:
 (lecture-materials-2)=
 ## Lecture Materials
 
-Lectures for Week 2
+Lectures for Week 1
+: {ref}`lectures:exceptions`
+: {ref}`lectures:recursion`
 : {ref}`lectures:testing`
 : {ref}`lectures:modules`
 

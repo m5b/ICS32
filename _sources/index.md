@@ -50,38 +50,26 @@ The following schedule is subject to change throughout the quarter.
 Week 1
 : Introduction
 : Exceptions and Files
-
-Week 2
 : Paths and Files Systems
 : Recursion
 : Testing
 
-Week 3
+Week 2
 : Networks and Sockets
-
-Week 4
 : Modules
-
-Week 5
 : Protocols
 
-Week 6
+Week 3
 : Classes
-: Duck Typing and Interfaces
+: Interfaces
 
-Week 7
+Week 4
 : URLs and HTTP
 : Web APIs
+: Third Party Libraries
 
-Week 8
+Week 5
 : Test Drive Development
 : Two Dimensional Lists
-: Third Party Libraries
 : Graphical User Interfaces
-
-Week 9
-: Inputs, Sounds, and Events
-
-Week 10
-: Advanced Graphical User Interfaces
 
