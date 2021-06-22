@@ -576,4 +576,4 @@ To facilitate this distinction, we can simply check the module's name by accessi
 Quiz recordings and results will be posted within 24 hours of recording.
 ```
 
-[Live Quiz and Discussion]()
+[Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3263642&node=10950092&a=1364313436&autoplay=1)
