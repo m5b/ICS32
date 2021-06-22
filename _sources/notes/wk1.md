@@ -11,7 +11,7 @@ Completing Assignment 1 will require that you start to build a fundamental under
 
 Quick Links:
 : {ref}`lecture-materials-2`
-: {ref}`quiz-results-2`
+: {ref}`quiz-results`
 
 (lecture-materials-2)=
 ## Lecture Materials
@@ -569,7 +569,7 @@ s
 To facilitate this distinction, we can simply check the module's name by accessing the **`__name__`** variable. If its value is **`__main__`**, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an **`if __name__ == '__main__':`** block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.
 ```
 
-(quiz-results-2)=
+(quiz-results)=
 ## Quiz Results
 
 ```{note}
