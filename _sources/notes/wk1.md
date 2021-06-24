@@ -570,10 +570,12 @@ To facilitate this distinction, we can simply check the module's name by accessi
 ```
 
 (quiz-results)=
-## Quiz Results
+## Live Class Recordings
 
 ```{note}
 Quiz recordings and results will be posted within 24 hours of recording.
 ```
 
-[Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3263642&node=10950092&a=1364313436&autoplay=1)
+[Monday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3263642&node=10950092&a=1364313436&autoplay=1)
+
+[Wednesday Live Discussion](https://uci.yuja.com/V/Video?v=3281185&node=10983771&a=1127258665&autoplay=1)
