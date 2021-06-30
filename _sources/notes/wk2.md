@@ -380,7 +380,7 @@ For more detail on how the client program works, as well as a peak at the server
 (lectures:classes)=
 ### Classes
 
-This lecture discusses elements of assignment 2, which will be released on 1/22.
+This lecture discusses elements of assignment 2.
 
 #### Videos
 
