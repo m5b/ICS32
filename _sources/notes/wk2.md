@@ -16,7 +16,7 @@ Quick Links:
 (lecture-materials)=
 ## Lecture Materials
 
-Lectures for Week 3
+Lectures for Week 2
 : {ref}`lectures:networks`
 : {ref}`lectures:protocols`
 : {ref}`lectures:classes`
