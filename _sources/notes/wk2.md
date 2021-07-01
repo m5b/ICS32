@@ -510,4 +510,4 @@ The **`get_posts`** and **`add_post`** methods in the example above are taken di
 (quiz-results2)=
 ## Live Class Recordings
 
-
+[Wednesday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3298620&node=11043322&a=530865012&autoplay=1)
