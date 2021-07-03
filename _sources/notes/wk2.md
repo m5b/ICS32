@@ -511,3 +511,10 @@ The **`get_posts`** and **`add_post`** methods in the example above are taken di
 ## Live Class Recordings
 
 [Wednesday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3298620&node=11043322&a=530865012&autoplay=1)
+
+[Friday Live Discussion](https://uci.yuja.com/V/Video?v=3303614&node=11059116&a=1174642833&autoplay=1)
+
+Topics Covered:
+: Reverse input processing
+: Misbehaving recursive functions
+: Useful functions of the pathlib module
