@@ -403,7 +403,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sun will set in </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">city</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">sunset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Although the sample code that I have supplied does have some error handling, you will likely want to attend to the various errors that can arise when connecting to remote API’s more gracefully than what I have supplied. Therefore, you will need to understand the different types of errors that occur when communicating over HTTP. Many different conditions can arise that your program may or may not need to communicate to your end user. For example, an invalid API key requires a different set of action than the remote server going down. Therefore, your OpenWeather class should be able to cleanly handle and inform a user about the following conditions:</p>
+<p>Although the sample code that I have supplied does have some error handling, you will likely want to attend to the various errors that can arise when connecting to remote API’s more gracefully than what I have included here. You will need to understand the different types of errors that occur when communicating over HTTP. Many different conditions can arise that your program may or may not need to communicate to your end user. For example, an invalid API key requires a different set of action than the API service going down. Therefore, your OpenWeather class should be able to cleanly handle and inform a user about the following conditions:</p>
 <ul class="simple">
 <li><p>Loss of local connection to the Internet</p></li>
 <li><p>404 or 503 HTTP response codes (indicating that the remote API is unavailable)</p></li>
@@ -421,7 +421,7 @@
 </div>
 <div class="section" id="part-2">
 <h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>Alright, at this point you should have two classes that retrieve data from web API’s. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left of after a2).</p>
+<p>Alright, at this point you should have two classes that retrieve data from web API’s. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left off after a2).</p>
 <p>You goal for part 2 should be to allow your user to write journal posts with optional keywords that are transcluded into data from your API classes. You must create at least two keywords, one for each API, using the keywords listed below:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@weather</span>
 <span class="nd">@lastfm</span>
@@ -461,6 +461,10 @@
   <span class="c1">#TODO: write code necessary to transclude keywords in the message parameter with appropriate data from API</span>
   <span class="k">pass</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The grading tool will import and call the required functions automatically, so you must take care to not change the file name or the function parameters (though you can safely add parameters as long as they are given default values). If you do make changes, it is likely that your code will not pass the grading tool.</p>
 </div>
 <p>Although it is not required for this assignment, it may be a good time to make use of <strong><code class="docutils literal notranslate"><span class="pre">inheritance</span></code></strong> in your program. For example, since OpenWeather, LastFM, and any other API classes you create must include the transclude function AND the transclusion process can be abstracted to work with any given set of transclusion rules (e.g., keyword to API data mapping), you might consider creating a parent class that can be used by all of your API classes.</p>
 </div>

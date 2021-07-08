@@ -113,7 +113,7 @@ print(f"The sun will set in {open_weather.city} at {open_weather.sunset}")
 
 ```
 
-Although the sample code that I have supplied does have some error handling, you will likely want to attend to the various errors that can arise when connecting to remote API's more gracefully than what I have supplied. Therefore, you will need to understand the different types of errors that occur when communicating over HTTP. Many different conditions can arise that your program may or may not need to communicate to your end user. For example, an invalid API key requires a different set of action than the remote server going down. Therefore, your OpenWeather class should be able to cleanly handle and inform a user about the following conditions:
+Although the sample code that I have supplied does have some error handling, you will likely want to attend to the various errors that can arise when connecting to remote API's more gracefully than what I have included here. You will need to understand the different types of errors that occur when communicating over HTTP. Many different conditions can arise that your program may or may not need to communicate to your end user. For example, an invalid API key requires a different set of action than the API service going down. Therefore, your OpenWeather class should be able to cleanly handle and inform a user about the following conditions:
 
 * Loss of local connection to the Internet
 * 404 or 503 HTTP response codes (indicating that the remote API is unavailable)
@@ -133,7 +133,7 @@ Finally, since we are not specifying how to write the class for your custom API,
 
 ### Part 2
 
-Alright, at this point you should have two classes that retrieve data from web API's. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left of after a2).
+Alright, at this point you should have two classes that retrieve data from web API's. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left off after a2).
 
 You goal for part 2 should be to allow your user to write journal posts with optional keywords that are transcluded into data from your API classes. You must create at least two keywords, one for each API, using the keywords listed below:
 
@@ -186,6 +186,12 @@ def transclude(self, message:str) -> str:
   pass
 
 ```
+
+```{note}
+The grading tool will import and call the required functions automatically, so you must take care to not change the file name or the function parameters (though you can safely add parameters as long as they are given default values). If you do make changes, it is likely that your code will not pass the grading tool.
+
+```
+
 
 Although it is not required for this assignment, it may be a good time to make use of **`inheritance`** in your program. For example, since OpenWeather, LastFM, and any other API classes you create must include the transclude function AND the transclusion process can be abstracted to work with any given set of transclusion rules (e.g., keyword to API data mapping), you might consider creating a parent class that can be used by all of your API classes. 
 
