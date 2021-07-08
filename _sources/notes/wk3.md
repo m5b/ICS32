@@ -432,8 +432,5 @@ I have included one additional look at Web API's using the Spotify API. A walkth
 ```{note}
 Materials will be posted after class on 7/7
 ```
-[Live Quiz and Discussion]()
+[Wednesday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3314243&node=11125314&a=143967648&autoplay=1)
 
-<!--
-<a href="../resources/QZ_Week_4_Quiz_Results.pdf">Quiz Results</a>
-//-->
