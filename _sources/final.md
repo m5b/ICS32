@@ -13,15 +13,92 @@ If you choose to work in a group you must create a team name and nominate a lead
 
 For your final project you will develop your own module that enables a program to send and receive direct messages with another user on the DS platform. You will then incorporate this module into a graphical user interface (GUI) using Tkinter.
 
-```{admonition} Notice
-:class: warning
+For your final project you will develop your own module that enables a program to send and receive direct messages with another user on the DS platform. You will then incorporate this module into a graphical user interface (GUI) using Tkinter.
 
-This is a draft assignment. I have included it now so that you have a chance to assess the difficulty and decide whether or not to find a partner.
+## Part 1: The DS Direct Messenger Module
 
-Final requirements and additional details for this assignment will be released in week 2!
+The first thing you will do is write the direct messenger module. Your module must adhere to the following rules:
+
+* Must be named **`ds_messenger.py`**
+* Must implement the following classes and methods
+
+```ipython3
+
+class DirectMessage:
+  def __init__(self):
+    self.recipient = None
+    self.message = None
+    self.timestamp = None
+
+
+class DirectMessenger:
+  def __init__(self, dsuserver=None, username=None, password=None):
+    self.token = None
+		
+  def send(self, message:str, recipient:str) -> bool:
+    # returns true if message successfully sent, false if send failed.
+    pass
+		
+  def retrieve_new(self) -> list:
+    # returns a list of DirectMessage objects containing all new messages
+    pass
+ 
+  def retrieve_all(self) -> list:
+    # returns a list of DirectMessage objects containing all messages
+    pass
 
 ```
 
+You are free to add as many supporting methods to either of these classes that you need, but a program should be able to import your module and use these functions to send direct messages to a DS server.
+
+To support this new feature, you will extend your **`ds__protocol`** module to support direct messaging with the following commands:
+
+directmessage
+: Accepts a message to be sent directly to another user. 
+
+```ipython3
+# Send a directmessage to another DS user
+{"token":"user_token", "directmessage": {"entry": "Hello World!","recipient":"ohhimark", "timestamp": "1603167689.3928561"}}
+
+# Request unread message from the DS server
+{"token":"user_token", "directmessage": "new"}
+
+# Request all messages from the DS server
+{"token":"user_token", "directmessage": "all"}
+```
+
+The DS server will respond to **`directmessage`** requests with the following **`ok`** response messages:
+
+```ipython3
+# Sending of direct message was successful
+{"response": {"type": "ok", "message": "Direct message sent"}}
+
+# Response to request for **`all`** and **`new`** messages. Timestamp is time in seconds 
+# of when the message was originally sent.
+{"response": {"type": "ok", "messages": [{"message":"Hello User 1!", "from":"markb" "timestamp":"1603167689.3928561"},{"message":"Bzzzzz", "from":"thebeemoviescript" "timestamp":"1603167689.3928561"}]}}
+```
+
+The **`ds_messenger.py`** module should be self contained. A program should be able to import your **`ds_messenger`** module and call the required functions to exchange messages with the DS server. You may reuse or import the code you have written for the **`ds_client.py`** module.
+
+## Part 2: The Graphical User Interface
+
+For the second part of the assignment you will write a graphical user interface (GUI) for your module using Tkinter. You are free to implement the interface however you like or adapt the Tkinter GUI that you were given in assignment 5. 
+
+There are many ways to create a graphical interface for a direct messaging program. You are not required to follow the example below. However, if you are not sure where to start the following wireframe should point you in the right direction.
+
+![tkinterexample](resources/final_project_tk_example.png)			
+
+In the wireframe model presented above, there are 5 widgets that are responsible for all of the input and output in the program:
+
+1. On the left is a treeview widget that displays all of the DS users that have sent you messages.Selecting a user will display the messages that they have sent in (2).
+2. On the upper right is the display widget that contains the messages sent by the user selected in (1).
+3. On the lower right is the text input widget where new messages are written.
+4. The 'Add User' button is where new users can be added for direct messages.
+5. The 'Send' button sends the message entered in (3).
+
+```{tip}
+The layout used in this wireframe is nearly identical to the layout provided to you in assignment 5. You may reuse that existing code to save you some steps.
+```
 ## Final Submission
 To receive full credit your final project must make __informed__ use of the following:
 
