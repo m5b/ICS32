@@ -30,3 +30,6 @@ Lectures for Week 4
 [Structuring Tkinter with Classes](https://uci.yuja.com/V/Video?v=2311976&node=8335658&a=1815687944&autoplay=1)
 
 (quiz-results4)=
+## Live Class Recordings
+
+Will be released after class on Monday
