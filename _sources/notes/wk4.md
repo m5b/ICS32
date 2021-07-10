@@ -22,6 +22,8 @@ Lectures for Week 4
 
 #### Full Lecture
 [Tkinter and Graphical User Interfaces](https://uci.yuja.com/V/Video?v=2301628&node=8312739&a=2055913874&autoplay=1)
+If you prefer to watch specific sections of the lecture, you will find each part below:
+
 #### Part 1
 [Planning tips for a GUI](https://uci.yuja.com/V/Video?v=2311938&node=8335521&a=285910547&autoplay=1)
 #### Part 2
