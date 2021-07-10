@@ -433,4 +433,4 @@ I have included one additional look at Web API's using the Spotify API. A walkth
 Materials will be posted after class on 7/7
 ```
 [Wednesday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3314243&node=11125314&a=143967648&autoplay=1)
-
+[Friday Live Discussion](https://uci.yuja.com/V/Video?v=3318300&node=11137353&a=96191787&autoplay=1)
