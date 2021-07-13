@@ -34,4 +34,5 @@ If you prefer to watch specific sections of the lecture, you will find each part
 (quiz-results4)=
 ## Live Class Recordings
 
-Will be released after class on Monday
+[Monday Live Quiz, Lecture and A3 Overview](https://uci.yuja.com/V/Video?v=3323343&node=11152819&a=1027421721&autoplay=1)
+
