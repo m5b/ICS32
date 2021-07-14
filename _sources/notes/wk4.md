@@ -35,4 +35,6 @@ If you prefer to watch specific sections of the lecture, you will find each part
 ## Live Class Recordings
 
 [Monday Live Quiz, Lecture and A3 Overview](https://uci.yuja.com/V/Video?v=3323343&node=11152819&a=1027421721&autoplay=1)
+[Wednesday Lecture on Unit Testing](https://uci.yuja.com/V/Video?v=3328885&node=11168397&a=679067247&autoplay=1)
 
+[Wednesday Live Discussion](https://uci.yuja.com/V/Video?v=3328884&node=11168396&a=2046321894&autoplay=1)
