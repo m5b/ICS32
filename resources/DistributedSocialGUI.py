@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, filedialog
 from Profile import Profile, Post
-from NaClProfile import NaClProfile
 
 """
 A subclass of tk.Frame that is responsible for drawing all of the widgets
@@ -171,15 +170,15 @@ class Footer(tk.Frame):
 """
 A subclass of tk.Frame that is responsible for drawing all of the widgets
 in the main portion of the root frame. Also manages all method calls for
-the NaClProfile class.
+the Profile class.
 """
 class MainApp(tk.Frame):
     def __init__(self, root):
         tk.Frame.__init__(self, root)
         self.root = root
 
-        # Initialize a new NaClProfile and assign it to a class attribute.
-        self._current_profile = NaClProfile()
+        # Initialize a new Profile and assign it to a class attribute.
+        self._current_profile = Profile()
 
         # After all initialization is complete, call the _draw method to pack the widgets
         # into the root frame
