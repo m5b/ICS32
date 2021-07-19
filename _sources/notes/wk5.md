@@ -219,4 +219,4 @@ And that's it. Most of what I have shared here is code you have already written.
 (quiz-results5)=
 ## Live Class Recordings
 
-[Lecture Slides](../resources/Graphical User Interfaces Live Lecture.pdf)
+<a href="../resources/Graphical User Interfaces Live Lecture.pdf">Lecture Slides</a>
