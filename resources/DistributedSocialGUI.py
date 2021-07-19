@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk, filedialog
 from Profile import Profile, Post
 
+import time
+
 """
 A subclass of tk.Frame that is responsible for drawing all of the widgets
 in the body portion of the root frame.
@@ -145,6 +147,8 @@ class Footer(tk.Frame):
     def save_click(self):
         if self._save_callback is not None:
             self._save_callback()
+        
+        time.sleep(10)
 
     """
     Updates the text that is displayed in the footer_label widget
@@ -224,7 +228,8 @@ class MainApp(tk.Frame):
         # clear the editor_entry UI for a new post.
         # This might also be a good place to check if the user has selected the online
         # checkbox and if so send the message to the server.
-        pass
+        #pass
+        self.update()
 
     """
     A callback function for responding to changes to the online chk_button.
