@@ -220,3 +220,5 @@ And that's it. Most of what I have shared here is code you have already written.
 ## Live Class Recordings
 
 <a href="../resources/Graphical User Interfaces Live Lecture.pdf">Lecture Slides</a>
+
+[Live Class Recording](https://uci.yuja.com/V/Video?v=3358301&node=11216998&a=1007171856&autoplay=1)
