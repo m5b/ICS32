@@ -362,7 +362,7 @@
 <p>For this final assignment in ICS32 you will have the opportunity to receive up to 3 extra credit points. To receive a signal extra credit point you must add at least one of the following features to your Tkinter GUI. You may <strong>add up to 3</strong> features for extra credit.</p>
 <ol class="simple">
 <li><p>Add title support for posts.</p></li>
-<li><p>Add a settings menu item and interface for encryption key management.</p></li>
+<li><p>Add a settings menu item and interface for username and password management.</p></li>
 <li><p>Add a toolbar with quick buttons to insert your API keywords into the editor.</p></li>
 <li><p>Add a bio menu item and interface for editing the user bio.</p></li>
 <li><p>Add support for editing existing posts.</p></li>
@@ -380,14 +380,14 @@
 </div>
 <div class="section" id="add-settings-menu-item-and-interface">
 <h4>Add settings menu item and interface<a class="headerlink" href="#add-settings-menu-item-and-interface" title="Permalink to this headline">¶</a></h4>
-<p>Without encryption keys, all post entries saved in a DSU file can never be decrypted. So if something were to happen to these keys, a user would never be able to recover their writing! Given the importance of these encryption keys, some users may want to keep a backup of them somewhere outside of the ICS 32 DS program. To support this, you will need to create a settings window that gives the user access to these keys. This feature will require the following changes to be made:</p>
+<p>Without a username and password, all post entries in a DSU file must be associated with either hard coded values or rely on a2 to generate a complete profile. A better approach would be to integrate the various profile settings into the GUI. To accomplish this, you will need to create a settings window that provides the user with access to input and change these values. This feature will require the following changes to be made:</p>
 <ol class="simple">
 <li><p>Add a new ‘settings’ item to the menu.</p></li>
 <li><p>Open a new window when the settings item is clicked.</p></li>
-<li><p>Display current keys in the settings window.</p></li>
-<li><p>Add a Tkinter Text or Entry widget to allow the user to change their keys.</p></li>
+<li><p>Display current username and password in the settings window.</p></li>
+<li><p>Add a Tkinter Text or Entry widget to allow the user to change their username and password.</p></li>
 <li><p>Add a Tkinter button to save and close the settings window.</p></li>
-<li><p>Save edited keys to the DSU file.</p></li>
+<li><p>Save edited username and password to the DSU file.</p></li>
 </ol>
 </div>
 <div class="section" id="add-a-quick-button-toolbar-for-keywords">
