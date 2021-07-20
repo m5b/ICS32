@@ -192,7 +192,7 @@ class MainApp(tk.Frame):
     Creates a new DSU file when the 'New' menu item is clicked.
     """
     def new_profile(self):
-        filename = tk.filedialog.asksaveasfile(filetypes=[('Distributed Social Profile', '*.dsu')])
+        filename = tk.filedialog.asksaveasfile(filetypes=[('Distributed Social Profile', '*.dsu')], defaultextension='.dsu')
         profile_filename = filename.name
 
         # TODO Write code to perform whatever operations are necessary to prepare the UI for
