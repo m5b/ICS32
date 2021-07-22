@@ -384,7 +384,7 @@
     <span class="nb">zip</span> <span class="o">=</span> <span class="s2">&quot;92697&quot;</span>
     <span class="n">ccode</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span>
     <span class="n">apikey</span> <span class="o">=</span> <span class="s2">&quot;YOUR API KEY&quot;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.openweathermap.org/data/2.5/weather?zip=</span><span class="si">{</span><span class="nb">zip</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">ccode</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">{</span><span class="n">apikey</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?zip=</span><span class="si">{</span><span class="nb">zip</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">ccode</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">{</span><span class="n">apikey</span><span class="si">}</span><span class="s2">&quot;</span>
 
     <span class="n">weather_obj</span> <span class="o">=</span> <span class="n">_download_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">weather_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
