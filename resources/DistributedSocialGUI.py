@@ -148,9 +148,7 @@ class Footer(tk.Frame):
     def save_click(self):
         if self._save_callback is not None:
             self._save_callback()
-        
-        time.sleep(10)
-
+            
     """
     Updates the text that is displayed in the footer_label widget
     """
