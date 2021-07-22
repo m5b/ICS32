@@ -26,7 +26,7 @@ class Body(tk.Frame):
     is selected.
     """
     def node_select(self, event):
-        index = int(self.posts_tree.selection()[0])-1 #selections are not 0-based, so subtract one.
+        index = int(self.posts_tree.selection()[0])
         entry = self._posts[index].entry
         self.set_text_entry(entry)
     
@@ -61,7 +61,8 @@ class Body(tk.Frame):
     """
     def insert_post(self, post: Post):
         self._posts.append(post)
-        self._insert_post_tree(len(self._posts), post)
+        id = len(self._posts) - 1 
+        self._insert_post_tree(id, post)
 
     """
     Resets all UI widgets to their default state. Useful for when clearing the UI is neccessary such
