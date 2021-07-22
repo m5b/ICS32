@@ -221,4 +221,6 @@ And that's it. Most of what I have shared here is code you have already written.
 
 <a href="../resources/Graphical User Interfaces Live Lecture.pdf">Lecture Slides</a>
 
-[Live Class Recording](https://uci.yuja.com/V/Video?v=3358301&node=11216998&a=1007171856&autoplay=1)
+[Monday Live Class Recording](https://uci.yuja.com/V/Video?v=3358301&node=11216998&a=1007171856&autoplay=1)
+
+[Wednesday Live Class Recording](https://uci.yuja.com/V/Video?v=3364814&node=11237139&a=1867777338&autoplay=1)
