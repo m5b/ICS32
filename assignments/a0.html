@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 0: Getting Started with Python &#8212; ICS 32 Summer 1 2021</title>
+    <title>Assignment 0: Getting Started with Python &#8212; ICS 32 Fall 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 1: File Explorer" href="a1.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
     <link rel="prev" title="Programming with Software Libraries" href="../index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +77,7 @@
   <img src="../_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -103,26 +103,6 @@
    Assignment 0
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a1.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a2.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a3.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a4.html">
-   Assignment 4
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -133,26 +113,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
   </a>
  </li>
 </ul>
@@ -280,6 +240,18 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starter-project">
+     Starter Project
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#git-and-github">
+       Git and GitHub
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
      How we will grade your submission
     </a>
@@ -364,23 +336,34 @@
 </div>
 <div class="section" id="validity-checking-your-output">
 <h3>Validity-checking your output<a class="headerlink" href="#validity-checking-your-output" title="Permalink to this headline">¶</a></h3>
-<p>We are also providing a tool that you can use to validity-check whether you’ve followed the basic requirements above. It will only give you a “passing” result in these circumstances:</p>
+<p>We are also providing a tool that you can use to check whether you’ve followed the basic requirements above. It will only give you a “passing” result in these circumstances:</p>
 <p>You’ve named your file a0.py.
 Executing that module is enough to execute your program.
 Your program reads its input and generates character-by-character correct input for one test scenario.</p>
 <p>Note that additional test inputs will be used when we grade your assignment. The way to understand the validity checker’s output is to think of it this way: Just because the validity checker says your program passes doesn’t mean it’s perfect, but if you cannot get the validity checker to report that your program passes, it surely will not pass all of our automated tests.</p>
-<p>Running the validity checker is simple. First, download the Python module linked below:</p>
-<p><a href="../resources/a0_validitychecker.py" >a0_validitychecker.py</a></p>
-<p>Put that file into the same directory as your a0.py file. Running the a0_validitycheck.py module — for example, by loading it in IDLE and pressing F5 (or selecting Run Module from the Run menu) — will run the validity checker and report a result, which will be printed to the Python shell.</p>
+<p>Running the validity checker is simple. Just ensure that the validity checker file is in the same directory as your a0.py file. Running the a0_validitycheck.py module — for example, by loading it in IDLE and pressing F5 (or selecting Run Module from the Run menu) — will run the validity checker and report a result, which will be printed to the Python shell.</p>
+</div>
+<div class="section" id="starter-project">
+<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
+<p>To keep the naming and validity checking requirements simple, you will start by creating a code repository on GitHub Classroom.</p>
+<p><a class="reference external" href="https://classroom.github.com/a/Q_5PRdb5">Assignment 0 Starter Repository</a></p>
+<div class="section" id="git-and-github">
+<h4>Git and GitHub<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h4>
+<p>Git is the most prevalent version control software today. Git and GitHub are different products! Git is freely-available open source software, GitHub is a popular hosting service for Git projects that includes many social networking and collaboration features.</p>
+<p>Most Git repositories are managed from your favorite terminal. GitHub provides some resources for picking up Git. The <a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">cheatsheet</a> can be a particularly useful reference.</p>
+<p>GitHub also provides desktop apps for managing Git repositories on macOS and Windows. These have the classic advantages and disadvantages of interfaces. The desktop apps have a much shallower learning curve and make completing simple tasks easier, but lack expressivity for the more advanced Git and GitHub features. You’re welcome to choose either a desktop app or the terminal in this class.</p>
+<p>The desktop apps automatically install Git. It’s also possible to install Git on its own, such as with the Debian package manager on Linux or via HomeBrew for Mac.</p>
+<p>At a minimum you should create a GitHub account and make use of the starter code repository for each assignment. However, you are strongly encouraged to take some time to learn how to add, commit, and push your code back to your repository. If the thought of learning version control feels overwhelming right now, don’t worry, it should! We will discuss this topic and how to make use of version control in labs throughout the quarter. You will not be graded on your use of git or GitHub.</p>
+</div>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>Unlike other assignments, this assignment will be graded on a 5-point scale, with the 5 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>Unlike other assignments, this assignment will be graded on a 50-point scale, with the 50 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <ul class="simple">
-<li><p>If all of our automated tests pass, you will receive 5 points.</p></li>
-<li><p>If any of our automated tests pass (i.e., at least one of them passes, even if all the others fail), you will receive 4.5 points.</p></li>
-<li><p>If none of our automated tests pass, but you did submit a file named a0.py, you will receive 2.5 points.</p></li>
-<li><p>If you did not submit a file named a0.py, but you did submit a Python module in a file whose name ends in .py, you will receive 1 point.</p></li>
+<li><p>If all of our automated tests pass, you will receive 50 points.</p></li>
+<li><p>If any of our automated tests pass (i.e., at least one of them passes, even if all the others fail), you will receive 45 points.</p></li>
+<li><p>If none of our automated tests pass, but you did submit a file named a0.py, you will receive 25 points.</p></li>
+<li><p>If you did not submit a file named a0.py, but you did submit a Python module in a file whose name ends in .py, you will receive 10 points.</p></li>
 <li><p>If you did not submit a Python module at all, you will receive 0 points.</p></li>
 </ul>
 </div>
@@ -416,7 +399,7 @@ Your program reads its input and generates character-by-character correct input 
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Programming with Software Libraries</a>
-    <a class='right-next' id="next-link" href="a1.html" title="next page">Assignment 1: File Explorer</a>
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

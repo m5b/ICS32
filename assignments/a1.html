@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 1: File Explorer &#8212; ICS 32 Summer 1 2021</title>
+    <title>Assignment 1: File Explorer &#8212; ICS 32 Fall 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,8 +54,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 2: Chatting with Friends" href="a2.html" />
-    <link rel="prev" title="Assignment 0: Getting Started with Python" href="a0.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -77,7 +75,7 @@
   <img src="../_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,30 +95,10 @@
   Assignments
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="a0.html">
    Assignment 0
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a2.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a3.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a4.html">
-   Assignment 4
   </a>
  </li>
 </ul>
@@ -133,26 +111,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
   </a>
  </li>
 </ul>
@@ -318,7 +276,7 @@
 <h1>Assignment 1: File Explorer<a class="headerlink" href="#assignment-1-file-explorer" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>For the rest of the assignments in this course, we will be building a distributed social communication platform. The program will allow you to send and receive messages with other students in the class. We will start with a command line interface and end with a graphical interface. At the heart of any communication tool, is the user, so the first thing we need to create is a tool that lets us manage user accounts.</p>
+<p>For the rest of the assignments in this course, we will be building a distributed social communication platform. The final version of the program will allow you to send and receive encrypted messages with other students in the class. We will start with a command line interface and end with a graphical interface. Along the way you learn about many of the processes that programmers use to develop software. For now, we’ll get started with a simple file management program. At the heart of any user facing program, is…the user, so the first thing we need to create is a tool that will let us manage user accounts.</p>
 <div class="section" id="summary-of-program-requirements-for-this-assignment">
 <h3>Summary of program requirements for this assignment:<a class="headerlink" href="#summary-of-program-requirements-for-this-assignment" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
@@ -538,14 +496,20 @@ R - Read the contents of a file.</p>
 </div>
 <div class="section" id="validation-checking-your-output">
 <h3>Validation-checking your output<a class="headerlink" href="#validation-checking-your-output" title="Permalink to this headline">¶</a></h3>
-<p>In assignment 0, we referred to this tool as the sanity checker. Moving forward we will refer a tool that I write to validate your program structure a validity checker.</p>
-<p><a href="../resources/a1_validitychecker_v-0.1.py" >Assignment 1 Validity Checker v0.1</a></p>
+<p>The validity checker for this assignment works just like the one you used for <a class="reference internal" href="a0.html"><span class="doc std std-doc">assignment 0</span></a>. Place the validity checker in the same directory as your <code class="docutils literal notranslate"><span class="pre">a1.py</span></code> module and run it.</p>
+<div class="tip admonition">
+<p class="admonition-title">Interpreting Validity Checker Output</p>
+<p>The validity checker will exit operation when it encounters an unexpected output from your program. Your instincts might lead you to run the last input operation reported by the validity checker prior to the error directly from your program. While this is a good first step, and one that can help you understand what went wrong, there is a good chance that the same input command will work for you. This does not mean that there is something wrong with the validity checker! Rather, it is an indication that the internal state of your code is changing after certain input commands are run in a certain order.</p>
+<p>If you find yourself in this situation, the first thing you should do is review the output from the validity checker, taking note of each of the input commands that were executed. Next, run your program (debug mode helps here) and input the exact same commands in the same order. You WILL find that your program output matches the validity checker perfectly. Use this knowledge to work through your code until you discover what is causing the error.</p>
+<p>So before you reach out to a course instructor and say “but it works for me”, perform the tests described above! (because if you don’t, we’ll tell you to anyway :) )</p>
+</div>
+<p><a href="../resources/a1_validitychecker.py" >Assignment 1 Validity Checker</a></p>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 15-point scale, with the 15 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>This assignment will be graded on a 100 point scale, with points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <dl class="simple myst">
-<dt>Requirements and Function | 13 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+<dt>Requirements and Function | 8 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
@@ -587,8 +551,6 @@ R - Read the contents of a file.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="a0.html" title="previous page">Assignment 0: Getting Started with Python</a>
-    <a class='right-next' id="next-link" href="a2.html" title="next page">Assignment 2: Chatting with Friends</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

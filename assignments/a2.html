@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2: Chatting with Friends &#8212; ICS 32 Summer 1 2021</title>
+    <title>Assignment 2: Journal &#8212; ICS 32 Fall 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,8 +54,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 3: Extending the Platform" href="a3.html" />
-    <link rel="prev" title="Assignment 1: File Explorer" href="a1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -77,7 +75,7 @@
   <img src="../_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,30 +95,10 @@
   Assignments
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="a0.html">
    Assignment 0
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a1.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a3.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a4.html">
-   Assignment 4
   </a>
  </li>
 </ul>
@@ -133,26 +111,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
   </a>
  </li>
 </ul>
@@ -260,13 +218,37 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-1">
-     Part 1
+    <a class="reference internal nav-link" href="#part-1-extending-a1">
+     Part 1: Extending A1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-2">
-     Part 2
+    <a class="reference internal nav-link" href="#part-2-managing-data-with-the-profile-module">
+     Part 2: Managing Data with the Profile Module
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-3-the-user-interface">
+     Part 3: The User Interface
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#user-interface-requirements">
+       User Interface Requirements
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#admin-mode">
+         Admin Mode
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-for-submission">
+     Preparing for Submission
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -287,19 +269,18 @@
         
               <div>
                 
-  <div class="section" id="assignment-2-chatting-with-friends">
-<h1>Assignment 2: Chatting with Friends<a class="headerlink" href="#assignment-2-chatting-with-friends" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="assignment-2-journal">
+<h1>Assignment 2: Journal<a class="headerlink" href="#assignment-2-journal" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The primary learning outcome for a1 was to provide you with an opportunity to learn how to work with modules from the Python Standard Library, explore recursive functions, and gain familiarity with error handling.</p>
-<p>For assignment 2, you are going to build upon your code from the a1 program, by creating a local-first journaling program. This means that your journal entries will be stored locally (on your computer) with an option to be shared to the Internet. Where on the Internet? Any server that supports the ICS32 distributed social platform (DSP) (for now that’s just me)!</p>
+<p>The primary objective for <a class="reference internal" href="a1.html"><span class="doc std std-doc">assignment 1</span></a> was to learn how to work with modules from the Python Standard Library, write recursive functions, and gain familiarity with error handling. If you were able to complete all of the requirements for assignment 1, you should now have a fully functional command line program that allows you to find, create, read, and delete files on your computer.</p>
+<p>Though useful, so far your program doesn’t provide any capabilities that are not already available from the command line in most modern computers. So for assignment 2, you are going to extend your a1 code to enable a user to keep track of their thoughts by writing journal posts and storing them in a text file. You will use the features that you implemented in <a class="reference internal" href="a1.html"><span class="doc std std-doc">a1</span></a> to provide the basic file management and user interface aspects of your new program while you add new features to support basic journaling and journal management functionality.</p>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Manage user data using a file store</p></li>
 <li><p>Design a command line user interface</p></li>
-<li><p>Write code to support a communication protocol</p></li>
-<li><p>Write code to communicate with a remote server over network sockets</p></li>
+<li><p>Implement a custom file format using JSON (Javascript Object Notation)</p></li>
 </ol>
 </div>
 <div class="section" id="learning-goals">
@@ -307,31 +288,30 @@
 <ol class="simple">
 <li><p>Working with modules</p></li>
 <li><p>Integrate existing code into your program</p></li>
-<li><p>Communicating with networks and sockets</p></li>
-<li><p>Working with protocols</p></li>
+<li><p>Improving error handling</p></li>
+<li><p>Working with JSON</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<p>Unlike the previous assignment, you will have a lot more flexibility in how you design your program’s user interface. I will not be providing a validity checker for this assignment, so the input and output of your program is largely up to you. However, there are some conditions:</p>
+<p>Unlike the previous assignment, you will have a lot more flexibility in how you design your program’s user interface. You will not receive a validity checker for this assignment, so the input and output of your program is largely up to you. However, there are some conditions:</p>
 <ul class="simple">
-<li><p>You must divide your program into <strong>at least three modules</strong>, not including the Profile module. Your modules should be named and loosely modeled after the descriptions below.</p>
+<li><p>You must divide your program into <strong>at least two modules</strong>, not including the Profile module that is provided in the starter code. Your modules should be named and loosely modeled after the descriptions below.</p>
 <ol class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong>: Your first module will be the entry point to your program.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong>: Your adaptation of the DS Protocol.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong>: Your distributed social client module should contain all code required to exchange messages with the DS Server.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">input_processor.py</span></code></strong>: A module that is responsible for processing all commands in the official input command format (see next item).</p></li>
 </ol>
 </li>
-<li><p>You must <em>retain</em> the functionality specified for a1. A user should be able to user your program to locate, create, and load <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> files. If you were unable to get all a1 features to be fully functional, don’t worry, you won’t be penalized again. Just carry through to a2 whatever you have completed.</p></li>
-<li><p>You must also retain the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
+<li><p>You <strong>must retain</strong> the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
 </ul>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span> <span class="p">[[</span><span class="o">-</span><span class="p">]</span><span class="n">OPTION</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification (more on that below).</p></li>
-<li><p>All modules that you edited must include the following comment on the first three lines:</p></li>
+<li><p>You <strong>must use</strong> the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification (more on that below).</p></li>
+<li><p>You <strong>must support</strong> the ability to enter an “admin” mode at any point in your program. The admin mode should function similarly to assignment 1, where instead of a user interface the user can enter any supported command according to the input command format used for in this course.</p></li>
+<li><p>All modules that you edit must include the following comment on the first three lines:</p></li>
 </ul>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># NAME</span>
@@ -341,165 +321,157 @@
 </pre></div>
 </div>
 <p>Otherwise, you are free to design your program any way you like. This means if you would like to provide more helpful feedback after error conditions, for example, you are free to do so.</p>
-<p>The program you will be creating is divided into two parts. I strongly encourage you to read through both parts so that you have a clear picture of what the complete program will do. Then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2.</p>
-<div class="warning admonition">
-<p class="admonition-title">Profile module update</p>
-<p>If you struggled with input processing in a1 or would like to compare your approach to ours, we are releasing a demo program that includes two way to process input.</p>
-<p><a href="../resources/ds_input_processor.py">DS Input Processor</a></p>
-<p>You are free to use this code in all remaining assignments.</p>
-</div>
-<div class="section" id="part-1">
-<h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
-<p>Your program should extend the create command that you built in a1. When a user enters the create command, not only will your program create a new DSU file, but it will also use inputs to collect additional data from the user. The collected data should be contained in a Profile object until the user ends the program, at which time the data should be saved to the user created DSU file.</p>
+<p>The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2 by writing some tests.</p>
+<div class="section" id="part-1-extending-a1">
+<h3>Part 1: Extending A1<a class="headerlink" href="#part-1-extending-a1" title="Permalink to this headline">¶</a></h3>
+<p>Your program should extend the <code class="docutils literal notranslate"><span class="pre">C</span></code> (create) command from a1. However, now when a user enters the <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code>, your program should create a new file and automatically append it with the extension (or suffix) <code class="docutils literal notranslate"><span class="pre">.dsu</span></code> (we will learn more about why it’s called ‘dsu’ in the next assignment). The use of the <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code> should also use the <code class="docutils literal notranslate"><span class="pre">input</span></code> function to collect the following data from the user:</p>
+<ul class="simple">
+<li><p><strong>username</strong>: a unique name to associate the user with posts.</p></li>
+<li><p><strong>password</strong>: a password to protect access to user journal entries.</p></li>
+<li><p><strong>bio</strong>: a brief description about the user.</p></li>
+</ul>
+<p>The collected data should be contained in a Profile object while the user is running the program and saved to the file system when the program exits (though, saving can and should occur whenever data is changed). The <code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code> has built-in functionality for saving data stored in a Profile object, all you have to do is supply the filename collected from the user (e.g., specified by the <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code> or collected from an <code class="docutils literal notranslate"><span class="pre">input</span></code> as a parameter to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method).</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
 <p>Extend the ‘C’ create DSU file command to collect profile information about the user and store the profile information using the Profile module.</p>
 </div>
-<div class="warning admonition">
-<p class="admonition-title">Profile module update</p>
-<p>Bug fixes made on 1/28 at 3:03 PM PST to v0.1.6</p>
+<p>When implemented, a user should be able to enter the following command into your program and start using it to write journal entries (“myjournal” is the user selected name for their journal).</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span> <span class="o">-</span><span class="n">n</span> <span class="n">myjournal</span>
+</pre></div>
 </div>
-<p><a href="../resources/Profile.py">The DSU Profile Module</a></p>
-<p>You must use the Profile module (linked above) to store the data you collect from the user. The Profile module has two primary functions: 1) Provides properties to store user input, and 2) Provides encode and decode functions to support saving profile data to a DSU file. To understand how to use Profile module, you will be required to study the code that it contains. Your user interface should collect all of the data represented by the properties in the Profile module.</p>
-<div class="tip admonition">
-<p class="admonition-title">Code Reading Tip</p>
-<p>Asking questions and working together is a critical component to a successful development team. So rather than tell you exactly how to use the Profile class, I want you to help each other figure it out. Although you are <strong>not allowed</strong> to share the code you write for this assignment with each other, you are allowed to share what you learn about the Profile module. My only requirement is that you do so publicly using the a2-qa channel in Zulip. We will keep an eye on conversation and make sure you are all headed in the right direction.</p>
-</div>
-<p>Your program should allow a user to search for and load a DSU file using the input command conventions established in a1. While you should have the search functionality already in place, you will need to add support for loading a DSU file.</p>
+<p>Your program should allow a user to search for and load a <code class="docutils literal notranslate"><span class="pre">DSU</span></code> file using the input command conventions established in a1, but you will need to add support for loading a <code class="docutils literal notranslate"><span class="pre">DSU</span></code> file.</p>
+<p>As you might recall, in a1 you performed a very similar operation when you implemented the ‘R’ command. We don’t want to change the behavior of the ‘R’ command, as there may be conditions in which a user might like to check the contents of a DSU file before loading it. Therefore, you will need to add a new input command to support loading an existing DSU file. Conceptually we can think of the task as ‘opening’ a file, similar to how you might open a <code class="docutils literal notranslate"><span class="pre">docx</span></code> file in Microsoft Word, so let’s use the input command <code class="docutils literal notranslate"><span class="pre">O</span></code> for ‘Open’:</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
 <p>Add new command to user interface to support loading DSU files.</p>
+<p>O - Open an existing file of the type <code class="docutils literal notranslate"><span class="pre">dsu</span></code></p>
 </div>
-<p>As you might recall, in a1 you performed a very similar operation when you implemented the ‘R’ command. We don’t want to change the behavior of the ‘R’ command, as there may be conditions in which a user might like to check the contents of a DSU file before loading it. Therefore, you will need to create a new input command to support loading an existing DSU file. There are two ways to approach this task: 1) create a new input command (e.g., ‘O [path].dsu’) or 2) add a load option to the ‘R’ command (e.g., ‘R [path].dsu -l’). The choice is yours, but be sure to inform the user about how they should go about loading a DSU file!</p>
-<p>Finally, as this program will be growing in complexity for the rest of the quarter, you should start getting used to writing tests. A good place to start is to ensure that your program is properly loading and saving profile data after it has been supplied by the user.</p>
-</div>
-<div class="section" id="part-2">
-<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>Now that you have a program that can successfully store and retrieve user input, it’s time to do something with it! For the second part of this assignment, you will be connecting to a server and sending the user data you have collected in Part 1 to the world wide web. You will do this by using sockets.</p>
-<p>Much of the work you will need to do to connect to the DS Server using network sockets is covered in the Networks and Sockets lecture. If you haven’t watched the lecture or looked through the notes yet, now is a good time!</p>
-<p>Unlike the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that is supplied to you, you will need to create the <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module yourself. However, it must contain and make use of the following function signature.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ds_client.py</span>
-
-<span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="n">server</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">bio</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  The send function joins a ds server and sends a message, bio, or both</span>
-
-<span class="sd">  :param server: The ip address for the ICS 32 DS server.</span>
-<span class="sd">  :param port: The port where the ICS 32 DS server is accepting connections.</span>
-<span class="sd">  :param username: The user name to be assigned to the message.</span>
-<span class="sd">  :param password: The password associated with the username.</span>
-<span class="sd">  :param message: The message to be sent to the server.</span>
-<span class="sd">  :param bio: Optional, a bio for the user.</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="k">pass</span>
+<p>When implemented, a user should be able to enter the following command into your program and start using the program to write journal entries.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">myjournal</span><span class="o">.</span><span class="n">dsu</span>
 </pre></div>
 </div>
-<p>The validity checking tool that we will use for grading will import your <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module and call this function with randomly generated values. When called, the information we supply should either successfully transmit the data to the DS Server or, in the case of incorrect data, gracefully inform our program what went wrong.</p>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>Connect to, send, and receive information with a remote DSP server</p>
 </div>
-<p>When communicating with a server using sockets, it is common to establish a protocol for exchanging messages. A protocol is a predefined system of rules to transfer information between two or more systems. For a2, your program will need to support the DSP protocol to successfully communicate with the DSP server. Your protocol code should be placed in the <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong> module.</p>
-<p>The DSP protocol supports the following send commands:</p>
-<dl class="simple myst">
-<dt>join</dt><dd><p>Accepts either an existing user and password, or a new user and password</p>
-</dd>
-<dt>post</dt><dd><p>Accepts a journal post for the currently connected user</p>
-</dd>
-<dt>bio</dt><dd><p>Accepts a user bio, either adding or replacing existing user bio</p>
-</dd>
-</dl>
-<p>All protocol messages must be sent in JavaScript Object Notation (JSON) format. All responses from the DSP server will be in JSON format as well.</p>
+<div class="section" id="part-2-managing-data-with-the-profile-module">
+<h3>Part 2: Managing Data with the Profile Module<a class="headerlink" href="#part-2-managing-data-with-the-profile-module" title="Permalink to this headline">¶</a></h3>
+<p>You must use the <code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code> that is included in your starter code to store the data you collect from the user. The Profile module has two primary functions:</p>
+<ol class="simple">
+<li><p>Provides properties to store user input.</p></li>
+<li><p>Provides encode and decode functions to support saving profile data to a <code class="docutils literal notranslate"><span class="pre">DSU</span></code> file using the JSON format.</p></li>
+</ol>
+<p>We will not be explicitly covering the functionality of the <code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code> in class. To understand how to use it, you will be required to learn the module on your own by reviewing its code, code comments, and discussion with the class. Don’t worry, the module is well documented and includes code snippets that demonstrate how each class method should work.</p>
+<p>A good starting place to understanding how the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module works is to create a test file that imports the module. Write some sample code using the two classes available to you in the module. You are free to share any sample tests you write with your classmates on Zulip.</p>
+<p>Here are a few tasks you might try in your test program:</p>
+<ul class="simple">
+<li><p>Create a new Profile object and save it.</p></li>
+<li><p>Open an existing Profile file (created in previous task).</p></li>
+<li><p>Add username and password to Profile object, save the object, check the DSU file to confirm.</p></li>
+<li><p>Create a Post and add it to a Profile object, save the object, check the DSU file to confirm.</p></li>
+</ul>
 <div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p>You don’t have to concern your self too much with JSON for this class. However, if you would like to learn more about JSON and why it is a great format for storing and transporting data, visit:</p>
-<p><a href="https://www.json.org/json-en.html">JSON.org</a></p>
+<p class="admonition-title">Code Reading Tip</p>
+<p>Asking questions and working with others is a critical component to becoming a successful programmer. So rather than tell you exactly how to use the Profile class, I want you to help each other figure it out. Although you are <strong>not allowed</strong> to share the code you write for this assignment with each other, you are allowed to share what you learn about the Profile module. My only requirement is that you do so publicly using the a2-qa channel in Zulip. We will keep an eye on conversation and make sure you are all headed in the right direction.</p>
 </div>
-<p>The following code snippets demonstrate how each of the DSP commands should be wrapped in JSON. You are free to adopt these templates for your program.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># join as existing or new user</span>
-<span class="p">{</span><span class="s2">&quot;join&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span><span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123&quot;</span><span class="p">,</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">}}</span>
-
-
-<span class="c1"># timestamp is generate automatically in the Profile module using Python&#39;s </span>
-<span class="c1"># time.time() function</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
-
-
-<span class="c1"># for bio, you will have to generate the timestamp yourself or leave it empty.</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;bio&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
-</pre></div>
-</div>
-<p>The DSP protocol also supports response commands:</p>
-<dl class="simple myst">
-<dt>error</dt><dd><p>Will be received when a send command is unable to be completed</p>
-</dd>
-<dt>ok</dt><dd><p>Will be received when a send command is successful</p>
-</dd>
-</dl>
-<p>Your program should expect one of these two responses after sending a command. The following code snippet demonstrates how the response command should be wrapped in JSON. Again, you are free to adopt this template for your program.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error messages will primarily be received when a user has not been </span>
-<span class="c1"># established for the active session. For example, sending &#39;bio&#39; or &#39;post&#39; </span>
-<span class="c1"># before &#39;join&#39;</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;An error message will be contained here.&quot;</span><span class="p">}}</span>
-
-<span class="c1"># Ok messages will be receieved after every successful send command. </span>
-<span class="c1"># They likely will not be accompanied by a message.</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">}}</span>
-</pre></div>
-</div>
+<p>Once you have a good understanding of how the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module works you are ready to implement the required features in your program. So far you have created the ability to create or open a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file. Next you will need to introduce some editing capability so that your users can store data in their journal.</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
-<p>Adapt the DSP protocol for use in your program.</p>
+<p>Add new command to user interface to support editing a DSU file.</p>
+<p>E - Edit the DSU file loaded by C or O commands</p>
 </div>
-<p>A typical exchange between a program and a DS server might look like the following:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">join_msg</span> <span class="o">=</span> <span class="s1">&#39;{&quot;join&quot;: {&quot;username&quot;: &quot;ohhimark&quot;,&quot;password&quot;: &quot;password123&quot;, &quot;token&quot;:&quot;&quot;}}&#39;</span>
+<p>The edit command will be used in combination with the different options supported by the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support editing a DSU file.</p>
+<p>-usr [USERNAME]</p>
+<p>-pwd [PASSWORD]</p>
+<p>-bio [BIO]</p>
+<p>-addpost [NEW POST]</p>
+<p>-delpost [ID]</p>
+</div>
+<p>Your program should support either one option at a time or any combination of options for a single print command.</p>
+<p>Finally, a user should always be able to review the contents of their journal. To support this feature, you will create one final command for printing the data that has been stored in a DSU file.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support printing data in a DSU file.</p>
+<p>P - Print data in the DSU file loaded by C or O commands</p>
+</div>
+<p>The print command will be used in combination with the different options supported by the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support editing a DSU file.</p>
+<p>-usr Prints the username stored in the profile object</p>
+<p>-pwd Prints the password stored in the profile object</p>
+<p>-bio Prints the bio stored in the profile object</p>
+<p>-posts Prints all posts stored in the profile object with id (using list index is fine)</p>
+<p>-post [ID] Prints post identified by ID</p>
+<p>-all Prints all content stored in the profile object</p>
+</div>
+<p>Like the E command, your program should support either one option at a time or any combination of options for a single print command. When all program features have been implemented, the following code should run in your program:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># create a new journal called &#39;myjournal&#39; (could also use O for existing file)</span>
+<span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span> <span class="o">-</span><span class="n">n</span> <span class="n">myjournal</span>
 
-<span class="n">send</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">recv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># add a username and password to &#39;myjournal&#39;</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">usr</span> <span class="s2">&quot;mark b&quot;</span> <span class="o">-</span><span class="n">pwd</span> <span class="s2">&quot;password123&quot;</span>
 
-<span class="n">send</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">join_msg</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">send</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="c1"># add a bio to &#39;myjournal&#39;</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">bio</span> <span class="s2">&quot;Hi my name is Mark, this is my bio.&quot;</span>
 
-<span class="n">resp</span> <span class="o">=</span> <span class="n">recv</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
-	
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Welcome back, ohhimark&quot;</span><span class="p">,</span> <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;07da3ddc-6b9a-4734-b3ca-f0aa7ff22360&quot;</span><span class="p">}}</span>
+<span class="c1"># add a post to &#39;myjournal&#39;</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">addpost</span> <span class="s2">&quot;Hello, this is my first post!&quot;</span>
+
+<span class="c1"># print the contents of &#39;myjournal&#39;</span>
+<span class="n">P</span> <span class="o">-</span><span class="nb">all</span>
+
+<span class="c1"># delete a post in &#39;myjournal&#39; by id</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">delpost</span> <span class="mi">1</span>
+
 </pre></div>
 </div>
-<p>In your Python code, you will treat JSON messages as type string. In the snippets above, you will likely need to replace the hard coded values (<em>e.g.,</em> ohhimark, password123, etc.) with the variables in your program that store the actual data you intend to send to the DSP server. There are many ways to do this, but you should focus your efforts on using the string formatting functions found in the Python Standard Library.</p>
-<div class="warning admonition">
-<p class="admonition-title">DS Server Protocol Helper Code</p>
-<p>The following code was added on 2/1 to help you process json formatted messages sent by the server. NOTE: You will need to adapt the example code to work with protocol messages.</p>
 </div>
-<p>To process the messages from the DS server, you may adapt the following code to reduce some of the extra work of parsing strings:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
-
-<span class="c1"># Create a namedtuple to hold the values we expect to retrieve from json messages.</span>
-<span class="n">DataTuple</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;DataTuple&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="s1">&#39;baz&#39;</span><span class="p">])</span>
-
-<span class="k">def</span> <span class="nf">extract_json</span><span class="p">(</span><span class="n">json_msg</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataTuple</span><span class="p">:</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Call the json.loads function on a json string and convert it to a DataTuple object</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="k">try</span><span class="p">:</span>
-    <span class="n">json_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_msg</span><span class="p">)</span>
-    <span class="n">foo</span> <span class="o">=</span> <span class="n">json_obj</span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span>
-    <span class="n">baz</span> <span class="o">=</span> <span class="n">json_obj</span><span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">][</span><span class="s1">&#39;baz&#39;</span><span class="p">]</span>
-  <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Json cannot be decoded.&quot;</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">DataTuple</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">baz</span><span class="p">)</span>
-
-<span class="c1"># Example Test</span>
-<span class="n">json_msg</span> <span class="o">=</span> <span class="s1">&#39;{&quot;foo&quot;:&quot;value1&quot;, &quot;bar&quot;: {&quot;baz&quot;: &quot;value2&quot;}}&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">extract_json</span><span class="p">(</span><span class="n">json_msg</span><span class="p">))</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">DataTuple</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
+<div class="section" id="part-3-the-user-interface">
+<h3>Part 3: The User Interface<a class="headerlink" href="#part-3-the-user-interface" title="Permalink to this headline">¶</a></h3>
+<p>“User interface” is a term used to describe the inputs and outputs that a person can use to interpret and control your program. In Python, a simple user interface can be programmed using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">print</span></code></strong> functions. You created a user interface for assignment 1, but you were required to follow a very specific set of rules for both input and output. Although your program did have an interface it was not very user friendly. A user was required to know how to write input commands without any help from the program.</p>
+<p>For this assignment we will be loosening control quite a bit and allow you to create your own custom input and output. This means that you will create a friendly <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">interface</span></code> that informs users how to interact with your program. Your user interface should provide prompts that clearly instruct the user on how to use your program. A good place to start is with a printed menu that lists the various input options that your program understands. You might find it helpful to write out your program flow on paper first, then write the code to implement what you have written.</p>
+<p>Your user interface can either use or act independently of the required input commands that you created in Part 2. So for example, you might make use of the input commands using an output similar to the following:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Please start by either creating or loading a DSU file using the following commands:
+ &gt; To create enter:
+ &gt; C /path/to/your/file -n YOUR_FILE_NAME
+ &gt; To open enter:
+ &gt; O /path/to/your/file/YOUR_FILE_NAME.dsu
 </pre></div>
 </div>
-<p>Finally, if you have made it this far, you are probably wondering about the information required to connect to the DSP server. I will have the server up and running very soon. In the meantime, you should be able to test using the echo server covered in lecture. Since this project page is public and I would like to avoid undesirable traffic aimed at my server, I will be communicating server details via Zulip only.</p>
-<p>You may also be wondering, what happens to all the messages you send…Well, since we are using networked sockets, you may have guessed, all of your messages will be published to a publicly available web page. So be kind and respectful in the messages you write!</p>
+<p>Or you might decide to simplify things for your user with something similar to the following:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load):
+ &gt; l
+ &gt; Great! What is the name of the file you would like to load?
+ &gt; /path/to/your/file/YOUR_FILE_NAME.dsu
+</pre></div>
+</div>
+<p>Which ever format you decide to use, remember, your program must still accept and handle the input command structure from a1 and Part 2.</p>
+<div class="section" id="user-interface-requirements">
+<h4>User Interface Requirements<a class="headerlink" href="#user-interface-requirements" title="Permalink to this headline">¶</a></h4>
+<p>As discussed, you are allowed to design your user interface however you like, but there are a few requirements that must also be met.</p>
+<div class="section" id="admin-mode">
+<h5>Admin Mode<a class="headerlink" href="#admin-mode" title="Permalink to this headline">¶</a></h5>
+<p>You may be wondering how the input commands will work if you design a custom user interface. Well, you will support input commands by implementing an administrator mode. At any given point of input your program should be able to enter administrator mode when receiving the user input <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong>. When in administrator mode your user interface should be disabled so that your program only responds to input commands. So building on an earlier example, the following output should work in your program:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load): admin
+ &gt; 
+</pre></div>
+</div>
+<p>Notice that if the keyword <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong> is entered, even if it is not one of the options required by the input, the program falls back to input command functionality. In admin mode, a user could enter any of the input commands required for this assignment and expect to see only the output generated by the input command. So, in the case of the print command, your program should print the desired output according to the command option. For other commands, like edit or open, any custom print output that you have created can continue to function normally. The only difference is that in admin mode your program no longer needs to ask the user for input.</p>
+</div>
+</div>
+</div>
+<div class="section" id="preparing-for-submission">
+<h3>Preparing for Submission<a class="headerlink" href="#preparing-for-submission" title="Permalink to this headline">¶</a></h3>
+<p>As this program will be growing in complexity for the rest of the quarter, you should start getting used to writing tests. A good place to start is to ensure that your program is properly loading and saving profile data after it has been supplied by the user. Here are a few additional conditions to consider (HINT: the autograder will likely test these!):</p>
+<ul class="simple">
+<li><p>Create a file using an existing file name</p></li>
+<li><p>Create a file and exit before data collection is complete</p></li>
+<li><p>Open file that does not exist</p></li>
+<li><p>Open dsu file that does not follow the Profile format</p></li>
+<li><p>Delete a file that is currently opened</p></li>
+</ul>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
@@ -551,8 +523,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="a1.html" title="previous page">Assignment 1: File Explorer</a>
-    <a class='right-next' id="next-link" href="a3.html" title="next page">Assignment 3: Extending the Platform</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

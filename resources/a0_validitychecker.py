@@ -1,11 +1,11 @@
-# a0_sanitycheck.py
+# a0_validitychecker.py
 #
-# ICS 32 Fall 2020
+# ICS 32 Fall 2021
 # Assignment #0: Getting Started with Python
 # Adapted from Alex Thornton's original project0_sanitycheck program by Mark Baldwin.
 #
 #
-# This is a sanity checker for your Assignment #0 solution, which checks whether
+# This is a validity checker for your Assignment #0 solution, which checks whether
 # your solution meets the basic requirements:
 #
 # * The file is named correctly
@@ -15,7 +15,7 @@
 #
 # There are other tests you'll want to run besides the one scenario here,
 # because we'll be testing more than just one when we grade your work, but if
-# your program is unable to pass this sanity checker, it will certainly be
+# your program is unable to pass this validity checker, it will certainly be
 # unable to pass our automated tests.
 #
 # YOU DO NOT NEED TO READ OR UNDERSTAND THIS CODE, though you can certainly
@@ -262,7 +262,7 @@ def run_test() -> None:
         run_test_lines(process)
         print_labeled_output(
             'PASSED',
-            'Your "a0.py" passed the sanity checker.  Note that there are',
+            'Your "a0.py" passed the validity checker.  Note that there are',
             'other tests you\'ll want to run on your own, because we\'ll be testing',
             'scenarios other than just this one.  But you\'re well on your way to',
             'being done with Assignment #0.')
@@ -270,7 +270,7 @@ def run_test() -> None:
     except TestFailure:
         print_labeled_output(
             'FAILED',
-            'The sanity checker has failed, for the reasons described above.')
+            'The validity checker has failed, for the reasons described above.')
 
     finally:
         if process != None:
@@ -285,7 +285,7 @@ def start_process() -> TextProcess:
         print_labeled_output(
             'ERROR',
             'Cannot find file "a0.py" in this directory.',
-            'Make sure that the sanity checker is in the same directory as the',
+            'Make sure that the validity checker is in the same directory as the',
             '"a0.py" that comprises your Assignment #0 solution.  Also, be',
             'sure that you\'ve named your "a0.py" file correctly, noting',
             'that capitalization and spacing matter.')

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 4: A Graphical User Interface &#8212; ICS 32 Summer 1 2021</title>
+    <title>Assignment 4: Extending the Platform &#8212; ICS 32 Fall 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,8 +54,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
-    <link rel="prev" title="Assignment 3: Extending the Platform" href="a3.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -77,7 +75,7 @@
   <img src="../_static/logo_stacked.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">ICS 32 Summer 1 2021</h1>
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,30 +95,10 @@
   Assignments
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="a0.html">
    Assignment 0
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a1.html">
-   Assignment 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a2.html">
-   Assignment 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="a3.html">
-   Assignment 3
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Assignment 4
   </a>
  </li>
 </ul>
@@ -133,26 +111,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
   </a>
  </li>
 </ul>
@@ -260,41 +218,36 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extra-credit">
-     Extra Credit
+    <a class="reference internal nav-link" href="#part-1">
+     Part 1
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#add-title-support-for-posts">
-       Add title support for posts
+      <a class="reference internal nav-link" href="#connecting-to-the-openweather-api">
+       Connecting to the OpenWeather API
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#add-settings-menu-item-and-interface">
-       Add settings menu item and interface
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#add-a-quick-button-toolbar-for-keywords">
-       Add a quick button toolbar for keywords
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#add-a-bio-menu-item-and-editor">
-       Add a bio menu item and editor
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#add-support-for-post-editing">
-       Add support for post editing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#add-support-for-dsu-server-location-editing">
-       Add support for DSU server location editing
+      <a class="reference internal nav-link" href="#connect-to-the-last-fm-api">
+       Connect to the Last.FM API
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2">
+     Part 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-3-the-refactor">
+     Part 3: The Refactor!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extra-credit">
+     Extra Credit
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#submitting">
@@ -319,122 +272,288 @@
         
               <div>
                 
-  <div class="section" id="assignment-4-a-graphical-user-interface">
-<h1>Assignment 4: A Graphical User Interface<a class="headerlink" href="#assignment-4-a-graphical-user-interface" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="assignment-4-extending-the-platform">
+<h1>Assignment 4: Extending the Platform<a class="headerlink" href="#assignment-4-extending-the-platform" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>So we have finally arrived at the end. Over the course of the last four assignments you have built, from the ground up, a feature rich program in Python. The code that you have written enables a person to write personal journal entries, publish entries to an online server, enrich journal entries with data from web API’s, and encrypt journal data to keep it secure. Now it’s time to bring all of these features together by moving them from the command line to the windowed world of the graphical user interface.</p>
-<p>For this assignment we will be using the Tkinter graphical toolkit to build a Graphical User Interface or GUI (like gooey) for the ICS 32 Distributed Social program.</p>
+<p>In assignment 2, you learned how to write a program that connects to and shares information with a program running on another computer. The systems we write programs for today are almost always connected to other computers in some capacity. Whether it is your computer operating system sending data back to its creator, your web browser automatically downloading updates, or you reaching out to friends and family for a video chat, nearly all the programs we use today rely on networked communication to extend their capabilities.</p>
+<p>While your Distributed Social (DS) program has the ability to accept, store, and distribute information written by your users, it doesn’t yet take advantage of the vast wealth of information available to networked programs today. So for this assignment we are going to be extending the DS platform by adding some new features for the users of your program.</p>
+<p>You have probably noticed how in programs like Slack, Discord, and Facebook Messenger, keywords can be entered into chat conversations that trigger some sort of automatic inclusion or formatting. In Computer Science, this process is called <strong>transclusion</strong>, which basically refers to the process of using a linking syntax to connect or include content from one source into the content of another. For this assignment, you will be enhancing the post writing feature you created in assignment 2 by adding support for keyword transclusion.</p>
+<p>By now, you should have had a chance to digest some of the core principles of networked communication. You have learned about protocols, sockets, and request/response communication with a server. Your work for assignment 3 will focus on locking in these concepts as well as exploring some new ones.</p>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Modify and extend the ICS 32 DS Demo Tkinter interface.</p></li>
-<li><p>Integrate existing code with Tkinter widgets.</p></li>
-<li><p>Modify and update Tkinter widgets to display program information to a user.</p></li>
+<li><p>Connect to and retrieve data from at least 2 web API’s using Python’s <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong> module.</p></li>
+<li><p>Use transclusion to parse and replace keywords in a journal entry with content from web API’s.</p></li>
+<li><p>Write classes to manage your APIs.</p></li>
 </ul>
 </div>
 <div class="section" id="learning-goals">
 <h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Learn how to build basic Graphical User Interfaces with Tkinter and Python.</p></li>
-<li><p>Write event handlers and callback functions.</p></li>
-<li><p>Structure and organize a GUI program with classes.</p></li>
+<li><p>How to work with public API’s</p></li>
+<li><p>Know when and how to write a class</p></li>
+<li><p>Understand and handle failures when communicating over HTTP</p></li>
+<li><p>Use inheritance to extend class functionality</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<p>For this assignment you will be given a mostly functional Tkinter program framework to get you started. Learning graphical toolkits is a big undertaking that is typically filled with a lot of trial and error. We could spend an entire quarter mastering the Tkinter toolkit if we so desired. So, rather than get bogged down attempting to work through all of the nuances of getting a Tkinter GUI to function the way we want, you will be spending your remaining time in this class extending an existing program that already works pretty well. The following image depicts the ICS 32 DS program in it’s default state with a DSU file loaded.</p>
-<p><img alt="dsugui" src="../_images/ics32dsu_gui.png" /></p>
-<p>However, the version that is available for you, does not yet have the features required to get to the state pictured. To make this program fully functional, you will have to download the template and complete all of the TODO items described in the code.</p>
-<div class="warning admonition">
-<p class="admonition-title">Attention</p>
-<p>The Distributed Social GUI Starter Code was updated on 7/17/21 to remove references to a version of the Profile module that we are no longer using for this course. If you are experiencing errors related to <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong>, please grab the latest version!</p>
-</div>
-<p><a href="../resources/DistributedSocialGUI.py">The Distributed Social GUI Starter Code</a></p>
-<p>To get a better understanding of how this program was built, watch the lecture and walkthrough posted in the weekly notes.</p>
+<p>Your main entry point to your program will be from a module called <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>. As with a2, you will not have a validity checker to use for testing and you will be largely responsible for program input and output. You are encouraged to continue to bring the user interface and other functions you created in your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong> modules, but you will not be re-graded on the features you implemented for those assignments.</p>
+<p>Your final program should contain the following new modules:</p>
+<ol class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API. See <a class="reference internal" href="#section-part1"><span class="std std-ref">Part 1</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the Last.FM API. See <a class="reference internal" href="#section-part2"><span class="std std-ref">Part 2</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit. See <a class="reference internal" href="#section-extracredit"><span class="std std-ref">Extra Credit</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">WebAPI.py</span></code></strong>: A base class module that provides access to common features for by API modules. See <a class="reference internal" href="#section-part3"><span class="std std-ref">Part 3: The Refactor!</span></a></p></li>
+</ol>
+<p>Since the code you write for this assignment will still be dependent on communication with the server, you should also include all modules you created or used for assignment 2.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is a lecture on Tkinter in the weekly notes page that covers the process for building this program, as well as some of the aspects of Tkinter you will need to know to complete the assignment.</p>
+<p>If you were unable to complete the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function requirement in a2, let us know. We will walk you through the steps required to send and receive messages with the DS server.</p>
+</div>
+<div class="section" id="part-1">
+<span id="section-part1"></span><h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
+<p>When introducing new features to a program or learning a new tool that is unfamiliar, a good place to start is with a test program. So for Part 1, you will temporarily set aside your DS program and focus on building a small test program that can successfully connect to and retrieve data from a public API. You are welcome to use the sample code below to get started.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span><span class="n">error</span>
+
+<span class="k">def</span> <span class="nf">_download_url</span><span class="p">(</span><span class="n">url_to_download</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">r_obj</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url_to_download</span><span class="p">)</span>
+        <span class="n">json_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">r_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_results</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to download contents of URL&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status code: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">))</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">r_obj</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">zip</span> <span class="o">=</span> <span class="s2">&quot;92697&quot;</span>
+    <span class="n">ccode</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span>
+    <span class="n">apikey</span> <span class="o">=</span> <span class="s2">&quot;YOUR API KEY&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?zip=</span><span class="si">{</span><span class="nb">zip</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">ccode</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">{</span><span class="n">apikey</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">weather_obj</span> <span class="o">=</span> <span class="n">_download_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">weather_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">weather_obj</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="connecting-to-the-openweather-api">
+<h4>Connecting to the OpenWeather API<a class="headerlink" href="#connecting-to-the-openweather-api" title="Permalink to this headline">¶</a></h4>
+<p>To use the sample code, you must first create an account and generate an API key at <a class="reference external" href="https://openweathermap.org/">OpenWeather</a>:</p>
+<ul class="simple">
+<li><p>Create an account at: <a class="reference external" href="https://home.openweathermap.org/users/sign_up">https://home.openweathermap.org/users/sign_up</a>. If you are prompted to input a reason, just enter UCI and Education/Science.</p></li>
+<li><p>Once registered, find your API by clicking the “API Keys” link on your account page. Copy your API key and store it somewhere (as a comment in your code, for example).</p></li>
+<li><p>Next visit the <a class="reference external" href="https://openweathermap.org/current">current weather page</a>. Read through the instructions and build your API call. A basic call should look like this:</p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&amp;appid={API key}
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You will likely want to customize this based on your personal preferences, so read through the documentation thoroughly to understand the various options for weather data available through the API.</p></li>
+</ul>
+<p>Once you have your own API key, copy it into the <strong><code class="docutils literal notranslate"><span class="pre">apikey</span></code></strong> variable in the sample code above and run the program to see the result. Notice that the data response from the API is in JSON format. Most web API’s use the JSON format for storing and sending data and since we are already familiar with JSON from a2, we will continue using it here (though it’s worth noting that the OpenWeather API does support HTML and XML formats too). The <strong><code class="docutils literal notranslate"><span class="pre">loads</span></code></strong> function in Python’s json module should be all you need to use for converting the JSON responses you received into a Python object (you are free to adapt the DS Server Protocol Helper Code example provided in a2). Also notice, that in the sample code, the print out only contains the <strong><code class="docutils literal notranslate"><span class="pre">description</span></code></strong> attribute for the weather. A more complete output might contain detailed information like temperature, barometric pressure, and humidity. To see all the data available from the API response, you can update the sample code to simply print the <strong><code class="docutils literal notranslate"><span class="pre">weather_obj</span></code></strong> variable.</p>
+<p>Now that you have a functioning API call in place, you should start thinking about how to make this information more accessible for your DS program. A good way to go about doing this is to create a class that abstracts away the processing logic you need to write to gain access to weather data. So for the remainder of this part of the assignment, you will write a weather class called <strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong> that accepts location information and an API key to store weather information in data attributes.</p>
+<p>Your class must include and implement the following two methods:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Sets the apikey required to make requests to a web API.</span>
+<span class="sd">  :param apikey: The apikey supplied by the API service</span>
+<span class="sd">	</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="c1">#TODO: assign apikey value to a class data attribute that can be accessed by class members</span>
+  <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Calls the web api using the required values and stores the response in class data attributes.</span>
+<span class="sd">	</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="c1">#TODO: use the apikey data attribute and the urllib module to request data from the web api. See sample code at the begining of Part 1 for a hint.</span>
+  <span class="c1">#TODO: assign the necessary response data to the required class data attributes</span>
+  <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Your class should be written such that the following validity code runs without error:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">OpenWeather</span> <span class="kn">import</span> <span class="n">OpenWeather</span>
+
+<span class="n">zipcode</span> <span class="o">=</span> <span class="s2">&quot;92697&quot;</span>
+<span class="n">ccode</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span>
+<span class="n">apikey</span> <span class="o">=</span> <span class="s2">&quot;YOUR API KEY&quot;</span>
+
+<span class="n">open_weather</span> <span class="o">=</span> <span class="n">OpenWeather</span><span class="p">(</span><span class="n">zipcode</span><span class="p">,</span> <span class="n">ccode</span><span class="p">)</span>
+<span class="n">open_weather</span><span class="o">.</span><span class="n">set_apikey</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="n">open_weather</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The temperature for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2"> degrees&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The high for today in </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> will be </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">high_temperature</span><span class="si">}</span><span class="s2"> degrees&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The low for today in </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> will be </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">low_temperature</span><span class="si">}</span><span class="s2"> degrees&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The coordinates for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> are </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">longitude</span><span class="si">}</span><span class="s2"> longitude and </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">latitude</span><span class="si">}</span><span class="s2"> latitude&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The current weather for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The current humidity for </span><span class="si">{</span><span class="n">zipcode</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">humidity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sun will set in </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">city</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">open_weather</span><span class="o">.</span><span class="n">sunset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Although the sample code included in this assignment does have some error handling, you will likely want to attend to the various errors that can arise when connecting to remote API’s more gracefully than what is provided. You will need to understand the different types of errors that occur when communicating over HTTP. Many different conditions can arise that your program may or may not need to communicate to your end user. For example, an invalid API key requires a different set of actions to resolve compared to the API service going down. Therefore, your OpenWeather class should be able to cleanly handle and inform a user about the following conditions:</p>
+<ul class="simple">
+<li><p>Loss of local connection to the Internet</p></li>
+<li><p>404 or 503 HTTP response codes (indicating that the remote API is unavailable)</p></li>
+<li><p>Invalid data formatting from the remote API</p></li>
+</ul>
+<p>There are many ways to approach handling these types of errors. If you consider that the bulk of the work occurs in the <strong><code class="docutils literal notranslate"><span class="pre">load_data</span></code></strong> method, one good strategy might be to throw an exception when an error occurs when this method is called. However, your exception handling MUST explicitly handle each of the conditions listed by providing a custom message. For example, if your code catches an HTTP exception, it should raise a new exception with a custom message related to the operation that is being performed.</p>
+<p>We will run code that creates these error conditions to evaluate your OpenWeather class as well as your second API (see next section).</p>
+</div>
+<div class="section" id="connect-to-the-last-fm-api">
+<h4>Connect to the Last.FM API<a class="headerlink" href="#connect-to-the-last-fm-api" title="Permalink to this headline">¶</a></h4>
+<p>Once you have finished creating your OpenWeather class, you will repeat the process with a new API from <a class="reference external" href="https://www.last.fm/api#getting-started">Last.FM</a>. The Last.FM API is large and full of interesting bits of data about music that you can pull into your DS Program. The main consideration here is to think about how you will present your API data in a DS journal post. The current limitations of the DS server and journaling platform, for example, would prevent you from using the search feature of the API. Take a few minutes to look through the documentation and decide on what type of information you want to support with your keyword.</p>
+<p>Once you settle on at least one API method from the <a class="reference external" href="https://www.last.fm/api#getting-started">Last.FM website</a>, you will repeat the steps used in the previous section. Read through the API documentation, register to get an API key, and build a supporting class called <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong> to abstract the underlying API complexities from your program (and don’t forget the error handling!).</p>
+<p>You are free to include as many methods from the Last.FM API as you like, each assigned to their own keyword. However, you must connect one method to the predefined keyword listed in Part 2 so that our automated tests can verify that you successfully connected to the API.</p>
+<p>Finally, since we are not specifying how to write the class for your custom API, you will need to ensure that your class is documented sufficiently enough for us to understand how it works.</p>
+</div>
+</div>
+<div class="section" id="part-2">
+<span id="section-part2"></span><h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
+<p>Alright, at this point you should have two classes that retrieve data from web API’s. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left off after a2).</p>
+<p>You goal for part 2 should be to allow your user to write journal posts with optional keywords that are transcluded into data from your API classes. You must create at least two keywords, one for each API, using the keywords listed below:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@weather</span>
+<span class="nd">@lastfm</span>
+</pre></div>
+</div>
+<p>You may discover that once you have one keyword connected to an API method that adding more is pretty easy. So, if you choose, you may create your own keywords for any additional API methods that you want to support as long as they adhere to the following format:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">@</span><span class="p">[</span><span class="n">KEYWORD</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>So for example, the following journal post:</p>
+<blockquote>
+<div><p>Hello World! Today is the first day of the rest of my life. It is &#64;weather outside and I am thrilled!</p>
+</div></blockquote>
+<p>Should transclude to:</p>
+<blockquote>
+<div><p>Hello World! Today is the first day of the rest of my life. It is sunny outside and I am thrilled!</p>
+</div></blockquote>
+<p>Okay, that’s a pretty bad example, but you get the idea:) Here, the OpenWeather API feature ‘description’ was assigned to the &#64;weather keyword so that when the message was transcluded the keyword was replaced with the description ‘sunny.’ You ARE NOT REQUIRED to bind ‘description’ to the &#64;weather keyword, but you are required to bind some data from the OpenWeather API to the <strong><code class="docutils literal notranslate"><span class="pre">&#64;weather</span></code></strong> keyword.</p>
+<p>When your user writes a post, you will also want to inform them about the keywords your program makes available. There are a number of ways to go about accomplishing this task, the most straightforward being a print out of the keywords. However, you might also consider making keyword selection a little more interactive. Either way, you will not be graded on how you inform your user about keyword options, only that you have added this feature.</p>
+<p>Finally, so that we may accurately test your program, all of your API classes (<strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">LastFM</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI</span></code></strong>) must also implement the following function:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transclude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Replaces keywords in a message with associated API data.</span>
+<span class="sd">  :param message: The message to transclude</span>
+<span class="sd">	</span>
+<span class="sd">  :returns: The transcluded message</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="c1">#TODO: write code necessary to transclude keywords in the message parameter with appropriate data from API</span>
+  <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>The grading tool will import and call the required functions automatically using its own API keys. You must take care to not change the file name or the function parameters (though you can safely add parameters as long as they are given default values). If you do make changes, it is likely that your code will not pass the grading tool.</p>
+</div>
+</div>
+<div class="section" id="part-3-the-refactor">
+<span id="section-part3"></span><h3>Part 3: The Refactor!<a class="headerlink" href="#part-3-the-refactor" title="Permalink to this headline">¶</a></h3>
+<p>At this point you should have two classes that look similar to the following psuedocode:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<span class="k">class</span> <span class="nc">MyAPI</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="c1"># creates required class attribute apikey</span>
+    <span class="c1"># creates API specific class attributes like zip, ccode</span>
+    <span class="k">pass</span>
+
+  <span class="k">def</span> <span class="nf">_download_url</span> <span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+  <span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+  <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+  <span class="k">def</span> <span class="nf">transclude</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+</pre></div>
+</div>
+<p>If you compare both classes you will likely find that both contain some redundant code. It is likely that the <strong><code class="docutils literal notranslate"><span class="pre">set_apikey</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">_download_url</span></code></strong> (or whatever you call the function that handles api requests) methods perform very similar operations. If so, you have a good indication that it might be time to refactor!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Often times when we write programs it is difficult to foresee all the features and code we will require to make our program function the way we want. But as the program and our understanding of the code we have written evolves, we gradually begin to find points of redundancy. The more redundant code that we put into our program, the greater the likelihood we face undesirable conditions such as poor performance, bugs, and confusing logic.</p>
+<p>As programmers, it is our job to ensure that our code is performant as possible, given our knowledge and abilities. One way that we accomplish this is by <strong>refactoring</strong> our code: reworking the code that we have written to reduce unneccessary logic, repetition, and errors.</p>
+</div>
+<p>For this final part of the assignment, you refactor your code to reduce redundancy. You will do this by creating a base class that all of your api classes inherit, so if you have not watched the lecture on inheritance yet, now is a good time to do it!</p>
+<p>Your base class will start with the following template:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">WebAPI</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">_download_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="c1">#TODO: Implement web api request code in a way that supports ALL types of web APIs</span>
+    <span class="k">pass</span>
+	
+  <span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+	
+  <span class="nd">@abstractmethod</span>
+  <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
+	
+  <span class="nd">@abstractmethod</span>
+  <span class="k">def</span> <span class="nf">transclude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+</pre></div>
+</div>
+<p>You will be required to add the necessary code to each of methods in the <strong><code class="docutils literal notranslate"><span class="pre">WebAPI</span></code></strong> class. Notice that the <strong><code class="docutils literal notranslate"><span class="pre">load_data</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">transclude</span></code></strong> methods have been assigned the <strong><code class="docutils literal notranslate"><span class="pre">&#64;abstractmethod</span></code></strong> decorator. If you inherit this class and do not implement either of the abstract methods, you will receive an error from the python interpreter. Therefore, all code that is unique to the API used in the child class (or class that inherits from the base class) should be contained within the these methods.</p>
+<p>When complete, the following code should be able to run using any of your API modules:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">test_api</span><span class="p">(</span><span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">webapi</span><span class="p">:</span><span class="n">WebAPI</span><span class="p">):</span>
+  <span class="n">webapi</span><span class="o">.</span><span class="n">set_apikey</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+  <span class="n">webapi</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">webapi</span><span class="o">.</span><span class="n">transclude</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="n">open_weather</span> <span class="o">=</span> <span class="n">OpenWeather</span><span class="p">()</span> <span class="c1">#notice there are no params here...HINT: be sure to use parameter defaults!!!</span>
+<span class="n">lastfm</span> <span class="o">=</span> <span class="n">LastFM</span><span class="p">()</span>
+
+<span class="n">test_api</span><span class="p">(</span><span class="s2">&quot;Testing the weather: @weather&quot;</span><span class="p">,</span> <span class="n">MY_APIKEY</span><span class="p">,</span> <span class="n">open_weather</span><span class="p">)</span>
+<span class="c1"># expected output should include the original message transcluded with the default weather value for the @weather keyword.</span>
+
+<span class="n">test_api</span><span class="p">(</span><span class="s2">&quot;Testing lastFM: @lastfm, MY_APIKEY, lastfm)</span>
+<span class="c1"># expected output include the original message transcluded with the default music data assigned to the @lastfm keyword</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="extra-credit">
-<h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>For this final assignment in ICS32 you will have the opportunity to receive up to 3 extra credit points. To receive a signal extra credit point you must add at least one of the following features to your Tkinter GUI. You may <strong>add up to 3</strong> features for extra credit.</p>
-<ol class="simple">
-<li><p>Add title support for posts.</p></li>
-<li><p>Add a settings menu item and interface for username and password management.</p></li>
-<li><p>Add a toolbar with quick buttons to insert your API keywords into the editor.</p></li>
-<li><p>Add a bio menu item and interface for editing the user bio.</p></li>
-<li><p>Add support for editing existing posts.</p></li>
-<li><p>Add support for editing the location of the DSU server.</p></li>
-<li><p>Add a custom feature (must complete at least one of the above first).</p></li>
-</ol>
-<div class="section" id="add-title-support-for-posts">
-<h4>Add title support for posts<a class="headerlink" href="#add-title-support-for-posts" title="Permalink to this headline">¶</a></h4>
-<p>Currently, the GUI for the ICS 32 DS program extracts the titles for the post tree viewer from the first few characters of the post. It might be nice to provide users with the ability to write a proper title for each post and use that in the post tree viewer as well. To accomplish this feature a couple of changes must happen:</p>
-<ol class="simple">
-<li><p>The Profile and Post classes must be updated to include an additional title attribute.</p></li>
-<li><p>The GUI must be modified to support text editing for the title.</p></li>
-<li><p>The post tree viewer widget must be updated to display post titles.</p></li>
-</ol>
+<span id="section-extracredit"></span><h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
+<p>We will be awarding 1 extra credit point for the successful inclusion of a third API from a source that has not been used for this class. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit. Your API should be built in a module named <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong> and make use of at least one keyword named:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@extracredit</span>
+</pre></div>
 </div>
-<div class="section" id="add-settings-menu-item-and-interface">
-<h4>Add settings menu item and interface<a class="headerlink" href="#add-settings-menu-item-and-interface" title="Permalink to this headline">¶</a></h4>
-<p>Without a username and password, all post entries in a DSU file must be associated with either hard coded values or rely on a2 to generate a complete profile. A better approach would be to integrate the various profile settings into the GUI. To accomplish this, you will need to create a settings window that provides the user with access to input and change these values. This feature will require the following changes to be made:</p>
-<ol class="simple">
-<li><p>Add a new ‘settings’ item to the menu.</p></li>
-<li><p>Open a new window when the settings item is clicked.</p></li>
-<li><p>Display current username and password in the settings window.</p></li>
-<li><p>Add a Tkinter Text or Entry widget to allow the user to change their username and password.</p></li>
-<li><p>Add a Tkinter button to save and close the settings window.</p></li>
-<li><p>Save edited username and password to the DSU file.</p></li>
-</ol>
+<p>Since it will be near impossible for us to create a unique key for every extra credit API, you MUST hard code your key into your <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI</span></code></strong> class. To ensure consistency across all submissions, your extra credit API must include the following global variable:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EXTRACREDITAPIKEY</span> <span class="o">=</span> <span class="s2">&quot;YOUR API KEY&quot;</span> <span class="c1"># replace with the key required for your custom api.</span>
+</pre></div>
 </div>
-<div class="section" id="add-a-quick-button-toolbar-for-keywords">
-<h4>Add a quick button toolbar for keywords<a class="headerlink" href="#add-a-quick-button-toolbar-for-keywords" title="Permalink to this headline">¶</a></h4>
-<p>In assignment 3, you introduced support for adding content from 3rd party API’s to your assignments. For this feature, you will add Tkinter buttons that insert your API data into the post entry editor. To complete this feature you will need to:</p>
-<ol class="simple">
-<li><p>Add buttons to the GUI. You may either add them in the footer frame between the status label and online checkbox, create a new ‘Toolbar’ frame class and add it above the entry editor, or add a new menu dropdown with menu items for your keywords.</p></li>
-<li><p>You must implement the &#64;weather feature, but you may also want to include any additional API keywords you created for assignment 3.</p></li>
-<li><p>When a keyword is selected, the API data should be placed at the position of the cursor in the entry editor window.</p></li>
-</ol>
-</div>
-<div class="section" id="add-a-bio-menu-item-and-editor">
-<h4>Add a bio menu item and editor<a class="headerlink" href="#add-a-bio-menu-item-and-editor" title="Permalink to this headline">¶</a></h4>
-<p>This feature adds support for viewing and editing the profile bio. (HINT: This feature pairs nicely with feature 2 in terms of the type and organization of code you will need to write).</p>
-<ol class="simple">
-<li><p>Add a new ‘bio’ item to the menu.</p></li>
-<li><p>Open a new window when the bio item is clicked.</p></li>
-<li><p>Display current bio in the bio window.</p></li>
-<li><p>Add a Tkinter Text or Entry widget to allow the user to change their bio.</p></li>
-<li><p>Add a Tkinter button to save and close the bio window.</p></li>
-<li><p>Save edited bio to the DSU file.</p></li>
-</ol>
-</div>
-<div class="section" id="add-support-for-post-editing">
-<h4>Add support for post editing<a class="headerlink" href="#add-support-for-post-editing" title="Permalink to this headline">¶</a></h4>
-<p>Currently, the post editor only adds new posts. When the Save Post button is clicked, whatever content is in the entry editor widget will be saved as a new post. A more realistic way of using this program would be to allow a user to also edit their post. There are a number of ways to go about adding this feature, here are a two:</p>
-<ol class="simple">
-<li><p>Detect when an existing post has been selected and edited and change the operation of the Save Post click event to update rather than add when appropriate.</p></li>
-<li><p>Add new buttons to perform different operations. An ‘edit’ button, for example, would update a post. Whereas a ‘new’ button would add a post.</p></li>
-</ol>
-</div>
-<div class="section" id="add-support-for-dsu-server-location-editing">
-<h4>Add support for DSU server location editing<a class="headerlink" href="#add-support-for-dsu-server-location-editing" title="Permalink to this headline">¶</a></h4>
-<p>The current implementation of the program requires you to hard code in the URL for the DSU server. However, servers come and go, and in the future your users may want to move their posts to a new location. So for this feature you will be required to add a text entry widget that allows your user to edit the URL of the DSU server. (HINT: This feature pairs nicely with feature 2 and 4 in terms of the type and organization of code you will need to write).</p>
-<ol class="simple">
-<li><p>Add a new ‘server’ item to the menu.</p></li>
-<li><p>Open a new window when the server item is clicked.</p></li>
-<li><p>Display current server URL in the server window.</p></li>
-<li><p>Add a Tkinter Text or Entry widget to allow the user to change their server.</p></li>
-<li><p>Add a Tkinter button to save and close the server window.</p></li>
-<li><p>Save edited server URL to the DSU file.</p></li>
-</ol>
-</div>
+<p>The grading tool will import your <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong> module and call the <strong><code class="docutils literal notranslate"><span class="pre">set_apikey</span></code></strong> function using the <strong><code class="docutils literal notranslate"><span class="pre">EXTRACREDITAPIKEY</span></code></strong> global variable as the value for the <strong><code class="docutils literal notranslate"><span class="pre">apikey</span></code></strong> parameter. So make sure your module supports this behavior!</p>
 </div>
 <div class="section" id="submitting">
 <h3>Submitting<a class="headerlink" href="#submitting" title="Permalink to this headline">¶</a></h3>
-<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong>. If you complete any of the extra credit items, be sure to add a README file that describes exactly which features you implemented. You can include the README in your zipped submission, but YOU MUST ALSO LEAVE A COMMENT IN CANVAS ON YOUR SUBMISSION THAT INDICATES YOU HAVE EXTRA CREDIT FEATURES IN YOUR PROGRAM. Failure to leave a comment means that we may not notice the extra credit features when grading.</p>
+<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>. If you complete the extra credit, be sure to add a comment on your submission page that notifies us. Failure to leave a comment means that we may not notice the extra credit feature when grading.</p>
 <p>Additionally, all modules that you create or edit must include the following comment on the first three lines:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># NAME</span>
@@ -450,20 +569,20 @@
 <dl class="simple myst">
 <dt>Requirements and Function | 12 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
+<dd><p>Does the program make use of required APIs?</p>
+</dd>
+<dd><p>Does the program adhere to the principles of inheritance?</p>
+</dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
 <dt>Quality and Design        | 3 pts</dt><dd><p>Is the code well designed?</p>
 </dd>
 <dd><p>Is the code clearly documented?</p>
 </dd>
-<dt>Extra Credit | 3 pts</dt><dd><p>Is one extra credit feature implemented and functioning as intended? 1 pt</p>
-</dd>
-<dd><p>Is a second extra credit feature implemented and functioning as intended? 1 pt</p>
-</dd>
-<dd><p>Is a third extra credit feature implemented and functioning as intended? 1 pt</p>
+<dt>Extra Credit							| 1 pt</dt><dd><p>Does the program makes use of a third API?</p>
 </dd>
 </dl>
-<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will be taking a much stricter stance on quality and design than we have in previous assignments.</p>
+<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will continue increasing the strictness of our stance on quality and design than we have in previous assignments.</p>
 </div>
 </div>
 </div>
@@ -496,8 +615,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="a3.html" title="previous page">Assignment 3: Extending the Platform</a>
-    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

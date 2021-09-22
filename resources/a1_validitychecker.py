@@ -1,11 +1,11 @@
 # a1_validitychecker.py
 #
-# ICS 32 Fall 2020
+# ICS 32 Fall 2021
 # Assignment #1: File Explorer
 #
 # NOTE: Heavily adapted from project1_sanitychecker.py written by Alex Thornton.
 #
-# This is a sanity checker for your Assignment #1 solution, which checks whether
+# This is a validity checker for your Assignment #1 solution, which checks whether
 # your solution meets some basic requirements with respect to reading input
 # formatting its output:
 #
@@ -281,6 +281,9 @@ TEST_FILES = [
         'Or maybe it should be about you',
         'I cannot decide'
     ]),
+    (pathlib.Path('Zzz/read.dsu'), [
+        'This is a line of text'
+    ]),
     (pathlib.Path('Zzz/zzz.py'), [
         'print(\'Sleep...\')',
         'for i in range(10):',
@@ -349,10 +352,13 @@ def make_test_lines(test_directory_path: pathlib.Path) -> ['TestLine']:
         str(test_directory_path / pathlib.Path('Zzz')), 10.0))
 
     test_lines.append(TestOutputLine(
+        str(test_directory_path / pathlib.Path('Zzz/read.dsu')), 10.0))
+    
+    test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('Zzz/zzz.py')), 10.0))
-
-    test_lines.append(TestInputLine('L ' +
-        str(test_directory_path / ' -f')))
+    
+    test_lines.append(TestInputLine(
+        'L {} -f'.format(str(test_directory_path))))
     
     test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('test1.txt')), 10.0))
@@ -360,8 +366,8 @@ def make_test_lines(test_directory_path: pathlib.Path) -> ['TestLine']:
     test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('test2.txt')), 10.0))
 
-    test_lines.append(TestInputLine('L ' +
-        str(test_directory_path / ' -r -f')))
+    test_lines.append(TestInputLine(
+        'L {} -r -f'.format(str(test_directory_path))))
     
     test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('test1.txt')), 10.0))
@@ -379,22 +385,25 @@ def make_test_lines(test_directory_path: pathlib.Path) -> ['TestLine']:
         str(test_directory_path / pathlib.Path('Sub/test3.txt')), 10.0))
 
     test_lines.append(TestOutputLine(
+        str(test_directory_path / pathlib.Path('Zzz/read.dsu')), 10.0))
+    
+    test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('Zzz/zzz.py')), 10.0))
     
-    test_lines.append(TestInputLine('L ' +
-        str(test_directory_path / ' -r -e py')))
+    test_lines.append(TestInputLine(
+        'L {} -r -e py'.format(str(test_directory_path))))
 
     test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('Zzz/zzz.py')), 10.0))
     
-    test_lines.append(TestInputLine('L ' +
-        str(test_directory_path / ' -s test1.txt')))
+    test_lines.append(TestInputLine(
+        'L {} -s test1.txt'.format(str(test_directory_path))))
     
     test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('test1.txt')), 10.0))
     
-    test_lines.append(TestInputLine('L ' +
-        str(test_directory_path / ' -r -s test1.txt')))
+    test_lines.append(TestInputLine(
+        'L {} -r -s test1.txt'.format(str(test_directory_path))))
     
     test_lines.append(TestOutputLine(
         str(test_directory_path / pathlib.Path('test1.txt')), 10.0))
@@ -405,13 +414,19 @@ def make_test_lines(test_directory_path: pathlib.Path) -> ['TestLine']:
     test_lines.append(TestInputLine('R ' +
         str(test_directory_path / 'test1.txt')))
     
+    test_lines.append(TestOutputLine('ERROR', 1.0))
+    
+    test_lines.append(TestInputLine('R ' +
+        str(test_directory_path / 'Zzz/read.dsu')))
+    
     test_lines.append(TestOutputLine('This is a line of text', 10.0))
 
     test_lines.append(TestInputLine('C'))
     test_lines.append(TestOutputLine('ERROR', 1.0))
    
-    test_lines.append(TestInputLine('C ' +
-        str(test_directory_path / ' -n test3')))
+    test_lines.append(TestInputLine(
+        'C {} -n test3'.format(str(test_directory_path))))
+   
     test_lines.append(TestOutputLine(
         str(test_directory_path / 'test3.dsu'), 10.0))
     
@@ -436,14 +451,14 @@ def run_test() -> None:
         run_test_lines(process, test_lines)
         print_labeled_output(
             'PASSED',
-            'Your "a1.py" passed the sanity checker.  Note that there are',
+            'Your "a1.py" passed the validity checker.  Note that there are',
             'many other tests you\'ll want to run on your own, because there are',
             'many different combinations of inputs that are legal.')
 
     except TestFailure:
         print_labeled_output(
             'FAILED',
-            'The sanity checker has failed, for the reasons described above.')
+            'The validity checker has failed, for the reasons described above.')
 
     finally:
         if process != None:
