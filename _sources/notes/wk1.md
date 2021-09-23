@@ -219,9 +219,6 @@ The computer file system! (ahem, a1)
 
 ## Quiz Results
 
-Coming soon.
-
-
 <a href="../resources/QZ_Week_1_Quiz_Results.pdf">Week 0 Quiz Results</a>
 
 
