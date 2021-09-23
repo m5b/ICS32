@@ -91,7 +91,7 @@ In-person Class
 :card: border-1
 Mon
 ^^^
-In-person Labs
+Remote Labs
 
 ---
 Wed
@@ -101,7 +101,7 @@ Remote Labs
 ---
 Fri
 ^^^
-Remote Labs
+In-person Labs
 ````
 
 Lecture and labs will hold one in-person session per week. Attendance is optional for both, but will factor into your participation grade. 
