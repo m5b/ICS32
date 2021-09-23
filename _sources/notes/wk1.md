@@ -12,6 +12,13 @@ Completing Assignment 1 will require that you start to build a fundamental under
 
 ## Lecture Materials
 
+### Thursday Live Class
+
+<a href="../resources/Introduction-to-ICS32.pdf">Week 0 Slides</a>
+
+<a href="https://uci.yuja.com/V/Video?v=3686576&node=12583367&a=226594572&autoplay=1">Recording</a>
+
+
 ### Recorded Lectures
 <a href="https://uci.yuja.com/V/Video?v=1975716&node=7594516&a=891585813&autoplay=1" >Exceptions and Files Lecture Part 1</a>
 
@@ -215,6 +222,7 @@ The computer file system! (ahem, a1)
 Coming soon.
 
 
+<a href="../resources/QZ_Week_1_Quiz_Results.pdf">Week 0 Quiz Results</a>
 
 
 
