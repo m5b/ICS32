@@ -231,7 +231,7 @@ The computer file system! (ahem, a1)
 
 ## Quiz Results
 
-<a href="../resources/QZ_Week_1_Quiz_Results.pdf">Week 0 Quiz Results</a>
+<a href="../resources/QZ_Week_1b_Quiz_Results.pdf">Week 1 Quiz Results</a>
 
 
 
