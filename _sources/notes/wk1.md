@@ -8,15 +8,27 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 1 Overview
 
-Completing Assignment 1 will require that you start to build a fundamental understanding of concepts that are a bit more complex than what you have learned so far. If you haven't already, be sure to read the overview for [Assignment 1](../assignments/a1.html) and watch the lectures posted below.
+Completing Assignment 1 will require that you start to build a fundamental understanding of concepts that are a bit more complex than what you have learned so far. If you haven't already, be sure to read the overview for [Assignment 1](../assignments/a1.md) and watch the lectures posted below.
 
 ## Lecture Materials
 
 ### Thursday Live Class
 
+#### Week 0
 <a href="../resources/Introduction-to-ICS32.pdf">Week 0 Slides</a>
 
 <a href="https://uci.yuja.com/V/Video?v=3686576&node=12583367&a=226594572&autoplay=1">Recording</a>
+
+#### Week 1
+<a href="https://uci.zoom.us/rec/play/RODqy9444Hqm6yo43iaOQICou4p_yFcxBmskUEOet2b03HDEXg9fyheFXKMekQD-M9FnXooD1DSVBi5j.BwNlG_aBH0aNsKw2">Recording</a>
+
+##### Live Class Refactor Demo Code
+<a href="../resources/refactor_before.py" title="Refactor before demo">Before Code</a>
+ 
+<a href="../resources/refactor_after.py" title="Refactor after demo">After Code</a>
+
+
+
 
 
 ### Recorded Lectures
