@@ -7,514 +7,376 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 2 Overview
 
-It's week 2. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2. 
+By now you should have turned in your first python program for ICS 32 and be well on your way with the next one. Congrats! Completing Assignment 1 will require that you start to build a fundamental understanding of concepts that are a bit more complex than what you have learned so far. If you haven't already, be sure to read the overview for [Assignment 1](../assignments/a1.html) and watched the lectures posted in the [Week 1 Notes](../notes/wk1) before you dive into the lecture materials for this week.
 
 Quick Links:
-: {ref}`lecture-materials`
-: {ref}`quiz-results2`
+: {ref}`lecture-materials-2`
+: {ref}`quiz-results-2`
 
-(lecture-materials)=
+(lecture-materials-2)=
 ## Lecture Materials
 
 Lectures for Week 2
-: {ref}`lectures:networks`
-: {ref}`lectures:protocols`
-: {ref}`lectures:classes`
+: {ref}`lectures:testing`
+: {ref}`lectures:modules`
 
-(lectures:networks)=
-### Networks and Sockets
+(lectures:testing)=
+### Some Notes on Testing 
 
-#### Videos
+Although we will be diving into testing more formally around the mid-point of the quarter, I wanted to give you some preliminary notes on how to think about testing your code right now. We can discuss the topics here in a bit more detail after quiz in our next class.
 
-[Networking and Sockets Lecture](https://uci.yuja.com/V/Video?v=2093512&node=7861887&a=1763099740&autoplay=1)
+#### Notes
 
-#### Working with Sockets
+Now that you have assignment 0 wrapped up, let's take a minute to reflect on the experience. 
 
-In a1 and a2, you are tasked with storing and retrieving data from the file system by opening, reading or writing, and closing a file using Python's built-in functions for file management. **`open()`**, **`close()`**, **`read()`**, and **`write()`**, as examples, allow us to open a _stream_ to a file to send and receive data to a file located in our computer's file system
+Reviewing the discussions many of you have had over the past week on Zulip, it looks like you are starting to recognize the complexity that goes into writing even a small program. 
 
-But what if we wanted to send and receive data to a different computer? We could continue to use the file system to store the data and then find a way to transfer the file over a network connection. Or, we could create a direct connection to a networked computer and _stream_ the data directly. Since we are not going to concern ourselves with the transfer of files just yet, let's look at how we can use Python's networking interface to send data to another computer.
+Interpreting and implementing program requirements is an essential part of the programming process that will become more familiar to you as you work through this course and many others. However, even with practice, you will find that it is important to develop strategies to reduce the uncertainty that accompanies the application of requirements. 
 
-In Python, we can think of a _networking_ interface as any tool that facilitates communication with another computer over an ethernet connection. In the following diagram, a network connection has been established between two computers. Although the diagram does not specify, we can assume that the client (laptop) and server (box) are both connected to a common network (_e.g.,_ a corporate lan, wan, or the Internet). In order to communicate with each other, the server exposes a unique IP address (168.235.86.101, as depicted here for example) and the client must know of that IP address.
+In a way, the validity checker for assignments 0 and 1 "tests" your program for you. It offered some sense of confidence that your program was functioning according to the assignment requirements. For the remaining assignments in this class, you will be responsible for checking the validity of your programs. So in this lecture, I want to talk about one of the ways that programmers go about accomplishing this goal.
 
-![networking](../resources/sockets_overview.png)			
+In large programming projects where teams of programmers work together to write software, the practice of writing tests is quite common. In fact, there are programming paradigms such as Agile, Cleanroom, Spiral, and Waterfall that have integrated testing directly into their methodologies. We won't be learning about paradigms and models in this class, but it's important to recognize how pervasive testing is throughout the software development industry. As you might imagine, this pervasiveness exists because the process of writing tests against your code, works. Tests can significantly reduce the development time, code complexity, and bug tracking.
 
-When the client is ready to connect, it first checks to see if the server's address is available for connections. If available, the server sends a _response_ to confirm and then waits for data to be sent from the client. Communication is performed using a socket, which in Python, is a wrapper on many of the underlying details that computers must establish to stream data. For the purposes of this lecture, we will focus on a fairly narrow set of the many ways that sockets can be used. So our primary concern here is how sockets send and receive data. Notice in the diagram above, that each computing system has two sockets: a response socket and a send socket, which represent the _input stream_ of data from a remote computer and the _output stream_ of data that is sent from the local computer. When data is streamed to the socket, Python's socket library attempts to ensure that all data is sent or received arrives intact and in the order it was written.
+##### So how do we start?
 
-The following diagram illustrates the primary Python functions required to establish a socket between two computers. Notice how the **`send()`** and **`recv()`** functions at the end are iterative. In this example, after a response is sent, the server waits until the client sends data again, establish a send and receive loop until either the client disconnects or the server rejects the connection.
+Well, the first thing we do is create a hypothesis about how our program and the functions within it, are expected to behave. For example, one test might be to input a value and observe the output. Does the output align with the expectations set in the program requirements? If so, then the test can be said to 'pass.' If it doesn't, then obviously the test fails, but how do we determine why? This was a source of confusion for many of you while using the assignment 1 validity checker as the validity checker could only report a failure when the program did not return an expected output. A better test might have examined the input and output at the level of functions rather than the program.
 
-![networking](../resources/python_sockets_diagram.png)			
+Testing individual functions, however, does require some planning. If the functions in your program perform many operations, it can be difficult to configure a test that can be relied upon. So one of the benefits of thinking about tests before or in tandem with your program design is that the responsibilities of your functions will inevitably be scoped to a manageable size.
 
-So now let's take a look at how the code for these two computer systems could be written using Python's **`socket`** library.
+##### So how do we test at the level of functions?
+
+Let's take, for example, a program that manages an email list. We'll assume that one of the requirements for this program is to support removing certain email addresses from the mail list.
+
+We'll start by adapting this small function written by Alex Thornton for ICS 32. The **'remove_from'** function accepts two parameters: a list and a value. It returns the same list, except without the passed value, if it exists.
 
 ```ipython3
-import socket
+def remove_from(the_list: list, value) -> list:
+	new_list = []
 
-PORT = 2020
-HOST = "127.0.0.1"
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as srv:
-	srv.bind((HOST, PORT))
-	srv.listen()
-
-	print("server listening on port", PORT)
-
-	connection, address = srv.accept()
-
-	with connection:
-		print("client connected")
+	for element in the_list:
+		if element != value:
+			new_list.append(element)
 		
-		while True:
-			rec_msg = connection.recv(4096)
-			
-			print("echo", rec_msg)
-
-			if not rec_msg:
-				break
-			connection.sendall(rec_msg)
-			
-		print("client disconnected")
+	return new_list
 ```
 
-In the code above, we start by importing the socket module to the program, and set a **`PORT`** and **`HOST`** variable that contain the IP address of the server and the desired port (port numbers are unrestricted, however, there are some common conventions for ports where you might find conflicts, so choose wisely).
-
-Then, a **`with`** statement is used to instantiate a socket object and assign it to the variable **`srv`**. **`with`** will handle the responsibility of properly closing the socket and connection. The socket is first bound to the desired address and port, then set to listen for incoming socket connection requests. The code, as is, will block at this point until a it _hears_ a remote connection, at which point the socket will _accept_ the connection and store the socket connection and remote address in the variables **`connection`** and **`address`** respectively.
-
-Now that a connection between a remote computer and server is established, the program can begin to exchange data. The server depicted by the code here is a lightweight _echo_ server whose only responsibility is to send the data it receives as a response. Because Python sockets use the same underlying tools for establishing network connections as other programming languages and networking tools, we can connect to this server in a number of different ways. If you are on Windows, you can download a program called "PUTTY" to connect to this server and send it messages. If you are on Linux or OSX, you should have a preinstalled tool called _ncat_ that will allow you to connect. In the following example, I use ncat to connect to the server and send a few messages.
-
-![networking](../resources/ncat_echo_test.gif)			
-
-Take a minute and try it for yourself. Grab [PUTTY](https://www.putty.org/) or fire up ncat, copy the server code sample into IDLE, and send some messages!
-
-Oh, one more thing before we move on. In networking, there are some IP addresses that have special meaning. One of those address that will be relevant to you here is the _loopback_ address:
-
-![networking](../resources/sockets_loopback.png)			
-
-The loopback address, **`127.0.0.1`** is networking convention that allows a computer to connect to itself using its network connection. And just like domain names on the Internet, the 'name' **`localhost`** is an alphanumeric map to the loopback IP address. In the example above, I bind the Python server to the loopback address and connect to it using ncat. This provides a simple and straightforward way to test our socket programming without having to maintain code on two separate systems.
-
-Okay, so we have seen how we can connect to the Python server with an existing client, now let's take a look at how we can write our own.
-
-```ipython3
-import socket
-
-
-PORT = 2020
-HOST = "127.0.0.1"
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
-	client.connect((HOST, PORT))
-
-	print("client connected to {HOST} on {PORT}")
-
-	while True:
-		msg = input("Enter message to send: ")
-
-		client.sendall(msg.encode('utf-8'))
-		srv_msg = client.recv(4096)
-
-		print("Response",srv_msg.decode('utf-8'))
-```
-
-So in the client example, just like the server code, we first instantiate a **`socket`** object and assign it to a variable, in this case we will use **`client`** for differentiation. However, rather than **`bind()`** and **`listen()`** on an address and port, we tell the socket to **`connect()`** to the location that we expect to be listening. Then we simply create a **`while`** loop to continuously collect user input, send it using the connected socket, and print the response from the server.
-
-Go ahead, take a minute to copy the client code into a new instance of IDLE. You should be to run both the server and client at the same time. Just make sure that you start the server first so the client can connect.
-
-One final concern that we have not discussed yet is the format in which we are sending and receiving data. You have probably noticed that prior to the client sending the user input string, it is encoded. The **`encode()`** function converts the its string object to bytes in the format that is passed as a parameter (utf-8) in our example. Likewise, the response from the server is decoded again before printing to the shell. This process can become quite burdensome when a program needs to send and receive larger, complex data sets. Fortunately, Python makes this process much easier for us by exposing some additional functions that abstract much of the work for us. Let's take a look at the revised code first:
-
-```ipython3
-import socket
-
-
-PORT = 2020
-HOST = "127.0.0.1"
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
-	client.connect((HOST, PORT))
-
-	send = client.makefile('w')
-	recv = client.makefile('r')
-
-	print("client connected to {HOST} on {PORT}")
-
-	while True:
-		msg = input("Enter message to send: ")
-
-		send.write(msg + '\r\n')
-		send.flush()
-
-		srv_msg = recv.readline()
-
-		print("Response",srv_msg)
-```
-
-Here we make use of the **`socket`** module's **`makefile`** function to create a read and write convention that more closely resembles what we have learned from file operations. Makefile abstracts much of the work required to convert string-like data into bytes. Notice, we no longer have to conduct any encoding or decoding operations. Rather, we simply create readable (**`.makefile('r')`**) and writeable (**`.makefile('w')`**) _file objects_ on our connected socket. The only additional responsibility required here is to tell the remote connection when we have completed writing operations. Write operations will typically store data in a buffer prior to sending, often, buffered data will not be sent until the buffer is full. Therefore, it is always important to remember _flush_ the buffer when write operations have completed. The socket's **`.flush()`** function will conduct this operation for you.
-
-
-(lectures:protocols)=
-### Protocols
-
-The protocols lecture makes use of three Python programs. While various parts of the programs are included in this section, you will want to download the actual files if you plan on running them yourself in IDLE.
-
-<a href="../resources/symptom_monitoring.py">SMP Protocol</a>
-
-<a href="../resources/symptom_monitoring_ui.py">SMP Client Program</a>
-
-<a href="../resources/symptom_monitoring_server.py">SMP Server Program</a>
-
-#### Videos
-
-[Protocols Lecture](https://uci.yuja.com/V/Video?v=2102790&node=7910449&a=3002510&autoplay=1)
-
-#### Notes
-
-In assignment 2, you are provided with the **`Profile`** module for storing and loading user data. In this module, we make use of a particular format for storing information called [JSON](https://www.json.org/json-en.html), which wraps Profile object data in a style of notation using the rules and conventions set forth by the creators of the format. 
-
-All the files that you find on your computer adhere to a similar process: a format is created that specifies how data should be stored and retrieved and programs that make use of the format adhere to the format conventions. A file's format is typically specified by it's extension, or suffix (_e.g._, .jpg, .doc, .py), providing the program that wants to use it with some clue as to how to interpret the file contents. A good example of this is an image editing program that can display different image formats.
-
-Programs that talk to each other over networks follow a similar process. A format is agreed upon and the programs that want to talk to each other must follow this format to successfully communicate. In networking, this format is called a _protocol_. The Hypertext Transfer Protocol or HTTP, for example, is one way that servers and the clients that connect to them can communicate (if you are reading this web page right now, you have no doubt accessed it using HTTP).
-
-So, now that we have established a preliminary understanding of what constitutes a protocol. Let's create one of our own. After all, there is really nothing special about a protocol, it's just a set of requests and responses agreed upon by two or more programs.
-
-Let's start by building a protocol for UCI's Working Well Daily Symptom check tool. Now, I am not sure if you receive these emails as a student, but employees at UCI are required to answer these emails everyday. How might we go about converting this tool to a program?  And how might we extract some common language to be used by the program (_e.g._, create a protocol)?
-
-![uciemail](../resources/symptomcheck_email.png)			
-
-(watch the lecture for more detail about the wellness check email. <a href="../resources/smp.pdf">Download the full email</a>)
-
-Well, we can start by asking a few high level questions: What information does the tool need to collect? What are the conditions that need to be handled? What actions must be taken in response to those conditions? Certainly, there are many different ways to answer these questions, so the path we take here is likely not the only direction we could go, but it should be sufficient to demonstrate the underlying concepts of networking protocols.
-
-First, we need to know who is submitting a daily wellness check. Then, by reading through the email we can determine which conditions determine the next steps required by the user. Notice in the email how every question is constructed to respond to either a yes or no answer. We can use this boolean like response to construct the type of data we need for the protocol. Also notice how there are only two actions for each response: no further action is required, or continue to next question.
-
-The following table lays out what we can expect from a typical client-server interaction using the protocol. We first assume the typical handshaking process that must occur when sockets are establishing a connection. The handshake process is then followed by the first requirement of the transaction: identification (or authentication) of the user. We then proceed to check off the various steps as laid out in the original email. Since we only need to give the server a yes or no answer, the structure for the protocol messages can be fairly simple. Here, we construct a command using the following schema:
-
-```code
-SMP_[TYPE] [VALUE]
-```
-
-The only command that we do not require a 1 or 0 value for is **`SMP_AUTH`** since we must pass some form of user identification to the server.
+At least, that's what we hope it does. Rather than assume it does and continue to build our email list management program, we should test it first:
 
 ```code
 
-| client          | server     |
-|-----------------|------------|
-| connect         |            |
-|                 | accept     |
-| SMP_AUTH userid |            |
-|                 | WELCOME    |
-| SMP_STATUS 0    |            |
-|                 | COMPLETE   |
-| SMP_STATUS 1    |            |
-|                 | CONTINUE   |
-| SMP_SYMPTOMS 0  |            |
-|                 | COMPLETE   |
-| SMP_SYMPTOMS 1  |            |
-|                 | CONTINUE   |
-| SMP_TESTED 0    |            |
-|                 | CONTINUE   |
-| SMP_PROXIMITY 0 |            |
-|                 | COMPLETE   |
-| disconnect      |            |
-|                 | disconnect |
-
+>>> emails = ["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
+>>> remove_from(emails, "user2@example.com")
+["user1@example.com", "user3@example.com", "user4@example.com"]
+>>> emails
+["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
+>>> remove_from(emails, "user4@example.com")
+["user1@example.com", "user2@example.com", "user3@example.com"]
+>>> emails
+["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
 
 ```
 
-And that's our protocol. There are a few more conditions not listed in the previous table, such as when the **`SMP_TESTED`** or **`SMP_PROXIMITY`** commands are 1 on 0, that if we wanted to provide a formal protocol specification we would probably want to explain in greater detail.
+So far so good. We start with a test list, then pass some test conditions to the function to see if it returns the results we expect. Here, after each call to **`remove_from`** we receive a new list with the value we passed to it missing. But have we tested every possible condition? What happens if a passed value does not exist?
 
-You may be wondering why we even need a protocol for this program. Why not just collect the required data from the user and send it over to a server all at once? While that might work fine within the constraints of the UC system wellness checking needs, what if we needed to support other universities, organizations, and governments around the world? Perhaps it would be easier to give all of those outlets the ability to build their own platforms, rather than modify a single program to support all of them. By creating (and standardizing) a protocol, we don't have to depend on the capabilities of a single program from a single source. Rather, as long as a program adheres to the protocol, anyone can create their own custom interfaces, programs, and platforms.
+```code
 
-Okay, so now that we have a protocol, let's take a look at how it is implemented in Python. I won't be putting the entire project into the notes here, but you can download the protocol file at the top of this section. We will be calling this protocol the Symptom Monitoring Protocol (SMP).
+>>> emails = ["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
+>>> remove_from(emails, "user5@example.com")
+["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
 
-```{note}
-Unlike previous snippets, those used in this lecture are not feature complete. They will not run on their own if you copy and paste from here. To run the programs and view all of the code, please download the files listed at the top of this section.
 ```
+
+Is that what we want to happen? What if our program needs to confirm that a removal actually occurred? Well, we could compare **`emails`** to the results, or we could give that responsibility to the **`remove_from`** function:
+
 
 ```ipython3
-AUTH = "SMP_AUTH"
-STATUS = "SMP_STATUS"
-SYMPTOMS = "SMP_SYMPTOMS"
-TESTED = "SMP_TESTED"
-PROXIMITY = "SMP_PROXIMITY"
+def remove_from(the_list: list, value) -> list:
+	new_list = []
 
-WELCOME = "WELCOME"
-CONTINUE = "CONTINUE"
-COMPLETE = "COMPLETE"
-NOUSER = "NOUSER"
-ERROR = "ERROR"
-```
-Here we specify some constant variables to hold the commands we created for the protocol. Constant variables will help us keep the string representations of the commands together and make updating the protocol commands a little easier if the need arises.
-
-In the following section, we create a namedtuple object to hold the objects derived from the socket. A namedtuple is a convenient way to pass multiple objects without having to manage individual variables for each one. The protocol is first initialized by placing a call to the init method and passing it a socket that has been connected to the desired SMP supported endpoint (a client, or a server). 
-
-```ipython3
-
-SMPConnection = namedtuple('SMPConnection',['socket','send','recv'])
-
-def init(sock:socket) -> SMPConnection:
-    '''
-    The init method should be called for every program that uses the SMP Protocol. The calling program should first establish a connection with a socket object, then pass that open socket to init. init will then create file objects to handle input and output.
-    '''
-    try:
-        f_send = sock.makefile('w')
-        f_recv = sock.makefile('r')
-    except:
-        raise SMPProtocolError("Invalid socket connection")
-
-    return SMPConnection(
-        socket = sock,
-        send = f_send,
-        recv = f_recv
-    )
-
-def listen(smp_conn: SMPConnection) -> str:
-    '''
-    listen will block until a new message has been received
-    '''
-    return _read_command(smp_conn)
-
-
-def authenticate(smp_conn: SMPConnection, userid: str) -> str:
-    '''
-    a helper method to authenticate a userid with a server
-    '''
-    cmd = '{} {}'.format(AUTH, userid)
-    _write_command(smp_conn, cmd)
-    result = _read_command(smp_conn)
-    
-    return result
-
-def report(smp_conn: SMPConnection, report: str, status: str) -> str:
-    '''
-    report will send the command specified by the parameters and return a response to the command using the SMP Protocol.
-
-    report: one of the SMP_X commands provided by the module
-    status: either 0 or 1 to indicate the status of the command specified in the report parameter
-    '''
-    cmd = '{} {}'.format(report, status)
-    _write_command(smp_conn, cmd)
-    return _read_command(smp_conn)
-
-
-def nouser(smp_conn: SMPConnection):
-    '''
-    a send only wrapper for the NOUSER command
-    '''
-    _write_command(smp_conn, NOUSER)
-
-def _write_command(smp_conn: SMPConnection, cmd: str):
-    '''
-    performs the required steps to send a message, including appending a newline sequence and flushing the socket to ensure
-    the message is sent immediately.
-    '''
-    try:
-        smp_conn.send.write(cmd + '\r\n')
-        smp_conn.send.flush()
-    except:
-        raise SMPProtocolError
-
-def _read_command(smp_conn: SMPConnection) -> str:
-    '''
-    performs the required steps to receive a message. Trims the 
-    newline sequence before returning
-    '''
-    cmd = smp_conn.recv.readline()[:-1]
-    return cmd
+	for element in the_list:
+		if element != value:
+			new_list.append(element)
+		else:
+			raise ValueError('value not found in list')
+		
+	return new_list
 ```
 
-This code contains just a few of the functions in the protocol, however, most of the remaining functions are similar to the ones represented here. In particular, the function **`nouser`** is one of several helper functions that send specific commands. Also notice how the write and read operations have been abstracted to their own function (**`_write_command`**, **`_read_command`**). By moving this required, but repetitive code to its own function, we can consolidate purely structural operations (_e.g._, appending or trimming socket messages) to a single location.
+So now we have a function that will raise an exception if the passed value does not exist, providing us with a convention (exceptions) that we can use to handle this new condition. 
 
-Okay, so that is the bulk of the SMP protocol module. Now let's take a look at how we might go about incorporating it into our programs. We will be building upon the code used in the Networks and Sockets lecture, so be sure to watch it before continuing.
+```code
+
+>>> emails = ["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
+>>> remove_from(emails, "user5@example.com")
+Traceback (most recent call last):
+  File "maillist.py", line 39, in <module> 
+		remove_from(emails, "user5@example.com")
+	File "maillist.py", line 33, in remove_from
+		raise ValueError('value not found in list')
+ValueError: value not found in list
+
+```
+Can you think of any others? What happens if the email list has multiple emails with the same address? Currently, all instances of value will be removed from the new list, but what if we only wanted to remove duplicates? By writing tests against our functions, we expose conditions that we might not otherwise think to consider.
+
+Now, having to write these tests cases each time we want to test a program can quickly become unwieldy. Fortunately, Python gives us a way to automate much of the work!
+
+The **`assert`** statement is a convenient shortcut for inserting debugging tests into your program. Here we test a normal case, or case that represents typical behavior for the remove_from function:
 
 ```ipython3
-print("Welcome to the UCI Working Well Daily Symptom Checker")
-print()
-print("To get started, enter your UCI provided email address")
+assert remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user4@example.com") == ["user1@example.com", "user2@example.com", "user3@example.com"]
 
+```
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect((HOST, PORT))
-_smp_conn = smp.init(sock)
+And here we test an error case, or case that generates a result we don't expect:
 
+```ipython3
 try:
-  while True:
-    userid = input()
-
-    res = smp.authenticate(_smp_conn, userid)
-    if res == smp.NOUSER:
-        print('Unable to find user. Check your ID and try again.')
-    else:
-        break
-
-  while True:
-    if _report_status(_smp_conn) == smp.COMPLETE:
-        print('Thank you. No further action is required.')
-        break
-    
-    if _report_symptoms(_smp_conn) == smp.COMPLETE:
-        print('Thank you. No further action is required.')
-        break
-    
-    if _report_tested(_smp_conn) == smp.CONTINUE:
-        if _report_proximity(_smp_conn) == smp.COMPLETE:
-            print('Thank you. It is advised that you do not come to campus today.')
-            break
-        else:
-            print('Thank you. No further action is required.')
-            break
-    else:
-        print('Thank you. No further action is required.')
-        break
-except SMPProtocolError:
-  print("An error occurred while attempting to communicate with the remote server.")    
-else:
-  # only disconnect if an SMPProtocolError did not occur
-  smp.disconnect(_smp_conn)
-finally:
-  sock.close()
-
+	remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user5@example.com")
+	assert False, "ValueError should have been thrown"
+except ValueError:
+	pass
 ```
 
-Just as with the client server we created, we start by connecting a socket to the desired host and port. Once we have a connected socket, we can use that socket to initialize the SMP protocol. Recall that upon initialization, the protocol module returns a namedtuple called **`SMPConnection`** that contains the socket, a writable file object, and a readable file object. Now that we have an SMPConnection, we can begin conducting operations using the protocol module. If we refer to the table from earlier, we know that the first thing we need to do is authenticate as a user. So the program first collects the required data from the user and then sends it to the remote endpoint for processing. An invalid id will cause the user to be prompted again, otherwise, the program will continue with the protocol.
+If both assertions pass, then we should not expect to see anything from the shell when running the program. However, if an assertion fails, the debugger will notify you of the failure:
 
-For more detail on how the client program works, as well as a peak at the server program, please watch the lecture videos!
+```ipython3
+>>> assert remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user4@example.com") == ["user1@example.com", "user2@example.com", "user3@example.com"]
 
-(lectures:classes)=
-### Classes
+Traceback (most recent call last):
+  File "maillist.py", line 38, in <module>
+	    assert remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user4@example.com") == ["user1@example.com", "user2@example.com", "user2@example.com"]
+AssertionError
+```
 
-This lecture discusses elements of assignment 2.
+We will get into the more formal test driven approach to software development in a few more weeks, once you have had a chance to experience working with larger, more complex programs. But for now, focus on thinking about the how the code you write should behave, and then write some assertion statements to confirm that it behaves as you expected. I think you will find that new edge conditions will arise that you might not have otherwise considered. And remember, testing is not about quantity! A program with 100 tests is not necessarily better than one with 10. Your goal should be to identify _different_ conditions worth testing, not _variations_ on the same test.
+
+(lectures:modules)=
+### Modules
+
+In upcoming assignments, you will be required to start organizing your code a bit more than you have for [a0](../assignments/a0) and [a1](../assignments/a1). One way to organize code is to divide it into multiple files, or modules. In this lecture, we'll be focusing on how you should go about fulfilling this requirement.
+
+The code that we write to create a program in Python is stored in plain text files. Aside from some common conventions such as file extensions (**`.py`**), syntax, and indentation, Python files are no different then any other plain text file that you might write. So far, you have probably written most of your Python programs in a single file with a **`.py`** extension. Generally speaking, this is a good practice. Having all of your code in a single file simplifies things quite a bit. When all of your code (and tests!) is in one location you don't have worry about connecting multiple files. However, as your programs grow in complexity and size, you will discover that managing all of your code in a single file quickly turns into a time consuming challenge. So let's turn to the lecture to learn how we can improve the readability and reuse of our code with modules.
 
 #### Videos
 
-[Classes Lecture](https://uci.yuja.com/V/Video?v=2184495&node=8074840&a=353799435&autoplay=1)
+[Modules Lecture](https://uci.yuja.com/V/Video?v=2060971&node=7796023&a=1224073848&autoplay=1)
 
-#### Notes
+#### Working with Modules
 
-In programming languages that support a class-orientation like Python, classes are used to create templates for objects that can perform state and behavior operations in program code. Classes contain attribute references that take the form of data attributes and methods. Class data attributes and methods are syntactically identical to the variables and functions that you have been writing in Python so far. The primary difference is that data attributes and methods are called and operate on the instance of the class in which they are contained.
+In Python, a module is nothing more than a file with the **`.py`** extension. However, unlike the programs you have written so far, a module does not produce output when executed directly from the shell. Let's take a look at the following example:
 
-In assignment 2 you were asked to make use of a module called Profile.py. To use that module, you were required to _instantiate_ it and call its methods to perform certain tasks for you in your program.
 
 ```ipython3
+# basicmath.py
 
-server = "localhost"
-profile = Profile(server)
-profile.get_posts()
+def add(a: int, b: int) -> int:
+	result = int(a) + int(b)
+	return result
+		
+def subtract(a: int, b: int) -> int:
+	result = int(a) - int(b)
+	return result
+```
+
+If we were to run this program, **`basicmath.py`**, on the shell we would not receive any output from the Python interpreter. We would, however, be able to call the modules functions directly:
+
+```ipython3
+>>> add(2, 5)
+7
+>>> subtract(9, 3)
+6
+```
+
+If we attempt to call these functions before we load **`basicmath.py`** the interpreter will return a **`Traceback`** that tells us that 'add' (or 'subtract') is not defined. So what is the difference? Well, by executing the **`basicmath.py`** module first we have loaded it into our program, which in this case is the Python shell. The Python programs that we write in **`.py`** files, operate in much the same way. Let's write a small program that makes use of the **`basicmath.py`** module:
+
+```ipython3
+# mathrunner.py
+
+import basicmath
+
+a = input("Enter your first value: ")
+b = input("Enter your second value: ")
+
+result = basicmath.add(a,b)
+print(result)
+
+result = basicmath.subtract(a,b)
+print(result)
 
 ```
 
-The term _instantiate_ refers to the action of creating an instance of a class for use within a program. When a class is instantiated, an instance of that class is created as an object upon which the methods and attributes of that class can be called. Consider the following code:
+Notice that the first line of code is an **`import`** statement followed by the name of our basicmath python module. We don't need to specify the **`.py`** extension as it is implied that we are importing Python files. So, in the same way that you "imported" the **`Path`** module into your program for a1, we are able to import python files that we write. 
+
+##### Scope
+
+Another important convention to consider in this code is how the add and subtract functions are accessed. You will see that when the variables are passed to the basicmath functions, the name of the module must first be referenced. Python, as well as most programming languages, operate under a concept called _scope_. Scope refers to the availability of classes (we will cover these in more detail later in the quarter), functions, and variables at a given point of execution in a program. In the example above, notice how the variable **`result`** is used in the add and subtract functions of the **`basicmath`** module as well as the **`mathrunner`** program. We can reuse variable names in this way due to Python's scoping rules. **`result`** is locally scoped to the add and subtract functions, meaning that it only exists in the moment that each of those functions is being called. Now, if we wanted to make use of **`result`** outside of the add and subtract functions, we could modify the basicmath program like so:
 
 ```ipython3
+# basicmath.py
 
-from Profile import Profile
+result = 0
 
-p1 = Profile("")
-p1.username = "usr1"
+def add(a: int, b: int) -> int:
+	result = int(a) + int(b)
+	return result
+		
+def subtract(a: int, b: int) -> int:
+	result = int(a) - int(b)
+	return result
 
-p2 = Profile("")
-p2.username = "usr2"
-
-Profile.username = "usr3"
-
-Profile.username = "usr4"
-
-print(p1.username)
-print(p2.username)
-print(Profile.username)
-
+def get_last_result() -> int:
+	return result
 ```
 
 ```ipython3
->>> usr1
->>> usr2
->>> usr4
+# mathrunner.py
+
+import basicmath
+
+a = input("Enter your first value: ")
+b = input("Enter your second value: ")
+
+result = basicmath.add(a,b)
+print(result)
+
+result = basicmath.subtract(a,b)
+print(result)
+
+print(basicmath.get_last_result())
+
 ```
 
-Notice that when the statement **`Profile.username`** is printed, the data attribute **`username`** contains the most recently assigned value. This use of class members is called an attribute reference and is identical to the way you have been assigning and evaluating variable references in your program. However, when the same attribute is printed from different instances of the Profile class (p1 and p2), the original value is still assigned. p1 and p2 are object references, or references to attributes of an object (rather than of a class), and demonstrate one of the advantages of writing classes. The code that is written to form a class can be instantiated an infinite number of times and each instance of that class will be unique.
+Which will output:
 
-As you studied the Profile module, you learned that there is a second class called **`Post`** that is used to store text and a timestamp when a user writes a new journal entry. You may have noticed that for every post added to the Profile, a new instance of the Post class is created. The Post class, therefore, specifies a template for instances (or objects) of the type Post. The following snippet from the **`load_profile`** method of the Profile class highlights how this operation occurs:
 
 ```ipython3
-for post_obj in obj['_Profile__posts']:
-	post = Post(post_obj['entry'], post_obj['timestamp'])
-	post.timestamp = post_obj['timestamp']
-	self.add_post(post)
+Enter your first value: 5
+Enter your second value: 2
+7
+3
+0
 ```
 
-Each instance of Post is added to a member of the Profile class that is of type **`dict`** using a helper method called **`add_post`**. We'll dive into methods and other features of classes like the keyword **`self`** a little further on. The important thing to recognize for now is how the Post class is used to represent all of the journal posts a user has created. Once loaded from the DSU file, each post becomes it's own object that can be operated on within a program, making classes suitable for storing and passing multiple types of data as a single object. Additionally, because the class is a template of an object, it is also extensible. Let's say, for example, that a new feature requirement was added to the DSU program: 
-
-> add support for titles to journal entries
-
-Since we already have a template for journal entries, all we have to do as add a new attribute reference to the template, the Post class.
+Wait, why is the value of **`result`** still zero? Well, even though the variable **`result`** is scoped outside of both functions, or _global_, Python still gives precedence to the _local_ instance of **`result`**. So the add and subtract functions create a local instance of **`result`** while get_last_result, in absence of any instantiation of a local **`result`** instance, defers to the global instance of **`result`**. To use the globally scoped variable, we need to tell Python that is our intention:
 
 ```ipython3
-# A simplified version of the Post class used in assignment 2
+# basicmath.py
 
-class Post:
-	timestamp = time.time()
-	entry = ""
-	title = ""
+result = 0
+
+def add(a: int, b: int) -> int:
+	global result 
+	result = int(a) + int(b)
+	return result
+		
+def subtract(a: int, b: int) -> int:
+	global result
+	result = int(a) - int(b)
+	return result
+
+def get_last_result() -> int:
+	return result
 ```
 
-Now, when all instances of the Post class are instantiated by the load_profile method, they will have the data attribute **`title`** available for getting and setting a title for post entries.
+Which will output:
 
-Alright, so now let's look at some of the rules for writing classes. So far we have been referring to the implementation of a class as a template for creating object instances of the type defined by that class. The action of creating an instance or instantiating a class comes with some built-in functionality that can be quite useful. By default, the instantiation of a class creates an empty object. However, there is a special method, **`__init__()`**, that if defined in a class will automatically be called whenever a new instance of a class is created. This type of special method is often referred to as a _constructor_, because it performs operations as the class is being "constructed."
-
-If you studied the Profile module you likely noticed that both the Profile class and Post class made use of this special method:
 
 ```ipython3
-# Example of a minimal class constructor
-def __init__(self):
-	pass
-
-# The Profile class constructor
-def __init__(self, dsuserver, username=None, password=None):
-	self.dsuserver = dsuserver 
-	self.username = username 
-	self.password = password 
-	self.bio = ''           
-	self.__posts = []       
-
-# The Post class constructor
-def __init__(self, message = None, timestamp = None):
-	if timestamp is None:
-		timestamp = time.time()
-
-	self.timestamp = timestamp
-	self.__entry = message
+Enter your first value: 5
+Enter your second value: 2
+7
+3
+3
 ```
 
-The first example in the above code demonstrates the basic structure of the **`__init__`** method. The **`self`** parameter is a built-in attribute reference of the object's instance. In order to access the attributes and methods of a class instance, the **`self`** parameter must be specified. We can see how **`self`** works in the second example above pulled from the Profile class. Notice how the names **`dsuserver`**, **`username`**, and **`password`** are used twice. Although they share the same name, they are distinctly different. One is a parameter of the **`__init__`** method, and the other is an attribute reference of the Profile class. We then distinguish between these like named variables by applying the instance attribute of the class, **`self`**, to the variable using dot notation. When a variable is assigned to the class instance using **`self`**, it automatically becomes an attribute reference of the class instance:
+There we go! So by setting the scope of the **`result`** variable inside each function to _global_ we change the scope from _local_ to _global_, allowing us to store a value in a shared variable. So scope can be thought of as consisting at two levels: _global_ and _local_. The Python interpreter assumes a _local_ first stance when interpreting program code and when a local instance is unavailable it assumes _global_.
+
+```{important}
+Scope refers to the availability of a particular object in a program. That availability is interepreted locally first and then globally.
+```
+
+##### Definition Access
+
+When writing modules that contain many functions performing many different types of operations you will find that you need some of those functions to perform operations _within_ your module, but you might not necessarily want those functions to be called _outside_ of your module. In programming terms, we describe these two types of functions as _private_ and _public_. While some programming languages do provide modifiers for declaring this intention at the point of compilation, Python does not. Rather, all functions in Python are public by default. There is no way to prevent another program from calling functions in your module that should not be called!
+
+To get around this feature, and the absence of such modifiers is considered a feature in Python, programmers have adopted some formal conventions for communicating _intent_. When writing functions that you don't intend to be used outside your module, they should be prepended with a single underscore (**`_`**) character. This convention is used for functions, constants, and classes in Python:
 
 ```ipython3
-# Example of how the init constructor can be used to create attribute references for class instances.
-p = Profile("a server address")
-p.username = "usr1"
+# Specifying private intent
+
+def _myprivatefunction():
+
+_myprivateconstant = "525600" # minutes in a year
+
+class _myprivateclass():
 ```
 
-Alright, let's return to the previous example above and discuss the parameters a little bit more. Notice how in both the Profile and Post examples there are additional parameters, some of which are assigned a default value of **`None`**. When writing a class, you may desire to provide the code that makes use of its objects some flexibility in how the class is instantiated. For example, in the Profile class constructor, the parameter **`dsuserver`** is not assigned a default value, therefore the only way to create an instance of the class is to pass a value for the parameter. Whereas, since the other two parameters have been assigned default values, they can be optionally assigned.
+We will be looking more closely at your use of naming conventions like private and public access as we move forward with assignments this quarter. Not only do we want to you to continue to adopt formal Python programming conventions, but thinking about access will help you to improve the structure of your modules. So start considering what operations in your program need to be conducted outside the scope of your module and more importantly, what code should not be accessed.
 
-The use of default values can be a useful way to guarantee that your class is used the way you intended. However, without adequate protections in place, parameter requirements can be ignored. To get around this constraint, many of you opted to pass in empty strings rather than an actual server address in assignment 2. For the most part, this workaround was largely acceptable because you also had the ability to assign the required parameter to the attribute reference. But what if upon instantiation, the Profile class called code that either validated the parameter value or attempted to use it for it's intended purpose? Without error handling, the program would crash whenever the class was instanced. So it's important to take these types of use cases and outcomes into consideration when writing a class. Given the way the **`dsuserver`** variable is used by the Profile class, do you think it should be assigned a default value rather than be a required parameter?
 
-The last aspect of classes that we will discuss for this lecture is the role of methods in class objects. Again, we'll return to the Profile class as our reference point:
+##### Namespaces
+
+As your programs grow in size and complexity the importance of understanding scope will become increasingly relevant. Without the ability to scope the objects that we create, every Python programmer would have to create unique object names! Imagine if object naming behaved like Internet domain names, each one having to be recorded in a central registry to avoid duplicates. Through scope, and a convention called _namespaces_, most programming languages can avoid this unnecessary complication. A namespace is a dictionary-like collection of symbolic names tied to the object in which they are currently defined.
+
+Namespaces are not a perfect solution, but they serve well to help programmers identify and differentiate the modules and programs that they write. It is important to avoid using known namespaces, particularly those that are used by Python's built-in objects. For example, you should avoid creating an object named **`int`** or **`tuple`** because they already exist in every instance of a Python program. Imagine if we had named our **`basicmath`** module **`math`**, which is part of the standard library! To put it more concretely, what if we also had an **`add`** function in our **`mathrunner.py`** program? Namespaces allow us to differentiate between like named objects:
 
 ```ipython3
-def get_posts(self) -> list:
-	return self.__posts
+# mathrunner.py
 
-def add_post(self, post: Post) -> None:
-	self.__posts.append(post)
+import basicmath as m
+
+def add(a, b): 
+	print(a + b)
+
+a = input("Enter your first value: ")
+b = input("Enter your second value: ")
+
+print(m.add(a,b))
+print(add(a,b))
+
 ```
 
-The **`get_posts`** and **`add_post`** methods in the example above are taken directly from the Profile class. At first glance, you'll notice that they look identical to the functions that you have been writing throughout this course. Like a function, the method is defined using the **`def`** keyword, accepts parameters, and supports the optional specification of a return type. However, notice that even if when we don't intend to use a parameter, as is the case with **`get_posts`**, the **`self`** parameter is specified. The purpose of a class method is to act upon the class instance in some way, therefore a method must have a way to access the attributes of its class. As with the class constructor, all method signatures (The signature of a method refers to the combination of name, parameters, and return type.) in a class must be assigned the self parameter. 
+The two **`add`** functions being printed will produce distinctly different results, namespaces allow us to differentiate between them in the code we write. Python also provides us with a naming convention for the modules that we import. Notice how the import statement and subsequent use of namespace differ in this revised version of **`mathrunner.py`**. This can be useful when the modules you are importing make use of a longer namespace that you might not want to type every time it is used.
 
+Python makes use of four types of namespaces, listed in order of precedence:
 
-(quiz-results2)=
-## Live Class Recordings
+Local
+: Inside a class method or function
 
-[Wednesday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3298620&node=11043322&a=530865012&autoplay=1)
+Enclosed
+: Inside an enclosing function in instances when one function is nested within another
 
-[Friday Live Discussion](https://uci.yuja.com/V/Video?v=3303614&node=11059116&a=1174642833&autoplay=1)
+Global
+: Outside all functions or class methods
 
-Topics Covered:
-: Reverse input processing
-: Misbehaving recursive functions
-: Useful functions of the pathlib module
+Built-In
+: The built-in namespace consists of all of the Python objects that are available to your program at runtime. Try running **`dir(__builtins__)`** on the IDLE shell to see the full list of built-ins. Many of the names should look familiar to you.
+
+I have included the following tip originally written by Alex Thornton, who also teaches this class at UCI. I think it's a great explanation of how modules make use of the **`__name__`** variable in Python and wanted to share it with you.
+
+```{admonition} Alex Thornton's Explanation of Executable Modules
+:class: tip
+When you load a module in IDLE and execute it (by pressing F5), the code in that module is executed. If it generates any observable result, like printing output or asking the user for input, you'll see that in the interpreter. Otherwise, you'll see a standard >>> interpreter prompt, and all of the module's definitions will now be available — so, for example, if the module defines a function, you could now call it.
+
+As we've seen, modules in Python have names. We can check the name of the currently-executing module at any time by accessing the global variable **`__name__`**, which is present in every module.
+
+In general, the names of modules are indicated by their filenames; a module written in a file **`boo.py`** has the name **`boo`**. But there's one special case that we haven't talked about: When you execute a module in Python (i.e., by pressing F5 in IDLE), it's given the special name **`__main__`** while it runs. (Anything you define in the Python interpreter will be considered part of the **`__main__`** module, as well.)
+
+This little fact can be a useful way of differentiating between whether a module has been executed (i.e., is it the "entry point" of a program?) or whether it's been imported. In general, importing a module shouldn't suddenly cause things to happen — output to be generated, input to be read, and so on — but should, instead, simply make definitions available that weren't previously. Even executable modules, the ones we expect to be able to execute as programs, should behave differently when imported than they do when executed.
+s
+To facilitate this distinction, we can simply check the module's name by accessing the **`__name__`** variable. If its value is **`__main__`**, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an **`if __name__ == '__main__':`** block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.
+```
+
+(quiz-results-2)=
+## Quiz Results
+
+Released after class on Thursday
+
+<!--
+If you are participating in the late quiz, feel free to watch the video linked below as you move through the quiz. Link to the late quiz can be found in Zulip #announcements. If you get any of the answers wrong, watch the video as there may be useful discussion related to the answers available!
+
+[Live Quiz and Discussion]()
+
+<a href="../resources/QZ_Week_2_Quiz_Results.pdf">Quiz Results</a>
+//-->
+
