@@ -9,6 +9,16 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 By now you should have turned in your first python program for ICS 32 and be well on your way with the next one. Congrats! Completing Assignment 1 will require that you start to build a fundamental understanding of concepts that are a bit more complex than what you have learned so far. If you haven't already, be sure to read the overview for [Assignment 1](../assignments/a1.html) and watched the lectures posted in the [Week 1 Notes](../notes/wk1) before you dive into the lecture materials for this week.
 
+### Thursday Live Class
+
+<a href="https://uci.zoom.us/rec/share/tWBG6yDRQjN2MObr_oIwsLf2dhKY4idSESPC2e47SXo4bvIKZHp5OrS8Ezzr2T8.jt79VrnvfDi8lCtx">Recording</a>
+
+##### Live Class Demo Code
+<a href="../resources/input_processor_demo.py" title="Input Processing Demo">Input Processing Demo</a>
+ 
+<a href="../resources/input_regex_processor.py" title="Regex Processor Example">Regex Processor Example</a>
+
+
 Quick Links:
 : {ref}`lecture-materials-2`
 : {ref}`quiz-results-2`
