@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
+    <link rel="prev" title="Assignment 1: File Explorer" href="a1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,19 +97,19 @@
   Assignments
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a0.html">
+  <a class="reference internal" href="a0.html">
    Assignment 0
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a1.html">
+  <a class="reference internal" href="a1.html">
    Assignment 1
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a2.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment 2
   </a>
  </li>
@@ -180,7 +182,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/prep/a2.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/a2.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -288,8 +290,8 @@
 <h1>Assignment 2: Journal<a class="headerlink" href="#assignment-2-journal" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The primary objective for <span class="xref myst">assignment 1</span> was to learn how to work with modules from the Python Standard Library, write recursive functions, and gain familiarity with error handling. If you were able to complete all of the requirements for assignment 1, you should now have a fully functional command line program that allows you to find, create, read, and delete files on your computer.</p>
-<p>Though useful, so far your program doesn’t provide any capabilities that are not already available from the command line in most modern computers. So for assignment 2, you are going to extend your a1 code to enable a user to keep track of their thoughts by writing journal posts and storing them in a text file. You will use the features that you implemented in <span class="xref myst">a1</span> to provide the basic file management and user interface aspects of your new program while you add new features to support basic journaling and journal management functionality.</p>
+<p>The goal for <a class="reference internal" href="a1.html"><span class="doc std std-doc">assignment 1</span></a> was to learn how to work with the Python Standard Library, use recursion, and start to familiarize yourself with error handling. If you were able to complete all of the requirements for assignment 1, you should now have a fully functional command line program that allows you to find, create, read, and delete files on your computer.</p>
+<p>Though useful, so far your program doesn’t offer any functionality that is not available from existing command line tools already on your computer. So for assignment 2, you are going to extend your a1 code to enable a user to capture their thoughts by writing journal posts and storing them in a text file. You will use the features that you implemented in <a class="reference internal" href="a1.html"><span class="doc std std-doc">a1</span></a> to provide the basic file management and user interface aspects of your new program while you add new features to support basic journaling and journal management functionality.</p>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
@@ -339,42 +341,44 @@
 <p>The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2 by writing some tests.</p>
 <div class="section" id="part-1-extending-a1">
 <h3>Part 1: Extending A1<a class="headerlink" href="#part-1-extending-a1" title="Permalink to this headline">¶</a></h3>
-<p>Your program should extend the <code class="docutils literal notranslate"><span class="pre">C</span></code> (create) command from a1. However, now when a user enters the <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code>, your program should create a new file and automatically append it with the extension (or suffix) <code class="docutils literal notranslate"><span class="pre">.dsu</span></code> (we will learn more about why it’s called ‘dsu’ in the next assignment). The use of the <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code> should also use the <code class="docutils literal notranslate"><span class="pre">input</span></code> function to collect the following data from the user:</p>
+<p>Your program should extend the <strong><code class="docutils literal notranslate"><span class="pre">C</span></code></strong> (create) command from a1. However, now when a user enters the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong>, your program should create a new file and automatically append it with the extension (or suffix) <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> (we will learn more about why it’s called ‘dsu’ in the next assignment). The use of the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong> should also prompt the user using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> function to collect the following data:</p>
 <ul class="simple">
 <li><p><strong>username</strong>: a unique name to associate the user with posts.</p></li>
 <li><p><strong>password</strong>: a password to protect access to user journal entries.</p></li>
 <li><p><strong>bio</strong>: a brief description about the user.</p></li>
 </ul>
-<p>The collected data should be contained in a Profile object while the user is running the program and saved to the file system when the program exits (though, saving can and should occur whenever data is changed). The <code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code> has built-in functionality for saving data stored in a Profile object, all you have to do is supply the filename collected from the user (e.g., specified by the <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code> or collected from an <code class="docutils literal notranslate"><span class="pre">input</span></code> as a parameter to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method).</p>
+<p>The collected data should be contained in a Profile object while the user is running the program and saved to the file system when the program exits (though, saving can and should occur whenever data is changed). The <strong><code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code></strong> has built-in functionality for saving data stored in a Profile object, all you have to do is supply the filename collected from the user (e.g., specified by the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong> or collected from an <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong>) as a parameter to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method.</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
 <p>Extend the ‘C’ create DSU file command to collect profile information about the user and store the profile information using the Profile module.</p>
 </div>
-<p>When implemented, a user should be able to enter the following command into your program and start using it to write journal entries (“myjournal” is the user selected name for their journal).</p>
+<p>Once implemented, a user should be able to enter the following command into your program and start using it to write journal entries (“myjournal” is the journal name chosen by your user).</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span> <span class="o">-</span><span class="n">n</span> <span class="n">myjournal</span>
 </pre></div>
 </div>
-<p>Your program should allow a user to search for and load a <code class="docutils literal notranslate"><span class="pre">DSU</span></code> file using the input command conventions established in a1, but you will need to add support for loading a <code class="docutils literal notranslate"><span class="pre">DSU</span></code> file.</p>
-<p>As you might recall, in a1 you performed a very similar operation when you implemented the ‘R’ command. We don’t want to change the behavior of the ‘R’ command, as there may be conditions in which a user might like to check the contents of a DSU file before loading it. Therefore, you will need to add a new input command to support loading an existing DSU file. Conceptually we can think of the task as ‘opening’ a file, similar to how you might open a <code class="docutils literal notranslate"><span class="pre">docx</span></code> file in Microsoft Word, so let’s use the input command <code class="docutils literal notranslate"><span class="pre">O</span></code> for ‘Open’:</p>
+<p>When the input command above is entered into your program it should respond by performing the data collection discussed earlier. This is your opportunity to design your own user interface, so we will not provide any examples here!</p>
+<p>At this point, your program should allow a user to search for and load a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file using the input command conventions established in a1 and the new features you have added to the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong>. But what happens when a user wants to use an existing <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file? To support the use of existing files, you will need to add code for loading a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file.</p>
+<p>As you might recall, in a1 you performed a very similar operation when you implemented the ‘R’ command. We don’t want to change the behavior of the ‘R’ command, as there may be conditions in which a user might like to check the contents of a DSU file before loading it. Therefore, you will need to add a new input command to support loading an existing DSU file. Conceptually we can think of the task as ‘opening’ a file, similar to how you might open a <strong><code class="docutils literal notranslate"><span class="pre">docx</span></code></strong> file in Microsoft Word, so let’s use the input command <strong><code class="docutils literal notranslate"><span class="pre">O</span></code></strong> for ‘Open’:</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
 <p>Add new command to user interface to support loading DSU files.</p>
-<p>O - Open an existing file of the type <code class="docutils literal notranslate"><span class="pre">dsu</span></code></p>
+<p>O - Open an existing file of the type <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong></p>
 </div>
 <p>When implemented, a user should be able to enter the following command into your program and start using the program to write journal entries.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">myjournal</span><span class="o">.</span><span class="n">dsu</span>
 </pre></div>
 </div>
+<p>Since you already have collected the required user data (username, password, bio), you do not need to add any additional input functions for this feature. However, you might consider adding some type of output to the user that the requested <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file has been successfully loaded. For example, you might print a simple confirmation message or you might print a message that outputs the username, password, and bio associated with the <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file. It’s up to you.</p>
 </div>
 <div class="section" id="part-2-managing-data-with-the-profile-module">
 <h3>Part 2: Managing Data with the Profile Module<a class="headerlink" href="#part-2-managing-data-with-the-profile-module" title="Permalink to this headline">¶</a></h3>
-<p>You must use the <code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code> that is included in your starter code to store the data you collect from the user. The Profile module has two primary functions:</p>
+<p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code></strong> that is included in your starter code to store the data you collect from the user. The Profile module has two primary functions:</p>
 <ol class="simple">
 <li><p>Provides properties to store user input.</p></li>
-<li><p>Provides encode and decode functions to support saving profile data to a <code class="docutils literal notranslate"><span class="pre">DSU</span></code> file using the JSON format.</p></li>
+<li><p>Provides encode and decode functions to support saving profile data to a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file using the JSON format.</p></li>
 </ol>
-<p>We will not be explicitly covering the functionality of the <code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code> in class. To understand how to use it, you will be required to learn the module on your own by reviewing its code, code comments, and discussion with the class. Don’t worry, the module is well documented and includes code snippets that demonstrate how each class method should work.</p>
-<p>A good starting place to understanding how the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module works is to create a test file that imports the module. Write some sample code using the two classes available to you in the module. You are free to share any sample tests you write with your classmates on Zulip.</p>
+<p>We will not be explicitly covering the functionality of the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code></strong> in class. To understand how to use it, you will be required to learn the module on your own by reviewing its code, code comments, and discussion with the class. Don’t worry, the module is well documented and includes code snippets that demonstrate how each class method should work.</p>
+<p>A good starting place to understand how the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module works is to create a test file that imports the module. Write some sample code using the two classes available to you in the module. You are free to share any sample tests you write with your classmates on Zulip.</p>
 <p>Here are a few tasks you might try in your test program:</p>
 <ul class="simple">
 <li><p>Create a new Profile object and save it.</p></li>
@@ -446,7 +450,7 @@
 <div class="section" id="part-3-the-user-interface">
 <h3>Part 3: The User Interface<a class="headerlink" href="#part-3-the-user-interface" title="Permalink to this headline">¶</a></h3>
 <p>“User interface” is a term used to describe the inputs and outputs that a person can use to interpret and control your program. In Python, a simple user interface can be programmed using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">print</span></code></strong> functions. You created a user interface for assignment 1, but you were required to follow a very specific set of rules for both input and output. Although your program did have an interface it was not very user friendly. A user was required to know how to write input commands without any help from the program.</p>
-<p>For this assignment we will be loosening control quite a bit and allow you to create your own custom input and output. This means that you will create a friendly <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">interface</span></code> that informs users how to interact with your program. Your user interface should provide prompts that clearly instruct the user on how to use your program. A good place to start is with a printed menu that lists the various input options that your program understands. You might find it helpful to write out your program flow on paper first, then write the code to implement what you have written.</p>
+<p>For this assignment we will be loosening control quite a bit and allow you to create your own custom input and output. This means that you will create a friendly <strong><code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">interface</span></code></strong> that informs users how to interact with your program. Your user interface should provide prompts that clearly instruct the user on how to use your program. A good place to start is with a printed menu that lists the various input options that your program understands. You might find it helpful to write out your program flow on paper first, then write the code to implement what you have written.</p>
 <p>Your user interface can either use or act independently of the required input commands that you created in Part 2. So for example, you might make use of the input commands using an output similar to the following:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Please start by either creating or loading a DSU file using the following commands:
  &gt; To create enter:
@@ -490,17 +494,17 @@
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 15-point scale, with the 15 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>This assignment will be graded on a 150 point scale, with the 150 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <dl class="simple myst">
-<dt>Requirements and Function | 10 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+<dt>Requirements and Function | 100 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
 <dd><p>Does the ds_client module function independently of the rest of the program?</p>
 </dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
-<dt>Module Usage | 2 pts</dt><dd><p>Are all required modules named and used as specified?</p>
+<dt>Module Usage | 30 pts</dt><dd><p>Are all required modules named and used as specified?</p>
 </dd>
-<dt>Quality and Design        | 3 pts</dt><dd><p>Is the code well designed?</p>
+<dt>Quality and Design        | 20 pts</dt><dd><p>Is the code well designed?</p>
 </dd>
 <dd><p>Is the code clearly documented?</p>
 </dd>
@@ -523,7 +527,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./prep"
+            path: "./assignments"
         },
         predefinedOutput: true
     }
@@ -538,6 +542,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="a1.html" title="previous page">Assignment 1: File Explorer</a>
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
