@@ -11,7 +11,7 @@ By now you should have turned in your first python program for ICS 32 and be wel
 
 ### Thursday Live Class
 
-<a href="https://uci.zoom.us/rec/share/tWBG6yDRQjN2MObr_oIwsLf2dhKY4idSESPC2e47SXo4bvIKZHp5OrS8Ezzr2T8.jt79VrnvfDi8lCtx">Recording</a>
+<a href="https://uci.zoom.us/rec/share/cKQYT2nNtSBpwDMIwfABr0XVGzzIL9ErTSfi7eEyp860rfUeEhQPZL_s0-AdR_9g.dPRDrB-RmNQ7RUhH?startTime=1633630225000">Recording</a>
 
 ##### Live Class Demo Code
 <a href="../resources/input_processor_demo.py" title="Input Processing Demo">Input Processing Demo</a>
