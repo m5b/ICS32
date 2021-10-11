@@ -7,430 +7,146 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 3 Overview
 
-It's week 3 and you have successfully submitted your first major python program! Take a minute to reflect on the experience. What worked? What didn't? Hopefully you have learned a little bit more about yourself and how you approach writing code.
-
-As the class moves forward, it's going to be even more important to stay on top of your responsibilities for each assignment. So I want to encourage you to take a few moments to think about your workflow for a1. Try and identify areas of improvement (e.g., participate in Zulip discussion, get an early start, outline your requirements, or set daily programming goals) and take action on them for a2-a4.
-
-I have a couple of bonus recordings for you this week. The first one is short discussion on how you might consider designing your program for a2:
-
-[Assignment 2 Program Design](https://uci.yuja.com/V/Video?v=3309940&node=11078327&a=235993349&autoplay=1)
-
-The next two videos were recorded during the Winter 21 class. Although we will discuss these topics a bit more during live lecture on Wednesday this week, I thought it might be helpful to provide you with some additional resources. So, feel free to watch at your leisure, particularly if you are struggling with some of the concepts around Profile module and protocols.
-
-[Discussion on Profile Module](https://uci.yuja.com/V/Video?v=2491170&node=9074322&a=857186104&autoplay=1)
-
-[Discussion on Protocol Module](https://uci.yuja.com/V/Video?v=2491162&node=9074304&a=1879480748&autoplay=1)
+It's week 3. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2. 
 
 Quick Links:
 : {ref}`lecture-materials`
 : {ref}`quiz-results3`
 
 (lecture-materials)=
-
 ## Lecture Materials
 
-Quick Links:
-: {ref}`lectures:inheritance`
-: {ref}`lectures:http`
-: {ref}`lectures:webapi`
- 
-(lectures:inheritance)=
-### Inheritance
+Lectures for Week 3
+: {ref}`lectures:classes`
+
+(lectures:classes)=
+### Classes
 
 #### Videos
 
-[Inheritance Lecture Video](https://uci.yuja.com/V/Video?v=2242269&node=8181690&a=1610946088&autoplay=1)
+[Classes Lecture](https://uci.yuja.com/V/Video?v=2184495&node=8074840&a=353799435&autoplay=1)
 
 #### Notes
 
-Did you know that a class can be a child of another class? That a child class can __inherit__ the attributes and methods of its parent? It can, and the process, which we call __inheritance__ is one of the fundamental paradigms of object oriented programming. Let's dive in to some code first, then we'll break down what all of this means.
+In programming languages that support a class-orientation like Python, classes are used to create templates for objects that can perform state and behavior operations in program code. Classes contain attribute references that take the form of data attributes and methods. Class data attributes and methods are syntactically identical to the variables and functions that you have been writing in Python so far. The primary difference is that data attributes and methods are called and operate on the instance of the class in which they are contained.
 
-In the Web API lecture, you may have noticed something odd with the way the **ICSHTTPRequestHanlder`** object was declared:
-
-```ipython3
-class ICSHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
-    def do_POST(self):
-
-```
-
-It looks like the class is specifying a parameter! Well, it sort of is, but notice that the parameter only contains a type of object--it's missing a parameter name. This is the syntactic convention that Python uses to subclass, or inherit, from other classes. When a class __subclasses__ another class in this way, it becomes a __type__ of that class, thereby inheriting all of the parent classes members (attributes and methods). Let's take a quick look at how we can use inheritance to improve reusability of our code.
-
-
-```ipython3
-class BaseClass:
-    def __init__(self):
-        self.base_attr = "I am a base attribute!"
-        self.data = 0
-    
-    def base_method(self):
-        print("the base method number is: ",self.data)
-
-class SubClass(BaseClass):
-    def sub_method(self, data: int):
-        self.data = data 
-
-class AnotherSubClass(BaseClass):
-    def base_method(self):
-        print("the custom base method number is: ",self.data)
-
-sc = SubClass()
-sc.base_method()
-sc.sub_method(5)
-sc.base_method()
-
-ac = AnotherSubClass()
-ac.base_method()
-
-print(sc.base_attr)
-print(type(sc))
-print(isinstance(sc, BaseClass))
-
-```
-```ipython3
->>> the base method number is:  0
->>> the base method number is:  5
->>> the custom base method number is:  0
->>> I am a base attribute!
->>> <class '__main__.SubClass'>
->>> True
-```
-In this example, we have a **`BaseClass`** which implements some initialization code and a method that prints the value of its data attribute member, **`data`**. We have a **`SubClass`** which inherits from **`BaseClass`** and implements its own method for changing the **`data`** attribute. And we have a **`AnotherSubClass`** which __overrides__ the **`base_method`** of the **`BaseClass`** and implements its own print statement.
-
-There is a lot to breakdown here, so let's go through the shell statement's one by one. First, notice that the **`base_method()`** method is a member of the **`sc`** object that we instantiated from **`SubClass`**. This is because, as we discussed earlier, the subclass inherits all of the members of the parent class. Next, notice that the new method that is created in the subclass can act upon the data attributes of the parent class, so here the **`data`** object is updated according to value passed into the **`base_method`**, therefore the next time that **`base_method`** is called the print statement reflects this change.
-
-The **`AnotherSubClass`** class demonstrates one of the more powerful examples of inheritance, overriding. A subclass can override, or change the expected behavior, of a parent class method by implementing its own version of the same method, with the same signature.
-
-The final three print statements simply demonstrate how Python treats subclasses. Notice how even though the object **`sc`** is of type **`SubClass`**, it is also an instance of **`BaseClass`**. Why is that important? Let's take a look:
-
-```ipython3
-class MessageClass:
-    def print_message(self, bc:BaseClass):
-        bc.base_method()
-
-mc = MessageClass()
-
-mc.print_message(sc)
-mc.print_message(ac)
-
-```
-```ipython3
->>> the base method number is:  5
->>> the custom base method number is:  0
-```
-
-In this example, we have created a new class called **`MessageClass`**. This class is responsible for printing messages of the type **`BaseClass`**. But notice that we never actually passed an object instantiated from **`BaseClass`**, rather we passed it **`SubClass`** and **`AnotherSubClass`** and it worked! Inheriting from classes this way can be used to structure and organize our programs while also reducing the amount of code we write. Code reuse is one of the best ways to reduce the likelihood of bugs in our programs.
-
-A good way to think about class inheritance is to consider some of the things we already know about the different types of objects we interact with every day. Take the smartphone for example. At an abstract level, every smartphone has a few common properties like a screen, buttons, microphone, speaker, cpu, gps, etc. So we can might think of all of those common attributes as members of a base class. So we could write a base class, let's call it **`SmartPhone`**, that will manage common attributes for us. Next, we might want to create a class that can do some things that only certain types of smartphones can do, let's call these classes **`iPhone`** and **`Android`**. Both classes can inherit from **`smartphone`** to make use of the common attributes. But each class will also implement its own attributes that are unique to it like touch interactions and apps. We can also go further and compose individual classes for all of the different types of iPhone's and Android phones that exist.
-
-(lectures:http)=
-### HTTP and URLs
-
-```{note}
-I am releasing this lecture a little early for those interested in a little more discussion about protocols using a real world example. However, the Python related materials (e.g., urllib) will not be relevant until A3.
-```
-
-#### Videos
-
-[HTTP and URLs Lecture](https://uci.yuja.com/V/Video?v=2192198&node=8090501&a=890308300&autoplay=1)
-
-#### Notes
-
-In the protocols lecture, we used the HyperText Transfer Protocol (HTTP) as an example of a common type of protocol that is used to send and receive data between a client and server computer. HTTP is a request/response protocol that is used by nearly all web traffic for communication and behaves roughly according to the following diagram:
-
-![http diagram](../resources/http_diagram.png)
-
-A client (the laptop) initiates a connection with a server (the black box) to which the server can either accept or, for a variety of reasons, reject. If the server accepts the connection, the client then proceeds to issue requests. Each request issued by the client receives a response from the server. This basic request/response dialogue is occurring every time you visit a website. The URLs that you type into your browser represent the address or location of the server you would like to connect to. Now digging into the underlying infrastructure of the Internet is a bit beyond the scope of this course, but it's important to understand that the textual URLs that we use are primarily designed to make finding and recalling servers easier for humans. The actual identifier the server responds to is a numerical address called an Internet Protocol Address, or IP Address. Every URL that we type into a browser is associated with an IP Address. You can discover this for yourself by using the **`ping`** program that is packaged with most operating systems:
-
-![ping](../resources/ping.png)
-
-The association between IP Address and the human readable URLs that we use is called a Domain Name Server or DNS. DNS is operated by numerous third party organizations who ensure that the human readable domain names are unique and connect to the correct server IP Addresses.
-
-Alright, now that we have a basic understanding of HTTP, URLs, and IP Addresses, let's take a closer look at how HTTP actually works. In the example below, a program called telnet was used to issue a GET request to the ICS 32 Distributed Social website. The response from the server begins with the following line that reads "HTTP/1.1 200 OK". Everything before that was input and output with the telnet program. (If you are on Linux or OSX you should have telnet installed by default. On Windows you can try this with a program called [Putty](https://putty.org).
-
-![telnet](../resources/telnet_get.png)
-
-The server responds with an HTTP header that contains some information about the web page we are requesting. What we are primarily concerned with here is the first line, particularly the use of the status code 200. The specification for HTTP 1.1 includes over forty status codes that a fully featured program that makes use of HTTP should be able to handle. However, for our discussion here, as well as the work required in assignment 3, you will only need to be concerned with a few of the most common status codes:
-
-200 OK
-: Indicates the status is OK.
-
-400 Bad Request
-: Indicates the HTTP request sent to the server contains invalid syntax
-
-401 Unauthorized
-: Indicates that the requested resource is not authorized to be returned in a response
-
-403 Forbidden
-: Indicates that a requested resource is protected by the server
-
-404 Not Found
-: Indicates that a requested resource is not available on the server
-
-500 Internal Server Error
-: Indicates that the server is unable to process the request
-
-504 Gateway Timeout
-: Indicates that the server was unable to respond to a request within the allowed time period
-
-You have likely encountered at least one of these while browsing the web (and the 400 level errors might sound familiar if you watched the final season of Mr. Robot!). 
-
-So far we have been discussing HTTP within the context of programs like telnet, Putty, and your web browser. However, there is nothing particularly special about any of these programs. They are just programs, written in a programming language, and understand how to communicate with servers using HTTP. So, just like your browser, we can use a programming language to accomplish the same goals. While Python does have libraries available for building robust programs that leverage the full HTTP specification, it also includes some higher level abstractions modules that can be used by programs that only need to perform some basic HTTP requests with a server. So for the remainder of this lecture, we will focus on working with the simplest of those modules, **`urllib`**.
-
-##### urllib
-
-The urllib package contains several modules that are useful for working with and requesting information from URLs:
-
-* urllib.request
-* urllib.error
-* urllib.parse
-* urllib.robotparser
-
-You can read more about each in detail at the [Python Documentation website](https://docs.python.org/3/library/urllib.html). For this lecture, we will be focusing on the **`urllib.request`** and **`urllibparse`**, however, you will want to familiarize your self with the **`urllib.error`** module as well for handling exceptions raised by **`urllib.request`**.
-
-###### urllib.parse
-
-The **`urllib.parse`** module provides functions for parsing URLs:
-
-```ipython3
-from urllib.parse import *
-
-u = urlparse("https://ics32.markbaldw.in/notes/wk3.html")
-print(u)
-
-```
-```ipython3
->>> ParseResult(scheme='https', netloc='ics32.markbaldw.in', path='/notes/wk6.html', params='', query='', fragment='')
-```
-The **`urlparse`** function accepts a URL string as a parameter and returns a named tuple containing the attributes and values of the supplied url. You can read more about what each of the attributes means at the Python Documentation page linked above.
-
-In the classes lecture, we learned about how to use constructor parameters to control how the classes we write are instantiated. We discussed the **`dsuserver`** parameter and how we might want to validate the parameter before we allow the Profile class to be instantiated. Well, the **`urllib.parse`** module provides one way to go about performing that validation. Let's try and parse our URL for the Distributed Social server:
-
-```ipython3
-uri = "ws://168.235.86.101:9996/ws"
-u = urlparse(uri)
-print(u)
-
-u = urlparse("")
-print(u)
-
-```
-```ipython3
->>> ParseResult(scheme='ws', netloc='168.235.86.101:9996', path='/ws', params='', query='', fragment='')
->>> ParseResult(scheme='', netloc='', path='', params='', query='', fragment='')
-```
-
-Notice how when the correct URL is specified we receive a named tuple with the scheme attribute set to 'ws' (because we are using the websocket protocol for communication). Yet, when an empty string is supplied, the scheme is an empty string. So this is just one way we could ensure that the **`dsuserver`** parameter is valid. Of course, it would be much simpler just to check if the parameter is an empty string, however, that is only one of many possible error conditions that may arise when someone uses the Profile class. Therefore, applying a robust validation process like **`urlparse`** can protect us from a variety of error conditions.
-
-Let's try to parse one more URL, but this time something a little more complex. In the next example I will borrow a URL from the assignment 3 overview:
+In assignment 2 you were asked to make use of a module called Profile.py. To use that module, you were required to _instantiate_ it and call its methods to perform certain tasks for you in your program.
 
 ```ipython3
 
-uri = "https://api.openweathermap.org/data/2.5/weather?zip=92697,US&appid=b64a375a083d857905dad51eb470980a"
-u = urlparse(uri)
-print(u)
-print(u.hostname)
-print(u.scheme)
-print(u.query)
+server = "localhost"
+profile = Profile(server)
+profile.get_posts()
 
 ```
-```ipython3
->>> ParseResult(scheme='https', netloc='api.openweathermap.org', path='/data/2.5/weather', params='', query='zip=92697,US&appid=b64a375a083d857905dad51eb470980a', fragment='')
->>> api.openweathermap.org
->>> https
->>> zip=92697,US&appid=b64a375a083d857905dad51eb470980a
-```
 
-Now the **`ParseResult`** named tuple also contains a value for the **`query`** attribute. And because we are working with a named tuple, using dot notation, we have direct access to each of the values parsed from the supplied URL. Alright, in the next section we will conclude with a closer look at **`urllib.request`**.
- 
-###### urllib.request
-
-
-The **`urllib.request`** module provides a variety of functions for creating and working with HTTP requests. Most of these functions support features that we will not be concerned with in this course. Instead, we will focus on the core function in module, **`urlopen`**, that accepts a URL as a parameter and returns an **`HTTPResponse`** object that contains the response from the server specified by the URL. Let's start by calling **`urlopen`** on the ICS32 Distributed Social website:
+The term _instantiate_ refers to the action of creating an instance of a class for use within a program. When a class is instantiated, an instance of that class is created as an object upon which the methods and attributes of that class can be called. Consider the following code:
 
 ```ipython3
-from urllib.request import urlopen
-uri = "http://168.235.86.101:9996"
-res = urlopen(uri)
-data = res.read()
-res.close()
 
-print(data)
-```
-```ipython3
-b'<html lang="en">\n  <head>\n    <title>ICS 32 Distributed Social</title>\n    <meta name=\'viewport\' content=\'width=device-width initial-scale=1\' />\n    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n    <link rel=\'stylesheet\' href=\'./css/source-sans-pro.min.css\' type=\'text/css\' />...\n\n'
-```
+from Profile import Profile
 
-First, notice that the **`HTTPResponse`** object is closed when operations on it are complete. As with file objects and sockets, **`HTTPResponse`** makes use of a binary stream to retrieve and store data. Since it is a stream, we have access to many of the same operations, like **`read()`**. Calling the **`read`** function returns the response body returned from the **`urlopen`** request. The response body is basically whatever content existed at the specified URL, which in this case is the HTML stored in the root file on the server. Looking at the print out of the response data, however, you will notice that it is prepended by the character 'b' (also note that the response data has been manually trimmed down for aesthetic purposes, indicated by the addition of the '...' characters). When we print data to the shell, the addition of the 'b' character indicates that what we are looking are bytes, not a string. To work with the bytes stored in the variable **`data`** like a string, we must first convert from a type of bytes to a type of string:
+p1 = Profile("")
+p1.username = "usr1"
 
-```ipython3
-print(type(data))
+p2 = Profile("")
+p2.username = "usr2"
 
-text = data.decode(encoding = 'utf-8')
-print(type(text))
+Profile.username = "usr3"
+
+Profile.username = "usr4"
+
+print(p1.username)
+print(p2.username)
+print(Profile.username)
 
 ```
-```ipython3
->>> <class 'bytes'>
->>> <class 'str'>
-```
-
-**`decode`** and **`encode`** are built-in functions of the **`bytes`** type that support converting between bytes and strings. The encoding type of UTF-8 tells the encoding and decoding functions what type of bytes we expect. For the most part, in the work we do in this course, it is safe to assume that strings will be encoded using UTF-8. However, in the real world, different computing systems and regions of the world quite frequently use different types of encoding, so it is always good practice to ensure you are using the right encoding. How do we know? Well, take a minute to scroll back up to the telnet example. You will notice in the screen shot that the HTTP header we received from our GET request has an attribute called **`Content-Type`** which specifies the encoding character set for the page! Fortunately, **`HTTPResponse`** makes it easy to retrieve the header content:
-```ipython3
-header = res.getheader("Content-Type")
-print(header)
-```
-```ipython3
->>> text/html; charset=UTF-8
-```
-
-So now, with a little string manipulation on the header value, we can specify our encoding type without having to guess.
-
-(lectures:webapi)=
-### Web APIs
-
-#### Videos
-
-[Web API Lecture Part 1](https://uci.yuja.com/V/Video?v=2242261&node=8181682&a=1186819191&autoplay=1)
-
-[Web API Lecture Part 2](https://uci.yuja.com/V/Video?v=2242265&node=8181686&a=238466118&autoplay=1)
-
-#### Notes
-
-Now that you have had some time to practice working with modules and learned a little bit more about how we can use Python to talk to the Internet, let's take a close look at some of the ways we can use the **`urllib`** module to expand the types of information available to our programs.
-
-The Internet makes it possible to find information about practically anything a person might want to learn about. In the HTTP and URLs lecture, you learned how to use the **`urlopen`** function to retrieve content from a URL. For most URLs, this means the data retrieved by **`urlopen`** is intended to be used by programs like a web browser. But what if you want to retrieve information in a format more suitable for inclusion in a program that is not web browser?
-
-Many websites or web services that produce data suitable for consumption outside of a browser publish an Application Programming Interface, or API. Rather than have to write code to extract the data you want from content formatted for the browser, an API explicitly formats data in a structure that is intended to be consumed from any type of program. One of the most common formats, which you are already familiar with, is JSON. 
-
-In some cases, an API will require you to go through some form of authentication. Depending on the type of authentication used, this process can be quite involved. One of the more common types of authentication is the API key. Key's allow the API provider to track and optionally reject requests that either use an invalid or expired key. This gives the provider some assurances against automated or malicious requests.
-
-Some API's, particularly those that are open or don't require a key, opt to reject requests when they don't like the way it looks. Let's take a look at one example:
-
-https://api.kanye.rest/
-
-Which, when viewed in the browser works fine, but when requested using **`urlopen`** does not (it returns a 403 forbidden message).  What this tells us is that the API is likely looking for a little more information from the request. Requests without traditional HTTP headers are often interpreted as potential bot/malicious attack threats and so they are often automatically blocked by most API servers. So, we need to modify the request to behave more like a web browser.
 
 ```ipython3
-import urllib, json
-from urllib import request,error
-
-def yeezy():
-    url = "https://api.kanye.rest/"
-    user_agent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64)"
-    headers = {'User-Agent': user_agent}
-    request = urllib.request.Request(url, None, headers)
-    response = urllib.request.urlopen(request)
-    
-    json_results = response.read()
-    r_obj = json.loads(json_results)
-    print(r_obj)
-
-if __name__ == '__main__':
-    yeezy()
-
+>>> usr1
+>>> usr2
+>>> usr4
 ```
-In the code above, notice that a **`Request`** object is created using the **`url`** variable and a **`headers`** object that contains the same user agent that FireFox on Windows 10 would send. The request object is then passed to **`urlopen`** rather than the raw URL that we've used in previous examples. Now, with more a 'browser-like' appearance, the API can successfully return a quote from Kanye Rest:
+
+Notice that when the statement **`Profile.username`** is printed, the data attribute **`username`** contains the most recently assigned value. This use of class members is called an attribute reference and is identical to the way you have been assigning and evaluating variable references in your program. However, when the same attribute is printed from different instances of the Profile class (p1 and p2), the original value is still assigned. p1 and p2 are object references, or references to attributes of an object (rather than of a class), and demonstrate one of the advantages of writing classes. The code that is written to form a class can be instantiated an infinite number of times and each instance of that class will be unique.
+
+As you studied the Profile module, you learned that there is a second class called **`Post`** that is used to store text and a timestamp when a user writes a new journal entry. You may have noticed that for every post added to the Profile, a new instance of the Post class is created. The Post class, therefore, specifies a template for instances (or objects) of the type Post. The following snippet from the **`load_profile`** method of the Profile class highlights how this operation occurs:
 
 ```ipython3
-{'quote': "I love sleep; it's my favorite."}
+for post_obj in obj['_Profile__posts']:
+	post = Post(post_obj['entry'], post_obj['timestamp'])
+	post.timestamp = post_obj['timestamp']
+	self.add_post(post)
 ```
-You may have also noticed the use of **`None`** in the **`Request`** object parameter list. We've used **`None`** here, because we are only interesting in __getting__ something from the supplied URL. But what if we also want to __send__ something? Let's take a look at the object definition adopted from [docs.python.org](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request):
+
+Each instance of Post is added to a member of the Profile class that is of type **`dict`** using a helper method called **`add_post`**. We'll dive into methods and other features of classes like the keyword **`self`** a little further on. The important thing to recognize for now is how the Post class is used to represent all of the journal posts a user has created. Once loaded from the DSU file, each post becomes it's own object that can be operated on within a program, making classes suitable for storing and passing multiple types of data as a single object. Additionally, because the class is a template of an object, it is also extensible. Let's say, for example, that a new feature requirement was added to the DSU program: 
+
+> add support for titles to journal entries
+
+Since we already have a template for journal entries, all we have to do as add a new attribute reference to the template, the Post class.
 
 ```ipython3
- class urllib.request.Request(url, data=None, headers={}, 
-	origin_req_host=None, unverifiable=False, method=None)
+# A simplified version of the Post class used in assignment 2
+
+class Post:
+	timestamp = time.time()
+	entry = ""
+	title = ""
 ```
-The data parameter, specified here, can used to send data to a URL. Since Yeezy doesn't require any particular information from us there was no need for us to use this parameter, however, there are cases where sending data might be necessary. If you've ever filled out and submitted a form in a browser, for example, you are sending data to a URL. Recall from the HTTP and URLs lecture that we talked about how HTTP is used to make GET requests to retrieve the content from a URL. Well, GET is one of many request methods made available in the HTTP specification. When data is submitted to a server using HTTP, the POST method is used to inform the server to expect a packet of data in the HTTP request. Let's take a look at how we can add data to a **`urllib`** request and send it to a server:
+
+Now, when all instances of the Post class are instantiated by the load_profile method, they will have the data attribute **`title`** available for getting and setting a title for post entries.
+
+Alright, so now let's look at some of the rules for writing classes. So far we have been referring to the implementation of a class as a template for creating object instances of the type defined by that class. The action of creating an instance or instantiating a class comes with some built-in functionality that can be quite useful. By default, the instantiation of a class creates an empty object. However, there is a special method, **`__init__()`**, that if defined in a class will automatically be called whenever a new instance of a class is created. This type of special method is often referred to as a _constructor_, because it performs operations as the class is being "constructed."
+
+If you studied the Profile module you likely noticed that both the Profile class and Post class made use of this special method:
 
 ```ipython3
-import urllib, json
-from urllib import request,error
+# Example of a minimal class constructor
+def __init__(self):
+	pass
 
-def send_data(data: str):
-    # the url and port of the ICSHTTP Simple Server:
-    url = 'http://localhost:8000'
+# The Profile class constructor
+def __init__(self, dsuserver, username=None, password=None):
+	self.dsuserver = dsuserver 
+	self.username = username 
+	self.password = password 
+	self.bio = ''           
+	self._posts = []       
 
-    # create some data to send, we'll use json format
-    json = {'data' : data}
+# The Post class constructor
+def __init__(self, message = None, timestamp = None):
+	if timestamp is None:
+		timestamp = time.time()
 
-    # properly encode the data for the request object
-    data = urllib.parse.urlencode(json)
-    data = data.encode('utf-8') 
-
-    # set a header, with content type. We don't need to specify user agent here
-    # since we are just sending to a custom server
-    headers = {'content-type': 'application/json'}
-    req = urllib.request.Request(url, data, headers)
-
-    # make the call, and print the response
-    with urllib.request.urlopen(req) as response:
-        resp = response.read()
-        print(resp)
-    
-if __name__ == '__main__':
-    while True:
-        send_data(input("What would you like to send? "))
+	self.timestamp = timestamp
+	self._entry = message
 ```
 
-In this program, we add JSON data to the **`Request`** object, though it doesn't have to be JSON. We could have also sent XML, HTML, a file, plain text, and [many more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types). Once we have determined the type of data to send, the **`content-type`** should be set to match. **`content-type`** is specified in the header and accepts a descriptive value that follows very specific formatting rules (see the previous link for a table of the various types and how they match to data). Once the request object is prepared, as with the previous example, it is sent to the desired server using the **`urlopen`** function. In the example above, we use the **`with`** statement to handle the state of the response object.
-
-To demonstrate how data is transferred over HTTP, let's create a simple HTTP server to listen for POST requests.
+The first example in the above code demonstrates the basic structure of the **`__init__`** method. The **`self`** parameter is a built-in attribute reference of the object's instance. In order to access the attributes and methods of a class instance, the **`self`** parameter must be specified. We can see how **`self`** works in the second example above pulled from the Profile class. Notice how the names **`dsuserver`**, **`username`**, and **`password`** are used twice. Although they share the same name, they are distinctly different. One is a parameter of the **`__init__`** method, and the other is an attribute reference of the Profile class. We then distinguish between these like named variables by applying the instance attribute of the class, **`self`**, to the variable using dot notation. When a variable is assigned to the class instance using **`self`**, it automatically becomes an attribute reference of the class instance:
 
 ```ipython3
-import http, socketserver
-from http import server 
-
-"""
-This is a subclass of the BaseHTTPRequestHandler class which provdies methods
-for various aspects of HTTP request management. Since our only goal is to 
-show how POST data works, this class simply renders and prints data when a 
-POST request is received.
-"""
-class ICSHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
-    def do_POST(self):
-        print(self.command + " received.")
-        data = self.rfile.read(int(self.headers['content-length']))
-        self.send_response(200)
-        self.send_header('Content-Type', 'application/json')
-        self.end_headers()
-        self.wfile.write("ok".encode(encoding = 'utf-8'))
-        print(data.decode(encoding = 'utf-8'))
-
-
-"""
-This is just basic startup code to run the TCPServer that accompanies
-the Python standard library.
-"""
-PORT = 8000
-
-handler = ICSHTTPRequestHandler
-httpd = socketserver.TCPServer(("", PORT), handler)
-
-print ("serving at port", PORT)
-httpd.serve_forever()
-
+# Example of how the init constructor can be used to create attribute references for class instances.
+p = Profile("a server address")
+p.username = "usr1"
 ```
 
-The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are conducting a deep dive into the **`http`** library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.
+Alright, let's return to the previous example above and discuss the parameters a little bit more. Notice how in both the Profile and Post examples there are additional parameters, some of which are assigned a default value of **`None`**. When writing a class, you may desire to provide the code that makes use of its objects some flexibility in how the class is instantiated. For example, in the Profile class constructor, the parameter **`dsuserver`** is not assigned a default value, therefore the only way to create an instance of the class is to pass a value for the parameter. Whereas, since the other two parameters have been assigned default values, they can be optionally assigned.
 
-To build a minimal viable HTTP server in Python, we can rely on the **`http`** and **`socketserver`** modules to manage most of the heavy lifting. The only code we will need to create is a custom request handler and a few lines to start the TCPServer that is included in the **`socketserver`** module. Python's **`http`** module includes a couple of request handlers for basic requests (**`SimpleHTTPRequestHandler`** and **`CGIHTTPRequestHandler`**), but neither of these support POST requests by default. So we have to create our own! Fortunately, the **`http`** module also provides a **`BaseHTTPRequestHandler`** that we can build upon (more on that in the Inheritance lecture).
+The use of default values can be a useful way to guarantee that your class is used the way you intended. However, without adequate protections in place, parameter requirements can be ignored. To get around this constraint, many of you opted to pass in empty strings rather than an actual server address in assignment 2. For the most part, this workaround was largely acceptable because you also had the ability to assign the required parameter to the attribute reference. But what if upon instantiation, the Profile class called code that either validated the parameter value or attempted to use it for it's intended purpose? Without error handling, the program would crash whenever the class was instanced. So it's important to take these types of use cases and outcomes into consideration when writing a class. Given the way the **`dsuserver`** variable is used by the Profile class, do you think it should be assigned a default value rather than be a required parameter?
 
-The **`ICSHTTPRequestHandler`** class overrides the inherited method **`do_POST`** to process incoming POST requests. The details of how this is done, are bit out of scope for this course, but you'll notice that we are essentially extracting the data from the request, preparing and sending a response to the client, and then printing the data to the console. In a real application, we would likely need to do something other than print to console though. A traditional HTTP server might send that data to another process to be interpreted or stored somewhere.
+The last aspect of classes that we will discuss for this lecture is the role of methods in class objects. Again, we'll return to the Profile class as our reference point:
 
-The lecture video will contain a running example of all of these programs, but you are STRONGLY encouraged to try running them yourself too! If you would like to learn a little bit more about how to work with HTTP data in Python, you can start by [reading the overview at docs.python.org](https://docs.python.org/3/howto/urllib2.html#data).
+```ipython3
+def get_posts(self) -> list:
+	return self._posts
 
-I have included one additional look at Web API's using the Spotify API. A walkthrough can be found in Part 2 of the lecture. I don't plan on writing up notes for the Spotify API, but the files for the program are included below.
+def add_post(self, post: Post) -> None:
+	self._posts.append(post)
+```
 
-<a href="../resources/music_finder.py">MusicFinder</a>
-
-<a href="../resources/spotify_credentials.py">Spotify Credentials</a>
+The **`get_posts`** and **`add_post`** methods in the example above are taken directly from the Profile class. At first glance, you'll notice that they look identical to the functions that you have been writing throughout this course. Like a function, the method is defined using the **`def`** keyword, accepts parameters, and supports the optional specification of a return type. However, notice that even if when we don't intend to use a parameter, as is the case with **`get_posts`**, the **`self`** parameter is specified. The purpose of a class method is to act upon the class instance in some way, therefore a method must have a way to access the attributes of its class. As with the class constructor, all method signatures (The signature of a method refers to the combination of name, parameters, and return type.) in a class must be assigned the self parameter. 
 
 
 (quiz-results3)=
-## Live Class Recordings
+## Quiz Results
 
-```{note}
-Materials will be posted after class on 7/7
-```
-[Wednesday Live Quiz and Discussion](https://uci.yuja.com/V/Video?v=3314243&node=11125314&a=143967648&autoplay=1)
-[Friday Live Discussion](https://uci.yuja.com/V/Video?v=3318300&node=11137353&a=96191787&autoplay=1)

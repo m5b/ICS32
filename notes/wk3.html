@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project: Chatting with Friends" href="../final.html" />
+    <link rel="prev" title="Week 2 Notes" href="wk2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -101,16 +103,36 @@
    Assignment 0
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a1.html">
+   Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a2.html">
+   Assignment 2
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wk1.html">
    Week 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk2.html">
+   Week 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 3
   </a>
  </li>
 </ul>
@@ -206,8 +228,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inheritance">
-     Inheritance
+    <a class="reference internal nav-link" href="#classes">
+     Classes
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -222,64 +244,11 @@
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#http-and-urls">
-     HTTP and URLs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Videos
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Notes
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#urllib">
-         urllib
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#urllib-parse">
-           urllib.parse
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#urllib-request">
-           urllib.request
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#web-apis">
-     Web APIs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Videos
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       Notes
-      </a>
-     </li>
-    </ul>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#live-class-recordings">
-   Live Class Recordings
+  <a class="reference internal nav-link" href="#quiz-results">
+   Quiz Results
   </a>
  </li>
 </ul>
@@ -301,361 +270,125 @@
 </div>
 <div class="section" id="week-3-overview">
 <h2>Week 3 Overview<a class="headerlink" href="#week-3-overview" title="Permalink to this headline">¶</a></h2>
-<p>It’s week 3 and you have successfully submitted your first major python program! Take a minute to reflect on the experience. What worked? What didn’t? Hopefully you have learned a little bit more about yourself and how you approach writing code.</p>
-<p>As the class moves forward, it’s going to be even more important to stay on top of your responsibilities for each assignment. So I want to encourage you to take a few moments to think about your workflow for a1. Try and identify areas of improvement (e.g., participate in Zulip discussion, get an early start, outline your requirements, or set daily programming goals) and take action on them for a2-a4.</p>
-<p>I have a couple of bonus recordings for you this week. The first one is short discussion on how you might consider designing your program for a2:</p>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=3309940&amp;node=11078327&amp;a=235993349&amp;autoplay=1">Assignment 2 Program Design</a></p>
-<p>The next two videos were recorded during the Winter 21 class. Although we will discuss these topics a bit more during live lecture on Wednesday this week, I thought it might be helpful to provide you with some additional resources. So, feel free to watch at your leisure, particularly if you are struggling with some of the concepts around Profile module and protocols.</p>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2491170&amp;node=9074322&amp;a=857186104&amp;autoplay=1">Discussion on Profile Module</a></p>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2491162&amp;node=9074304&amp;a=1879480748&amp;autoplay=1">Discussion on Protocol Module</a></p>
+<p>It’s week 3. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2.</p>
 <dl class="simple myst">
-<dt>Quick Links:</dt><dd><p><a class="reference internal" href="wk5.html#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
+<dt>Quick Links:</dt><dd><p><a class="reference internal" href="wk4.html#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
 </dd>
-<dd><p><a class="reference internal" href="#quiz-results3"><span class="std std-ref">Live Class Recordings</span></a></p>
+<dd><p><a class="reference internal" href="wk4.html#quiz-results3"><span class="std std-ref">Quiz Results</span></a></p>
 </dd>
 </dl>
 </div>
 <div class="section" id="lecture-materials">
 <span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
-<dt>Quick Links:</dt><dd><p><a class="reference internal" href="#lectures-inheritance"><span class="std std-ref">Inheritance</span></a></p>
-</dd>
-<dd><p><a class="reference internal" href="#lectures-http"><span class="std std-ref">HTTP and URLs</span></a></p>
-</dd>
-<dd><p><a class="reference internal" href="#lectures-webapi"><span class="std std-ref">Web APIs</span></a></p>
+<dt>Lectures for Week 3</dt><dd><p><a class="reference internal" href="wk4.html#lectures-classes"><span class="std std-ref">Classes</span></a></p>
 </dd>
 </dl>
-<div class="section" id="inheritance">
-<span id="lectures-inheritance"></span><h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="classes">
+<span id="lectures-classes"></span><h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="videos">
 <h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2242269&amp;node=8181690&amp;a=1610946088&amp;autoplay=1">Inheritance Lecture Video</a></p>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2184495&amp;node=8074840&amp;a=353799435&amp;autoplay=1">Classes Lecture</a></p>
 </div>
 <div class="section" id="notes">
 <h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
-<p>Did you know that a class can be a child of another class? That a child class can <strong>inherit</strong> the attributes and methods of its parent? It can, and the process, which we call <strong>inheritance</strong> is one of the fundamental paradigms of object oriented programming. Let’s dive in to some code first, then we’ll break down what all of this means.</p>
-<p>In the Web API lecture, you may have noticed something odd with the way the <strong>ICSHTTPRequestHanlder`</strong> object was declared:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ICSHTTPRequestHandler</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<p>In programming languages that support a class-orientation like Python, classes are used to create templates for objects that can perform state and behavior operations in program code. Classes contain attribute references that take the form of data attributes and methods. Class data attributes and methods are syntactically identical to the variables and functions that you have been writing in Python so far. The primary difference is that data attributes and methods are called and operate on the instance of the class in which they are contained.</p>
+<p>In assignment 2 you were asked to make use of a module called Profile.py. To use that module, you were required to <em>instantiate</em> it and call its methods to perform certain tasks for you in your program.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">server</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+<span class="n">profile</span><span class="o">.</span><span class="n">get_posts</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>It looks like the class is specifying a parameter! Well, it sort of is, but notice that the parameter only contains a type of object–it’s missing a parameter name. This is the syntactic convention that Python uses to subclass, or inherit, from other classes. When a class <strong>subclasses</strong> another class in this way, it becomes a <strong>type</strong> of that class, thereby inheriting all of the parent classes members (attributes and methods). Let’s take a quick look at how we can use inheritance to improve reusability of our code.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseClass</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">base_attr</span> <span class="o">=</span> <span class="s2">&quot;I am a base attribute!&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the base method number is: &quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<p>The term <em>instantiate</em> refers to the action of creating an instance of a class for use within a program. When a class is instantiated, an instance of that class is created as an object upon which the methods and attributes of that class can be called. Consider the following code:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Profile</span> <span class="kn">import</span> <span class="n">Profile</span>
 
-<span class="k">class</span> <span class="nc">SubClass</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">sub_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span> 
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;usr1&quot;</span>
 
-<span class="k">class</span> <span class="nc">AnotherSubClass</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the custom base method number is: &quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;usr2&quot;</span>
 
-<span class="n">sc</span> <span class="o">=</span> <span class="n">SubClass</span><span class="p">()</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">sub_method</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+<span class="n">Profile</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;usr3&quot;</span>
 
-<span class="n">ac</span> <span class="o">=</span> <span class="n">AnotherSubClass</span><span class="p">()</span>
-<span class="n">ac</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+<span class="n">Profile</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;usr4&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">base_attr</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sc</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">BaseClass</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Profile</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; the base method number is:  0
-&gt;&gt;&gt; the base method number is:  5
-&gt;&gt;&gt; the custom base method number is:  0
-&gt;&gt;&gt; I am a base attribute!
-&gt;&gt;&gt; &lt;class &#39;__main__.SubClass&#39;&gt;
-&gt;&gt;&gt; True
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">usr1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">usr2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">usr4</span>
 </pre></div>
 </div>
-<p>In this example, we have a <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong> which implements some initialization code and a method that prints the value of its data attribute member, <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong>. We have a <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong> which inherits from <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong> and implements its own method for changing the <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> attribute. And we have a <strong><code class="docutils literal notranslate"><span class="pre">AnotherSubClass</span></code></strong> which <strong>overrides</strong> the <strong><code class="docutils literal notranslate"><span class="pre">base_method</span></code></strong> of the <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong> and implements its own print statement.</p>
-<p>There is a lot to breakdown here, so let’s go through the shell statement’s one by one. First, notice that the <strong><code class="docutils literal notranslate"><span class="pre">base_method()</span></code></strong> method is a member of the <strong><code class="docutils literal notranslate"><span class="pre">sc</span></code></strong> object that we instantiated from <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong>. This is because, as we discussed earlier, the subclass inherits all of the members of the parent class. Next, notice that the new method that is created in the subclass can act upon the data attributes of the parent class, so here the <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> object is updated according to value passed into the <strong><code class="docutils literal notranslate"><span class="pre">base_method</span></code></strong>, therefore the next time that <strong><code class="docutils literal notranslate"><span class="pre">base_method</span></code></strong> is called the print statement reflects this change.</p>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">AnotherSubClass</span></code></strong> class demonstrates one of the more powerful examples of inheritance, overriding. A subclass can override, or change the expected behavior, of a parent class method by implementing its own version of the same method, with the same signature.</p>
-<p>The final three print statements simply demonstrate how Python treats subclasses. Notice how even though the object <strong><code class="docutils literal notranslate"><span class="pre">sc</span></code></strong> is of type <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong>, it is also an instance of <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong>. Why is that important? Let’s take a look:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MessageClass</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">print_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bc</span><span class="p">:</span><span class="n">BaseClass</span><span class="p">):</span>
-        <span class="n">bc</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
+<p>Notice that when the statement <strong><code class="docutils literal notranslate"><span class="pre">Profile.username</span></code></strong> is printed, the data attribute <strong><code class="docutils literal notranslate"><span class="pre">username</span></code></strong> contains the most recently assigned value. This use of class members is called an attribute reference and is identical to the way you have been assigning and evaluating variable references in your program. However, when the same attribute is printed from different instances of the Profile class (p1 and p2), the original value is still assigned. p1 and p2 are object references, or references to attributes of an object (rather than of a class), and demonstrate one of the advantages of writing classes. The code that is written to form a class can be instantiated an infinite number of times and each instance of that class will be unique.</p>
+<p>As you studied the Profile module, you learned that there is a second class called <strong><code class="docutils literal notranslate"><span class="pre">Post</span></code></strong> that is used to store text and a timestamp when a user writes a new journal entry. You may have noticed that for every post added to the Profile, a new instance of the Post class is created. The Post class, therefore, specifies a template for instances (or objects) of the type Post. The following snippet from the <strong><code class="docutils literal notranslate"><span class="pre">load_profile</span></code></strong> method of the Profile class highlights how this operation occurs:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">post_obj</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;_Profile__posts&#39;</span><span class="p">]:</span>
+	<span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="n">post_obj</span><span class="p">[</span><span class="s1">&#39;entry&#39;</span><span class="p">],</span> <span class="n">post_obj</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])</span>
+	<span class="n">post</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">post_obj</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">add_post</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each instance of Post is added to a member of the Profile class that is of type <strong><code class="docutils literal notranslate"><span class="pre">dict</span></code></strong> using a helper method called <strong><code class="docutils literal notranslate"><span class="pre">add_post</span></code></strong>. We’ll dive into methods and other features of classes like the keyword <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong> a little further on. The important thing to recognize for now is how the Post class is used to represent all of the journal posts a user has created. Once loaded from the DSU file, each post becomes it’s own object that can be operated on within a program, making classes suitable for storing and passing multiple types of data as a single object. Additionally, because the class is a template of an object, it is also extensible. Let’s say, for example, that a new feature requirement was added to the DSU program:</p>
+<blockquote>
+<div><p>add support for titles to journal entries</p>
+</div></blockquote>
+<p>Since we already have a template for journal entries, all we have to do as add a new attribute reference to the template, the Post class.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A simplified version of the Post class used in assignment 2</span>
 
-<span class="n">mc</span> <span class="o">=</span> <span class="n">MessageClass</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">Post</span><span class="p">:</span>
+	<span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+	<span class="n">entry</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Now, when all instances of the Post class are instantiated by the load_profile method, they will have the data attribute <strong><code class="docutils literal notranslate"><span class="pre">title</span></code></strong> available for getting and setting a title for post entries.</p>
+<p>Alright, so now let’s look at some of the rules for writing classes. So far we have been referring to the implementation of a class as a template for creating object instances of the type defined by that class. The action of creating an instance or instantiating a class comes with some built-in functionality that can be quite useful. By default, the instantiation of a class creates an empty object. However, there is a special method, <strong><code class="docutils literal notranslate"><span class="pre">__init__()</span></code></strong>, that if defined in a class will automatically be called whenever a new instance of a class is created. This type of special method is often referred to as a <em>constructor</em>, because it performs operations as the class is being “constructed.”</p>
+<p>If you studied the Profile module you likely noticed that both the Profile class and Post class made use of this special method:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a minimal class constructor</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="k">pass</span>
 
-<span class="n">mc</span><span class="o">.</span><span class="n">print_message</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">print_message</span><span class="p">(</span><span class="n">ac</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">the</span> <span class="n">base</span> <span class="n">method</span> <span class="n">number</span> <span class="ow">is</span><span class="p">:</span>  <span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">the</span> <span class="n">custom</span> <span class="n">base</span> <span class="n">method</span> <span class="n">number</span> <span class="ow">is</span><span class="p">:</span>  <span class="mi">0</span>
-</pre></div>
-</div>
-<p>In this example, we have created a new class called <strong><code class="docutils literal notranslate"><span class="pre">MessageClass</span></code></strong>. This class is responsible for printing messages of the type <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong>. But notice that we never actually passed an object instantiated from <strong><code class="docutils literal notranslate"><span class="pre">BaseClass</span></code></strong>, rather we passed it <strong><code class="docutils literal notranslate"><span class="pre">SubClass</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">AnotherSubClass</span></code></strong> and it worked! Inheriting from classes this way can be used to structure and organize our programs while also reducing the amount of code we write. Code reuse is one of the best ways to reduce the likelihood of bugs in our programs.</p>
-<p>A good way to think about class inheritance is to consider some of the things we already know about the different types of objects we interact with every day. Take the smartphone for example. At an abstract level, every smartphone has a few common properties like a screen, buttons, microphone, speaker, cpu, gps, etc. So we can might think of all of those common attributes as members of a base class. So we could write a base class, let’s call it <strong><code class="docutils literal notranslate"><span class="pre">SmartPhone</span></code></strong>, that will manage common attributes for us. Next, we might want to create a class that can do some things that only certain types of smartphones can do, let’s call these classes <strong><code class="docutils literal notranslate"><span class="pre">iPhone</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">Android</span></code></strong>. Both classes can inherit from <strong><code class="docutils literal notranslate"><span class="pre">smartphone</span></code></strong> to make use of the common attributes. But each class will also implement its own attributes that are unique to it like touch interactions and apps. We can also go further and compose individual classes for all of the different types of iPhone’s and Android phones that exist.</p>
-</div>
-</div>
-<div class="section" id="http-and-urls">
-<span id="lectures-http"></span><h3>HTTP and URLs<a class="headerlink" href="#http-and-urls" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>I am releasing this lecture a little early for those interested in a little more discussion about protocols using a real world example. However, the Python related materials (e.g., urllib) will not be relevant until A3.</p>
-</div>
-<div class="section" id="id2">
-<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2192198&amp;node=8090501&amp;a=890308300&amp;autoplay=1">HTTP and URLs Lecture</a></p>
-</div>
-<div class="section" id="id3">
-<h4>Notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>In the protocols lecture, we used the HyperText Transfer Protocol (HTTP) as an example of a common type of protocol that is used to send and receive data between a client and server computer. HTTP is a request/response protocol that is used by nearly all web traffic for communication and behaves roughly according to the following diagram:</p>
-<p><img alt="http diagram" src="../_images/http_diagram.png" /></p>
-<p>A client (the laptop) initiates a connection with a server (the black box) to which the server can either accept or, for a variety of reasons, reject. If the server accepts the connection, the client then proceeds to issue requests. Each request issued by the client receives a response from the server. This basic request/response dialogue is occurring every time you visit a website. The URLs that you type into your browser represent the address or location of the server you would like to connect to. Now digging into the underlying infrastructure of the Internet is a bit beyond the scope of this course, but it’s important to understand that the textual URLs that we use are primarily designed to make finding and recalling servers easier for humans. The actual identifier the server responds to is a numerical address called an Internet Protocol Address, or IP Address. Every URL that we type into a browser is associated with an IP Address. You can discover this for yourself by using the <strong><code class="docutils literal notranslate"><span class="pre">ping</span></code></strong> program that is packaged with most operating systems:</p>
-<p><img alt="ping" src="../_images/ping.png" /></p>
-<p>The association between IP Address and the human readable URLs that we use is called a Domain Name Server or DNS. DNS is operated by numerous third party organizations who ensure that the human readable domain names are unique and connect to the correct server IP Addresses.</p>
-<p>Alright, now that we have a basic understanding of HTTP, URLs, and IP Addresses, let’s take a closer look at how HTTP actually works. In the example below, a program called telnet was used to issue a GET request to the ICS 32 Distributed Social website. The response from the server begins with the following line that reads “HTTP/1.1 200 OK”. Everything before that was input and output with the telnet program. (If you are on Linux or OSX you should have telnet installed by default. On Windows you can try this with a program called <a class="reference external" href="https://putty.org">Putty</a>.</p>
-<p><img alt="telnet" src="../_images/telnet_get.png" /></p>
-<p>The server responds with an HTTP header that contains some information about the web page we are requesting. What we are primarily concerned with here is the first line, particularly the use of the status code 200. The specification for HTTP 1.1 includes over forty status codes that a fully featured program that makes use of HTTP should be able to handle. However, for our discussion here, as well as the work required in assignment 3, you will only need to be concerned with a few of the most common status codes:</p>
-<dl class="simple myst">
-<dt>200 OK</dt><dd><p>Indicates the status is OK.</p>
-</dd>
-<dt>400 Bad Request</dt><dd><p>Indicates the HTTP request sent to the server contains invalid syntax</p>
-</dd>
-<dt>401 Unauthorized</dt><dd><p>Indicates that the requested resource is not authorized to be returned in a response</p>
-</dd>
-<dt>403 Forbidden</dt><dd><p>Indicates that a requested resource is protected by the server</p>
-</dd>
-<dt>404 Not Found</dt><dd><p>Indicates that a requested resource is not available on the server</p>
-</dd>
-<dt>500 Internal Server Error</dt><dd><p>Indicates that the server is unable to process the request</p>
-</dd>
-<dt>504 Gateway Timeout</dt><dd><p>Indicates that the server was unable to respond to a request within the allowed time period</p>
-</dd>
-</dl>
-<p>You have likely encountered at least one of these while browsing the web (and the 400 level errors might sound familiar if you watched the final season of Mr. Robot!).</p>
-<p>So far we have been discussing HTTP within the context of programs like telnet, Putty, and your web browser. However, there is nothing particularly special about any of these programs. They are just programs, written in a programming language, and understand how to communicate with servers using HTTP. So, just like your browser, we can use a programming language to accomplish the same goals. While Python does have libraries available for building robust programs that leverage the full HTTP specification, it also includes some higher level abstractions modules that can be used by programs that only need to perform some basic HTTP requests with a server. So for the remainder of this lecture, we will focus on working with the simplest of those modules, <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong>.</p>
-<div class="section" id="urllib">
-<h5>urllib<a class="headerlink" href="#urllib" title="Permalink to this headline">¶</a></h5>
-<p>The urllib package contains several modules that are useful for working with and requesting information from URLs:</p>
-<ul class="simple">
-<li><p>urllib.request</p></li>
-<li><p>urllib.error</p></li>
-<li><p>urllib.parse</p></li>
-<li><p>urllib.robotparser</p></li>
-</ul>
-<p>You can read more about each in detail at the <a class="reference external" href="https://docs.python.org/3/library/urllib.html">Python Documentation website</a>. For this lecture, we will be focusing on the <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">urllibparse</span></code></strong>, however, you will want to familiarize your self with the <strong><code class="docutils literal notranslate"><span class="pre">urllib.error</span></code></strong> module as well for handling exceptions raised by <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong>.</p>
-<div class="section" id="urllib-parse">
-<h6>urllib.parse<a class="headerlink" href="#urllib-parse" title="Permalink to this headline">¶</a></h6>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">urllib.parse</span></code></strong> module provides functions for parsing URLs:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># The Profile class constructor</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsuserver</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">dsuserver</span> <span class="o">=</span> <span class="n">dsuserver</span> 
+	<span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span> 
+	<span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">password</span> 
+	<span class="bp">self</span><span class="o">.</span><span class="n">bio</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>           
+	<span class="bp">self</span><span class="o">.</span><span class="n">_posts</span> <span class="o">=</span> <span class="p">[]</span>       
 
-<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;https://ics32.markbaldw.in/notes/wk3.html&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;ics32.markbaldw.in&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/notes/wk6.html&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">urlparse</span></code></strong> function accepts a URL string as a parameter and returns a named tuple containing the attributes and values of the supplied url. You can read more about what each of the attributes means at the Python Documentation page linked above.</p>
-<p>In the classes lecture, we learned about how to use constructor parameters to control how the classes we write are instantiated. We discussed the <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> parameter and how we might want to validate the parameter before we allow the Profile class to be instantiated. Well, the <strong><code class="docutils literal notranslate"><span class="pre">urllib.parse</span></code></strong> module provides one way to go about performing that validation. Let’s try and parse our URL for the Distributed Social server:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;ws://168.235.86.101:9996/ws&quot;</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="c1"># The Post class constructor</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">timestamp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
-<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">timestamp</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">_entry</span> <span class="o">=</span> <span class="n">message</span>
 </pre></div>
 </div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;ws&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;168.235.86.101:9996&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/ws&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<p>The first example in the above code demonstrates the basic structure of the <strong><code class="docutils literal notranslate"><span class="pre">__init__</span></code></strong> method. The <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong> parameter is a built-in attribute reference of the object’s instance. In order to access the attributes and methods of a class instance, the <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong> parameter must be specified. We can see how <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong> works in the second example above pulled from the Profile class. Notice how the names <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">username</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">password</span></code></strong> are used twice. Although they share the same name, they are distinctly different. One is a parameter of the <strong><code class="docutils literal notranslate"><span class="pre">__init__</span></code></strong> method, and the other is an attribute reference of the Profile class. We then distinguish between these like named variables by applying the instance attribute of the class, <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong>, to the variable using dot notation. When a variable is assigned to the class instance using <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong>, it automatically becomes an attribute reference of the class instance:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of how the init constructor can be used to create attribute references for class instances.</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="s2">&quot;a server address&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;usr1&quot;</span>
 </pre></div>
 </div>
-<p>Notice how when the correct URL is specified we receive a named tuple with the scheme attribute set to ‘ws’ (because we are using the websocket protocol for communication). Yet, when an empty string is supplied, the scheme is an empty string. So this is just one way we could ensure that the <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> parameter is valid. Of course, it would be much simpler just to check if the parameter is an empty string, however, that is only one of many possible error conditions that may arise when someone uses the Profile class. Therefore, applying a robust validation process like <strong><code class="docutils literal notranslate"><span class="pre">urlparse</span></code></strong> can protect us from a variety of error conditions.</p>
-<p>Let’s try to parse one more URL, but this time something a little more complex. In the next example I will borrow a URL from the assignment 3 overview:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;https://api.openweathermap.org/data/2.5/weather?zip=92697,US&amp;appid=b64a375a083d857905dad51eb470980a&quot;</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hostname</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">scheme</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;api.openweathermap.org&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/data/2.5/weather&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;zip=92697,US&amp;appid=b64a375a083d857905dad51eb470980a&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">openweathermap</span><span class="o">.</span><span class="n">org</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">https</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">zip</span><span class="o">=</span><span class="mi">92697</span><span class="p">,</span><span class="n">US</span><span class="o">&amp;</span><span class="n">appid</span><span class="o">=</span><span class="n">b64a375a083d857905dad51eb470980a</span>
-</pre></div>
-</div>
-<p>Now the <strong><code class="docutils literal notranslate"><span class="pre">ParseResult</span></code></strong> named tuple also contains a value for the <strong><code class="docutils literal notranslate"><span class="pre">query</span></code></strong> attribute. And because we are working with a named tuple, using dot notation, we have direct access to each of the values parsed from the supplied URL. Alright, in the next section we will conclude with a closer look at <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong>.</p>
-</div>
-<div class="section" id="urllib-request">
-<h6>urllib.request<a class="headerlink" href="#urllib-request" title="Permalink to this headline">¶</a></h6>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">urllib.request</span></code></strong> module provides a variety of functions for creating and working with HTTP requests. Most of these functions support features that we will not be concerned with in this course. Instead, we will focus on the core function in module, <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong>, that accepts a URL as a parameter and returns an <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> object that contains the response from the server specified by the URL. Let’s start by calling <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> on the ICS32 Distributed Social website:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://168.235.86.101:9996&quot;</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">res</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<p>Alright, let’s return to the previous example above and discuss the parameters a little bit more. Notice how in both the Profile and Post examples there are additional parameters, some of which are assigned a default value of <strong><code class="docutils literal notranslate"><span class="pre">None</span></code></strong>. When writing a class, you may desire to provide the code that makes use of its objects some flexibility in how the class is instantiated. For example, in the Profile class constructor, the parameter <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> is not assigned a default value, therefore the only way to create an instance of the class is to pass a value for the parameter. Whereas, since the other two parameters have been assigned default values, they can be optionally assigned.</p>
+<p>The use of default values can be a useful way to guarantee that your class is used the way you intended. However, without adequate protections in place, parameter requirements can be ignored. To get around this constraint, many of you opted to pass in empty strings rather than an actual server address in assignment 2. For the most part, this workaround was largely acceptable because you also had the ability to assign the required parameter to the attribute reference. But what if upon instantiation, the Profile class called code that either validated the parameter value or attempted to use it for it’s intended purpose? Without error handling, the program would crash whenever the class was instanced. So it’s important to take these types of use cases and outcomes into consideration when writing a class. Given the way the <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> variable is used by the Profile class, do you think it should be assigned a default value rather than be a required parameter?</p>
+<p>The last aspect of classes that we will discuss for this lecture is the role of methods in class objects. Again, we’ll return to the Profile class as our reference point:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+	<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_posts</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">post</span><span class="p">:</span> <span class="n">Post</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">_posts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">b</span><span class="s1">&#39;&lt;html lang=&quot;en&quot;&gt;</span><span class="se">\n</span><span class="s1">  &lt;head&gt;</span><span class="se">\n</span><span class="s1">    &lt;title&gt;ICS 32 Distributed Social&lt;/title&gt;</span><span class="se">\n</span><span class="s1">    &lt;meta name=</span><span class="se">\&#39;</span><span class="s1">viewport</span><span class="se">\&#39;</span><span class="s1"> content=</span><span class="se">\&#39;</span><span class="s1">width=device-width initial-scale=1</span><span class="se">\&#39;</span><span class="s1"> /&gt;</span><span class="se">\n</span><span class="s1">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;</span><span class="se">\n</span><span class="s1">    &lt;link rel=</span><span class="se">\&#39;</span><span class="s1">stylesheet</span><span class="se">\&#39;</span><span class="s1"> href=</span><span class="se">\&#39;</span><span class="s1">./css/source-sans-pro.min.css</span><span class="se">\&#39;</span><span class="s1"> type=</span><span class="se">\&#39;</span><span class="s1">text/css</span><span class="se">\&#39;</span><span class="s1"> /&gt;...</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-</pre></div>
-</div>
-<p>First, notice that the <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> object is closed when operations on it are complete. As with file objects and sockets, <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> makes use of a binary stream to retrieve and store data. Since it is a stream, we have access to many of the same operations, like <strong><code class="docutils literal notranslate"><span class="pre">read()</span></code></strong>. Calling the <strong><code class="docutils literal notranslate"><span class="pre">read</span></code></strong> function returns the response body returned from the <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> request. The response body is basically whatever content existed at the specified URL, which in this case is the HTML stored in the root file on the server. Looking at the print out of the response data, however, you will notice that it is prepended by the character ‘b’ (also note that the response data has been manually trimmed down for aesthetic purposes, indicated by the addition of the ‘…’ characters). When we print data to the shell, the addition of the ‘b’ character indicates that what we are looking are bytes, not a string. To work with the bytes stored in the variable <strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> like a string, we must first convert from a type of bytes to a type of string:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-
-<span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-</pre></div>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; &lt;class &#39;bytes&#39;&gt;
-&gt;&gt;&gt; &lt;class &#39;str&#39;&gt;
-</pre></div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">decode</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">encode</span></code></strong> are built-in functions of the <strong><code class="docutils literal notranslate"><span class="pre">bytes</span></code></strong> type that support converting between bytes and strings. The encoding type of UTF-8 tells the encoding and decoding functions what type of bytes we expect. For the most part, in the work we do in this course, it is safe to assume that strings will be encoded using UTF-8. However, in the real world, different computing systems and regions of the world quite frequently use different types of encoding, so it is always good practice to ensure you are using the right encoding. How do we know? Well, take a minute to scroll back up to the telnet example. You will notice in the screen shot that the HTTP header we received from our GET request has an attribute called <strong><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></strong> which specifies the encoding character set for the page! Fortunately, <strong><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></strong> makes it easy to retrieve the header content:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
-</pre></div>
-</div>
-<p>So now, with a little string manipulation on the header value, we can specify our encoding type without having to guess.</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">get_posts</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">add_post</span></code></strong> methods in the example above are taken directly from the Profile class. At first glance, you’ll notice that they look identical to the functions that you have been writing throughout this course. Like a function, the method is defined using the <strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong> keyword, accepts parameters, and supports the optional specification of a return type. However, notice that even if when we don’t intend to use a parameter, as is the case with <strong><code class="docutils literal notranslate"><span class="pre">get_posts</span></code></strong>, the <strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong> parameter is specified. The purpose of a class method is to act upon the class instance in some way, therefore a method must have a way to access the attributes of its class. As with the class constructor, all method signatures (The signature of a method refers to the combination of name, parameters, and return type.) in a class must be assigned the self parameter.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="web-apis">
-<span id="lectures-webapi"></span><h3>Web APIs<a class="headerlink" href="#web-apis" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id4">
-<h4>Videos<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2242261&amp;node=8181682&amp;a=1186819191&amp;autoplay=1">Web API Lecture Part 1</a></p>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2242265&amp;node=8181686&amp;a=238466118&amp;autoplay=1">Web API Lecture Part 2</a></p>
-</div>
-<div class="section" id="id5">
-<h4>Notes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<p>Now that you have had some time to practice working with modules and learned a little bit more about how we can use Python to talk to the Internet, let’s take a close look at some of the ways we can use the <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong> module to expand the types of information available to our programs.</p>
-<p>The Internet makes it possible to find information about practically anything a person might want to learn about. In the HTTP and URLs lecture, you learned how to use the <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> function to retrieve content from a URL. For most URLs, this means the data retrieved by <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> is intended to be used by programs like a web browser. But what if you want to retrieve information in a format more suitable for inclusion in a program that is not web browser?</p>
-<p>Many websites or web services that produce data suitable for consumption outside of a browser publish an Application Programming Interface, or API. Rather than have to write code to extract the data you want from content formatted for the browser, an API explicitly formats data in a structure that is intended to be consumed from any type of program. One of the most common formats, which you are already familiar with, is JSON.</p>
-<p>In some cases, an API will require you to go through some form of authentication. Depending on the type of authentication used, this process can be quite involved. One of the more common types of authentication is the API key. Key’s allow the API provider to track and optionally reject requests that either use an invalid or expired key. This gives the provider some assurances against automated or malicious requests.</p>
-<p>Some API’s, particularly those that are open or don’t require a key, opt to reject requests when they don’t like the way it looks. Let’s take a look at one example:</p>
-<p>https://api.kanye.rest/</p>
-<p>Which, when viewed in the browser works fine, but when requested using <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> does not (it returns a 403 forbidden message).  What this tells us is that the API is likely looking for a little more information from the request. Requests without traditional HTTP headers are often interpreted as potential bot/malicious attack threats and so they are often automatically blocked by most API servers. So, we need to modify the request to behave more like a web browser.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span><span class="n">error</span>
-
-<span class="k">def</span> <span class="nf">yeezy</span><span class="p">():</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.kanye.rest/&quot;</span>
-    <span class="n">user_agent</span> <span class="o">=</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64)&quot;</span>
-    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">}</span>
-    <span class="n">request</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    
-    <span class="n">json_results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">r_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_results</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">r_obj</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">yeezy</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>In the code above, notice that a <strong><code class="docutils literal notranslate"><span class="pre">Request</span></code></strong> object is created using the <strong><code class="docutils literal notranslate"><span class="pre">url</span></code></strong> variable and a <strong><code class="docutils literal notranslate"><span class="pre">headers</span></code></strong> object that contains the same user agent that FireFox on Windows 10 would send. The request object is then passed to <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> rather than the raw URL that we’ve used in previous examples. Now, with more a ‘browser-like’ appearance, the API can successfully return a quote from Kanye Rest:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;quote&#39;</span><span class="p">:</span> <span class="s2">&quot;I love sleep; it&#39;s my favorite.&quot;</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>You may have also noticed the use of <strong><code class="docutils literal notranslate"><span class="pre">None</span></code></strong> in the <strong><code class="docutils literal notranslate"><span class="pre">Request</span></code></strong> object parameter list. We’ve used <strong><code class="docutils literal notranslate"><span class="pre">None</span></code></strong> here, because we are only interesting in <strong>getting</strong> something from the supplied URL. But what if we also want to <strong>send</strong> something? Let’s take a look at the object definition adopted from <a class="reference external" href="https://docs.python.org/3/library/urllib.request.html#urllib.request.Request">docs.python.org</a>:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">class</span> <span class="nc">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{},</span> 
-	<span class="n">origin_req_host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unverifiable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The data parameter, specified here, can used to send data to a URL. Since Yeezy doesn’t require any particular information from us there was no need for us to use this parameter, however, there are cases where sending data might be necessary. If you’ve ever filled out and submitted a form in a browser, for example, you are sending data to a URL. Recall from the HTTP and URLs lecture that we talked about how HTTP is used to make GET requests to retrieve the content from a URL. Well, GET is one of many request methods made available in the HTTP specification. When data is submitted to a server using HTTP, the POST method is used to inform the server to expect a packet of data in the HTTP request. Let’s take a look at how we can add data to a <strong><code class="docutils literal notranslate"><span class="pre">urllib</span></code></strong> request and send it to a server:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span><span class="n">error</span>
-
-<span class="k">def</span> <span class="nf">send_data</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="c1"># the url and port of the ICSHTTP Simple Server:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:8000&#39;</span>
-
-    <span class="c1"># create some data to send, we&#39;ll use json format</span>
-    <span class="n">json</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span> <span class="p">:</span> <span class="n">data</span><span class="p">}</span>
-
-    <span class="c1"># properly encode the data for the request object</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> 
-
-    <span class="c1"># set a header, with content type. We don&#39;t need to specify user agent here</span>
-    <span class="c1"># since we are just sending to a custom server</span>
-    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
-    <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-    <span class="c1"># make the call, and print the response</span>
-    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-        <span class="n">resp</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
-    
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">send_data</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What would you like to send? &quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>In this program, we add JSON data to the <strong><code class="docutils literal notranslate"><span class="pre">Request</span></code></strong> object, though it doesn’t have to be JSON. We could have also sent XML, HTML, a file, plain text, and <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">many more</a>. Once we have determined the type of data to send, the <strong><code class="docutils literal notranslate"><span class="pre">content-type</span></code></strong> should be set to match. <strong><code class="docutils literal notranslate"><span class="pre">content-type</span></code></strong> is specified in the header and accepts a descriptive value that follows very specific formatting rules (see the previous link for a table of the various types and how they match to data). Once the request object is prepared, as with the previous example, it is sent to the desired server using the <strong><code class="docutils literal notranslate"><span class="pre">urlopen</span></code></strong> function. In the example above, we use the <strong><code class="docutils literal notranslate"><span class="pre">with</span></code></strong> statement to handle the state of the response object.</p>
-<p>To demonstrate how data is transferred over HTTP, let’s create a simple HTTP server to listen for POST requests.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">http</span><span class="o">,</span> <span class="nn">socketserver</span>
-<span class="kn">from</span> <span class="nn">http</span> <span class="kn">import</span> <span class="n">server</span> 
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This is a subclass of the BaseHTTPRequestHandler class which provdies methods</span>
-<span class="sd">for various aspects of HTTP request management. Since our only goal is to </span>
-<span class="sd">show how POST data works, this class simply renders and prints data when a </span>
-<span class="sd">POST request is received.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">class</span> <span class="nc">ICSHTTPRequestHandler</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s2">&quot; received.&quot;</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;content-length&#39;</span><span class="p">]))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This is just basic startup code to run the TCPServer that accompanies</span>
-<span class="sd">the Python standard library.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="mi">8000</span>
-
-<span class="n">handler</span> <span class="o">=</span> <span class="n">ICSHTTPRequestHandler</span>
-<span class="n">httpd</span> <span class="o">=</span> <span class="n">socketserver</span><span class="o">.</span><span class="n">TCPServer</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">),</span> <span class="n">handler</span><span class="p">)</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;serving at port&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span>
-<span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are conducting a deep dive into the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.</p>
-<p>To build a minimal viable HTTP server in Python, we can rely on the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">socketserver</span></code></strong> modules to manage most of the heavy lifting. The only code we will need to create is a custom request handler and a few lines to start the TCPServer that is included in the <strong><code class="docutils literal notranslate"><span class="pre">socketserver</span></code></strong> module. Python’s <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> module includes a couple of request handlers for basic requests (<strong><code class="docutils literal notranslate"><span class="pre">SimpleHTTPRequestHandler</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">CGIHTTPRequestHandler</span></code></strong>), but neither of these support POST requests by default. So we have to create our own! Fortunately, the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> module also provides a <strong><code class="docutils literal notranslate"><span class="pre">BaseHTTPRequestHandler</span></code></strong> that we can build upon (more on that in the Inheritance lecture).</p>
-<p>The <strong><code class="docutils literal notranslate"><span class="pre">ICSHTTPRequestHandler</span></code></strong> class overrides the inherited method <strong><code class="docutils literal notranslate"><span class="pre">do_POST</span></code></strong> to process incoming POST requests. The details of how this is done, are bit out of scope for this course, but you’ll notice that we are essentially extracting the data from the request, preparing and sending a response to the client, and then printing the data to the console. In a real application, we would likely need to do something other than print to console though. A traditional HTTP server might send that data to another process to be interpreted or stored somewhere.</p>
-<p>The lecture video will contain a running example of all of these programs, but you are STRONGLY encouraged to try running them yourself too! If you would like to learn a little bit more about how to work with HTTP data in Python, you can start by <a class="reference external" href="https://docs.python.org/3/howto/urllib2.html#data">reading the overview at docs.python.org</a>.</p>
-<p>I have included one additional look at Web API’s using the Spotify API. A walkthrough can be found in Part 2 of the lecture. I don’t plan on writing up notes for the Spotify API, but the files for the program are included below.</p>
-<p><a href="../resources/music_finder.py">MusicFinder</a></p>
-<p><a href="../resources/spotify_credentials.py">Spotify Credentials</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="live-class-recordings">
-<span id="quiz-results3"></span><h2>Live Class Recordings<a class="headerlink" href="#live-class-recordings" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Materials will be posted after class on 7/7</p>
-</div>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=3314243&amp;node=11125314&amp;a=143967648&amp;autoplay=1">Wednesday Live Quiz and Discussion</a>
-<a class="reference external" href="https://uci.yuja.com/V/Video?v=3318300&amp;node=11137353&amp;a=96191787&amp;autoplay=1">Friday Live Discussion</a></p>
+<div class="section" id="quiz-results">
+<span id="quiz-results3"></span><h2>Quiz Results<a class="headerlink" href="#quiz-results" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -687,6 +420,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="wk2.html" title="previous page">Week 2 Notes</a>
+    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project: Chatting with Friends</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
