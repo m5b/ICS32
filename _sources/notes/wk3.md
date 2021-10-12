@@ -10,10 +10,10 @@ Keep an eye weekly pages as they might be updated throughout the week.
 It's week 3. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2. 
 
 Quick Links:
-: {ref}`lecture-materials`
+: {ref}`lecture-materials3`
 : {ref}`quiz-results3`
 
-(lecture-materials)=
+(lecture-materials3)=
 ## Lecture Materials
 
 Lectures for Week 3
