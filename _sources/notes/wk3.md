@@ -9,6 +9,14 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 It's week 3. You should be finalizing your work on assignment 1 right about now and getting ready to start assignment 2. The lectures for this week include topics that you will need to start learning for assignment 2. 
 
+### Thursday Live Class
+
+<a href="https://uci.zoom.us/rec/share/j5wIzxHeTNH81GF33ESmbl9sAmTiMgOpJVelfNQKIYKYd3zk8rJXB0ANGhfAeKFq.Frfw_XQNAwre7mD3?startTime=1634235205000">Recording</a>
+
+
+<a href="../resources/wk3_demo.zip">User Interface Demo Code</a>
+
+
 Quick Links:
 : {ref}`lecture-materials3`
 : {ref}`quiz-results3`
