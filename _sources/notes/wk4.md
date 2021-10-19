@@ -7,7 +7,9 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 4 Overview
 
-It's week 4. You should be finalizing your work on assignment 2 right about now and getting ready to start assignment 3. The lectures for this week include topics that you will need to start learning for assignment 3. 
+Greetings everyone and welcome to week 4! You should be finalizing your work on assignment 2 over the next few days and getting ready to start the next assignment. The lectures for this week include topics that you will need to start learning for assignment 3. We will spend our class time this week discussing some validity checks you can run to test your assignment 2 before it's due and we'll review the requirements for assignment 3.
+
+I know it's a lot, but try and find some time this week to watch the lectures and practice the code examples provided in the notes below. See you Thursday!
 
 Quick Links:
 : {ref}`lecture-materials4`
@@ -16,7 +18,7 @@ Quick Links:
 (lecture-materials4)=
 ## Lecture Materials
 
-Lectures for Week 3
+Lectures for Week 4
 : {ref}`lectures:networks`
 : {ref}`lectures:protocols`
 
@@ -165,7 +167,7 @@ The protocols lecture makes use of three Python programs. While various parts of
 
 #### Notes
 
-In assignment 2, you are provided with the **`Profile`** module for storing and loading user data. In this module, we make use of a particular format for storing information called [JSON](https://www.json.org/json-en.html), which wraps Profile object data in a style of notation using the rules and conventions set forth by the creators of the format. 
+In assignment 2, you are working with the **`Profile`** module for storing and loading user data. In this module, we make use of a particular format for storing information called [JSON](https://www.json.org/json-en.html) that wraps Profile object data in a style of notation using the rules and conventions set forth by the creators of the format. 
 
 All the files that you find on your computer adhere to a similar process: a format is created that specifies how data should be stored and retrieved and programs that make use of the format adhere to the format conventions. A file's format is typically specified by it's extension, or suffix (_e.g._, .jpg, .doc, .py), providing the program that wants to use it with some clue as to how to interpret the file contents. A good example of this is an image editing program that can display different image formats.
 
