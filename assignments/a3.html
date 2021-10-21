@@ -384,11 +384,12 @@
 </div>
 <p>The following code snippets demonstrate how each of the DSP commands should be wrapped in JSON. You are free to adopt these templates for your program.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># join as existing or new user</span>
-<span class="p">{</span><span class="s2">&quot;join&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span><span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123&quot;</span><span class="p">,</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">}}</span>
+<span class="p">{</span><span class="s2">&quot;join&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span><span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123&quot;</span><span class="p">,</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}}</span>
 
 
 <span class="c1"># timestamp is generate automatically in the Profile module using Python&#39;s </span>
 <span class="c1"># time.time() function</span>
+<span class="c1"># user_token represents the server generated token associated with your user account</span>
 <span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
 
 
@@ -411,9 +412,10 @@
 
 <span class="c1"># Ok messages will be receieved after every successful send command. </span>
 <span class="c1"># They likely will not be accompanied by a message.</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">}}</span>
+<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;12345678-1234-1234-1234-123456789abc&quot;</span><span class="p">}}</span>
 </pre></div>
 </div>
+<p>Notice that an <strong><code class="docutils literal notranslate"><span class="pre">ok</span></code></strong> response includes a UUID token. This is your authentication token that acknowledges that you have successfully logged on to the server. You must pass this token with all server communication after the initial join request.</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
 <p>Adapt the DSP protocol for use in your program.</p>
