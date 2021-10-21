@@ -313,8 +313,8 @@
 <li><p>You must divide your program into <strong>at least three modules</strong>, not including the Profile module included in the starter code. Your modules should be named and loosely modeled after the descriptions below.</p>
 <ol class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>: Your first module will be the entry point to your program. It will be responsible for importing and using the other required modules.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong>: Your adaptation of the DS Protocol.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong>: Your distributed social client module. It should contain all code required to exchange messages with the DS Server.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong>: Your adaptation of the DSP Protocol.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong>: Your distributed social client module. It should contain all code required to exchange messages with the DSP Server.</p></li>
 </ol>
 </li>
 <li><p>You must retain the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
@@ -323,7 +323,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification to store information about your user and the DS Server.</p></li>
+<li><p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification to store information about your user and the DSP Server.</p></li>
 <li><p>You do not have to use the <strong><code class="docutils literal notranslate"><span class="pre">input_processor.py</span></code></strong> module you created for a2. However, since you will add new user interactions to your program, it makes sense to continue building out this module.</p></li>
 <li><p>All modules that you edited must include the following comment on the first three lines:</p></li>
 </ul>
@@ -338,7 +338,7 @@
 <p>The program you will be creating is divided into two parts. I strongly encourage you to read through both parts so that you have a clear picture of what the complete program will do. Then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2.</p>
 <div class="section" id="part-1">
 <h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
-<p>Much of the work you will need to do to connect to the DS Server using network sockets is covered in the Networks and Sockets lecture. If you haven’t watched the lecture or looked through the notes yet, now is a good time!</p>
+<p>Much of the work you will need to do to connect to the DSP Server using network sockets is covered in the Networks and Sockets lecture. If you haven’t watched the lecture or looked through the notes yet, now is a good time!</p>
 <p>Unlike the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that is supplied to you, you will need to complete the <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module yourself. The starter code for this module contains the following function signature.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ds_client.py</span>
 
@@ -346,8 +346,8 @@
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  The send function joins a ds server and sends a message, bio, or both</span>
 
-<span class="sd">  :param server: The ip address for the ICS 32 DS server.</span>
-<span class="sd">  :param port: The port where the ICS 32 DS server is accepting connections.</span>
+<span class="sd">  :param server: The ip address for the ICS 32 DSP server.</span>
+<span class="sd">  :param port: The port where the ICS 32 DSP server is accepting connections.</span>
 <span class="sd">  :param username: The user name to be assigned to the message.</span>
 <span class="sd">  :param password: The password associated with the username.</span>
 <span class="sd">  :param message: The message to be sent to the server.</span>
@@ -356,7 +356,7 @@
   <span class="k">pass</span>
 </pre></div>
 </div>
-<p>You must ensure that the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function specified above can successfully communicate with the DS server using the parameters specified. You <strong>must not</strong> change the signature of this function. If you do, you will likely not pass the grading tool that we use.</p>
+<p>You must ensure that the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function specified above can successfully communicate with the DSP server using the parameters specified. You <strong>must not</strong> change the signature of this function. If you do, you will likely not pass the grading tool that we use.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>The <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function does not have to include all the code required to communicate with the server. In fact, if you try to do everything with this function you will likely run into design problems. Instead, think about each of the steps that this function must perform and consider how thye might be organized into smaller single task functions.</p>
@@ -418,7 +418,7 @@
 <p class="admonition-title">Program Feature</p>
 <p>Adapt the DSP protocol for use in your program.</p>
 </div>
-<p>A typical exchange between a program and a DS server might look like the following:</p>
+<p>A typical exchange between a program and a DSP server might look like the following:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">join_msg</span> <span class="o">=</span> <span class="s1">&#39;{&quot;join&quot;: {&quot;username&quot;: &quot;ohhimark&quot;,&quot;password&quot;: &quot;password123&quot;, &quot;token&quot;:&quot;&quot;}}&#39;</span>
 
 <span class="n">send</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">makefile</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
