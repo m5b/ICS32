@@ -11,6 +11,15 @@ Greetings everyone and welcome to week 4! You should be finalizing your work on 
 
 I know it's a lot, but try and find some time this week to watch the lectures and practice the code examples provided in the notes below. See you Thursday!
 
+### Thursday Live Class
+
+<a href="https://uci.zoom.us/rec/share/Qi1OG8zuG6l7kj6BXjknd1zha0QazazY9PPiM1hEX-UsJwhpbjZD1t6eVYOTEN10.Vk2uLjzu-_zcNox5">Recording</a>
+
+<a href="https://uci.zoom.us/rec/share/on5Pdck1NElb2tHs0eH3ZJZ_pdbccEDlKjjIa_TiJpFLd82B9rnvVMnTDgzYoAU.TJ2fVrzp6rgxpsc-">Class follow up in which I explain why the final demo didn't work and run again...successfully.</a>
+
+<a href="../resources/a2_unittest_demo.py">A2 Unit Test Demo Code</a>
+
+
 Quick Links:
 : {ref}`lecture-materials4`
 : {ref}`quiz-results4`
