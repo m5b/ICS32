@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
+    <link rel="prev" title="Assignment 2: Journal" href="a2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,24 +97,24 @@
   Assignments
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a0.html">
+  <a class="reference internal" href="a0.html">
    Assignment 0
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a1.html">
+  <a class="reference internal" href="a1.html">
    Assignment 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a2.html">
+  <a class="reference internal" href="a2.html">
    Assignment 2
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a3.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment 3
   </a>
  </li>
@@ -195,7 +197,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/prep/a3.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/a3.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -253,6 +255,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2">
+     Part 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starter-project">
+     Starter Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
      How we will grade your submission
     </a>
@@ -277,7 +289,7 @@
 <p>A journaling program, like the one you built for <span class="xref myst">assignment 2</span> is a nice way to record and manage personal information. However, there may be some occasions when your users want to share their thoughts with a broader audience. So for this assignment, you will be introducing an <strong>online</strong> option to your program that allows your users to publish individual posts to a remote server where others can read what they have to say.</p>
 <p>This means that your journal entries will be stored locally (on your computer) with an option to be shared to the Internet. Where on the Internet? Any server that supports the ICS32 distributed social platform (DSP) (for now that’s just us)!</p>
 <p>If you would like to take a quick look at the ICS32 DSP website, feel free to click through to the website:</p>
-<p><a class="reference external" href="https://ics32distributedsocial.com">ICS32 Distributed Social</a></p>
+<p><a class="reference external" href="http://ics32distributedsocial.com">ICS32 Distributed Social</a></p>
 <p>The ICS32 DSP website is where you can view user posts published by your program. You don’t need to do anything with this website in your program, it’s simply here so that you can verify that posts published through your program are successful. Alright, so let’s get started!</p>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
@@ -296,23 +308,23 @@
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<p>Unlike the previous assignment, you will have a lot more flexibility in how you design your program’s user interface. I will not be providing a validity checker for this assignment, so the input and output of your program is largely up to you. However, there are some conditions:</p>
+<p>As with the previous assignment, you have a lot of flexibility with how you design your program’s user interface. You will not have a validity checker for this assignment, so the input and output of your program is largely up to you. However, there are some conditions:</p>
 <ul class="simple">
-<li><p>You must divide your program into <strong>at least three modules</strong>, not including the Profile module. Your modules should be named and loosely modeled after the descriptions below.</p>
+<li><p>You must divide your program into <strong>at least three modules</strong>, not including the Profile module included in the starter code. Your modules should be named and loosely modeled after the descriptions below.</p>
 <ol class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong>: Your first module will be the entry point to your program.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>: Your first module will be the entry point to your program. It will be responsible for importing and using the other required modules.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong>: Your adaptation of the DS Protocol.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong>: Your distributed social client module should contain all code required to exchange messages with the DS Server.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong>: Your distributed social client module. It should contain all code required to exchange messages with the DS Server.</p></li>
 </ol>
 </li>
-<li><p>You must <em>retain</em> the functionality specified for a1. A user should be able to user your program to locate, create, and load <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> files. If you were unable to get all a1 features to be fully functional, don’t worry, you won’t be penalized again. Just carry through to a2 whatever you have completed.</p></li>
-<li><p>You must also retain the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
+<li><p>You must retain the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
 </ul>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span> <span class="p">[[</span><span class="o">-</span><span class="p">]</span><span class="n">OPTION</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification (more on that below).</p></li>
+<li><p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification to store information about your user and the DS Server.</p></li>
+<li><p>You do not have to use the <strong><code class="docutils literal notranslate"><span class="pre">input_processor.py</span></code></strong> module you created for a2. However, since you will add new user interactions to your program, it makes sense to continue building out this module.</p></li>
 <li><p>All modules that you edited must include the following comment on the first three lines:</p></li>
 </ul>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
@@ -327,7 +339,7 @@
 <div class="section" id="part-1">
 <h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
 <p>Much of the work you will need to do to connect to the DS Server using network sockets is covered in the Networks and Sockets lecture. If you haven’t watched the lecture or looked through the notes yet, now is a good time!</p>
-<p>Unlike the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that is supplied to you, you will need to create the <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module yourself. However, it must contain and make use of the following function signature.</p>
+<p>Unlike the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that is supplied to you, you will need to complete the <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module yourself. The starter code for this module contains the following function signature.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ds_client.py</span>
 
 <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="n">server</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">bio</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -344,12 +356,17 @@
   <span class="k">pass</span>
 </pre></div>
 </div>
-<p>The validity checking tool that we will use for grading will import your <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module and call this function with randomly generated values. When called, the information we supply should either successfully transmit the data to the DS Server or, in the case of incorrect data, gracefully inform our program what went wrong.</p>
+<p>You must ensure that the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function specified above can successfully communicate with the DS server using the parameters specified. You <strong>must not</strong> change the signature of this function. If you do, you will likely not pass the grading tool that we use.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function does not have to include all the code required to communicate with the server. In fact, if you try to do everything with this function you will likely run into design problems. Instead, think about each of the steps that this function must perform and consider how thye might be organized into smaller single task functions.</p>
+</div>
+<p>The tool that we will use for grading will import your <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module and call this function with randomly generated values. When called, the information we supply should either successfully transmit the data to the DSP Server or, in the case of incorrect data, gracefully inform our program what went wrong.</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
 <p>Connect to, send, and receive information with a remote DSP server</p>
 </div>
-<p>When communicating with a server using sockets, it is common to establish a protocol for exchanging messages. A protocol is a predefined system of rules to transfer information between two or more systems. For a2, your program will need to support the DSP protocol to successfully communicate with the DSP server. Your protocol code should be placed in the <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong> module.</p>
+<p>When communicating with a server using sockets, it is common to establish a protocol for exchanging messages. A protocol is a predefined system of rules to transfer information between two or more systems. For this assignment, your program will need to support the DSP protocol to successfully communicate with the DSP server. Your protocol handling code should be placed in the <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong> module.</p>
 <p>The DSP protocol supports the following send commands:</p>
 <dl class="simple myst">
 <dt>join</dt><dd><p>Accepts either an existing user and password, or a new user and password</p>
@@ -417,11 +434,7 @@
 </pre></div>
 </div>
 <p>In your Python code, you will treat JSON messages as type string. In the snippets above, you will likely need to replace the hard coded values (<em>e.g.,</em> ohhimark, password123, etc.) with the variables in your program that store the actual data you intend to send to the DSP server. There are many ways to do this, but you should focus your efforts on using the string formatting functions found in the Python Standard Library.</p>
-<div class="warning admonition">
-<p class="admonition-title">DS Server Protocol Helper Code</p>
-<p>The following code was added on 2/1 to help you process json formatted messages sent by the server. NOTE: You will need to adapt the example code to work with protocol messages.</p>
-</div>
-<p>To process the messages from the DS server, you may adapt the following code to reduce some of the extra work of parsing strings:</p>
+<p>To process the messages from the DSP server you will need to adapt the following function, which can be found in your starter code, to reduce some of the extra work of parsing strings:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
@@ -448,27 +461,57 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">DataTuple</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Finally, if you have made it this far, you are probably wondering about the information required to connect to the DSP server. I will have the server up and running very soon. In the meantime, you should be able to test using the echo server covered in lecture. Since this project page is public and I would like to avoid undesirable traffic aimed at my server, I will be communicating server details via Zulip only.</p>
-<p>You may also be wondering, what happens to all the messages you send…Well, since we are using networked sockets, you may have guessed, all of your messages will be published to a publicly available web page. So be kind and respectful in the messages you write!</p>
+<p>Finally, if you have made it this far, you are probably wondering about the information required to connect to the DSP server. Since this project page is public and I would like to avoid undesirable traffic aimed at my server, I will be communicating server details via Zulip only. In the meantime, you should be able to run some client side tests using the echo server covered in lecture.</p>
+</div>
+<div class="section" id="part-2">
+<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
+<p>At this point you should be able to run the following small program and successfully see a message posted to the <a class="reference external" href="http://ics32distributedsocial.com">ICS32 Distributed Social</a> website.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dsp_demo.py</span>
+
+<span class="kn">import</span> <span class="nn">ds_client</span>
+<span class="n">server</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span> <span class="c1"># replace with actual server ip address</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span> <span class="c1"># replace with actual port</span>
+<span class="n">ds_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="s2">&quot;f21demo&quot;</span><span class="p">,</span> <span class="s2">&quot;pwd123&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Feel free to change the username and password used in the previous example to anything you like. Once a username is registered with a password, however, you must always use the same password when sending information to the DSP server.</p>
+<p>Now that you are able to connect and send content to the server, it’s time to integrate the functionality into your user interface. In assignment 2, you built a local-first journaling program. Your interface enabled a user to write and save journal entries to a custom file using the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module. For part 2 of this assignment, you will extend your journaling program to allow your user to optionally choose to post journal entries to the DSP server.</p>
+<p>You may recall that the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> class included an attribute called <strong><code class="docutils literal notranslate"><span class="pre">dsuserver</span></code></strong> that was not required for assignment 2. You will use this parameter to store the IP Address of the DSP server. For this course, we will assume that value for <strong><code class="docutils literal notranslate"><span class="pre">port</span></code></strong> will never change, so you can safely hard code the port number that you will receive into your code somewhere. Just be sure that your <strong><code class="docutils literal notranslate"><span class="pre">ds_client</span></code></strong> <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function uses the port parameter, not your hard coded port. You do not have to store the port in the user profile.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Extend your journal user interface to collect the desired DSP server from the user.</p>
+</div>
+<p>Your user interface will allow the user to specify which server they want to use for publishing journal entries. Once this feature is complete the only thing left to do is add support for posting journal entries to the server. How you approach this requirement will depend on how you have implemented your program so far. For example, you might decide to prompt the user to post online after every new entry. Or you might prefer to let the user select a journal entry (perhaps by using the Print feature from a2) to post from a list of all entries. Think it through and do what you think makes the most sense for your program and assignment.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Extend your journal user interface to allow the user to post journal entries to a DSP server.</p>
+</div>
+<p>The ICS32 DSP website is where you can view user posts published by your program. You don’t need to do anything with this website in your program, it’s simply here so that you can verify that posts you’ve published are successful. Alright, so let’s get started!</p>
+</div>
+<div class="section" id="starter-project">
+<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
+<p><a href="https://classroom.github.com/a/09MqKJt1">Assignment 3 Starter Repository</a></p>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 15-point scale, with the 15 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>This assignment will be graded on a 150 point scale, with the 150 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <dl class="simple myst">
-<dt>Requirements and Function | 10 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+<dt>Requirements and Function | 100 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
 <dd><p>Does the ds_client module function independently of the rest of the program?</p>
 </dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
-<dt>Module Usage | 2 pts</dt><dd><p>Are all required modules named and used as specified?</p>
+<dt>Module Usage | 30 pts</dt><dd><p>Are all required modules named and used as specified?</p>
 </dd>
-<dt>Quality and Design        | 3 pts</dt><dd><p>Is the code well designed?</p>
+<dt>Quality and Design        | 20 pts</dt><dd><p>Is the code well designed?</p>
 </dd>
 <dd><p>Is the code clearly documented?</p>
 </dd>
+<dd><p>Is the user interface creative and feature rich?</p>
+</dd>
 </dl>
-<p>Now that you have successfully completed on large program, we will start to look at the quality and design criteria a little more closely. If you have not been putting time into organizing and documenting your code, now is a good time to start.</p>
+<p>Now that you have successfully completed a few large programs, we will be applying a rigid assessment of your program design and quality. If you have not been putting time into organizing and documenting your code, now is a good time to start.</p>
 </div>
 </div>
 </div>
@@ -486,7 +529,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./prep"
+            path: "./assignments"
         },
         predefinedOutput: true
     }
@@ -501,6 +544,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="a2.html" title="previous page">Assignment 2: Journal</a>
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
