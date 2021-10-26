@@ -224,7 +224,7 @@ If you would like to see a running an example of the code above, feel free to co
 
 #### Videos
 
-[Inheritance Lecture Video](https://uci.yuja.com/V/Video?v=2242269&node=8181690&a=1610946088&autoplay=1)
+[Inheritance Lecture Video]()
 
 #### Notes
 
@@ -310,12 +310,4 @@ In this example, we have created a new class called **`MessageClass`**. This cla
 
 A good way to think about class inheritance is to consider some of the things we already know about the different types of objects we interact with every day. Take the smartphone for example. At an abstract level, every smartphone has a few common properties like a screen, buttons, microphone, speaker, cpu, gps, etc. So we can might think of all of those common attributes as members of a base class. So we could write a base class, let's call it **`SmartPhone`**, that will manage common attributes for us. Next, we might want to create a class that can do some things that only certain types of smartphones can do, let's call these classes **`iPhone`** and **`Android`**. Both classes can inherit from **`smartphone`** to make use of the common attributes. But each class will also implement its own attributes that are unique to it like touch interactions and apps. We can also go further and compose individual classes for all of the different types of iPhone's and Android phones that exist.
 
-(quiz-results5)=
-## Quiz Results
-
-LINKS WILL BE UPDATE BY 2/3
-
-[Live Quiz and Discussion]()
-
-<a href="../resources/QZ_Week_5_Quiz_Results.pdf">Quiz Results</a>
 
