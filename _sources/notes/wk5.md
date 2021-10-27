@@ -26,6 +26,13 @@ Lectures for Week 5
 (lectures:adv_classes)=
 ### Advanced Classes
 
+#### Videos
+
+[Advanced Classes Lecture Video](https://uci.yuja.com/V/Video?v=3831681&node=13163283&a=80382057&autoplay=1)
+
+#### Notes
+
+
 In the week 3 lecture notes you learned about the concept of classes. In that lecture, we described a class as a
 
 > template for objects that perform state and behavior operations in program code
@@ -224,7 +231,7 @@ If you would like to see a running an example of the code above, feel free to co
 
 #### Videos
 
-[Inheritance Lecture Video]()
+[Inheritance Lecture Video](https://uci.yuja.com/V/Video?v=3831635&node=13163176&a=1696442917&autoplay=1)
 
 #### Notes
 
