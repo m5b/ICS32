@@ -7,6 +7,12 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 5 Overview
 
+### Thursday Live Class
+
+<a href="https://uci.zoom.us/rec/share/3VNTu8rCngsK8b-JRlSX-SvHan9wLVu55tAhwHSxKu2mkvpoeUTgbdVhzOS6Ua8A.3EfTY-A1vOJQJd_T">Recording</a>
+
+<a href="../resources/A3_Program_Design.pptx">A3 Program Design Slides</a>
+
 Quick Links:
 : {ref}`lecture-materials`
 : {ref}`quiz-results5`
