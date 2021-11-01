@@ -1,29 +1,21 @@
-Week 5 Notes
+Week 6 Notes
 ============================
 
 ```{note}
 Keep an eye weekly pages as they might be updated throughout the week.
 ```
 
-## Week 5 Overview
+## Week 6 Overview
+
 
 Quick Links:
 : {ref}`lecture-materials`
-: {ref}`quiz-results5`
 
 (lecture-materials)=
 ## Lecture Materials
 
-```{note}
-I am putting this weeks live quiz lecture at the top today, rather than in the Quiz Results section. Note, we spent almost the entire class time discussing design strategies and requirements for a2. Please watch if you are still uncertain about how to proceed.
-```
-
-[Program Design and A2 Discussion](https://uci.yuja.com/V/Video?v=2520602&node=9151903&a=1996610766&autoplay=1)
-
-Lectures for Week 5
+Lectures for Week 6
 : {ref}`lectures:webapi`
-: {ref}`lectures:inheritance`
-
 
 (lectures:webapi)=
 ### Web APIs
@@ -164,102 +156,3 @@ I have included one additional look at Web API's using the Spotify API. A walkth
 <a href="../resources/music_finder.py">MusicFinder</a>
 
 <a href="../resources/spotify_credentials.py">Spotify Credentials</a>
-
- 
-(lectures:inheritance)=
-### Inheritance
-
-#### Videos
-
-[Inheritance Lecture Video](https://uci.yuja.com/V/Video?v=2242269&node=8181690&a=1610946088&autoplay=1)
-
-#### Notes
-
-Did you know that a class can be a child of another class? That a child class can __inherit__ the attributes and methods of its parent? It can, and the process, which we call __inheritance__ is one of the fundamental paradigms of object oriented programming. Let's dive in to some code first, then we'll break down what all of this means.
-
-In the Web API lecture, you may have noticed something odd with the way the **ICSHTTPRequestHanlder`** object was declared:
-
-```ipython3
-class ICSHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
-    def do_POST(self):
-
-```
-
-It looks like the class is specifying a parameter! Well, it sort of is, but notice that the parameter only contains a type of object--it's missing a parameter name. This is the syntactic convention that Python uses to subclass, or inherit, from other classes. When a class __subclasses__ another class in this way, it becomes a __type__ of that class, thereby inheriting all of the parent classes members (attributes and methods). Let's take a quick look at how we can use inheritance to improve reusability of our code.
-
-
-```ipython3
-class BaseClass:
-    def __init__(self):
-        self.base_attr = "I am a base attribute!"
-        self.data = 0
-    
-    def base_method(self):
-        print("the base method number is: ",self.data)
-
-class SubClass(BaseClass):
-    def sub_method(self, data: int):
-        self.data = data 
-
-class AnotherSubClass(BaseClass):
-    def base_method(self):
-        print("the custom base method number is: ",self.data)
-
-sc = SubClass()
-sc.base_method()
-sc.sub_method(5)
-sc.base_method()
-
-ac = AnotherSubClass()
-ac.base_method()
-
-print(sc.base_attr)
-print(type(sc))
-print(isinstance(sc, BaseClass))
-
-```
-```ipython3
->>> the base method number is:  0
->>> the base method number is:  5
->>> the custom base method number is:  0
->>> I am a base attribute!
->>> <class '__main__.SubClass'>
->>> True
-```
-In this example, we have a **`BaseClass`** which implements some initialization code and a method that prints the value of its data attribute member, **`data`**. We have a **`SubClass`** which inherits from **`BaseClass`** and implements its own method for changing the **`data`** attribute. And we have a **`AnotherSubClass`** which __overrides__ the **`base_method`** of the **`BaseClass`** and implements its own print statement.
-
-There is a lot to breakdown here, so let's go through the shell statement's one by one. First, notice that the **`base_method()`** method is a member of the **`sc`** object that we instantiated from **`SubClass`**. This is because, as we discussed earlier, the subclass inherits all of the members of the parent class. Next, notice that the new method that is created in the subclass can act upon the data attributes of the parent class, so here the **`data`** object is updated according to value passed into the **`base_method`**, therefore the next time that **`base_method`** is called the print statement reflects this change.
-
-The **`AnotherSubClass`** class demonstrates one of the more powerful examples of inheritance, overriding. A subclass can override, or change the expected behavior, of a parent class method by implementing its own version of the same method, with the same signature.
-
-The final three print statements simply demonstrate how Python treats subclasses. Notice how even though the object **`sc`** is of type **`SubClass`**, it is also an instance of **`BaseClass`**. Why is that important? Let's take a look:
-
-```ipython3
-class MessageClass:
-    def print_message(self, bc:BaseClass):
-        bc.base_method()
-
-mc = MessageClass()
-
-mc.print_message(sc)
-mc.print_message(ac)
-
-```
-```ipython3
->>> the base method number is:  5
->>> the custom base method number is:  0
-```
-
-In this example, we have created a new class called **`MessageClass`**. This class is responsible for printing messages of the type **`BaseClass`**. But notice that we never actually passed an object instantiated from **`BaseClass`**, rather we passed it **`SubClass`** and **`AnotherSubClass`** and it worked! Inheriting from classes this way can be used to structure and organize our programs while also reducing the amount of code we write. Code reuse is one of the best ways to reduce the likelihood of bugs in our programs.
-
-A good way to think about class inheritance is to consider some of the things we already know about the different types of objects we interact with every day. Take the smartphone for example. At an abstract level, every smartphone has a few common properties like a screen, buttons, microphone, speaker, cpu, gps, etc. So we can might think of all of those common attributes as members of a base class. So we could write a base class, let's call it **`SmartPhone`**, that will manage common attributes for us. Next, we might want to create a class that can do some things that only certain types of smartphones can do, let's call these classes **`iPhone`** and **`Android`**. Both classes can inherit from **`smartphone`** to make use of the common attributes. But each class will also implement its own attributes that are unique to it like touch interactions and apps. We can also go further and compose individual classes for all of the different types of iPhone's and Android phones that exist.
-
-(quiz-results5)=
-## Quiz Results
-
-LINKS WILL BE UPDATE BY 2/3
-
-[Live Quiz and Discussion]()
-
-<a href="../resources/QZ_Week_5_Quiz_Results.pdf">Quiz Results</a>
-

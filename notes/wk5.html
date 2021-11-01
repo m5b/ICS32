@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Final Project: Chatting with Friends" href="../final.html" />
+    <link rel="next" title="Week 6 Notes" href="wk6.html" />
     <link rel="prev" title="Week 4 Notes" href="wk4.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -148,6 +148,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Week 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk6.html">
+   Week 6
   </a>
  </li>
 </ul>
@@ -311,7 +316,7 @@
 <dl class="simple myst">
 <dt>Quick Links:</dt><dd><p><a class="reference internal" href="wk6.html#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
 </dd>
-<dd><p><a class="reference internal" href="wk6.html#quiz-results5"><span class="std std-ref">Quiz Results</span></a></p>
+<dd><p><span class="xref std std-ref">quiz-results5</span></p>
 </dd>
 </dl>
 </div>
@@ -321,7 +326,7 @@
 <dl class="simple myst">
 <dt>Lectures for Week 5</dt><dd><p><a class="reference internal" href="#lectures-adv-classes"><span class="std std-ref">Advanced Classes</span></a></p>
 </dd>
-<dd><p><a class="reference internal" href="wk6.html#lectures-inheritance"><span class="std std-ref">Inheritance</span></a></p>
+<dd><p><a class="reference internal" href="#lectures-inheritance"><span class="std std-ref">Inheritance</span></a></p>
 </dd>
 </dl>
 <div class="section" id="advanced-classes">
@@ -380,7 +385,7 @@
 
 </pre></div>
 </div>
-<p>Notice how the <strong><code class="docutils literal notranslate"><span class="pre">CommandType</span></code></strong> class sort of accepts a parameter of type <strong><code class="docutils literal notranslate"><span class="pre">Enum</span></code></strong> in the class definition? This is called inheritance and it’s a concept we will look at more closely in the next <a class="reference internal" href="wk6.html#lectures-inheritance"><span class="std std-ref">lecture</span></a>. For now, just imagine that by <em>inheriting</em> from <strong><code class="docutils literal notranslate"><span class="pre">Enum</span></code></strong> the <strong><code class="docutils literal notranslate"><span class="pre">CommandType</span></code></strong> class already has some functionality built-in, even before we add our custom command names and values. One of those functions is the ability to iterate, another is that we don’t need to <em>instantiate</em> this class to use it. Instead, we simply reference each member symbolically whenever we need to validate an input command.</p>
+<p>Notice how the <strong><code class="docutils literal notranslate"><span class="pre">CommandType</span></code></strong> class sort of accepts a parameter of type <strong><code class="docutils literal notranslate"><span class="pre">Enum</span></code></strong> in the class definition? This is called inheritance and it’s a concept we will look at more closely in the next <a class="reference internal" href="#lectures-inheritance"><span class="std std-ref">lecture</span></a>. For now, just imagine that by <em>inheriting</em> from <strong><code class="docutils literal notranslate"><span class="pre">Enum</span></code></strong> the <strong><code class="docutils literal notranslate"><span class="pre">CommandType</span></code></strong> class already has some functionality built-in, even before we add our custom command names and values. One of those functions is the ability to iterate, another is that we don’t need to <em>instantiate</em> this class to use it. Instead, we simply reference each member symbolically whenever we need to validate an input command.</p>
 <p>In the code above, each member of the <strong><code class="docutils literal notranslate"><span class="pre">CommandType</span></code></strong> class is compared to the first character of an input command. If the command is found, then a variable is set. Hopefully this looks a little bit easier to understand than the conditional equivalent we started with above! Now let’s take a look at the variable <strong><code class="docutils literal notranslate"><span class="pre">_input_data</span></code></strong>. Notice that it has an member called <strong><code class="docutils literal notranslate"><span class="pre">command</span></code></strong> that is used to store the <strong><code class="docutils literal notranslate"><span class="pre">CommandType</span></code></strong> identified in the for loop. So it must be an object of some type, right? Here’s the declaration:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">InputData</span><span class="p">:</span>
@@ -608,7 +613,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="wk4.html" title="previous page">Week 4 Notes</a>
-    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project: Chatting with Friends</a>
+    <a class='right-next' id="next-link" href="wk6.html" title="next page">Week 6 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
