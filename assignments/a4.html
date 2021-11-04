@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
+    <link rel="prev" title="Assignment 3: Publishing Online" href="a3.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,29 +97,29 @@
   Assignments
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a0.html">
+  <a class="reference internal" href="a0.html">
    Assignment 0
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a1.html">
+  <a class="reference internal" href="a1.html">
    Assignment 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a2.html">
+  <a class="reference internal" href="a2.html">
    Assignment 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a3.html">
+  <a class="reference internal" href="a3.html">
    Assignment 3
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a4.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment 4
   </a>
  </li>
@@ -210,7 +212,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/prep/a4.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/a4.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -300,6 +302,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starter-project">
+     Starter Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
      How we will grade your submission
     </a>
@@ -348,10 +355,10 @@
 <p>Your main entry point to your program will be from a module called <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong>. As with a3, you will not have a validity checker to use for testing and you will be largely responsible for program input and output. You are encouraged to continue to bring the user interface and other functions you created in your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> through <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong> modules, but you will not be re-graded on the features you implemented for those assignments.</p>
 <p>Your final program should contain the following new modules:</p>
 <ol class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API. See <a class="reference internal" href="#section-part1"><span class="std std-ref">Part 1</span></a></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the Last.FM API. See <a class="reference internal" href="#section-part2"><span class="std std-ref">Part 2</span></a></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit. See <a class="reference internal" href="#section-extracredit"><span class="std std-ref">Extra Credit</span></a></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">WebAPI.py</span></code></strong>: A base class module that provides access to common features for by API modules. See <a class="reference internal" href="#section-part3"><span class="std std-ref">Part 3: The Refactor!</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API. See <a class="reference internal" href="../prep/a4.html#section-part1"><span class="std std-ref">Part 1</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the Last.FM API. See <a class="reference internal" href="../prep/a4.html#section-part2"><span class="std std-ref">Part 2</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit. See <a class="reference internal" href="../prep/a4.html#section-extracredit"><span class="std std-ref">Extra Credit</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">WebAPI.py</span></code></strong>: A base class module that provides access to common features for your API modules. See <a class="reference internal" href="../prep/a4.html#section-part3"><span class="std std-ref">Part 3: The Refactor!</span></a></p></li>
 </ol>
 <p>Since the code you write for this assignment will still be dependent on communication with the server, you should also include all modules you created or used for assignment 3.</p>
 <div class="admonition note">
@@ -412,7 +419,7 @@
 <ul class="simple">
 <li><p>You will likely want to customize this based on your personal preferences, so read through the documentation thoroughly to understand the various options for weather data available through the API.</p></li>
 </ul>
-<p>Once you have your own API key, copy it into the <strong><code class="docutils literal notranslate"><span class="pre">apikey</span></code></strong> variable in the sample code above and run the program to see the result. Notice that the data response from the API is in JSON format. Most web API’s use the JSON format for storing and sending data and since we are already familiar with JSON from a2, we will continue using it here (though it’s worth noting that the OpenWeather API does support HTML and XML formats too). The <strong><code class="docutils literal notranslate"><span class="pre">loads</span></code></strong> function in Python’s json module should be all you need to use for converting the JSON responses you received into a Python object (you are free to adapt the DS Server Protocol Helper Code example provided in a2). Also notice, that in the sample code, the print out only contains the <strong><code class="docutils literal notranslate"><span class="pre">description</span></code></strong> attribute for the weather. A more complete output might contain detailed information like temperature, barometric pressure, and humidity. To see all the data available from the API response, you can update the sample code to simply print the <strong><code class="docutils literal notranslate"><span class="pre">weather_obj</span></code></strong> variable.</p>
+<p>Once you have your own API key, copy it into the <strong><code class="docutils literal notranslate"><span class="pre">apikey</span></code></strong> variable in the sample code above and run the program to see the result. Notice that the data response from the API is in JSON format. Most web API’s use the JSON format for storing and sending data and since we are already familiar with JSON from a3, we will continue using it here (though it’s worth noting that the OpenWeather API does support HTML and XML formats too). The <strong><code class="docutils literal notranslate"><span class="pre">loads</span></code></strong> function in Python’s json module should be all you need to use for converting the JSON responses you received into a Python object (you are free to adapt the <strong><code class="docutils literal notranslate"> <span class="pre">extract_json</span></code></strong> helper code example provided in a3). Also notice, that in the sample code, the print out only contains the <strong><code class="docutils literal notranslate"><span class="pre">description</span></code></strong> attribute for the weather. A more complete output might contain detailed information like temperature, barometric pressure, and humidity. To see all the data available from the API response, you can update the sample code to simply print the <strong><code class="docutils literal notranslate"><span class="pre">weather_obj</span></code></strong> variable.</p>
 <p>Now that you have a functioning API call in place, you should start thinking about how to make this information more accessible for your DS program. A good way to go about doing this is to create a class that abstracts away the processing logic you need to write to gain access to weather data. So for the remainder of this part of the assignment, you will write a weather class called <strong><code class="docutils literal notranslate"><span class="pre">OpenWeather</span></code></strong> that accepts location information and an API key to store weather information in data attributes.</p>
 <p>Your class must include and implement the following two methods:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_apikey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -473,7 +480,7 @@
 </div>
 <div class="section" id="part-2">
 <span id="section-part2"></span><h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>Alright, at this point you should have two classes that retrieve data from web API’s. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left off after a2).</p>
+<p>Alright, at this point you should have two classes that retrieve data from web API’s. For the second part of the assignment you will incorporate these classes into the current version of your DS program (where you left off after a3).</p>
 <p>You goal for part 2 should be to allow your user to write journal posts with optional keywords that are transcluded into data from your API classes. You must create at least two keywords, one for each API, using the keywords listed below:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@weather</span>
 <span class="nd">@lastfm</span>
@@ -540,7 +547,7 @@
 <p>Often times when we write programs it is difficult to foresee all the features and code we will require to make our program function the way we want. But as the program and our understanding of the code we have written evolves, we gradually begin to find points of redundancy. The more redundant code that we put into our program, the greater the likelihood we face undesirable conditions such as poor performance, bugs, and confusing logic.</p>
 <p>As programmers, it is our job to ensure that our code is performant as possible, given our knowledge and abilities. One way that we accomplish this is by <strong>refactoring</strong> our code: reworking the code that we have written to reduce unneccessary logic, repetition, and errors.</p>
 </div>
-<p>For this final part of the assignment, you refactor your code to reduce redundancy. You will do this by creating a base class that all of your api classes inherit, so if you have not watched the lecture on inheritance yet, now is a good time to do it!</p>
+<p>For this final part of the assignment, you will refactor your code to reduce redundancy. You will do this by creating a base class that all of your api classes inherit, so if you have not watched the lecture on inheritance yet, now is a good time to do it!</p>
 <p>Your base class will start with the following template:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 
@@ -586,7 +593,7 @@
 </div>
 <div class="section" id="extra-credit">
 <span id="section-extracredit"></span><h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>We will be awarding 1 extra credit point for the successful inclusion of a third API from a source that has not been used for this class. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit. Your API should be built in a module named <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong> and make use of at least one keyword named:</p>
+<p>We will be awarding 5 extra credit points for the successful inclusion of a third API from a source that has not been used for this class. If you choose to add a third API, you must explicitly define how to use it in your program and let us know via submission page comment that you would like to us to review your third API for extra credit. Your API should be built in a module named <strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong> and make use of at least one keyword named:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@extracredit</span>
 </pre></div>
 </div>
@@ -598,7 +605,7 @@
 </div>
 <div class="section" id="submitting">
 <h3>Submitting<a class="headerlink" href="#submitting" title="Permalink to this headline">¶</a></h3>
-<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong>. If you complete the extra credit, be sure to add a comment on your submission page that notifies us. Failure to leave a comment means that we may not notice the extra credit feature when grading.</p>
+<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong>. If you complete the extra credit, be sure to add a comment on your submission page that notifies us. Failure to leave a comment means that we may not notice the extra credit feature when grading.</p>
 <p>Additionally, all modules that you create or edit must include the following comment on the first three lines:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># NAME</span>
@@ -608,11 +615,15 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="starter-project">
+<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
+<p><a href="https://classroom.github.com/a/DJg05tcx">Assignment 4 Starter Repository</a></p>
+</div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 15-point scale, with the 15 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>This assignment will be graded on a 150 point scale, with the 150 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <dl class="simple myst">
-<dt>Requirements and Function | 12 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+<dt>Requirements and Function | 120 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
 <dd><p>Does the program make use of required APIs?</p>
 </dd>
@@ -620,11 +631,13 @@
 </dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
-<dt>Quality and Design        | 3 pts</dt><dd><p>Is the code well designed?</p>
+<dt>Quality and Design        | 30 pts</dt><dd><p>Is the code well designed?</p>
 </dd>
 <dd><p>Is the code clearly documented?</p>
 </dd>
-<dt>Extra Credit							| 1 pt</dt><dd><p>Does the program makes use of a third API?</p>
+<dt>Extra Credit							| 5 pts</dt><dd><p>Does the program makes use of a third API?</p>
+</dd>
+<dd><p>Does the API work?</p>
 </dd>
 </dl>
 <p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will continue increasing the strictness of our stance on quality and design than we have in previous assignments.</p>
@@ -645,7 +658,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./prep"
+            path: "./assignments"
         },
         predefinedOutput: true
     }
@@ -660,6 +673,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="a3.html" title="previous page">Assignment 3: Publishing Online</a>
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
