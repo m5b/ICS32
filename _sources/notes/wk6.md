@@ -9,7 +9,6 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ### Thursday Live Class
 
-<a href="https://uci.zoom.us/rec/share/aPdMV4qQcxIn6s8sh4Y6yH5XZGFAuZhncYKfT6erx-wjdRhuhghBF-1oychU1rDy.CpQRtmlLwaB37id_">Recording</a>
 
 Quick Links:
 : {ref}`lecture-materials`
