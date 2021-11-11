@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6 Notes &#8212; ICS 32 Fall 2021</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project: Chatting with Friends" href="../final.html" />
+    <link rel="prev" title="Week 6 Notes" href="wk6.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_stacked.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Programming with Software Libraries
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a0.html">
+   Assignment 0
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a1.html">
+   Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a2.html">
+   Assignment 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a3.html">
+   Assignment 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/a4.html">
+   Assignment 4
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Lecture Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk1.html">
+   Week 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk2.html">
+   Week 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk3.html">
+   Week 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk4.html">
+   Week 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk5.html">
+   Week 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk6.html">
+   Week 6
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 7
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Final Project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../final.html">
+   Project Requirements
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/wk7.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#week-7-overview">
+   Week 7 Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-materials">
+   Lecture Materials
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-inheritance">
+     Advanced Inheritance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#videos">
+       Videos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notes">
+       Notes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#designing-with-inheritance">
+         Designing with Inheritance
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#abstract-methods">
+         Abstract Methods
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#multiple-inheritance">
+         Multiple Inheritance
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#interfaces">
+         Interfaces
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="week-6-notes">
+<h1>Week 6 Notes<a class="headerlink" href="#week-6-notes" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep an eye weekly pages as they might be updated throughout the week.</p>
+</div>
+<div class="section" id="week-7-overview">
+<h2>Week 7 Overview<a class="headerlink" href="#week-7-overview" title="Permalink to this headline">¶</a></h2>
+<dl class="simple myst">
+<dt>Quick Links:</dt><dd><p><a class="reference internal" href="wk8.html#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="lecture-materials">
+<span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
+<dl class="simple myst">
+<dt>Lectures for Week 7</dt><dd><p><a class="reference internal" href="#lectures-adv-inheritance"><span class="std std-ref">Advanced Inheritance</span></a></p>
+</dd>
+</dl>
+<div class="section" id="advanced-inheritance">
+<span id="lectures-adv-inheritance"></span><h3>Advanced Inheritance<a class="headerlink" href="#advanced-inheritance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="videos">
+<h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
+<p>In the <a class="reference internal" href="wk5.html"><span class="doc std std-doc">week 5</span></a> lecture on inheritance, you learned how to take advantage of Python’s support for deriving one class from another. We referred to these derived classes as <strong><code class="docutils literal notranslate"><span class="pre">subclasses</span></code></strong> or <strong><code class="docutils literal notranslate"><span class="pre">child</span></code></strong> classes and discussed some of the benefits of designing your around these concepts. If you haven’t watched the inheritance lecture yet, please do before continuing as this lecture will assume you have a basic understanding of the material.</p>
+<p>In the first lecture we looked at a couple trivial examples to learn how to write code to make use of inheritance. For this lecture, we will build a more meaningful program to highlight the advantages that inheritance offers your code.</p>
+<div class="section" id="designing-with-inheritance">
+<h5>Designing with Inheritance<a class="headerlink" href="#designing-with-inheritance" title="Permalink to this headline">¶</a></h5>
+<p>Let’s start with a brief discussion on design. As we have covered many times throughout the quarter, a major factor to a successful program is fast, reliable, robust code. The less code we write, the less code we have to worry about to meet these goals.</p>
+<p>Inheritance provides our programs with one way to reduce the amount of code we need to write.</p>
+<p>One type of programming where inheritance is quite useful is with graphical user interfaces. Using the simplest definition, a graphical user interface or GUI provides a collection of widgets that collect input and display output to a user. Common widgets that you have no doubt interacted with include buttons, text boxes, pull down menus, checkboxes, and so on.</p>
+<p>As you might imagine, many of these widgets share a lot of traits, which if implemented per widget, would create a great deal of repetitive code. Let’s look at an example.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ButtonWidget</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">forecolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">backcolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">CheckboxWidget</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">forecolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">backcolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">TextboxWidget</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">forecolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">backcolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>In the code above, we have three different types of widgets defined as classes. You will quickly notice that each class implements the same four attributes. Of course, all of these widgets need to support custom dimensions and colors, but using this design means that whenever one of these attributes needs to be changed, we will have to make the same change in each class.</p>
+<p>So let’s refactor each widget to make use of inheritance (this process should largely be familiar to you by now as it has been discussed in the inheritance lecture and assignment 4):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseWidget</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">forecolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">backcolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">ButtonWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">CheckboxWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">TextboxWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>That’s better. Now each widget retains access to the same attributes, but those attributes only need to be coded and maintained in a single location. If we decide to create a new widget, all we have to do is inherit from <strong><code class="docutils literal notranslate"><span class="pre">BaseWidget</span></code></strong>.</p>
+<p>Let’s take a look at an example from the <a class="reference internal" href="wk6.html"><span class="doc std std-doc">Web API</span></a> lecture. In that lecture, we implemented a custom <strong><code class="docutils literal notranslate"><span class="pre">HTTPRequestHandler</span></code></strong> called <strong><code class="docutils literal notranslate"><span class="pre">ICSHTTPRequestHandler</span></code></strong>:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ICSHTTPRequestHandler</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s2">&quot; received.&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;content-length&#39;</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Notice here, how even though an HTTP request handling class has far more functionality built into it (<a class="reference external" href="https://docs.python.org/3/library/http.server.html?highlight=basehttprequesthandler#http.server.BaseHTTPRequestHandler">more here:</a>) we only need to implement the functionality we desire for our custom derived class (e.g., handling POST requests).</p>
+<p>The advantages to this approach become more significant as widget complexity increases. For example, a common requirement for GUI widgets is the ability to change size based on an external set of conditions. Rather than code this functionality for each widget, by building on top of a base widget type, complex functions like resizing can be shared across all widget classes.</p>
+</div>
+<div class="section" id="abstract-methods">
+<h5>Abstract Methods<a class="headerlink" href="#abstract-methods" title="Permalink to this headline">¶</a></h5>
+<p>In the <a class="reference internal" href="wk5.html"><span class="doc std std-doc">inheritance lecture</span></a>, we talked about the concept of overriding base class methods to implement new functionality in a derived class. Overriding allows us to take control of the functionality provided by a base class, but what if a base class requires its derived classes to adhere to a particular set of operations or rules?</p>
+<p>Let’s build on our earlier example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseWidget</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">forecolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">backcolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">ButtonWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">CheckboxWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">TextboxWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">build_ui</span><span class="p">(</span><span class="n">widgets</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="n">BaseWidget</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+        <span class="n">w</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="p">[</span><span class="n">ButtonWidget</span><span class="p">(),</span> <span class="n">CheckboxWidget</span><span class="p">(),</span> <span class="n">TextboxWidget</span><span class="p">()]</span>
+
+<span class="n">build_ui</span><span class="p">(</span><span class="n">widgets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is quite a simplistic overview of how a GUI might be rendered, but it covers the basic process. In most GUI toolkits, each widget is responsible for rendering how it should look on a screen. A base widget cannot know how a particular widget should look, but it should require a widget to implement the code necessary to render itself.</p>
+<p>If we were to run the code above, it would run without error, but if these widgets were actually feature complete we still would not see anything on the screen. So can we ensure that a required method is actually implemented in a derived class?</p>
+<p>We mitigate this concern by declaring that a method is required through the concept of <em>abstract methods</em>. In object oriented programming, an abstract method is one that is defined, but not implemented.</p>
+<p>An abstract declaration is used to define a method that <em>must</em> exist in a class, but its specific implementation does not or cannot be determined. In the example above, since <strong><code class="docutils literal notranslate"><span class="pre">BaseWidget</span></code></strong> does not specify a particular way to render, it is the responsibility of the derived class to define how rendering should be handled. If the <strong><code class="docutils literal notranslate"><span class="pre">render</span></code></strong> method were declared abstract, we could avoid some of the confusion around implementing a custom <strong><code class="docutils literal notranslate"><span class="pre">BaseWidget</span></code></strong> class. Let’s take a look:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">BaseWidget</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="n">width</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">height</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">forecolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">backcolor</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Abstract methods are not built-in to Python, so to get the functionality we desire, we must first import the <strong><code class="docutils literal notranslate"><span class="pre">ABC</span></code></strong> module and use inheritance to declare that we intend our base class to make use of the features that <strong><code class="docutils literal notranslate"><span class="pre">ABC</span></code></strong> includes. To define a method as abstract, we apply the <strong><code class="docutils literal notranslate"><span class="pre">&#64;abstractmethod</span></code></strong> decorator to each method we want derived classes to implement.</p>
+<p>Now when the revised code is run, the shell will output the following error for each method until they all implement the <strong><code class="docutils literal notranslate"><span class="pre">render</span></code></strong> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t instantiate abstract class ButtonWidget with abstract method render</span>
+</pre></div>
+</div>
+<p>So what does this functionality give us? If you are writing a program that you do not ever expect to support code from programmers outside of your own organization, then there probably isn’t much reason to design with abstract methods. However, if you are developing a library, API, or other modules intended for public use you might want to exert some control over how your code is used.</p>
+<p>You have likely noticed that the <strong><code class="docutils literal notranslate"><span class="pre">WebAPI</span></code></strong> module used in <a class="reference internal" href="../assignments/a4.html"><span class="doc std std-doc">assignment 4</span></a> makes use of abstract methods, ensuring that your derived classes will operate according to the specification intended by the assignment creator :)</p>
+</div>
+<div class="section" id="multiple-inheritance">
+<h5>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">¶</a></h5>
+<p>A derived class is not limited to inheriting from just one base. There are times where a class might need to take on the functionality from two distinct classes. Let’s once again return to the simplified GUI example.</p>
+<p>Some widgets have features that are not common to all widgets, but are common enough to justify extracting into a common class. One good example of this is with widgets that need to support scrolling. The following code snippet contains two new widgets that contain a scrollable view pane.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextAreaWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">scroll_up</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">scroll_down</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># render widget</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">ListItemWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">scroll_up</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">scroll_down</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># render widget</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Both classes must implement code to handle scrolling up and down, taking us once again down the path where we have to manage the same code in multiple places. We <em>could</em> move this code to <strong><code class="docutils literal notranslate"><span class="pre">BaseWidget</span></code></strong>, but then we introduce unnecessary code to widgets like the <strong><code class="docutils literal notranslate"><span class="pre">ButtonWidget</span></code></strong> that do not support scrolling.</p>
+<p>Multiple inheritance allows us to get around this issue. Let’s once again move our repetitive code to a common base class and use inheritance to add support to all derived classes that need scroll functionality.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseScroll</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">scroll_up</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">scroll_down</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">TextAreaWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">,</span> <span class="n">BaseScroll</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># render widget</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">ListItemWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">,</span> <span class="n">BaseScroll</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># render widget</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Now we have a base scroll class where we can maintain all code required by any widget that needs to support scrolling, while still retaining all of the functionality that the base widget class provides.</p>
+<p>Alright, one last thing that we should consider when using multiple inheritance. Remember in the first <a class="reference internal" href="wk5.html"><span class="doc std std-doc">inheritance</span></a> lecture we briefly discussed the role of <strong><code class="docutils literal notranslate"><span class="pre">super</span></code></strong> in the class hierarchy. Well, now we have two super classes! So how does Python decide which one to use?</p>
+<p>We can check by taking a looking at the <a class="reference external" href="http://python-history.blogspot.com/2010/06/method-resolution-order.html">method resolution order</a> (a tuple that Python adds to all classes):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">TextAreaWidget</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which will output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(&lt;class &#39;__main__.TextAreaWidget&#39;&gt;, &lt;class &#39;__main__.BaseWidget&#39;&gt;, &lt;class &#39;abc.ABC&#39;&gt;, &lt;class &#39;__main__.BaseScroll&#39;&gt;, &lt;class &#39;object&#39;&gt;)
+</pre></div>
+</div>
+<p>So Python will work up the inheritance hierarchy working from left to right. We are now getting a bit beyond the scope of what you need to know and learn for this course, but it’s worth noting that there is a process in place for calling <strong><code class="docutils literal notranslate"><span class="pre">super</span></code></strong>. Generally, though, unless you have a specific need to pass parameters to the init method of a parent class, it’s best to just access parent methods using the class directly.</p>
+<p>One final word of caution. Most object oriented languages do not support multiple inheritance…with good reason. You can imagine how complex the relationships between parent, child, grandchild classes can becomes as the class hierarchy grows. At some point, multiple inheritance can be counterproductive to our goal of reducing and simplifying code. So, if you use multiple inheritance, use with caution!</p>
+</div>
+<div class="section" id="interfaces">
+<h5>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h5>
+<p>One aspect of inheritance that we have discussed, but not explicitly described yet is the concept of an interface. When you inherit from a class, the derived class takes on the parent classes implementation (the code and functionality) and its interface (the signature). Interfaces provide one way to avoid a lot of the complexity that arises with multiple inheritance. In fact, other languages that do not support multiple inheritance, have no limitation on implementing multiple interfaces!</p>
+<p>Once again, we will expand on our GUI code to demonstrate how to create an interface. Here is another widget that does not inherit from the <strong><code class="docutils literal notranslate"><span class="pre">BaseWidget</span></code></strong>, but still implements its <em>interface</em>:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RadiobuttonWidget</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">build_ui</span><span class="p">(</span><span class="n">widgets</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="n">BaseWidget</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+        <span class="n">w</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="p">[</span><span class="n">ButtonWidget</span><span class="p">(),</span> <span class="n">CheckboxWidget</span><span class="p">(),</span> <span class="n">TextboxWidget</span><span class="p">(),</span> <span class="n">RadiobuttonWidget</span><span class="p">()]</span>
+
+<span class="n">build_ui</span><span class="p">(</span><span class="n">widgets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now of course, by not inheriting from the base widget the <strong><code class="docutils literal notranslate"><span class="pre">RadiobuttonWidget</span></code></strong> will not have the functionality, but since it does implement the <strong><code class="docutils literal notranslate"><span class="pre">render</span></code></strong> method, for all intents and purposes the function <strong><code class="docutils literal notranslate"><span class="pre">build_ui</span></code></strong> function considers it a widget. In Python, this is often referred to as Duck Typing, because if it walks like a duck and acts like a duck, it must be a duck!</p>
+<p>Deciding when to use an interface vs. inheritance is largely dependent on the design approach you take with your code. Pouring over the reasons for and when an interface is more desirable is not something you need to worry about too much in this class. However, understanding the role of each will equip you with the knowledge to apply to your future program design.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="wk6.html" title="previous page">Week 6 Notes</a>
+    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project: Chatting with Friends</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mark S. Baldwin<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
