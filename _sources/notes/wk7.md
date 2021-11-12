@@ -22,6 +22,8 @@ Lectures for Week 7
 
 #### Videos
 
+[Advanced Inheritance Lecture](https://uci.yuja.com/V/Video?v=3900187&node=13324542&a=809406141&autoplay=1)
+
 #### Notes
 
 In the [week 5](../notes/wk5.md) lecture on inheritance, you learned how to take advantage of Python's support for deriving one class from another. We referred to these derived classes as **`subclasses`** or **`child`** classes and discussed some of the benefits of designing your around these concepts. If you haven't watched the inheritance lecture yet, please do before continuing as this lecture will assume you have a basic understanding of the material.
