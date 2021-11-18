@@ -97,33 +97,28 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a0.html">
+  <a class="reference internal" href="a0.html">
    Assignment 0
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a1.html">
+  <a class="reference internal" href="a1.html">
    Assignment 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a2.html">
+  <a class="reference internal" href="a2.html">
    Assignment 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a3.html">
+  <a class="reference internal" href="a3.html">
    Assignment 3
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a4.html">
+  <a class="reference internal" href="a4.html">
    Assignment 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a5.html">
-   Assignment 5
   </a>
  </li>
 </ul>
@@ -220,7 +215,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/prep/a5.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/a6.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -403,10 +398,10 @@
 <div class="section" id="part-1">
 <h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
 <p>The ICS32 Distributed Social organization has decided to implement the <a class="reference external" href="https://nacl.cr.yp.to/">NaCl</a> networking and encryption library to help strengthen the security of its social messaging platform. Rather than implement the NaCl specification directly, the DS org will use a 3rd party library that is already written in Python called <a class="reference external" href="https://github.com/pyca/pynacl">PyNaCl</a>. The PyNaCl library supports the use of public key encryption using public and private keys. The following diagram depicts the basic process for using public and private keys to encrypt and decrypt data.</p>
-<p><img alt="encryption1" src="../_images/enc_ex11.png" /></p>
+<p><img alt="encryption1" src="../_images/enc_ex1.png" /></p>
 <p>You can think of the role of public and private keys in public key encryption like a username and password. While it is safe to share a public key (username), you would never want to share a private key (password). When both public and private keys are combined, the public key encryption algorithm will use them to encrypt data into a format that can only be decrypted with the same public and private keys. This is the method you will use to add encryption to all posts entries and bio stored in your programs <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file.</p>
 <p>However, since we still want our messages to be readable from the DS website, we will also need to add support for encrypting our post information using a key that the DS server can use to decrypt messages. Fortunately, this process is nearly identical to what you will use for local encryption to your <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file. The following diagram depicts the basic process for using public and private keys to share encrypted data.</p>
-<p><img alt="encryption2" src="../_images/enc_ex21.png" /></p>
+<p><img alt="encryption2" src="../_images/enc_ex2.png" /></p>
 <p>Rather than encrypt a message using a public key that we create, we encrypt using the public key of the source where we want to share our message. This means that we need a way to exchange public keys with the DS server. To keep things as consistent as possible, the DS organization has modified the <strong><code class="docutils literal notranslate"><span class="pre">token</span></code></strong> key used by its protocol to store the public encryption keys exchanged between client programs and the server. But more on this change a little bit later.</p>
 <p>Your final program will contain the following new modules:</p>
 <ol class="simple">
@@ -679,7 +674,7 @@
 <div class="section" id="id2">
 <h3>Part 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>For this assignment you will be given a mostly functional Tkinter program framework to get you started. Learning graphical toolkits is a big undertaking that is typically filled with a lot of trial and error. We could spend an entire quarter mastering the Tkinter toolkit if we so desired. So, rather than get bogged down attempting to work through all of the nuances of getting a Tkinter GUI to function the way we want, you will be spending your remaining time in this class extending an existing program that already works pretty well. The following image depicts the ICS 32 DS program in it’s default state with a DSU file loaded.</p>
-<p><img alt="dsugui" src="../_images/ics32dsu_gui1.png" /></p>
+<p><img alt="dsugui" src="../_images/ics32dsu_gui.png" /></p>
 <p>However, the version that is available for you, does not yet have the features required to get to the state pictured. To make this program fully functional, you will have to download the template and complete all of the TODO items described in the code.</p>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
@@ -820,7 +815,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./prep"
+            path: "./assignments"
         },
         predefinedOutput: true
     }

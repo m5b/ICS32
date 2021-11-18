@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
+    <link rel="prev" title="Assignment 4: Extending the Platform" href="a4.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,34 +97,34 @@
   Assignments
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a0.html">
+  <a class="reference internal" href="a0.html">
    Assignment 0
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a1.html">
+  <a class="reference internal" href="a1.html">
    Assignment 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a2.html">
+  <a class="reference internal" href="a2.html">
    Assignment 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a3.html">
+  <a class="reference internal" href="a3.html">
    Assignment 3
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a4.html">
+  <a class="reference internal" href="a4.html">
    Assignment 4
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/a5.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment 5
   </a>
  </li>
@@ -220,7 +222,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/prep/a5.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/a5.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -276,11 +278,6 @@
     <a class="reference internal nav-link" href="#part-1">
      Part 1
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Part 1
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#installing-the-pynacl-package">
@@ -292,22 +289,78 @@
        Prepare your Environment
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-support-for-encryption">
+       Adding Support for Encryption
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#encrypted-server-communication">
+       Encrypted Server Communication
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#part-2">
      Part 2
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-3">
-     Part 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Part 2
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a5-code-walkthrough">
+       A5 Code Walkthrough
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-271">
+         TODO: Line 271
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-237">
+         TODO: Line 237
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-43-edit-set-text-entry-method">
+         TODO: Line 43 - edit set_text_entry method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-197-new-profile">
+         TODO: Line ~197 - new profile!
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-212-open-profile">
+         TODO: Line ~ 212 - open profile!
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-52-set-posts">
+         TODO: Line ~52 - set_posts!
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#todo-line-240-edit-the-save-profile-method">
+         TODO: line ~240 - edit the save_profile method.
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#step-1">
+           Step 1:
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#step-2">
+           Step 2:
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extra-credit">
@@ -352,6 +405,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starter-project">
+     Starter Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
      How we will grade your submission
     </a>
@@ -373,9 +431,9 @@
 <h1>Assignment 5: Encrypted Graphical User Interface<a class="headerlink" href="#assignment-5-encrypted-graphical-user-interface" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>So we have finally arrived at the end. Over the course of the last four assignments you have built, from the ground up, a feature rich program in Python. The code that you have written enables a person to write personal journal entries, publish entries to an online server, and enrich journal entries with data from web API’s. Now it’s time to bring all of these features together by moving them from the command line to the windowed world of the graphical user interface.</p>
-<p>However, for the past two months, partnering organizations (e.g., ICS 32 students :) ) have been raising concerns over the poor security and privacy of the ICS 32 Distributed Social platform. In response to the concerns raised by its partners, the ICS32 Distributed Social organization (e.g., ICS 32 instructors) has implemented a new authentication scheme. Rather than rely on a user name and password, users will now be required to supply an <a class="reference external" href="https://ed25519.cr.yp.to/">ed25519</a> public-key with each message. Additionally, all messages sent to the server must be encrypted with the DSP server’s public key.</p>
-<p>So for this assignment you will need to update your program to support the new authentication process for the DSP server and integrate your existing code into a new graphical interface using the Tkinter graphical toolkit.</p>
+<p>So we have finally arrived at the end. Over the course of the last four assignments you have built, from the ground up, a feature rich program in Python. The code that you have written enables a person to write personal journal entries, publish those entries to an online server, and enrich them with data from web API’s. Now it’s time to bring all of these features together by moving them from the command line to the windowed world of the graphical user interface.</p>
+<p>For the past two months, partnering organizations (e.g., ICS 32 students :) ) have been raising concerns over the poor security and privacy of the ICS 32 Distributed Social platform. In response to the concerns raised by its partners, the ICS32 Distributed Social organization (e.g., ICS 32 instructors) has implemented a new authentication scheme. Rather than rely on a user name and password, users will now be required to supply an <a class="reference external" href="https://ed25519.cr.yp.to/">ed25519</a> public-key with each message. Additionally, all messages sent to the server must first be encrypted with the DSP server’s public key.</p>
+<p>So for this assignment you will need to update your program to support the new authentication process for the DSP server and integrate your existing code into a new graphical interface using the <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">Tkinter</a> graphical toolkit.</p>
 <div class="section" id="summary-of-program-requirements">
 <h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -403,21 +461,17 @@
 <div class="section" id="part-1">
 <h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
 <p>The ICS32 Distributed Social organization has decided to implement the <a class="reference external" href="https://nacl.cr.yp.to/">NaCl</a> networking and encryption library to help strengthen the security of its social messaging platform. Rather than implement the NaCl specification directly, the DS org will use a 3rd party library that is already written in Python called <a class="reference external" href="https://github.com/pyca/pynacl">PyNaCl</a>. The PyNaCl library supports the use of public key encryption using public and private keys. The following diagram depicts the basic process for using public and private keys to encrypt and decrypt data.</p>
-<p><img alt="encryption1" src="../_images/enc_ex11.png" /></p>
-<p>You can think of the role of public and private keys in public key encryption like a username and password. While it is safe to share a public key (username), you would never want to share a private key (password). When both public and private keys are combined, the public key encryption algorithm will use them to encrypt data into a format that can only be decrypted with the same public and private keys. This is the method you will use to add encryption to all posts entries and bio stored in your programs <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file.</p>
+<p><img alt="encryption1" src="../_images/enc_ex1.png" /></p>
+<p>You can think of the role of public and private keys in public key encryption like a username and password. While it is safe to share a public key (username), you would never want to share a private key (password). When both public and private keys are combined, the public key encryption algorithm will use them to encrypt data into a format that can only be decrypted with the same public and private keys. This is the method you will use to add encryption to all posts entries and bio stored in your program’s <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file.</p>
 <p>However, since we still want our messages to be readable from the DS website, we will also need to add support for encrypting our post information using a key that the DS server can use to decrypt messages. Fortunately, this process is nearly identical to what you will use for local encryption to your <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong> file. The following diagram depicts the basic process for using public and private keys to share encrypted data.</p>
-<p><img alt="encryption2" src="../_images/enc_ex21.png" /></p>
+<p><img alt="encryption2" src="../_images/enc_ex2.png" /></p>
 <p>Rather than encrypt a message using a public key that we create, we encrypt using the public key of the source where we want to share our message. This means that we need a way to exchange public keys with the DS server. To keep things as consistent as possible, the DS organization has modified the <strong><code class="docutils literal notranslate"><span class="pre">token</span></code></strong> key used by its protocol to store the public encryption keys exchanged between client programs and the server. But more on this change a little bit later.</p>
-<p>Your final program will contain the following new modules:</p>
+<p>For Part 1, you will create the following new modules:</p>
 <ol class="simple">
 <li><p>NaClDSEncoder.py: A helper module provided for you, complete.</p></li>
 <li><p>NaClProfile.py: A template class provided for you, incomplete.</p></li>
-<li><p>a4.py: The main entry point to your program. You may continue to migrate your code from a2.py and a3.py or you start fresh. If you do start fresh, you will still need to make use of the code you have written to send messages to the DS server.</p></li>
 </ol>
 <p>To prepare your ICS32 DS program for network communication using NaCl, there are a number of tasks you must complete. They have been divided into individual parts below to help you prioritize your program requirements.</p>
-</div>
-<div class="section" id="id1">
-<h3>Part 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="installing-the-pynacl-package">
 <h4>Installing the PyNaCl Package<a class="headerlink" href="#installing-the-pynacl-package" title="Permalink to this headline">¶</a></h4>
 <p>The first thing you will need to do is install the PyNaCl package to your instance of Python:</p>
@@ -433,8 +487,7 @@
 </div>
 <div class="section" id="prepare-your-environment">
 <h4>Prepare your Environment<a class="headerlink" href="#prepare-your-environment" title="Permalink to this headline">¶</a></h4>
-<p>Thankfully, the DS org has released a module to abstract away some of the steps required to interact with their new encrypted platform. So the next thing you will want to do is download the module and test it.</p>
-<p><a class="reference external" href="https://ics32.markbaldw.in/resources/NaClDSEncoder.py">ICS32 Distributed Social NaCl Encoder</a></p>
+<p>Thankfully, the DSP org has released the <strong><code class="docutils literal notranslate"><span class="pre">NaClDSEncoder</span></code></strong> module (provided for you in the starter repository) to abstract away some of the steps required to interact with their new encrypted platform. So the next thing you will want to do is download the module and test it.</p>
 <p>A simple test is included in the following snippet, you are free to use it to validate that your environment is properly configured. You may also find the use of the <strong><code class="docutils literal notranslate"><span class="pre">NaClDSEncoder</span></code></strong> class in the test class a useful reference for your assignment code.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NaClDSEncoder_test.py</span>
 <span class="c1"># Simple test harness for the NaClDSEncoder class</span>
@@ -506,10 +559,9 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="part-2">
-<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>For part 2, you will need to write a new class to handle the new encryption policies required by the DS org. Since the DS server will now expect your program to authenticate with a public key and send posts that have been encrypted using the DS public key, you are going to need to rethink the way your current program works. Fortunately, the Profile module that you have been using in your DS program, is still quite useful. Therefore, the best course of action is probably to subclass the Profile class. To help you with this task, you will use the following skeleton to get started:</p>
+<div class="section" id="adding-support-for-encryption">
+<h4>Adding Support for Encryption<a class="headerlink" href="#adding-support-for-encryption" title="Permalink to this headline">¶</a></h4>
+<p>Next, you will need to write a new class to handle the new encryption policies required by the DSP org. Since the DSP server will now expect your program to authenticate with a public key and send posts that have been encrypted using the DSP public key, you are going to need to rethink the way your current program works. Fortunately, the Profile module that you have been using in your DSP program, is still quite useful. Therefore, the best course of action is probably to subclass the Profile class. To help you with this task, you will use the following skeleton to get started (also included in the starter repository):</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Install the pynacl library so that the following modules are available</span>
 <span class="c1"># to your program.</span>
 <span class="kn">import</span> <span class="nn">nacl.utils</span>
@@ -604,15 +656,14 @@
 <span class="sd">        TODO: Complete the encrypt_entry method.</span>
 
 <span class="sd">        NOTE: A good design approach might be to create private encrypt and decrypt methods that your add_post, </span>
-<span class="sd">        get_posts and this method can call.</span>
+<span class="sd">        get_posts, and this method can call.</span>
 <span class="sd">        </span>
 <span class="sd">        :return: bytes </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 </pre></div>
 </div>
-<p>You can also download the <a class="reference external" href="https://ics32.markbaldw.in/resources/NaClProfile.py">code directly if you prefer</a>.</p>
-<p>Since we will be required to send encrypted messages to the new DS server, we might as well add support for local encryption as well to prevent unwanted parties from reading our journal entries. Therefore, in this class you will extend the Profile module to not only encrypt messages that will be sent to the DS server, but also messages stored in the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file.</p>
+<p>Since we will be required to send encrypted messages to the new DSP server, we might as well add support for local encryption as well to prevent unwanted parties from reading our journal entries. Therefore, in the <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong> class you will extend the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module to not only encrypt messages that will be sent to the DSP server, but also messages stored in the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file.</p>
 <p>The comments in the skeleton code will provide you with some guidance on what you need to do. In addition to the incomplete methods, you will also need to override two methods from the Profile class. If done correctly, all of your new data attributes as well as your encrypted messages will be saved to the <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> file passed to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method, without having to change anything else!</p>
 <p>To learn how to encrypt and decrypt information using a keypair, you will need to consult the documentation for the module. The <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/">main page for the docs</a> is a good place to start if you want to learn more about PyNaCl. However, since you are only required to implement a small portion of the overall PyNaCl module, you may find the examples on the <a class="reference external" href="https://pynacl.readthedocs.io/en/latest/public/#examples">Public Key Encryption</a> page to be the most helpful. Feel free to discuss your findings on Zulip with your classmates.</p>
 <p>Once your new <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> subclass has been completed, you can validate it by running the following program:</p>
@@ -654,16 +705,14 @@
 </div>
 <p>Just remember that once post entries have been encrypted with a keypair, they can <strong>only</strong> be decrypted with the same keypair!</p>
 </div>
-<div class="section" id="part-3">
-<h3>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">¶</a></h3>
-<p>For the final part of this assignment, you will need to make sure your new authentication and encryption interface works with the udpated DS Server. There have been a few changes to the DS Server.</p>
-<p><del>First, it is no longer running at the previous URL. A new URL will be provided via Slack.</del> This information is no longer relevant. Continue using the same server/port that you have been using all quarter.</p>
-<p>Second, you will receive a slightly revised response message:</p>
+<div class="section" id="encrypted-server-communication">
+<h4>Encrypted Server Communication<a class="headerlink" href="#encrypted-server-communication" title="Permalink to this headline">¶</a></h4>
+<p>Finally, you will need to make sure your new authentication and encryption interface works with the updated DSP Server. To support keypair encryption, a few changes have been made to the way the DSP Server handles messages.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># join as existing or new user</span>
 <span class="p">{</span><span class="s2">&quot;join&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span><span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123&quot;</span><span class="p">,</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;my_public_key&quot;</span><span class="p">}}</span>
 </pre></div>
 </div>
-<p>You might recall from previous assignments, the token key was not used during join requests with the DS server. With the new public key encryption in place, you must now perform a join request using a public key that you have generated. The DS server will then use this public key to decrypt all of the messages that you send moving forward.</p>
+<p>You might recall from previous assignments, the token key was not used during join requests with the DS server. With the new public key encryption in place, you must now perform a join request using a public key that you have generated locally. The DS server will then use this public key to decrypt all of the messages that you send moving forward.</p>
 <p>You will also need to slightly adjust the way in which you use the <strong><code class="docutils literal notranslate"><span class="pre">token</span></code></strong> value that you receive from the DS Server. Under the rules of the non-encrypted DS server you were required to send the token you received from the server in all of your messages. Now, rather than send back the server token, you will send <strong>your public key</strong> as the value of the token key.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -676,25 +725,212 @@
 <p>So rather than return this response token to the server like you did in previous assignments, you will now need to store this value in your program somewhere and use it to encrypt your messages before sending. The <strong><code class="docutils literal notranslate"><span class="pre">encrypted_entry</span></code></strong> function that is part of the <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong> skeleton class is designed to support this requirement.</p>
 <p>If you have implemented your <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong> class and modified your communication with the DS Server successfully, your program should continue to work as expected, just a little more secure.</p>
 </div>
-<div class="section" id="id2">
-<h3>Part 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>For this assignment you will be given a mostly functional Tkinter program framework to get you started. Learning graphical toolkits is a big undertaking that is typically filled with a lot of trial and error. We could spend an entire quarter mastering the Tkinter toolkit if we so desired. So, rather than get bogged down attempting to work through all of the nuances of getting a Tkinter GUI to function the way we want, you will be spending your remaining time in this class extending an existing program that already works pretty well. The following image depicts the ICS 32 DS program in it’s default state with a DSU file loaded.</p>
-<p><img alt="dsugui" src="../_images/ics32dsu_gui1.png" /></p>
-<p>However, the version that is available for you, does not yet have the features required to get to the state pictured. To make this program fully functional, you will have to download the template and complete all of the TODO items described in the code.</p>
-<div class="warning admonition">
-<p class="admonition-title">Attention</p>
-<p>The Distributed Social GUI Starter Code was updated on 7/17/21 to remove references to a version of the Profile module that we are no longer using for this course. If you are experiencing errors related to <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong>, please grab the latest version!</p>
 </div>
-<p><a href="../resources/DistributedSocialGUI.py">The Distributed Social GUI Starter Code</a></p>
-<p>To get a better understanding of how this program was built, watch the lecture and walkthrough posted in the weekly notes.</p>
+<div class="section" id="part-2">
+<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
+<p>Once you have encryption in place, it’s time to wire everything up to a graphical user interface. For this part of the assignment you will be given a mostly functional Tkinter program to get you started. Learning graphical toolkits is a big undertaking that is typically filled with a lot of trial and error. We could spend an entire quarter mastering the Tkinter toolkit if we so desired. So, rather than get bogged down attempting to work through all of the nuances of getting a Tkinter GUI to function the way we want, you will be spending your remaining time in this class extending an existing program that already works pretty well. The following image depicts the ICS 32 DS program in it’s default state with a DSU file loaded.</p>
+<p><img alt="dsugui" src="../_images/ics32dsu_gui.png" /></p>
+<p>However, the version that is available for you, does not yet have the features required to get to the state pictured. To make this program fully functional, you will have to start with the template (included in the starter repository) and complete all of the <strong><code class="docutils literal notranslate"><span class="pre">TODO</span></code></strong> items described in the code comments.</p>
+<p>For Part 2, you will complete the following new modules:</p>
+<ol class="simple">
+<li><p>a5.py: A GUI module provided for you, incomplete.</p></li>
+</ol>
+<p>The following section is optional. You are free to jump into the <strong><code class="docutils literal notranslate"><span class="pre">a5.py</span></code></strong> code and start working on the TODO items any way you want. However, there is a lot to do for this assignment, so to mitigate some of the complexity we are providing some additional notes on how to go about completing the TODO items for this part of the assignment.</p>
+<div class="section" id="a5-code-walkthrough">
+<h4>A5 Code Walkthrough<a class="headerlink" href="#a5-code-walkthrough" title="Permalink to this headline">¶</a></h4>
+<p>We strongly encourage you to take a pass at the starter code on your own first. Try and complete each TODO without using the notes included here. But if you get stuck, feel free to come here for further guidance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is a lecture on Tkinter in the weekly notes page that covers the process for building this program, as well as some of the aspects of Tkinter you will need to know to complete the assignment.</p>
+<p>The line number references here might be off by 1 or 2, but should still generally take you to the associated section of the starter code. Of course, as you edit the file, the line numbers will continue to fall out of sync, so you might find it useful to keep a reference copy of the original starter code.</p>
+</div>
+<div class="section" id="todo-line-271">
+<h5>TODO: Line 271<a class="headerlink" href="#todo-line-271" title="Permalink to this headline">¶</a></h5>
+<p>Let’s start with the <strong><code class="docutils literal notranslate"><span class="pre">online_clicked</span></code></strong> callback. (all line numbers are from unmodified starter code file)</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">footer</span> <span class="o">=</span> <span class="n">Footer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">save_callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">save_profile</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The goal here is to update the Footer initializer to support a callback for the online checkbox widget. The solution is to replicate the existing <strong><code class="docutils literal notranslate"><span class="pre">save_callback</span></code></strong> functionality:</p>
+<ol class="simple">
+<li><p>Add a new parameter to Footer (…) after <strong><code class="docutils literal notranslate"><span class="pre">save_callback</span></code></strong>, using the same conventions as <strong><code class="docutils literal notranslate"><span class="pre">save_callback</span></code></strong>. Check line 119, see the statement <strong><code class="docutils literal notranslate"><span class="pre">save_callback=None</span></code></strong>? Add another parameter called <strong><code class="docutils literal notranslate"><span class="pre">online_callback</span></code></strong>.</p></li>
+<li><p>Now we need to do something with that new parameter. So check line 122, see how the value of the <strong><code class="docutils literal notranslate"><span class="pre">save_callback</span></code></strong> parameter is assigned to a private attribute called <strong><code class="docutils literal notranslate"><span class="pre">self.savecallback</span></code></strong>? Replicate that for <strong><code class="docutils literal notranslate"><span class="pre">online_callback</span></code></strong>. Notice, we already have a method we can use called <strong><code class="docutils literal notranslate"><span class="pre">online_click</span></code></strong>. The only difference, however, is that the <strong><code class="docutils literal notranslate"><span class="pre">online_changed</span></code></strong> method in MainApp has a parameter: value:bool. So we also need to pass a parameter when we call the callback. Fortunately the parameter already exists for us and can be found in the initializer for footer.</p></li>
+<li><p>Next, we need to add code to <strong><code class="docutils literal notranslate"><span class="pre">online_click</span></code></strong>, line 137. Remove the ‘pass’ keyword, and reproduce the code used in <strong><code class="docutils literal notranslate"><span class="pre">save_click</span></code></strong>, but change your attribute and method call to the new online parameter and attribute we created in step 1.</p></li>
+<li><p>Return to line 271 (though, this line number has changed now that we have added code). Update the Footer(…) initializer by adding a new parameter. The parameter name should match the parameter name you added in step 2. The value for that parameter should match the name of the <strong><code class="docutils literal notranslate"><span class="pre">online_changed</span></code></strong> method in the Main class.</p></li>
+</ol>
+<p>When done, run your program. When you click the checkbox, the footer status label should toggle between online and offline.</p>
+</div>
+<div class="section" id="todo-line-237">
+<h5>TODO: Line 237<a class="headerlink" href="#todo-line-237" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">online_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="nb">bool</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>If all went well in the last step, you are read to move on. I left the following code here on purpose so that you could verify that the callback you added worked:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">footer</span><span class="o">.</span><span class="n">set_status</span><span class="p">(</span><span class="s2">&quot;Online&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">footer</span><span class="o">.</span><span class="n">set_status</span><span class="p">(</span><span class="s2">&quot;Offline&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But really, it’s not entirely necessary here. If you like it, leave it. If you don’t, delete it. However, we already know the online status by looking at the checkmark in the checkbox.</p>
+<p>So the goal here is to create a ‘flag’ that we can use later to check whether the user wants to submit a post to the server. So the first thing we need is a variable to server as that flag!</p>
+<ol class="simple">
+<li><p>Go to the initializer for the MainApp class and add a new attribute, let’s call it <strong><code class="docutils literal notranslate"><span class="pre">self._is_online</span></code></strong> and set it to a default value of False (since the widget also starts as unchecked).</p></li>
+<li><p>Return to online changed and add the attribute from step 1, so that the ‘value’ parameter sets the value of it.</p></li>
+<li><p>Add a print(<strong><code class="docutils literal notranslate"><span class="pre">self._is_online</span></code></strong>) to the end of the method and run the program. You should see output on the shell that changes from true to false when the checkbox widget is checked and unchecked.</p></li>
+</ol>
+</div>
+<div class="section" id="todo-line-43-edit-set-text-entry-method">
+<h5>TODO: Line 43 - edit set_text_entry method<a class="headerlink" href="#todo-line-43-edit-set-text-entry-method" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_text_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>For this task, we just need to add some cleanup code for the editor widget.</p>
+<ol class="simple">
+<li><p>Start by removing the ‘pass’ keyword.</p></li>
+<li><p>Next, we need to add two lines of code: one to delete the content of the editor and one to insert new content. To the docs!</p></li>
+</ol>
+<p>https://tkdocs.com/tutorial/widgets.html#entry</p>
+<ol class="simple">
+<li><p>Under the Entry Contents section on the linked page above, you will see an example of how to delete and insert. Using those examples as a reference, add a delete and insert operations to the method.</p></li>
+<li><p>To test this functionality, let’s temporarily add some sample code to your <strong><code class="docutils literal notranslate"><span class="pre">online_changed</span></code></strong> method:</p></li>
+</ol>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">set_text_entry</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Run the program. When the checkbox widget is clicked the words “Hello World” should appear in your editor.</p></li>
+<li><p>If you get an error of something like “bad text index”, then change the first parameter in your delete and insert function calls from 0 to 0.0, it’s a weird quirk of this widget (0, works in python &lt; 3, 0.0 works in python &gt; 3)</p></li>
+</ol>
+</div>
+<div class="section" id="todo-line-197-new-profile">
+<h5>TODO: Line ~197 - new profile!<a class="headerlink" href="#todo-line-197-new-profile" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>This really isn’t that hard. It’s mostly code you have already written. Let’s take advantage of the NaClProfile class attribute in MainApp for this task.</p>
+<p>So when a NEW profile is created, we need to do three things:</p>
+<ol class="simple">
+<li><p>Create a new profile.</p></li>
+<li><p>Generate keys (if you are using NaClProfile instead of Profile)</p></li>
+<li><p>Reset the UI.</p></li>
+</ol>
+<p>We probably also want to keep track of the location of the file. So let’s start by creating a class attribute to hold our file path and name in the initializer for the MainApp class:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_profile_filename</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>There’s some sample code in the new_profile method that demonstrates what we need to do, so let’s update it to fit our new attribute:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_profile_filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>I just changed profile_filename to <strong><code class="docutils literal notranslate"><span class="pre">self._profile_filename</span></code></strong></p>
+<p>Now let’s create a new NaClProfile object:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span> <span class="o">=</span> <span class="n">NaClProfile</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Generate a keypair:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">generate_keypair</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And reset the UI, just in case a profile has already been loaded:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">reset_ui</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can test that our code works by printing out the keypair to the shell:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>**`print(self._current_profile.keypair)`**
+</pre></div>
+</div>
+<p>And that’s it! Not so bad, right?</p>
+</div>
+<div class="section" id="todo-line-212-open-profile">
+<h5>TODO: Line ~ 212 - open profile!<a class="headerlink" href="#todo-line-212-open-profile" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">open_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>This task is nearly identical to the previous one, with two exceptions:
+First, we need to load an existing profile. So rather than generating a new keypair, we will import based on how store keys in our NaClProfile object (from a4):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_profile_filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">name</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span> <span class="o">=</span> <span class="n">NaClProfile</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">load_profile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_profile_filename</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">import_keypair</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">keypair</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we need to add our profile data to the UI. So we reset the UI just as with the new_profile method, and then send all existing posts to the set_posts method:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">set_posts</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">get_posts</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Note that not ALL the code is being shown in these snippets, so remember to clear the UI!</p>
+<p>Go ahead and test again with:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_current_profile</span><span class="o">.</span><span class="n">keypair</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="todo-line-52-set-posts">
+<h5>TODO: Line ~52 - set_posts!<a class="headerlink" href="#todo-line-52-set-posts" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">posts</span><span class="p">:</span><span class="nb">list</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Fortunately for this task, we have almost all the code we need to make it happen already written. We need to do two things:</p>
+<ol class="simple">
+<li><p>Populate the <strong><code class="docutils literal notranslate"><span class="pre">_posts</span></code></strong> attribute that has already been written for us with posts.</p></li>
+<li><p>Add those posts to the <strong><code class="docutils literal notranslate"><span class="pre">treeview</span></code></strong> widget</p></li>
+</ol>
+<p>For 1, well…this task should be well within your skillset by now. So I am going to leave it to you. It’s one line of code that assigns the parameter to the class attribute. Read the TODO comments if you get stuck.</p>
+<p>For 2, we need to iterate on our newly populated <strong><code class="docutils literal notranslate"><span class="pre">_posts</span></code></strong> class attribute. So a for a loop that iterates on <strong><code class="docutils literal notranslate"><span class="pre">self._posts</span></code></strong> and inserts each post to the <strong><code class="docutils literal notranslate"><span class="pre">treeview</span></code></strong> widget. How do we do that? Check out the <strong><code class="docutils literal notranslate"><span class="pre">_insert_post_tree</span></code></strong> method! It takes an id and a post as parameters. You have the post, so what about the id? It can be any value, but it needs to be unique. The best way to do this is to use the length of the <strong><code class="docutils literal notranslate"><span class="pre">_posts</span></code></strong> array as the id.</p>
+<p>Okay, less guidance now, but you have all written this type of code before…so I am sure you can get this one worked out.</p>
+</div>
+<div class="section" id="todo-line-240-edit-the-save-profile-method">
+<h5>TODO: line ~240 - edit the save_profile method.<a class="headerlink" href="#todo-line-240-edit-the-save-profile-method" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p><em>Saving</em> the best for last, pun intended. Let’s do this in two steps, step 1 is offline only, and step 2 is online support.</p>
+<div class="section" id="step-1">
+<h6>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h6>
+<ol class="simple">
+<li><p>A new post has been written and is ready to save. The first step is to create a new post object using the text that was written. Fortunately, we have a method in the Body class to get the text for us!</p></li>
+</ol>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_text_entry</span><span class="p">())</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Next, we need to update our GUI by adding the new post object. Are there any methods in the Body class that we can use? Take a look.</p></li>
+<li><p>Next, we should also update our <strong><code class="docutils literal notranslate"><span class="pre">_current_profile</span></code></strong> object and save it. You know how to do this, you have been doing it since a2. (<strong><code class="docutils literal notranslate"><span class="pre">add_post,</span> <span class="pre">save_profile</span></code></strong>)</p></li>
+<li><p>Finally, let’s reset the text editor:</p></li>
+</ol>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">set_text_entry</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Okay, we have enough code completed to run some tests:</p>
+<ol class="simple">
+<li><p>Create a new file, write a post, and save it.</p></li>
+<li><p>Close the program, restart it.</p></li>
+<li><p>Open the file created in 1. You should see your post in the treeview.</p></li>
+</ol>
+</div>
+<div class="section" id="step-2">
+<h6>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h6>
+<p>Let’s get this thing online.</p>
+<p>So at this point, your program should be saving posts to whatever dsu file is loaded into the program when the user clicks the Save Post button. If not, STOP and go back through these posts until you get there.</p>
+<p>The last thing we need to do for a5 is send our post to the DS server when the online checkbox widget is checked, or is true. So, let’s write a conditional statement that evaluates the MainApp class attribute that we added earlier:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_online</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1">#call your server connect code.</span>
+</pre></div>
+</div>
+<p>Remember, we are still in the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method, we are just adding new lines after the code we wrote in Step 1.</p>
+<p>To complete this task, at a bare minimum we need to call the server communication code we wrote in a2.</p>
+<p>Finally, we need to call this <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function or whatever process you created in <strong><code class="docutils literal notranslate"><span class="pre">ds_client</span></code></strong> to send messages to the server from the GUI. To keep our event handling code clean, let’s create a new method called ‘publish’. In that method we will make the call to ‘send’:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">post</span><span class="p">:</span><span class="n">Post</span><span class="p">):</span>
+    <span class="n">ds_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It might be nice to add some GUI updates for usability in the <strong><code class="docutils literal notranslate"><span class="pre">self._is_online</span></code></strong> conditional. Perhaps, updating the footer label using the set_status method of the Footer class? And perhaps calling update() function to make sure all widgets refresh before the potentially long call to the server.</p>
+<p>And that’s it. Most of what has been shared here is code you have already written. This is just a quick overview that covers one of many ways to go about implementing it.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="extra-credit">
 <h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
-<p>For this final assignment in ICS32 you will have the opportunity to receive up to 3 extra credit points. To receive a signal extra credit point you must add at least one of the following features to your Tkinter GUI. You may <strong>add up to 3</strong> features for extra credit.</p>
+<p>For this final assignment in ICS32 you will have the opportunity to receive extra credit. To receive a 4 extra credit points you must add at least one of the following features to your Tkinter GUI. You may <strong>add up to 3</strong> features for a total of 12 extra credit.</p>
 <ol class="simple">
 <li><p>Add title support for posts.</p></li>
 <li><p>Add a settings menu item and interface for username and password management.</p></li>
@@ -702,7 +938,6 @@
 <li><p>Add a bio menu item and interface for editing the user bio.</p></li>
 <li><p>Add support for editing existing posts.</p></li>
 <li><p>Add support for editing the location of the DSU server.</p></li>
-<li><p>Add a custom feature (must complete at least one of the above first).</p></li>
 </ol>
 <div class="section" id="add-title-support-for-posts">
 <h4>Add title support for posts<a class="headerlink" href="#add-title-support-for-posts" title="Permalink to this headline">¶</a></h4>
@@ -769,7 +1004,7 @@
 </div>
 <div class="section" id="submitting">
 <h3>Submitting<a class="headerlink" href="#submitting" title="Permalink to this headline">¶</a></h3>
-<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong>. If you complete any of the extra credit items, be sure to add a README file that describes exactly which features you implemented. You can include the README in your zipped submission, but YOU MUST ALSO LEAVE A COMMENT IN CANVAS ON YOUR SUBMISSION THAT INDICATES YOU HAVE EXTRA CREDIT FEATURES IN YOUR PROGRAM. Failure to leave a comment means that we may not notice the extra credit features when grading.</p>
+<p>Upload all of your program files in a single .zip file to Canvas by the due date. NAME YOUR MAIN FILE <strong><code class="docutils literal notranslate"><span class="pre">a5.py</span></code></strong>. If you complete any of the extra credit items, be sure to add a README file that describes exactly which features you implemented. You can include the README in your zipped submission, but YOU MUST ALSO LEAVE A COMMENT IN CANVAS ON YOUR SUBMISSION THAT INDICATES YOU HAVE EXTRA CREDIT FEATURES IN YOUR PROGRAM. Failure to leave a comment means that we may not notice the extra credit features when grading.</p>
 <p>Additionally, all modules that you create or edit must include the following comment on the first three lines:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># NAME</span>
@@ -779,30 +1014,36 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="starter-project">
+<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
+<p><a href="https://classroom.github.com/a/MZB2DBhp">Assignment 5 Starter Repository</a></p>
+</div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 15-point scale, with the 15 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<p>This assignment will be graded on a 150-point scale, with the 150 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
 <dl class="simple myst">
-<dt>Requirements and Function | 12 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+<dt>Requirements and Function | 120 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
 </dd>
 <dd><p>Does the program make use of the required 3rd Party module?</p>
 </dd>
 <dd><p>Does the NaClProfile module function properly?</p>
 </dd>
+<dd><p>Have all the TODO items been completed appropriately?</p>
+</dd>
 <dd><p>Are there any bugs or errors?</p>
 </dd>
-<dt>Quality and Design        | 3 pts</dt><dd><p>Is the code well designed?</p>
+<dt>Quality and Design        | 30 pts</dt><dd><p>Is the code well designed?</p>
 </dd>
 <dd><p>Is the code clearly documented?</p>
 </dd>
-<dt>Extra Credit | 3 pts</dt><dd><p>Is one extra credit feature implemented and functioning as intended? 1 pt</p>
+<dt>Extra Credit | 12 pts</dt><dd><p>Is one extra credit feature implemented and functioning as intended? 4 pts</p>
 </dd>
-<dd><p>Is a second extra credit feature implemented and functioning as intended? 1 pt</p>
+<dd><p>Is a second extra credit feature implemented and functioning as intended? 4 pts</p>
 </dd>
-<dd><p>Is a third extra credit feature implemented and functioning as intended? 1 pt</p>
+<dd><p>Is a third extra credit feature implemented and functioning as intended? 4 pts</p>
 </dd>
 </dl>
-<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will be taking a much stricter stance on quality and design than we have in previous assignments.</p>
+<p>By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will continue to take a strict stance on quality and design for this assignment.</p>
 </div>
 </div>
 </div>
@@ -820,7 +1061,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./prep"
+            path: "./assignments"
         },
         predefinedOutput: true
     }
@@ -835,6 +1076,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="a4.html" title="previous page">Assignment 4: Extending the Platform</a>
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">Week 1 Notes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
