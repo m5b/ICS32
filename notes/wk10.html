@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 9 Notes &#8212; ICS 32 Fall 2021</title>
+    <title>Week 10 Notes &#8212; ICS 32 Fall 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project: Chatting with Friends" href="../final.html" />
+    <link rel="prev" title="Week 9 Notes" href="wk9.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -132,7 +134,7 @@
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wk1.html">
    Week 1
@@ -176,6 +178,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="wk9.html">
    Week 9
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 10
   </a>
  </li>
 </ul>
@@ -261,8 +268,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-9-overview">
-   Week 9 Overview
+  <a class="reference internal nav-link" href="#week-10-overview">
+   Week 10 Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -289,27 +296,15 @@
       <a class="reference internal nav-link" href="#notes">
        Notes
       </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#object-copy">
-     Object Copy
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Videos
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Notes
-      </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#shallow-vs-deep-copy">
-         Shallow vs. Deep Copy
+        <a class="reference internal nav-link" href="#working-with-the-event-loop">
+         Working with the Event Loop
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Tkinter Layout
         </a>
        </li>
       </ul>
@@ -329,14 +324,14 @@
         
               <div>
                 
-  <div class="section" id="week-9-notes">
-<h1>Week 9 Notes<a class="headerlink" href="#week-9-notes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="week-10-notes">
+<h1>Week 10 Notes<a class="headerlink" href="#week-10-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Keep an eye weekly pages as they might be updated throughout the week.</p>
 </div>
-<div class="section" id="week-9-overview">
-<h2>Week 9 Overview<a class="headerlink" href="#week-9-overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="week-10-overview">
+<h2>Week 10 Overview<a class="headerlink" href="#week-10-overview" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
 <dt>Quick Links:</dt><dd><p><a class="reference internal" href="wk9.html#lecture-materials"><span class="std std-ref">Lecture Materials</span></a></p>
 </dd>
@@ -345,16 +340,14 @@
 <div class="section" id="lecture-materials">
 <span id="id1"></span><h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
-<dt>Lectures for Week 9</dt><dd><p><a class="reference internal" href="wk9.html#lectures-discussion9"><span class="std std-ref">Live Discussion</span></a></p>
+<dt>Lectures for Week 10</dt><dd><p><a class="reference internal" href="wk9.html#lectures-discussion9"><span class="std std-ref">Live Discussion</span></a></p>
 </dd>
 <dd><p><a class="reference internal" href="#lectures-tkinterlayout"><span class="std std-ref">Tkinter Layout</span></a></p>
-</dd>
-<dd><p><a class="reference internal" href="wk9.html#lectures-objectcopy"><span class="std std-ref">Object Copy</span></a></p>
 </dd>
 </dl>
 <div class="section" id="live-discussion">
 <span id="lectures-discussion9"></span><h3>Live Discussion<a class="headerlink" href="#live-discussion" title="Permalink to this headline">¶</a></h3>
-<p>Live discussion for this week is cancelled for the Thanksgiving holiday. See you all in week 10!</p>
+<p>Thursday 12/2</p>
 </div>
 <div class="section" id="tkinter-layout">
 <span id="lectures-tkinterlayout"></span><h3>Tkinter Layout<a class="headerlink" href="#tkinter-layout" title="Permalink to this headline">¶</a></h3>
@@ -363,93 +356,92 @@
 </div>
 <div class="section" id="notes">
 <h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="object-copy">
-<span id="lectures-objectcopy"></span><h3>Object Copy<a class="headerlink" href="#object-copy" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id2">
-<h4>Videos<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="id3">
-<h4>Notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>Let’s talk about assignment statements in Python.</p>
-<p>At this point in the course, you likely have not had to think about how Python manages variable assignments. For the most part, save for any advanced functionality you might have implemented in one of the course assignments, you declare a variable, assign it a value, and continue writing your code. Perhaps you assigned one object to a new object, but you most likely have not encountered Python’s default pass-by-reference assignment structure.</p>
-<p>When a collection in Python is assigned to a new object, a <em>reference</em> to its value is passed to the new object. Let’s take a look at what that means with some code:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="s2">&quot;World&quot;</span><span class="p">]</span>
-<span class="n">a2</span> <span class="o">=</span> <span class="n">a1</span>
-<span class="n">a3</span> <span class="o">=</span> <span class="n">a2</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="n">a3</span><span class="p">)</span>
-
-<span class="n">a1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="n">a3</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>At a glance you might expect the second print statement to be the same as the first. But when we run the code:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>The list assigned to a1, is referenced by both a2 and a3 variables. As a reference, when the source changes, so will all objects that it has been assigned to. Because it is a reference, changes to the assigned object will change the source as well:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">a3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Goodbye&quot;</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="n">a1</span><span class="p">)</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Goodbye&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Generally, pass-by-reference is the preferred way to manage data in a program. A reference ensures that there will only be one instance of object data in your program. This means that your programs will be faster, lighter, and your data easier to track. However, there are instances where you might need to make changes to one copy while leaving the original intact. We could approach this problem procedurally with the following code:</p>
+<p>Let’s talk about Tkinter!</p>
+<div class="section" id="working-with-the-event-loop">
+<h5>Working with the Event Loop<a class="headerlink" href="#working-with-the-event-loop" title="Permalink to this headline">¶</a></h5>
+<p>If you recall from our live lecture in week 8, we discussed the event loop and how it is used by graphical toolkits like Tkinter. The following diagram depicts the basic process:</p>
+<p>As events are trigger in the user interface, they are added to the event queue and then processed sequentially until the queue is empty. But what if we want to trigger some event programmatically rather than wait for the user to perform some action? In graphical programs, it is quite common to run background operations either while idle or as a user is interacting with the interface. A program may need to poll a remote service for new data, check for changes to existing data or send data somewhere, or perform some safety tasks like saving program state. In most cases, these types of tasks should not depend on the user to initiate them, but instead happen automatically.</p>
+<p>Fortunately, most graphical toolkits provide a mechanism for adding procedures to the event queue programmatically. Tkinter’s mechanism is called a <strong>timer event</strong>. Timer events are similar to input events like <em>click</em>, <em>select</em>, and <em>press</em>, but they can be set in code and triggered by a time based interval. The following diagram from the <a class="reference external" href="https://tkdocs.com/tutorial/eventloop.html">Tkdocs event loop tutorial</a> depicts how timer events are used in an event loop:</p>
+<p><img alt="Tkdocs event loop diagram" src="../_images/aftertimeline.png" /></p>
+<p>Notice how each timer event schedules a new timer event when it is called. In this sense, we can chain together function calls that we want to occur. But we don’t have to chain different function calls, we can also simply call the same function each time. In pseudo code, a timer event that recalls a function might look something like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
-<span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="s2">&quot;World&quot;</span><span class="p">]</span>
-<span class="n">a2</span> <span class="o">=</span> <span class="n">a1</span>
-<span class="n">a3</span> <span class="o">=</span> <span class="p">[</span><span class="n">a2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a2</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="k">def</span> <span class="nf">timed_fn</span><span class="p">():</span>
+  <span class="n">check_mail</span><span class="p">()</span>
+	<span class="n">timer_event</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">timed_fn</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="n">a3</span><span class="p">)</span>
+<span class="n">timer_event</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">timed_fn</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the pseudo code above, a timer event is created that will call the <strong><code class="docutils literal notranslate"><span class="pre">timed_fn</span></code></strong> function after 5 seconds (since the parameter is in milliseconds) from the time the event loop is started. <strong><code class="docutils literal notranslate"><span class="pre">timed_fn</span></code></strong> then performs some operation like checking for new mail and adds itself back to the event loop by calling <strong><code class="docutils literal notranslate"><span class="pre">timer_event</span></code></strong> again. When run, the resulting code will then automatically call the <strong><code class="docutils literal notranslate"><span class="pre">check_mail</span></code></strong> function every 5 seconds until the program stops running.</p>
+<p>In Tkinter, timer events can be created using the <strong><code class="docutils literal notranslate"><span class="pre">after</span></code></strong> function. <strong><code class="docutils literal notranslate"><span class="pre">after</span></code></strong> accepts a delay time, function, and function arguments as its parameters:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ms</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  :param ms: The delay in milliseconds before func is called.</span>
+<span class="sd">  :param func: The function to be called when timer event is removed from the event queue</span>
+<span class="sd"> </span>
+<span class="sd">  :return: an id that is associated with this timer event</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">pass</span>
+					
+</pre></div>
+</div>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">after</span></code></strong> function is a member of the <strong><code class="docutils literal notranslate"><span class="pre">Tk</span></code></strong> class and can be called from any top level widget. Let’s take a look at how to use a timer event in Tkinter by modifying the start code for <a class="reference internal" href="../assignments/a5.html"><span class="doc std std-doc">assignment 5</span></a>. Comments have been removed for brevity.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">main</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">main</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;ICS 32 Distributed Social Demo&quot;</span><span class="p">)</span>
 
-<span class="n">a1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="n">main</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;720x480&quot;</span><span class="p">)</span>
+<span class="n">main</span><span class="o">.</span><span class="n">option_add</span><span class="p">(</span><span class="s1">&#39;*tearOff&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="n">a3</span><span class="p">)</span>
+<span class="n">MainApp</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
+<span class="n">main</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">main</span><span class="o">.</span><span class="n">minsize</span><span class="p">(</span><span class="n">main</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">(),</span> <span class="n">main</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">())</span>
+
+<span class="n">main</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Since <strong><code class="docutils literal notranslate"><span class="pre">main</span></code></strong> is the top level widget for the starter code, we will need to place the call to after from it. We will also assume that there is a method in the <strong><code class="docutils literal notranslate"><span class="pre">MainApp</span></code></strong> class that we will want to call using a timer event, so we will need to assign the <strong><code class="docutils literal notranslate"><span class="pre">MainApp</span></code></strong> instance to a variable that we can use with the timer.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">main</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">main</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;ICS 32 Distributed Social Demo&quot;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;720x480&quot;</span><span class="p">)</span>
+<span class="n">main</span><span class="o">.</span><span class="n">option_add</span><span class="p">(</span><span class="s1">&#39;*tearOff&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">MainApp</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+
+<span class="n">main</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">main</span><span class="o">.</span><span class="n">minsize</span><span class="p">(</span><span class="n">main</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">(),</span> <span class="n">main</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">())</span>
+
+<span class="n">main</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">app</span><span class="o">.</span><span class="n">check_something</span><span class="p">)</span> 
+<span class="n">main</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The changes here mean that now once the main loop starts, in 5 seconds the <strong><code class="docutils literal notranslate"><span class="pre">check_something</span></code></strong> method of the <strong><code class="docutils literal notranslate"><span class="pre">MainApp</span></code></strong> class will be added to the event queue and called in turn. Next, let’s look at the implementation of the <strong><code class="docutils literal notranslate"><span class="pre">check__something</span></code></strong> method.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_something</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># perform some operation</span>
+    
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">check_something</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you look at starter code, you will notice that when the <strong><code class="docutils literal notranslate"><span class="pre">MainApp</span></code></strong> class is instantiated, the top level widget is passed as an initialization parameter and then assigned to the class attribute <strong><code class="docutils literal notranslate"><span class="pre">root</span></code></strong>. In the method above, since <strong><code class="docutils literal notranslate"><span class="pre">root</span></code></strong> is the same object as <strong><code class="docutils literal notranslate"><span class="pre">main</span></code></strong> from the earlier code snippet, it is used to place a new timer event on the event queue by calling the <strong><code class="docutils literal notranslate"><span class="pre">after</span></code></strong> function again. If we run this starter code with these updates, then every 5 seconds the <strong><code class="docutils literal notranslate"><span class="pre">check_something</span></code></strong> function will be called.</p>
+<p>What if we need to stop this operation?</p>
+<p>For long running timer events, there may be a desire to cancel them at some point. For example, you might decide that automatically running an operation in the background is something that your user should have control over. So perhaps an <em>auto check</em> option or simply a <em>cancel</em> button is a better way to design your program. Timer events can be cancelled by keeping track of the id returned from each call to <strong><code class="docutils literal notranslate"><span class="pre">after</span></code></strong>. The timer associated with a particular <strong><code class="docutils literal notranslate"><span class="pre">id</span></code></strong> can be destroyed by placing a call to <strong><code class="docutils literal notranslate"><span class="pre">after_cancel</span></code></strong>:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>					
+<span class="k">def</span> <span class="nf">after_cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  :param id: The id that is associated with the timer event to be cancelled</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">pass</span>
 
 </pre></div>
 </div>
-<p>Notice how now, the change to index 1 in the object a1, does not affect the data stored in a3. That’s because we have effectively made a copy of the original collection. A slightly more efficient (and expandable) approach would involve using a loop to copy each item in the collection, but this approach only gets us so far. As objects become increasingly complex, working out the logic to make a complete copy can quickly turn into painstakingly error prone work. Fortunately, Python has taken care of this for us! Let’s return to our code snippet one more time:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
-
-<span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="s2">&quot;World&quot;</span><span class="p">]</span>
-<span class="n">a2</span> <span class="o">=</span> <span class="n">a1</span>
-<span class="n">a3</span> <span class="o">=</span> <span class="n">a2</span>
-<span class="n">a3</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="n">a3</span><span class="p">)</span>
-
-<span class="n">a1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="n">a3</span><span class="p">)</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
-</pre></div>
+<p>Whether or not you need to make use of after_cancel is largely up to you and your program design. We won’t go into detail on how to go about implementing cancel support here, but it’s good to know that cancelling a running timer event is possible.</p>
+<p>Note that working with timer events is often not as straightforward as it seems in this lecture. In the use cases for this class, the implementations covered here are sufficient. However, as program complexity grows and more events move on and off the queue either through widget interaction or timer events, bugs can appear. So before you start adding tens of timer events to your future programs, take some time to learn about the complexities of the event loop. For this class, we just want to give you the beginning pathways for completing operations like the ones you are asked to complete in your assignments, rather than overwhelm you with the complexities of managing multiprocess operations.</p>
 </div>
-<p>The results are the same, but now we have moved the responsibility of making a copy from our own code to a well-tested module that is part of the Python standard library!</p>
-<div class="section" id="shallow-vs-deep-copy">
-<h5>Shallow vs. Deep Copy<a class="headerlink" href="#shallow-vs-deep-copy" title="Permalink to this headline">¶</a></h5>
-<p>The copy library provides two types of object copy mechanisms, <em>shallow</em> and <em>deep</em>. To understand the difference, let’s draw from the <a class="reference external" href="https://docs.python.org/3/library/copy.html">Python documents</a>:</p>
-<blockquote>
-<div><p>A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.</p>
-</div></blockquote>
-<blockquote>
-<div><p>A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.</p>
-</div></blockquote>
-<p>In the code sample above we used a shallow copy when calling the <strong><code class="docutils literal notranslate"><span class="pre">copy()</span></code></strong> function. A deep copy would like:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">a3</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>If your goal is to make a copy of a collection, then using a shallow copy should be sufficient. However, if you have a compound object, one that consists of classes <em>and</em> collections (e.g., <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> or <strong><code class="docutils literal notranslate"><span class="pre">NaClProfile</span></code></strong>), you may need to make a deep copy to ensure that all attributes, and data collections are copied. Just be aware, when you make a deep copy of an object <em>everything</em> is copied! So if in an object instantiated from a large nested inheritance hierarchy, you may want to consider other options.</p>
-<p>To wrap up, it’s worth mentioning that the reason we are discussing object copy is that you may encounter a situation in which you find pass-by-reference problematic while connecting your earlier work to the Tkinter GUI for <a class="reference internal" href="../assignments/a5.html"><span class="doc std std-doc">a5</span></a>. So be aware, that if you notice an issue with value references in your program, you might need to make a copy!</p>
+<div class="section" id="id2">
+<h5>Tkinter Layout<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<p>This lecture will be released on Tuesday 11/30.</p>
 </div>
 </div>
 </div>
@@ -484,6 +476,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="wk9.html" title="previous page">Week 9 Notes</a>
+    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project: Chatting with Friends</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
