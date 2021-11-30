@@ -353,6 +353,7 @@
 <span id="lectures-tkinterlayout"></span><h3>Tkinter Layout<a class="headerlink" href="#tkinter-layout" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="videos">
 <h4>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=3962775&amp;node=13460917&amp;a=132884211&amp;autoplay=1">Tkinter Event Loop Lecture</a></p>
 </div>
 <div class="section" id="notes">
 <h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
@@ -360,6 +361,7 @@
 <div class="section" id="working-with-the-event-loop">
 <h5>Working with the Event Loop<a class="headerlink" href="#working-with-the-event-loop" title="Permalink to this headline">¶</a></h5>
 <p>If you recall from our live lecture in week 8, we discussed the event loop and how it is used by graphical toolkits like Tkinter. The following diagram depicts the basic process:</p>
+<p><img alt="Event Loop Diagram" src="../_images/eventloop.png" /></p>
 <p>As events are trigger in the user interface, they are added to the event queue and then processed sequentially until the queue is empty. But what if we want to trigger some event programmatically rather than wait for the user to perform some action? In graphical programs, it is quite common to run background operations either while idle or as a user is interacting with the interface. A program may need to poll a remote service for new data, check for changes to existing data or send data somewhere, or perform some safety tasks like saving program state. In most cases, these types of tasks should not depend on the user to initiate them, but instead happen automatically.</p>
 <p>Fortunately, most graphical toolkits provide a mechanism for adding procedures to the event queue programmatically. Tkinter’s mechanism is called a <strong>timer event</strong>. Timer events are similar to input events like <em>click</em>, <em>select</em>, and <em>press</em>, but they can be set in code and triggered by a time based interval. The following diagram from the <a class="reference external" href="https://tkdocs.com/tutorial/eventloop.html">Tkdocs event loop tutorial</a> depicts how timer events are used in an event loop:</p>
 <p><img alt="Tkdocs event loop diagram" src="../_images/aftertimeline.png" /></p>
@@ -442,6 +444,7 @@
 <div class="section" id="id2">
 <h5>Tkinter Layout<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
 <p>This lecture will be released on Tuesday 11/30.</p>
+<p>Hopefully by now you have all had some time to work on assembling widgets into a Tkinter graphical interface. If so, you have probably noticed.</p>
 </div>
 </div>
 </div>
