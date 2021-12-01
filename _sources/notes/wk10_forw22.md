@@ -141,11 +141,30 @@ Note that working with timer events is often not as straightforward as it seems 
 
 ##### Tkinter Layout
 
-Part 1 is a re-record of what I covered in class in week 8. If you missed it due to audio issues, feel free to watch again.
+Hopefully by now you have all had some time to work on assembling widgets into a Tkinter graphical interface. If so, you have probably noticed that getting widget to behave the way you want is a bit challenging. In this lecture, we will dive into the geometry managers of Tkinter and explore how and when to use each of them.
 
-###### Part 1
-[Planning tips for a GUI](https://uci.yuja.com/V/Video?v=2311938&node=8335521&a=285910547&autoplay=1)
-###### Part 2
-[Basic Tkinter Layout](https://uci.yuja.com/V/Video?v=2311950&node=8335572&a=1924101216&autoplay=1)
-###### Part 3
-[Structuring Tkinter with Classes](https://uci.yuja.com/V/Video?v=2311976&node=8335658&a=1815687944&autoplay=1)
+Tkinter supports three types of geometry managers: **`pack`**, **`place`**, and **`grid`**. If you review the starter code for [a5](../assignments/a5.md) you will notice that the graphical interface is created using the **`pack`** geometry manager. Let's look at an example:
+
+```python3
+import tkinter as tk
+
+root = tk.Tk()
+root.geometry("400x400")
+
+frm_1 = tk.Frame(master=root, height=100, width=100, background="red")
+frm_1.pack()
+
+frm_2 = tk.Frame(master=root, height=100, width=100, background="green")
+frm_2.pack()
+
+frm_3 = tk.Frame(master=root, height=100, width=100, background="blue")
+frm_3.pack()
+
+root.mainloop()
+```
+
+Working with frames is a good way to start building your program layout, so we'll start with a simple example where a few frame widgets are added to the top-level window. Since we are dealing with 
+
+
+![pack example 1](../resources/tkinter_geom_1.png)
+

@@ -54,8 +54,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Final Project: Chatting with Friends" href="../final.html" />
-    <link rel="prev" title="Week 9 Notes" href="wk9.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -134,7 +132,7 @@
   Lecture Notes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wk1.html">
    Week 1
@@ -180,8 +178,8 @@
    Week 9
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk10.html">
    Week 10
   </a>
  </li>
@@ -237,7 +235,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notes/wk10.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notes/wk10_forw22.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -306,23 +304,6 @@
         <a class="reference internal nav-link" href="#tkinter-layout">
          Tkinter Layout
         </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#part-1">
-           Part 1
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#part-2">
-           Part 2
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#part-3">
-           Part 3
-          </a>
-         </li>
-        </ul>
        </li>
       </ul>
      </li>
@@ -359,7 +340,7 @@
 <dl class="simple myst">
 <dt>Lectures for Week 10</dt><dd><p><a class="reference internal" href="wk9.html#lectures-discussion9"><span class="std std-ref">Live Discussion</span></a></p>
 </dd>
-<dd><p><a class="reference internal" href="wk10_forw22.html#lectures-tkinterlayout"><span class="std std-ref">Tkinter</span></a></p>
+<dd><p><a class="reference internal" href="#lectures-tkinterlayout"><span class="std std-ref">Tkinter</span></a></p>
 </dd>
 </dl>
 <div class="section" id="live-discussion">
@@ -460,19 +441,27 @@
 </div>
 <div class="section" id="tkinter-layout">
 <h5>Tkinter Layout<a class="headerlink" href="#tkinter-layout" title="Permalink to this headline">¶</a></h5>
-<p>Part 1 is a re-record of what I covered in class in week 8. If you missed it due to audio issues, feel free to watch again.</p>
-<div class="section" id="part-1">
-<h6>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h6>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2311938&amp;node=8335521&amp;a=285910547&amp;autoplay=1">Planning tips for a GUI</a></p>
+<p>Hopefully by now you have all had some time to work on assembling widgets into a Tkinter graphical interface. If so, you have probably noticed that getting widget to behave the way you want is a bit challenging. In this lecture, we will dive into the geometry managers of Tkinter and explore how and when to use each of them.</p>
+<p>Tkinter supports three types of geometry managers: <strong><code class="docutils literal notranslate"><span class="pre">pack</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">place</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">grid</span></code></strong>. If you review the starter code for <a class="reference internal" href="../assignments/a5.html"><span class="doc std std-doc">a5</span></a> you will notice that the graphical interface is created using the <strong><code class="docutils literal notranslate"><span class="pre">pack</span></code></strong> geometry manager. Let’s look at an example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;400x400&quot;</span><span class="p">)</span>
+
+<span class="n">frm_1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">frm_1</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">frm_2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">frm_2</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">frm_3</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">frm_3</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="section" id="part-2">
-<h6>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h6>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2311950&amp;node=8335572&amp;a=1924101216&amp;autoplay=1">Basic Tkinter Layout</a></p>
-</div>
-<div class="section" id="part-3">
-<h6>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">¶</a></h6>
-<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=2311976&amp;node=8335658&amp;a=1815687944&amp;autoplay=1">Structuring Tkinter with Classes</a></p>
-</div>
+<p>Working with frames is a good way to start building your program layout, so we’ll start with a simple example where a few frame widgets are added to the top-level window. Since we are dealing with</p>
+<p><img alt="pack example 1" src="notes/../resources/tkinter_geom_1.png" /></p>
 </div>
 </div>
 </div>
@@ -507,8 +496,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="wk9.html" title="previous page">Week 9 Notes</a>
-    <a class='right-next' id="next-link" href="../final.html" title="next page">Final Project: Chatting with Friends</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
