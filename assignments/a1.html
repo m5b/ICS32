@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 1: File Explorer &#8212; ICS 32 Fall 2021</title>
+    <title>Assignment 1: File Explorer &#8212; ICS 32 Winter 2022</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,14 +53,17 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment 2: Journal" href="a2.html" />
     <link rel="prev" title="Assignment 0: Getting Started with Python" href="a0.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -72,32 +72,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo_stacked.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_stacked.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ICS 32 Winter 2022</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Programming with Software Libraries
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Assignments
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="a0.html">
    Assignment 0
@@ -129,69 +133,24 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../notes/wk1.html">
    Week 1
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk5.html">
-   Week 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk6.html">
-   Week 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk7.html">
-   Week 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk8.html">
-   Week 8
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk9.html">
-   Week 9
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notes/wk10.html">
-   Week 10
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Final Project
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../final.html">
    Project Requirements
@@ -199,6 +158,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -214,21 +174,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -246,27 +206,27 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
@@ -288,60 +248,11 @@
   <a class="reference internal nav-link" href="#program-requirements">
    Program Requirements
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-1">
-     Part 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-2">
-     Part 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-few-rules">
-     A Few Rules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-considerations">
-     Other Considerations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#submitting-your-assignment">
-   Submitting Your Assignment
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-and-organizational-requirements">
-     Naming and organizational requirements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validation-checking-your-output">
-     Validation-checking your output
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#starter-project">
-     Starter Project
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
-     How we will grade your submission
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -349,7 +260,7 @@
         
               <div>
                 
-  <div class="section" id="assignment-1-file-explorer">
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-1-file-explorer">
 <h1>Assignment 1: File Explorer<a class="headerlink" href="#assignment-1-file-explorer" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
@@ -376,229 +287,9 @@
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="part-1">
-<h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
-<p>User input for this program will take the following format:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span> <span class="p">[[</span><span class="o">-</span><span class="p">]</span><span class="n">OPTION</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>For the first part of the assignment, you will support two commands:</p>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>L - List the contents of the user specified directory.<br />
-Q - Quit the program.</p>
-</div>
-<p>The ‘Q’ command is straightforward, when your program receives the ‘Q’ input it should cleanly stop operation. The ‘L’ command will instruct your program to list the contents of a directory. So for example, if we want to list the content of a particular directory in our file system:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>
-</pre></div>
-</div>
-<p>which will print:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>
-</pre></div>
-</div>
-<p>So by running this command, we discover that there are two files and two directories contained within the directory we specified. Notice that the results are sorted by files first and then directories. Your first attempt to print the contents of a directory will not look like this, so you will have to take care to ensure your code properly sorts results into files first, followed by directories.</p>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>The results of the ‘L’ command must print results in a files first, directories last format.</p>
-</div>
-<p>Now let’s add some options to refine our directory listing. There are four options that you will need your program to support:</p>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>-r Output directory content recursively.<br />
--f Output only files, excluding directories in the results.<br />
--s Output only files that match a given file name.<br />
--e Output only files that match a give file extension.</p>
-</div>
-<p>Applying the ‘r’ option to the directory list command, will print the contents of the source directory as well as all subdirectories:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">help</span><span class="o">.</span><span class="n">doc</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>Notice how that in addition to the output of files within the ‘assets’ directory, the subdirectory ‘logos’ is also printed along with the files contained within.</p>
-<p>Okay, so far so good. Now let’s see what happens when we apply the ‘f’ option:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">f</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>As you may have expected, by adding the ‘f’ option to the ‘L’ command, the program will only list the files in the specified directory.</p>
-<p>The two remaining options, ‘s’ and ‘e’, allow us to further refine our results by specifying search parameters. Unlike the ‘r’ and ‘f’ options, these options will also need to accept a user input parameter. So let’s say we want to find all files in a given directory with the name ‘readme.txt’:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">s</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>Notice that we combined options here to recursively check all subdirectories as well, so our results return two instances of the file ‘readme.txt’ that exist within the ‘a1’ directory. If we had left the ‘r’ option off, the results would be slightly different:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">s</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>Now let’s try another search using the ‘e’ option. As I described earlier, the ‘e’ option allows us to filter results by file extension, so:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">e</span> <span class="n">jpg</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo2</span><span class="o">.</span><span class="n">jpg</span>
-</pre></div>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can safely assume that when a program feature is combined with the ‘-r’ option, that the ‘-r’ option will always come first.</p>
-</div>
-<p>The results now only return files who have the extension or <em>suffix</em> ‘jpg’. Okay, so once you have created a program that is able to execute all of the operations described in this section you will be ready for Part 2.</p>
-</div>
-<div class="section" id="part-2">
-<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have a way to look for files in our file system, we need to actually do something with those files! So for this part of the assignment you will add three additional commands to your program:</p>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>C - Create a new file in the specified directory.<br />
-D - Delete the file.<br />
-R - Read the contents of a file.</p>
-</div>
-<p>Creating a new file is exactly as it sounds, when the user issues the C command, your program will read the input and create a new file:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">n</span> <span class="n">mark</span>
-</pre></div>
-</div>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>-n Specify the name to be used for a new file.</p>
-</div>
-<p>The ‘C’ command must also accept a single option ‘n’ that allows the user to specify the name of the file. Note that we do not require the use of an extension. Instead, since we will be using this program in the future to create users for our distributed social platform, the program will control the types of files it creates. So whenever a file is created, it must append the user specified name with a distributed social user extension, or ‘dsu’. So when the previous command is run, it will create a new file in the specified directory, with the specified name, and the ‘dsu’ extension. The program output should look like the following to confirm to the user that the file was created:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
-</pre></div>
-</div>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>New files created with the ‘C’ command must automatically be created with the ‘dsu’ extension or <em>suffix</em>.</p>
-</div>
-<p>The ‘D’ command will allow the user to delete a DSU file. If the user specified file is not a DSU file, then the program should print ERROR and wait for corrected input from the user. Once the DSU file has been successfully deleted, the program should print a confirmation:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span> <span class="n">DELETED</span>
-</pre></div>
-</div>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>A the output after deleting a file should print the directory and file name with the word ‘DELETED’ at the end of the line.</p>
-</div>
-<p>The ‘R’ command will print the contents of a DSU file. As with the ‘D’ command, if the user specified file is not a DSU file, the program should print ERROR and wait for corrected input from the user. If the file is empty, then the program should print EMPTY and wait for corrected input from the user:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EMPTY</span>
-</pre></div>
-</div>
-<p>Otherwise, the program will print the contents of the file:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
-</pre></div>
-</div>
-<p>And the resulting output:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Hello World!
-</pre></div>
-</div>
-<div class="admonition-program-feature admonition">
-<p class="admonition-title">Program Feature</p>
-<p>The program must handle errors gracefully. When an error occurs, the program should inform the user by printing ‘ERROR’ and wait for additional input from the user.</p>
-</div>
-<p>Finally, and this applies to both Parts 1 and 2, your program should handle errors gracefully. If a user enters commands, inputs, or options that are not understood by the program, the program should simply print ERROR and wait for additional input from the user.</p>
-</div>
-<div class="section" id="a-few-rules">
-<h3>A Few Rules<a class="headerlink" href="#a-few-rules" title="Permalink to this headline">¶</a></h3>
-<p>The majority of the work you will need to do for this assignment will center around the <a class="reference external" href="https://docs.python.org/3.8/library/pathlib.html"><strong>pathlib</strong></a> library. Start by familiarizing yourself with the various functions that the library provides. Path is a powerful type that will help you manipulate the file system, so use as much of it as you can to reduce the complexity of your program. There are, however, a few functions in the library that you will not be allowed to use for this assignment. <strong>os.walk</strong>, <strong>os.fwalk</strong>, <strong>glob</strong>, and <strong>rglob</strong> abstract away much of the functionality that we want you to learn through this assignment. Generally, if you find yourself using library functions to locate files rather than writing your own recursive function, then you are probably using the library inappropriately.</p>
-</div>
-<div class="section" id="other-considerations">
-<h3>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The following notes are adapted from the Alex Thornton’s notes on writing programs. It’s great advice, so rather than rewrite it, I prefer to <a class="reference external" href="https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants">“stand on the shoulders of giants”</a> and let you learn from the source.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Alex Thornton’s Program Writing Tips</p>
-<p><strong>The value of working incrementally</strong></p>
-<p>You may be accustomed to solving relatively small, mostly self-contained problems that you can handle all at once. This program, while not giant by real-world standards, consists of more moving parts than you might be used to writing, so you will likely find that attempting to write this program all at once will lead you astray, even if an all-inclusive, everything-at-once approach worked well for you in ICS 31.</p>
-<p>A better approach for this project — and one that will increase in importance this quarter, as the problems we solve get larger and more complex — is to look for stable ground as often as you can find it. Rather than trying to write the entire program, write some small part of it that you understand well, then find a way to verify that the part you wrote works as you expected (e.g., by writing a function and then calling it in the Python interpreter manually). When it does, you’ve reached stable ground, and you’re ready to choose the next small step you should take, again taking care to choose something that you’ll be able to verify after you’re done with it. Ideally, you’ll find yourself reaching stable ground quite often — sometimes, every few minutes, if things are going well — and this will help you to feel confident that you’re making progress.</p>
-<p>If you find yourself stuck on one problem and have no idea how to move further, find another positive step you can take. For example, if you’re not sure how to find all of the files in a directory structure, write a function that simply returns a hard-coded list of file paths and use that temporarily, then move on and work on something else, eventually working your way back to the places that were causing you trouble. The goal is always to be making some kind of progress, and it’s not necessary to write the program in a particular order (e.g., the order in which things happen in the user interface).</p>
-<p>Also, when you reach what you believe to be stable ground, it’s not a bad idea to make a copy of your Python module before proceeding. That way, if your next step doesn’t go as you planned, you maintain the option of “rolling back” to the previous, stable version and trying again. It also gives you something stable to turn in if you find that the deadline arrives and you’re not finished; it’s always better to turn in a partial program that does something correctly, rather than one that doesn’t run. Don’t feel like you need to keep every stable version, but it’s not a bad idea to at least have the most recent one or two. (One of the practical skills you’ll need to start thinking about, if you haven’t already, is staying organized. If you have a couple of versions of a file and find that you’re often not sure which is which, then you need a better organizational scheme — better file names, better directory names, or whatever helps it to be more obvious to you.)</p>
-<p><strong>So, what steps should I take?</strong></p>
-<p>There are a variety of ways to build this program from beginning to end, so don’t go looking for the “perfect way” to do it. Find a small step you can take, take it, and then find another. Of course, there are missteps you might take along the way, but the best way to learn how to write programs this way is simply to do it; you’ll learn as much from your missteps as you will from the ones that work out well.</p>
-<p>As an example, though, think about the fact that the program is built around the core notion of “Find all of the unique files in a directory, its subdirectories, their subdirectories, and so on, and return a list of their paths.” That sounds like a pretty good step to start with, except that it’s actually a bigger step than it sounds like. So you could start even smaller: write a function that finds the files in a directory but ignores subdirectories. Once you can do that, add handling for one level of subdirectories (but assume they have no subdirectories inside of them). Then consider unbounded subdirectory depth and handle that scenario.</p>
-<p>Whenever you’re working on something and you feel you’ve bitten off more than you can chew, think about ways to break the problem into smaller ones; eventually, you’ll be left with a problem you can think through and complete.</p>
-<p>If you’re not sure what step to take next, feel free to ask us; we’ll help you find a task that will lead you to stable ground.</p>
-<p><strong>Testing</strong></p>
-<p>Testing this program is going to seem cumbersome, because it will require creating directory structures and files in various configurations, then running the program to see how it behaves. You might find that it’s worth your time to automate some scenarios, by writing short Python functions (perhaps in a separate module) that create directories and files in interesting combinations. You won’t likely find that it will require writing a lot of code, but it will pay you back (and then some!) as you test your program.</p>
-<p>It’s quite common in real-world software development to write code whose sole use is as a development tool; it’s not part of the program, per se, and will not be given to users of the program, but is strictly meant to make it easier to build the program. You’ll be well-served to explore ways to use Python to lighten your testing burden; if there are five interesting scenarios you’ve identified, you should write five Python functions that can set them up for you automatically, so you can get them back any time you need to test them. If it takes a half-hour to write the test programs, but it takes five minutes to set up the tests manually, as soon as you’ve set up the tests six times, the time spent writing the test program will begin paying you back. Computers automate tasks that are otherwise cumbersome, and testing certainly falls into that category. (We’ll see this theme repeated throughout the course.)</p>
-</div>
-</div>
-</div>
-<div class="section" id="submitting-your-assignment">
-<h2>Submitting Your Assignment<a class="headerlink" href="#submitting-your-assignment" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="naming-and-organizational-requirements">
-<h3>Naming and organizational requirements<a class="headerlink" href="#naming-and-organizational-requirements" title="Permalink to this headline">¶</a></h3>
-<p>How you organize your program is up to you, but there are a couple of requirements that you’ll need to follow.</p>
-<p>Your program must be written entirely in a single Python module, in a file named a1.py. Note that capitalization and spacing are important here (i.e., no letters in the filename are capitalized and there are no spaces); they’re part of the requirement.</p>
-<p>Executing your a1 module — by, for example, pressing F5 or selecting Run Module from the Run menu in IDLE — must cause your program to read its input and then print its output. It must not be necessary to call a function manually to make your program run.</p>
-<p>Other than that, anything goes; you can organize your solution in any way you’d like. Note that future assignments will take what we call “quality of solution” a lot more seriously, but the name of the game in this warm-up assignment is simply to submit a program that works.</p>
-</div>
-<div class="section" id="validation-checking-your-output">
-<h3>Validation-checking your output<a class="headerlink" href="#validation-checking-your-output" title="Permalink to this headline">¶</a></h3>
-<p>The validity checker for this assignment works just like the one you used for <a class="reference internal" href="a0.html"><span class="doc std std-doc">assignment 0</span></a>. Place the validity checker in the same directory as your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> module and run it.</p>
-<div class="tip admonition">
-<p class="admonition-title">Interpreting Validity Checker Output</p>
-<p>The validity checker will exit operation when it encounters an unexpected output from your program. Your instincts might lead you to run the last input operation reported by the validity checker prior to the error directly from your program. While this is a good first step, and one that can help you understand what went wrong, there is a good chance that the same input command will work for you. This does not mean that there is something wrong with the validity checker! Rather, it is an indication that the internal state of your code is changing after certain input commands are run in a certain order.</p>
-<p>If you find yourself in this situation, the first thing you should do is review the output from the validity checker, taking note of each of the input commands that were executed. Next, run your program (debug mode helps here) and input the exact same commands in the same order. You WILL find that your program output matches the validity checker perfectly. Use this knowledge to work through your code until you discover what is causing the error.</p>
-<p>So before you reach out to a course instructor and say “but it works for me”, perform the tests described above! (because if you don’t, we’ll tell you to anyway :) )</p>
-</div>
-</div>
-<div class="section" id="starter-project">
-<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
-<p><a href="https://classroom.github.com/a/5rmWyeT2">Assignment 1 Starter Repository</a></p>
-</div>
-<div class="section" id="how-we-will-grade-your-submission">
-<h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
-<p>This assignment will be graded on a 100 point scale, with the 100 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
-<dl class="simple myst">
-<dt>Requirements and Function | 90 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
-</dd>
-<dd><p>Are there any bugs or errors?</p>
-</dd>
-<dt>Quality and Design        | 10 pts</dt><dd><p>Is the code well designed?</p>
-</dd>
-<dd><p>Is the code clearly documented?</p>
-</dd>
-</dl>
-<p>As this is your first assignment using the following grading rubric, we will make an effort to draw attention to where your program fails to meet the grading criteria. However, as we move on, you will be expected to learn from our feedback and address the concerns that we raise in your code.</p>
+<p>The full assignment will be released during week 1.</p>
 </div>
 </div>
 </div>
@@ -625,23 +316,34 @@ R - Read the contents of a file.</p>
 
               </div>
               
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="a0.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment 0: Getting Started with Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="a2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 2: Journal</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="a0.html" title="previous page">Assignment 0: Getting Started with Python</a>
-    <a class='right-next' id="next-link" href="a2.html" title="next page">Assignment 2: Journal</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Mark S. Baldwin<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>
@@ -650,11 +352,8 @@ R - Read the contents of a file.</p>
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
   </body>
 </html>

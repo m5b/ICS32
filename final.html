@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Final Project: Chatting with Friends &#8212; ICS 32 Fall 2021</title>
+    <title>Final Project: Chatting with Friends &#8212; ICS 32 Winter 2022</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -54,15 +51,18 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Week 10 Notes" href="notes/wk10.html" />
-
+    <link rel="prev" title="Week 1 Notes" href="notes/wk1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -71,32 +71,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo_stacked.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">ICS 32 Fall 2021</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_stacked.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ICS 32 Winter 2022</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
    Programming with Software Libraries
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Assignments
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="assignments/a0.html">
    Assignment 0
@@ -128,69 +132,24 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Lecture Notes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notes/wk1.html">
    Week 1
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk5.html">
-   Week 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk6.html">
-   Week 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk7.html">
-   Week 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk8.html">
-   Week 8
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk9.html">
-   Week 9
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notes/wk10.html">
-   Week 10
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Final Project
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Project Requirements
@@ -198,6 +157,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -213,21 +173,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -245,82 +205,36 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overview">
    Overview
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-implement-direct-messaging-protocol">
-   Part 1: Implement Direct Messaging Protocol
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-a-test">
-     Writing a Test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-the-ds-direct-messenger-module">
-   Part 2: The DS Direct Messenger Module
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Writing a Test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-store-messages-locally">
-   Part 3: Store Messages Locally
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-4-the-graphical-user-interface">
-   Part 4: The Graphical User Interface
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#final-submission">
-   Final Submission
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grading">
-     Grading
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -328,169 +242,20 @@
         
               <div>
                 
-  <div class="section" id="final-project-chatting-with-friends">
+  <div class="tex2jax_ignore mathjax_ignore section" id="final-project-chatting-with-friends">
 <h1>Final Project: Chatting with Friends<a class="headerlink" href="#final-project-chatting-with-friends" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>As discussed in the course overview, you will not be required to take a midterm or final exam. Rather, we will be assessing your understanding of the course material by asking you to apply what you have learned through a final project. At this point in the class you have learned how to work with the computer file system, modules, sockets, and APIs. You have also learned how to write simple tests for your code, classes, apply recursive function calls, and handle exceptions that occur when your program runs. Therefore, your final project should build upon and extend what you have learned so far and completed in your assignments.</p>
-<p>The final project is worth a total of 200 points, more than what you earn for all course assignments, which means you should target an individual project workload that is equal to or greater than what you have completed for any two assignments in the course. You will have roughly five and a half weeks to complete your final project, so take this into account when planning your work. To help you manage the final project alongside your remaining three assignments, you will be allowed to work in groups. Working in a group is <strong>optional</strong> and will be limited to a <strong>maximum of three</strong>.</p>
+<p>The final project is worth a total of 150 points, similar to what you have earned for most course assignments. However, grading for final project will be far more rigid than what you have experienced so far. You will have roughly five weeks to complete your final project, during which time we expect you to integrate everything you have learned from the work you have completed. To help you manage the final project alongside your remaining three assignments, you will be allowed to work in groups. Working in a group is <strong>optional</strong> and will be limited to a <strong>maximum of three</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you choose to work in a group you must create a team name and nominate a leader. The leader will be responsible for communication and submission. We will discuss how to submit a group assignment in class as we near the end of the quarter. DO NOT wait until the last week of class to formalize your group. Take care of this step as soon as possible.</p>
 </div>
 <p>For your final project you will develop a module that enables a program to send and receive direct messages with another user on the DSP platform. You will then incorporate this module into a graphical user interface (GUI) using Tkinter. There is a significant amount of work required to make this program feature complete, so you should get started early and gradually build your program step by step. To help you get started, the requirements for your final program have been divided into several parts. You are encouraged to follow each part in order. If you are working in a group, assigning a single part to each group member is a good way to divide the work equitably as each part can be written and tested independently of the final program.</p>
-</div>
-<div class="section" id="part-1-implement-direct-messaging-protocol">
-<h2>Part 1: Implement Direct Messaging Protocol<a class="headerlink" href="#part-1-implement-direct-messaging-protocol" title="Permalink to this headline">¶</a></h2>
-<p>To communicate with another user on the DSP platform, your program will need to make use of new protocol messages. To support these new messages, your program should extend your <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol</span></code></strong> module to support direct messaging with the following commands:</p>
-<dl class="simple myst">
-<dt>directmessage</dt><dd><p>Accepts a message to be sent directly to another user.</p>
-</dd>
-</dl>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Send a directmessage to another DS user</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="s2">&quot;recipient&quot;</span><span class="p">:</span><span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
-
-<span class="c1"># Request unread message from the DS server</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">}</span>
-
-<span class="c1"># Request all messages from the DS server</span>
-<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Recall from <strong><code class="docutils literal notranslate"><span class="pre">a3</span></code></strong> that <strong><code class="docutils literal notranslate"><span class="pre">user_token</span></code></strong> is retrieved by sending a successful join command. So in order to send a direct message you must first join the server.</p>
-<p>The DS server will respond to <strong><code class="docutils literal notranslate"><span class="pre">directmessage</span></code></strong> requests with the following <strong><code class="docutils literal notranslate"><span class="pre">ok</span></code></strong> response messages:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sending of direct message was successful</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct message sent&quot;</span><span class="p">}}</span>
-
-<span class="c1"># Response to request for **`all`** and **`new`** messages. Timestamp is time in seconds </span>
-<span class="c1"># of when the message was originally sent.</span>
-<span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Hello User 1!&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;markb&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">},{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Bzzzzz&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;thebeemoviescript&quot;</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}]}}</span>
-</pre></div>
-</div>
-<p>To process these new response messages you will need to extend the message conversion code that you wrote for <strong><code class="docutils literal notranslate"><span class="pre">a3</span></code></strong>. How you solve this requirement is up to you, but a good approach will likely include adding a function to your <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol</span></code></strong> that converts JSON messages to a list or dictionary.</p>
-<div class="section" id="writing-a-test">
-<h3>Writing a Test<a class="headerlink" href="#writing-a-test" title="Permalink to this headline">¶</a></h3>
-<p>When your code is complete, write a small test program to verify that your messages are being processed as expected. Your program should import your module (e.g., import ds_protocol, if you are extending your ds_protocol module) and call the code you have written with a few test messages. You can use the messages provided above or create a few of your own as test cases. You can name your test whatever you like, but it should be prepended with the word <strong><code class="docutils literal notranslate"><span class="pre">test_</span></code></strong>:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_ds_message_protocol</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<p>Once your test program is complete, you are ready to move on to the next part of the assignment.</p>
-</div>
-</div>
-<div class="section" id="part-2-the-ds-direct-messenger-module">
-<h2>Part 2: The DS Direct Messenger Module<a class="headerlink" href="#part-2-the-ds-direct-messenger-module" title="Permalink to this headline">¶</a></h2>
-<p>Now that you have a functioning protocol in place, you are ready to write your message send and retrieve code. The first thing you will do is complete the direct messenger module. Your module must adhere to the following rules:</p>
-<ul class="simple">
-<li><p>Must be named <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong></p></li>
-<li><p>Must implement the following classes and methods</p></li>
-</ul>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DirectMessage</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">recipient</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="kc">None</span>
-
-
-<span class="k">class</span> <span class="nc">DirectMessenger</span><span class="p">:</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsuserver</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="kc">None</span>
-		
-  <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">recipient</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="c1"># returns true if message successfully sent, false if send failed.</span>
-    <span class="k">pass</span>
-		
-  <span class="k">def</span> <span class="nf">retrieve_new</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="c1"># returns a list of DirectMessage objects containing all new messages</span>
-    <span class="k">pass</span>
- 
-  <span class="k">def</span> <span class="nf">retrieve_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="c1"># returns a list of DirectMessage objects containing all messages</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-<p>You are free to add as many supporting methods to either of these classes that you need, but the <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger.py</span></code></strong> module should be able to function without any other dependencies. A program that imports your module should be able to call the required functions to exchange messages with the DS server. You may reuse or import the code you have written for the <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module to reduce the amount of code you have to write.</p>
-<div class="section" id="id1">
-<h3>Writing a Test<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Once again, when your code is complete, write a small test program to verify that your <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger</span></code></strong> module is functioning properly. You can name your test whatever you like, but it should be prepended with the word <strong><code class="docutils literal notranslate"><span class="pre">test_</span></code></strong>:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_ds_messenger</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<p>Once your test program is complete, you are ready to move on to the next part of the assignment.</p>
-</div>
-</div>
-<div class="section" id="part-3-store-messages-locally">
-<h2>Part 3: Store Messages Locally<a class="headerlink" href="#part-3-store-messages-locally" title="Permalink to this headline">¶</a></h2>
-<p>Some of the data your program uses should be preserved across multiple uses. To complete this feature you can either implement your own data storage code or extend the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module to support serializing new data.</p>
-<p>Your program should be able to store message data locally so that when the program starts it does not have to connect to the DSP server to display messages. Your program should also store recipient data locally so that your user does not have to add the same recipients each time the program is run. It’s fine if you require a user to first load their dsu profile (or custom file format you build) before displaying data. The important thing here is to NOT require an internet connection to get messages.</p>
-<p>However you handle this requirement, after using your program once, all recipients added and messages retrieved should be appear in the GUI at start on subsequent uses.</p>
-</div>
-<div class="section" id="part-4-the-graphical-user-interface">
-<h2>Part 4: The Graphical User Interface<a class="headerlink" href="#part-4-the-graphical-user-interface" title="Permalink to this headline">¶</a></h2>
-<p>The final part of the assignment will be to write a graphical user interface (GUI) for your module using Tkinter. You are free to implement the interface however you like or adapt the Tkinter GUI starter code that you were given in assignment 5.</p>
-<p>There are many ways to create a graphical interface for a direct messaging program. You are not required to follow the example below. However, if you are not sure where to start the following wireframe should point you in the right direction.</p>
-<p><img alt="tkinterexample" src="_images/final_project_tk_example.png" /></p>
-<p>In the wireframe model presented above, there are 5 widgets that are responsible for all of the input and output in the program:</p>
-<ol class="simple">
-<li><p>On the left is a treeview widget that displays all of the DS users that have sent you messages. Selecting a user will display the messages that they have sent in (2).</p></li>
-<li><p>On the upper right is the display widget that contains the messages sent by the user selected in (1).</p></li>
-<li><p>On the lower right is the text input widget where new messages are written.</p></li>
-<li><p>The ‘Add User’ button is used to add new contacts to receive direct messages.</p></li>
-<li><p>The ‘Send’ button sends the message entered in (3).</p></li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The layout used in this wireframe is nearly identical to the layout provided to you in assignment 5. You may reuse that existing code to save you some steps.</p>
-</div>
-<p><img alt="tkinterreal" src="_images/final_project_chat_example.png" /></p>
-<p>One possible version of the Social Messenger app is pictured above. In this version, the add user requirement has been moved to the settings menu. To see this version in action, watch the class recording for <a class="reference internal" href="notes/wk6.html"><span class="doc std std-doc">week 6</span></a>.</p>
-<p>In addition to the requirements described above, there are a few other tasks you must complete:</p>
-<ol class="simple">
-<li><p>Your GUI must automatically retrieve new messages while the program is running.</p></li>
-<li><p>Your conversations must be visually separated in some way (e.g., left/right align, color, identifier, etc).</p></li>
-<li><p>Selecting a new contact in the treeview should display any recent messages with that contact in the message window.</p></li>
-<li><p>Your GUI must include at least one “flourish.” A flourish is some feature that goes beyond the core requirements for a functional program. Past assignment flourishes have included a dark mode toggle, chat bubbles, profile switcher, and a profile wizard. This is your chance to have some fun with the project and make your final program unique. Feel free to ask us if your idea flourish will count for this requirement.</p></li>
-</ol>
-</div>
-<div class="section" id="final-submission">
-<h2>Final Submission<a class="headerlink" href="#final-submission" title="Permalink to this headline">¶</a></h2>
-<p>To receive full credit your final project must make <strong>informed</strong> use of the following criteria:</p>
-<dl class="simple myst">
-<dt>Classes</dt><dd><p>You have been provided with some skeletal classes to use in your module. However, there will undoubtedly be other areas of the program where a class improves your program design. You must use at least one new class in addition to what has already been provided for you.</p>
-</dd>
-<dt>Custom Exceptions</dt><dd><p>Your program should implement <em>at least one</em> custom exception class.</p>
-</dd>
-<dt>Use of try/except</dt><dd><p>Areas of code prone to exceptions (sockets, file i/o, etc.) should be wrapped in try/except statements. Exceptions should be handled in a way that does not negatively affect the functionality of your program.</p>
-</dd>
-<dt>Commenting and Documentation</dt><dd><p>Your overall final program should contain sufficient code comments for a new programmer to be able to understand what your code does. Your program should include an HTML document generated using PDOC that can be used to understand all of the code that you have written.</p>
-</dd>
-<dt>Function</dt><dd><p>Your program must work. Functionality of your program will be assessed in two ways. First, a user should be able to run your program and send and receive direct messages with a DS server. Second, your <strong><code class="docutils literal notranslate"><span class="pre">ds_messenger</span></code></strong> module must work outside of your main program. We will use a validity checker program for grading that imports your module and makes calls on the required class and methods.</p>
-</dd>
-</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Informed use means that you have thoughtfully applied the requirements in a way that is beneficial to your program. In other words, do not simply make up pointless tests or classes to check a box for the assignment.</p>
-</div>
-<p>You will submit all files required to run your project, your two <strong><code class="docutils literal notranslate"><span class="pre">test_</span></code></strong> programs, PDOC files, and a README file that details any required instructions on how to build and run it. You must also include all references and sources that you used to build your project. If you included code in your project from an external source (<strong>e.g.</strong>, StackOverflow, text books, sample programs, and so on), you must cite these sources in the readme as well as leave comments in your code files indicating where it was found by you or your group members.</p>
-<div class="section" id="grading">
-<h3>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You will not be graded on the visual quality of your GUI. Getting TKinter to render perfectly on all platforms is difficult and we do not expect you to test across multiple platforms. So do your best to ensure that all of your UI elements can be accessed, but don’t worry too much about perfect rendering.</p>
-</div>
-<p>This assignment will be graded on a 200 point scale, with the 200 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
-<dl class="simple myst">
-<dt>Requirements (150 points)</dt><dd><p>Does the program fulfill the requirements described in each part of the assignment?</p>
-</dd>
-<dd><p>Does the program run without error?</p>
-</dd>
-<dd><p>Are there any bugs or errors?</p>
-</dd>
-<dt>Validity (25 points)</dt><dd><p>Does the project adhere to the principles taught in class for creating robust and bug free code.</p>
-</dd>
-<dt>Documentation (25 points)</dt><dd><p>Does the project provide sufficient documentation. Your code should be well commented so that we can understand what purpose it serves in your project. Your README should clearly explain how to run your project. And when run, the functionality of your project should be clear and intuitive. Your PDOC file should clearly articulate what each class, method, function does.</p>
-</dd>
-</dl>
-<p>Your final submission should include all materials described in Parts 1-4, zipped and uploaded to the Canvas submission page by the due date. Since this is the last assignment for the course, there will be no late submissions accepted.</p>
+<p>The full assignment will be released during week 6.</p>
 </div>
 </div>
 </div>
@@ -517,22 +282,27 @@
 
               </div>
               
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="notes/wk1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 1 Notes</p>
+        </div>
+    </a>
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="notes/wk10.html" title="previous page">Week 10 Notes</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Mark S. Baldwin<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>
@@ -541,11 +311,8 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
   </body>
 </html>

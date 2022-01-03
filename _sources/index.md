@@ -76,7 +76,9 @@ You can expect a typical week to look similar to the following:
 :card: border-1
 Tue
 ^^^
-Recorded Lecture
+Pre-recorded Lecture
+
+In-person Class
 
 ---
 Thu
@@ -91,12 +93,12 @@ In-person Class
 :card: border-1
 Mon
 ^^^
-Remote Labs
+In-person Labs
 
 ---
 Wed
 ^^^
-Remote Labs
+In-person Labs
 
 ---
 Fri
@@ -104,7 +106,7 @@ Fri
 In-person Labs
 ````
 
-Lecture and labs will hold one in-person session per week. Attendance is optional for both, but will factor into your participation grade. 
+Lecture and labs will hold one in-person session per week. Attendance is optional for both, but will factor into your participation grade. Although week to week lab attendance is optional, you will be required to complete 8 labs over the course of the quarter. A lab schedule will be published during week 1 so you can decide which labs you would like to attend. Check back here during week 1 for the full lab schedule.
 
 #### Quarter at a Glance
 
