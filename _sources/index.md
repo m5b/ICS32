@@ -41,21 +41,18 @@ The assignment you submit by the deadline will be considered final. We will not 
 
 You will have the opportunity to improve your code for up to three main assignments (A1-A5) by submitting a refactor. You can refactor any main assignment that you want, but no more than three. For this class we will define a refactor as:
 
-* More than just a bug or broken requirement fix. To be considered complete, a refactor must make identifiable improvements to your code.
+* More than just a bug or broken requirement fix. To be considered complete, a refactor must make identifiable improvements to your code. 
 * One half part clear explanation of the changes you made.
 * One half part for actual improvement of your code.
 * One full part successful function of the improvement.
 
-You don't have to have a low grade to refactor. If you received full credit on your assignment, you can still submit a refactor. There is always room for improvement!
+You don't have to have a low grade to refactor. If you received full credit on your assignment, you can still submit a refactor. There is always room for improvement! Similarly, you do not have to wait for graded feedback on your assignment to work on a refactor. In fact, we prefer if you identify issues on your own rather than rely on our input to decide where to make improvements.
 
-All refactors must be submitted within 1 week from the day that your assignment grade was released. So this means, you can not submit refactors at the end of the quarter if your grade is lower than you would like.
-
-Completing all three refactors and receiving full credit on each will raise your grade one half letter. So if you have a B+, a perfect set of refactors will give you an A-. However, the maximum grade you can achieve through refactors is a 96% or A. Therefore, the only way to earn an A+ in this class is through high scores on original assignment submissions.
+Completing all three refactors and receiving full credit on each will raise your grade one half letter. So if you have a B+, a perfect set of refactors will give you an A-. However, the maximum grade you can achieve through refactors is a 96% or A. Therefore, the only way to earn an A+ in this class is through high scores on original assignment submissions, lab work, and participation.
 
 ### Exams
 
 Due to the uncertainty of in-person access this quarter, we will be replacing midterm and final exams with a course project. The final project must be built using the tools and techniques you learn throughout the course. More details will be provided at the midpoint of the quarter.
-
 
 ### Lecture Notes
 
