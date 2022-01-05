@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2: Journal &#8212; ICS 32 Winter 2022</title>
+    <title>Labs &#8212; ICS 32 Winter 2022</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 3: Publishing Online" href="a3.html" />
-    <link rel="prev" title="Assignment 1: File Explorer" href="a1.html" />
+    <link rel="next" title="Week 1 Notes" href="../notes/wk1.html" />
+    <link rel="prev" title="Refactor" href="refactor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,7 +101,7 @@
   Assignments
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="a0.html">
    Assignment 0
@@ -112,8 +112,8 @@
    Assignment 1
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2.html">
    Assignment 2
   </a>
  </li>
@@ -138,14 +138,14 @@
   Reinforcement Work
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="refactor.html">
    Refactor Overview
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lab Overview
   </a>
  </li>
@@ -214,7 +214,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/assignments/a2.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/assignments/lab.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -248,22 +248,20 @@
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary-of-program-requirements">
-     Summary of Program Requirements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-goals">
-     Learning Goals
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-requirements">
-   Program Requirements
+  <a class="reference internal nav-link" href="#lab-overview">
+   Lab Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-schedule">
+   Lab Schedule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
+   How we will grade your submission
   </a>
  </li>
 </ul>
@@ -277,36 +275,111 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-2-journal">
-<h1>Assignment 2: Journal<a class="headerlink" href="#assignment-2-journal" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="labs">
+<h1>Labs<a class="headerlink" href="#labs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The goal for <a class="reference internal" href="a1.html"><span class="doc std std-doc">assignment 1</span></a> was to learn how to work with the Python Standard Library, use recursion, and start to familiarize yourself with error handling. If you were able to complete all of the requirements for assignment 1, you should now have a fully functional command line program that allows you to find, create, read, and delete files on your computer.</p>
-<p>Though useful, so far your program doesn’t offer any functionality that is not available from existing command line tools already on your computer. So for assignment 2, you are going to extend your a1 code to enable a user to capture their thoughts by writing journal posts and storing them in a text file. You will use the features that you implemented in <a class="reference internal" href="a1.html"><span class="doc std std-doc">a1</span></a> to provide the basic file management and user interface aspects of your new program while you add new features to support basic journaling and journal management functionality.</p>
-<div class="section" id="summary-of-program-requirements">
-<h3>Summary of Program Requirements<a class="headerlink" href="#summary-of-program-requirements" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Manage user data using a file store</p></li>
-<li><p>Design a command line user interface</p></li>
-<li><p>Implement a custom file format using JSON (Javascript Object Notation)</p></li>
-</ol>
+<p>Labs are your opportunity to refine your understanding of programming concepts covered in class, assignments, and lecture. Repetition is an important part of programming skill development; lab exercises are designed to promote this practice. We want you to see problems from different perspectives. So you can expect a lab exercise to ask you to complete a task similar the ones you will be working on in your assignments.</p>
+<p>If you want to become a strong programmer, then you should view labs as an opportunity to hone your skills. The more code you write, the better you will get, trust us!</p>
 </div>
-<div class="section" id="learning-goals">
-<h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Working with modules</p></li>
-<li><p>Integrate existing code into your program</p></li>
-<li><p>Improving error handling</p></li>
-<li><p>Working with JSON</p></li>
-</ol>
+<div class="section" id="lab-overview">
+<h2>Lab Overview<a class="headerlink" href="#lab-overview" title="Permalink to this headline">¶</a></h2>
+<p>There will be a total of 20 labs held this quarter. You are free to attend any of the labs that cover topics of interest or have value to you. You must complete the lab exercise during the lab time you have registered to attend. Late submissions (we will allow a 10-15 minute grace period) will not count towards your lab total. Therefore, it is better to submit incomplete work than to submit late or not at all.</p>
+<p>Each lab you complete will be worth 6 points. To receive the full lab credit of 50 points for the entire course, you must complete a minimum of 8 labs. If you complete 8 labs and receive full credit for each, you will be awarded a 2 point bonus. Otherwise, you may need a 9th lab to get you to the full 50 points.</p>
+<dl class="simple myst">
+<dt>A few tips when attending labs:</dt><dd><p>Lab time is to be used for lab exercises only.</p>
+</dd>
+<dd><p><strong>Do not</strong> ask your lab TA or tutor for help with class assignments.</p>
+</dd>
+<dd><p><strong>Do</strong> ask your lab TA or tutor for help with the lab exercise.</p>
+</dd>
+<dd><p>Arrive on time and find your TA or tutor (when in-person) to request a link to the lab exercise.</p>
+</dd>
+<dd><p>Labs should be completed individually, though you can discuss the exercise conceptually with a classmate.</p>
+</dd>
+</dl>
 </div>
+<div class="section" id="lab-schedule">
+<h2>Lab Schedule<a class="headerlink" href="#lab-schedule" title="Permalink to this headline">¶</a></h2>
+<p>The following lab schedule is mostly set. However, if we determine that during the quarter there are concepts that are not resonating with a significant portion of the class, we may revise a lab topic to accommodate. We will make an announcement when any changes to the lab schedule occur.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Monday</p></th>
+<th class="head"><p>Wednesday</p></th>
+<th class="head"><p>Friday</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wk 1</p></td>
+<td><p>No Lab</p></td>
+<td><p>No Lab</p></td>
+<td><p>inputs and functions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wk 2</p></td>
+<td><p>working with files</p></td>
+<td><p>exceptions</p></td>
+<td><p>recursion</p></td>
+</tr>
+<tr class="row-even"><td><p>Wk 3</p></td>
+<td><p>No Lab</p></td>
+<td><p>testing with assert</p></td>
+<td><p>working with modules</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wk 4</p></td>
+<td><p>namespaces and naming</p></td>
+<td><p>writing and using classes</p></td>
+<td><p>create a protocol</p></td>
+</tr>
+<tr class="row-even"><td><p>Wk 5</p></td>
+<td><p>No Lab</p></td>
+<td><p>No Lab</p></td>
+<td><p>No Lab</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wk 6</p></td>
+<td><p>sockets</p></td>
+<td><p>inheritance</p></td>
+<td><p>managing data</p></td>
+</tr>
+<tr class="row-even"><td><p>Wk 7</p></td>
+<td><p>HTTP requests</p></td>
+<td><p>request processing</p></td>
+<td><p>exception handling strategies</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wk 8</p></td>
+<td><p>No Lab</p></td>
+<td><p>advanced inheritance</p></td>
+<td><p>understanding python objects</p></td>
+</tr>
+<tr class="row-even"><td><p>Wk 9</p></td>
+<td><p>responsive GUI’s</p></td>
+<td><p>callback functions</p></td>
+<td><p>Tkinter event loop</p></td>
+</tr>
+</tbody>
+</table>
+<p>The topics presented here are intentionally high-level and abstract. You will find out what the actual exercise for each topic will be when you arrive at the lab, not before. If you need special accommodations (time, remote, alternative material delivery) for labs, please let us know. We are willing to work with you on an individual level to ensure that you are able complete the required labs.</p>
 </div>
-<div class="section" id="program-requirements">
-<h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The full assignment will be released during week 3.</p>
-</div>
+<div class="section" id="how-we-will-grade-your-submission">
+<h2>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h2>
+<p>We want labs to be low-stress and fun for you, so don’t feel pressured to get everything right. We will typically just review your code before assigning a grade. If you would like feedback or to discuss your work in detail, feel free to reach out to your TA.</p>
+<p>Your goal should not be perfection! You will have plenty of time for that on your assignments. Rather, simply put forth your best effort to complete the exercise in the time allotted. If we see that you have <em>tried</em> you will receive some credit, regardless of whether your code works or not.</p>
+<p>Labs will be graded on a 6 point scale, with the 6 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<dl class="simple myst">
+<dt>Attended lab | 1.0 pt</dt><dd><p>Did the student attend lab?</p>
+</dd>
+<dd><p>Did the student work on the exercise?</p>
+</dd>
+<dt>Exercise work | 3.0 pts</dt><dd><p>Did the student sufficiently attempt to complete the exercise?</p>
+</dd>
+<dd><p>Did the student write a reasonable amount of code for the exercise?</p>
+</dd>
+<dt>Exercise complete | 2.0 pts</dt><dd><p>Did the student complete the exercise?</p>
+</dd>
+<dd><p>Does the student’s program sufficiently complete the exercise?</p>
+</dd>
+</dl>
+<p>Good luck. Try to have some fun with your labs! This work should not be stressful. Remember, choose the labs that are right for you. It is in your best interest to attend labs that cover concepts that you are not as familiar with when writing code rather than the labs that you think will be easy.</p>
 </div>
 </div>
 
@@ -335,17 +408,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="a1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="refactor.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment 1: File Explorer</p>
+            <p class="prev-next-title">Refactor</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="a3.html" title="next page">
+    <a class='right-next' id="next-link" href="../notes/wk1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 3: Publishing Online</p>
+        <p class="prev-next-title">Week 1 Notes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

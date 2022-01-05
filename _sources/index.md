@@ -39,7 +39,7 @@ The assignment you submit by the deadline will be considered final. We will not 
 
 #### Refactors
 
-You will have the opportunity to improve your code for up to three main assignments (A1-A5) by submitting a refactor. You can refactor any main assignment that you want, but no more than three. For this class we will define a refactor as:
+[You](You) will have the opportunity to improve your code for up to three main assignments (A1-A5) by submitting a refactor. You can refactor any main assignment that you want, but no more than three. For this class we will define a refactor as:
 
 * More than just a bug or broken requirement fix. To be considered complete, a refactor must make identifiable improvements to your code. 
 * One half part clear explanation of the changes you made.
@@ -103,7 +103,7 @@ Fri
 In-person Labs
 ````
 
-Lecture and labs will hold one in-person session per week. Attendance is optional for both, but will factor into your participation grade. Although week to week lab attendance is optional, you will be required to complete 8 labs over the course of the quarter. A lab schedule will be published during week 1 so you can decide which labs you would like to attend. Check back here during week 1 for the full lab schedule.
+Labs will be held remotely until we return to campus. We will update lab locations in week 3, assuming all goes according to plan. Although week to week lab attendance is optional, you will be required to complete a minimum of 8 labs over the course of the quarter to receive full lab credit. To learn more about labs and view the lab schedule visit the [lab overview](../assignments/lab.md) page.
 
 #### Quarter at a Glance
 
