@@ -248,11 +248,52 @@
   <a class="reference internal nav-link" href="#week-1-overview">
    Week 1 Overview
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-materials">
+   Lecture Materials
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handling-errors">
-     Handling Errors
+    <a class="reference internal nav-link" href="#live-class">
+     Live Class
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tuesday">
+       Tuesday
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#thursday">
+       Thursday
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recorded-lectures">
+     Recorded Lectures
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#handling-errors">
+       Handling Errors
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#lecture-recording">
+         Lecture Recording
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#lecture-notes">
+         Lecture Notes
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -276,15 +317,37 @@
 <div class="section" id="week-1-overview">
 <h2>Week 1 Overview<a class="headerlink" href="#week-1-overview" title="Permalink to this headline">¶</a></h2>
 <p>Normally weekly notes will be released at beginning of each week. Since this is our first week together, however, the notes and lecture recordings will be release after our first class together on Tuesday the 4th. Check back here after class on Tuesday and Thursday for updates.</p>
-<p>See you Tuesday!</p>
+</div>
+<div class="section" id="lecture-materials">
+<h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="live-class">
+<h3>Live Class<a class="headerlink" href="#live-class" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tuesday">
+<h4>Tuesday<a class="headerlink" href="#tuesday" title="Permalink to this headline">¶</a></h4>
+<p><a href="../resources/Introduction-to-ICS32.pdf">Slides</a></p>
+<p><a href="https://uci.zoom.us/rec/share/l-PIX0txfFz2aajBrs5EGmdq2eY8E3SycC2ZOi3irYbud3wNEt-6EBhuIGvUBX0n.1-LwI3ArDUPZ8R7M?startTime=1641329512000">Recording</a></p>
+</div>
+<div class="section" id="thursday">
+<h4>Thursday<a class="headerlink" href="#thursday" title="Permalink to this headline">¶</a></h4>
+<p>Coming Soon</p>
+</div>
+</div>
+<div class="section" id="recorded-lectures">
+<h3>Recorded Lectures<a class="headerlink" href="#recorded-lectures" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="handling-errors">
-<h3>Handling Errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h3>
+<h4>Handling Errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="lecture-recording">
+<h5>Lecture Recording<a class="headerlink" href="#lecture-recording" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference external" href="https://uci.yuja.com/V/Video?v=4086515&amp;node=13881759&amp;a=551849669&amp;autoplay=1">Error Handling Lecture</a></p>
+</div>
+<div class="section" id="lecture-notes">
+<h5>Lecture Notes<a class="headerlink" href="#lecture-notes" title="Permalink to this headline">¶</a></h5>
 <p>In this lecture we are going to talk about error handling and using the try/except statement. As you may already know, when we write programs errors are inevitable. Even in the most perfectly written programs, errors can occur. It’s very difficult to predict every possible condition that we may encounter. Oftentimes, these are internal errors that occur due to the code we write and other times they are external forces that are beyond our control. Even when our code is perfect, something external to our code might happen, right? Imagine for a moment that your program is in the middle of downloading a file from a server on the internet. Take a minute, think about all the different conditions that might occur to prevent your file from downloading:</p>
 <ul class="simple">
 <li><p>The server might crash.</p></li>
 <li><p>The server might lose connection to the Internet.</p></li>
 <li><p>You might lose connection to the Internet.</p></li>
-<li><p>Your Wi-Fi router could stop working.</p></li>
+<li><p>Your WiFi router could stop working.</p></li>
 <li><p>Your network card could stop working.</p></li>
 </ul>
 <p>There’s a lot of reasons. These types of conditions are generally things that are out of your control, but you still need to think about them and handle them in your program. Unless you protect your code appropriately, it’s likely that it will fail at some point during its operation. In this lecture, I want to talk about how you can go about protecting your code from both predictable errors and the unpredictable scenarios that we might not necessarily expect to happen. So let’s start with a quick example:</p>
@@ -439,6 +502,8 @@ What is your age? twelve
 </div>
 <p>Now we only need to add one conditional statement to check the user input values and provide some feedback to the user. We also now have a program that keeps all user input and output in one place (the run function) instead of scattering print statements throughout the program code.</p>
 <p>Okay, if you haven’t tried running this code yet, please do. My goal with these lectures and notes is to give you enough code to follow along and view the results on your computer in real time. If you have made it this far, play around with the code a bit more. How would you go about adding support for values of type float? How might you redesign the <strong><code class="docutils literal notranslate"><span class="pre">run</span></code></strong> function to allow the user to <em>fix</em> their input error other than having to run the program again?</p>
+</div>
+</div>
 </div>
 </div>
 </div>

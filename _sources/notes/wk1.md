@@ -9,16 +9,36 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 Normally weekly notes will be released at beginning of each week. Since this is our first week together, however, the notes and lecture recordings will be release after our first class together on Tuesday the 4th. Check back here after class on Tuesday and Thursday for updates.
 
-See you Tuesday!
+## Lecture Materials
 
-### Handling Errors
+### Live Class
+
+#### Tuesday
+
+<a href="../resources/Introduction-to-ICS32.pdf">Slides</a>
+
+<a href="https://uci.zoom.us/rec/share/l-PIX0txfFz2aajBrs5EGmdq2eY8E3SycC2ZOi3irYbud3wNEt-6EBhuIGvUBX0n.1-LwI3ArDUPZ8R7M?startTime=1641329512000">Recording</a>
+
+#### Thursday
+
+Coming Soon
+
+### Recorded Lectures
+
+#### Handling Errors
+
+##### Lecture Recording
+
+[Error Handling Lecture](https://uci.yuja.com/V/Video?v=4086515&node=13881759&a=551849669&autoplay=1)
+
+##### Lecture Notes
 
 In this lecture we are going to talk about error handling and using the try/except statement. As you may already know, when we write programs errors are inevitable. Even in the most perfectly written programs, errors can occur. It's very difficult to predict every possible condition that we may encounter. Oftentimes, these are internal errors that occur due to the code we write and other times they are external forces that are beyond our control. Even when our code is perfect, something external to our code might happen, right? Imagine for a moment that your program is in the middle of downloading a file from a server on the internet. Take a minute, think about all the different conditions that might occur to prevent your file from downloading: 
 
 * The server might crash. 
 * The server might lose connection to the Internet. 
 * You might lose connection to the Internet. 
-* Your Wi-Fi router could stop working. 
+* Your WiFi router could stop working. 
 * Your network card could stop working.
 
 There's a lot of reasons. These types of conditions are generally things that are out of your control, but you still need to think about them and handle them in your program. Unless you protect your code appropriately, it's likely that it will fail at some point during its operation. In this lecture, I want to talk about how you can go about protecting your code from both predictable errors and the unpredictable scenarios that we might not necessarily expect to happen. So let's start with a quick example:
