@@ -219,3 +219,5 @@ if __name__ == '__main__':
 Now we only need to add one conditional statement to check the user input values and provide some feedback to the user. We also now have a program that keeps all user input and output in one place (the run function) instead of scattering print statements throughout the program code.
 
 Okay, if you haven't tried running this code yet, please do. My goal with these lectures and notes is to give you enough code to follow along and view the results on your computer in real time. If you have made it this far, play around with the code a bit more. How would you go about adding support for values of type float? How might you redesign the **`run`** function to allow the user to _fix_ their input error other than having to run the program again?
+
+

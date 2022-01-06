@@ -265,6 +265,55 @@
   <a class="reference internal nav-link" href="#program-requirements">
    Program Requirements
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-1">
+     Part 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2">
+     Part 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-few-rules">
+     A Few Rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-considerations">
+     Other Considerations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submitting-your-assignment">
+   Submitting Your Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naming-and-organizational-requirements">
+     Naming and organizational requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-checking-your-output">
+     Validation-checking your output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starter-project">
+     Starter Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
+     How we will grade your submission
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -281,7 +330,7 @@
 <h1>Assignment 1: File Explorer<a class="headerlink" href="#assignment-1-file-explorer" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>For the rest of the assignments in this course, you will be building a distributed social communication platform. The final version of the program will allow you to send and receive encrypted messages with other students in the class. You will start with a command line interface and end with an encrypted graphical interface. Along the way you will learn about many of the processes that programmers use to develop software. For now though, you’ll get started with a simple file management program. At the heart of any user facing program is…the user, so the first thing we need to create is a tool that will let us manage user accounts.</p>
+<p>For the rest of the assignments in this course, you will be building a distributed social communication platform. The final version of the program will allow you to send and receive encrypted messages with other students in the class. You will start with a command line interface and end with an encrypted graphical interface. Along the way you will learn about many of the processes that programmers use to develop software. For now though, you’ll get started with a simple file management program.</p>
 <div class="section" id="summary-of-program-requirements-for-this-assignment">
 <h3>Summary of program requirements for this assignment:<a class="headerlink" href="#summary-of-program-requirements-for-this-assignment" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
@@ -295,7 +344,7 @@
 <div class="section" id="learning-goals">
 <h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li><p>Working with files and file systems.</p></li>
+<li><p>Working with files and file systems</p></li>
 <li><p>Understand Recursion</p></li>
 <li><p>Error handling</p></li>
 <li><p>Tests</p></li>
@@ -304,9 +353,239 @@
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-1">
+<h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
+<p>User input for this program will take the following format:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span> <span class="p">[[</span><span class="o">-</span><span class="p">]</span><span class="n">OPTION</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For the first part of the assignment, you will support two commands:</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>L - List the contents of the user specified directory.<br />
+Q - Quit the program.</p>
+</div>
+<p>The ‘Q’ command is straightforward, when your program receives the ‘Q’ input it should cleanly stop operation. The ‘L’ command will instruct your program to list the contents of a directory. So for example, if we want to list the content of a particular directory in our file system:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>
+</pre></div>
+</div>
+<p>which will print:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>
+</pre></div>
+</div>
+<p>So by running this command, we discover that there are two files and two directories contained within the directory we specified. Notice that the results are sorted by files first and then directories. Your first attempt to print the contents of a directory will not look like this, so you will have to take care to ensure your code properly sorts results into files first, followed by directories.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>The results of the ‘L’ command must print results in a files first, directories last format. If the path specified does not contain any files or directories, then you do not not need to print anything.</p>
+</div>
+<p>Now let’s add some options to refine our directory listing. There are four options that you will need your program to support:</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>-r Output directory content recursively.<br />
+-f Output only files, excluding directories in the results.<br />
+-s Output only files that match a given file name.<br />
+-e Output only files that match a give file extension.</p>
+</div>
+<p>Applying the ‘r’ option to the directory list command, will print the contents of the source directory as well as all subdirectories:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo2</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">help</span><span class="o">.</span><span class="n">doc</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Notice how that in addition to the output of files within the ‘assets’ directory, the subdirectory ‘logos’ is also printed along with the files contained within.</p>
+<p>Okay, so far so good. Now let’s see what happens when we apply the ‘f’ option:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Or with the recursion option:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo2</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">help</span><span class="o">.</span><span class="n">doc</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>As you may have expected, by adding the ‘f’ option to the ‘L’ command, the program will only list the files in the specified directory.</p>
+<p>The two remaining options, ‘s’ and ‘e’, allow us to further refine our results by specifying search parameters. Unlike the ‘r’ and ‘f’ options, these options will also need to accept a user input parameter. So let’s say we want to find all files in a given directory with the name ‘readme.txt’:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">s</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Or with the recursion option:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">s</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">doc</span>\<span class="n">readme</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Notice that we combined options here to recursively check all subdirectories as well, so our results return two instances of the file ‘readme.txt’ that exist within the ‘a1’ directory.</p>
+<p>Now let’s try another search using the ‘e’ option. As I described earlier, the ‘e’ option allows us to filter results by file extension, so:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span> <span class="o">-</span><span class="n">e</span> <span class="n">jpg</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
+</pre></div>
+</div>
+<p>Or with the recursion option:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">e</span> <span class="n">jpg</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">image2</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo1</span><span class="o">.</span><span class="n">jpg</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">assets</span>\<span class="n">logos</span>\<span class="n">logo2</span><span class="o">.</span><span class="n">jpg</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The full assignment will be released during week 1.</p>
+<p>You can safely assume that when a program feature is combined with the ‘-r’ option, that the ‘-r’ option will always come first.</p>
+</div>
+<p>The results now only return files who have the extension or <em>suffix</em> ‘jpg’. Okay, so once you have created a program that is able to execute all of the operations described in this section you will be ready for Part 2.</p>
+</div>
+<div class="section" id="part-2">
+<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a way to look for files in our file system, we need to actually do something with those files! So for this part of the assignment you will add three additional commands to your program:</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>C - Create a new file in the specified directory.<br />
+D - Delete the file.<br />
+R - Read the contents of a file.</p>
+</div>
+<p>Creating a new file is exactly as it sounds, when the user issues the C command, your program will read the input and create a new file:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span> <span class="o">-</span><span class="n">n</span> <span class="n">mark</span>
+</pre></div>
+</div>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>-n Specify the name to be used for a new file.</p>
+</div>
+<p>The ‘C’ command must also accept a single option ‘n’ that allows the user to specify the name of the file. Note that we do not require the use of an extension. Instead, since we will be using this program in the future to create users for our distributed social platform, the program will control the types of files it creates. So whenever a file is created, it must append the user specified name with a distributed social user extension, or ‘dsu’. So when the previous command is run, it will create a new file in the specified directory, with the specified name, and the ‘dsu’ extension. The program output should look like the following to confirm to the user that the file was created:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
+</pre></div>
+</div>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>New files created with the ‘C’ command must automatically be created with the ‘dsu’ extension or <em>suffix</em>.</p>
+</div>
+<p>The ‘D’ command will allow the user to delete a DSU file. If the user specified file is not a DSU file, then the program should print ERROR and wait for corrected input from the user. Once the DSU file has been successfully deleted, the program should print a confirmation:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span> <span class="n">DELETED</span>
+</pre></div>
+</div>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>A the output after deleting a file should print the directory and file name with the word ‘DELETED’ at the end of the line.</p>
+</div>
+<p>The ‘R’ command will print the contents of a DSU file. As with the ‘D’ command, if the user specified file is not a DSU file, the program should print ERROR and wait for corrected input from the user. If the file is empty, then the program should print EMPTY and wait for corrected input from the user:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EMPTY</span>
+</pre></div>
+</div>
+<p>Otherwise, the program will print the contents of the file:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">a1</span>\<span class="n">mark</span><span class="o">.</span><span class="n">dsu</span>
+</pre></div>
+</div>
+<p>And the resulting output:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Hello World!
+</pre></div>
+</div>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>The program must handle errors gracefully. When an error occurs, the program should inform the user by printing ‘ERROR’ and wait for additional input from the user.</p>
+</div>
+<p>Finally, and this applies to both Parts 1 and 2, your program should handle errors gracefully. If a user enters commands, inputs, or options that are not understood by the program, the program should simply print ERROR and wait for additional input from the user.</p>
+</div>
+<div class="section" id="a-few-rules">
+<h3>A Few Rules<a class="headerlink" href="#a-few-rules" title="Permalink to this headline">¶</a></h3>
+<p>The majority of the work you will need to do for this assignment will center around the <a class="reference external" href="https://docs.python.org/3.8/library/pathlib.html"><strong>pathlib</strong></a> library. Start by familiarizing yourself with the various functions that the library provides. Path is a powerful type that will help you manipulate the file system, so use as much of it as you can to reduce the complexity of your program. There are, however, a few functions in the library that you will not be allowed to use for this assignment. <strong>os.walk</strong>, <strong>os.fwalk</strong>, <strong>glob</strong>, and <strong>rglob</strong> abstract away much of the functionality that we want you to learn through this assignment. Generally, if you find yourself using library functions to locate files rather than writing your own recursive function, then you are probably using the library inappropriately.</p>
+</div>
+<div class="section" id="other-considerations">
+<h3>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>You <strong>do not</strong> need to concern yourself with rare edge cases. Your code should work with most commonly used file and directory paths. Situations where a path or filename makes use of the options used by your program can be ignored.</p></li>
+<li><p>You <strong>do</strong> need to concern yourself with whitespace. A program that splits the input command by whitespace will not pass our grading tool! This means that you are going to have to get a bit clever about how to process your input. We will discuss some strategies during live class.</p></li>
+<li><p>You <strong>do</strong> need to support functionality on both Windows and Posix file systems! This means you should not hard code conventions common to one particular operating system (<em>e.g.,</em> ‘C:\’) or use concatenation to build your paths. The <strong><code class="docutils literal notranslate"><span class="pre">pathlib</span></code></strong> module takes care of this work for you, so as long as you use it properly your code will run on both systems.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="submitting-your-assignment">
+<h2>Submitting Your Assignment<a class="headerlink" href="#submitting-your-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="naming-and-organizational-requirements">
+<h3>Naming and organizational requirements<a class="headerlink" href="#naming-and-organizational-requirements" title="Permalink to this headline">¶</a></h3>
+<p>How you organize your program is up to you, but there are a couple of requirements that you’ll need to follow.</p>
+<p>Your program must be written entirely in a single Python module, in a file named <a class="reference external" href="http://a1.py">a1.py</a>. Note that capitalization and spacing are important here (i.e., no letters in the filename are capitalized and there are no spaces); they’re part of the requirement.</p>
+<p>Executing your a1 module — by, for example, pressing F5 or selecting Run Module from the Run menu in IDLE — must cause your program to read its input and then print its output. It must not be necessary to call a function manually to make your program run.</p>
+<p>Other than that, anything goes; you can organize your solution in any way you’d like. Note that future assignments will take what we call “quality of solution” a lot more seriously, but the name of the game in this warm-up assignment is simply to submit a program that works.</p>
+</div>
+<div class="section" id="validation-checking-your-output">
+<h3>Validation-checking your output<a class="headerlink" href="#validation-checking-your-output" title="Permalink to this headline">¶</a></h3>
+<p>The validity checker for this assignment works just like the one you used for <a class="reference internal" href="a0.html"><span class="doc std std-doc">assignment 0</span></a>. Place the validity checker in the same directory as your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> module and run it.</p>
+<div class="tip admonition">
+<p class="admonition-title">Interpreting Validity Checker Output</p>
+<p>The validity checker will exit operation when it encounters an unexpected output from your program. Your instincts might lead you to run the last input operation reported by the validity checker prior to the error directly from your program. While this is a good first step, and one that can help you understand what went wrong, there is a good chance that the same input command will work for you. This does not mean that there is something wrong with the validity checker! Rather, it is an indication that the internal state of your code is changing after certain input commands are run in a certain order.</p>
+<p>If you find yourself in this situation, the first thing you should do is review the output from the validity checker, taking note of each of the input commands that were executed. Next, run your program (debug mode helps here) and input the exact same commands in the same order. You WILL find that your program output matches the validity checker perfectly. Use this knowledge to work through your code until you discover what is causing the error.</p>
+<p>So before you reach out to a course instructor and say “but it works for me”, perform the tests described above! (because if you don’t, we’ll tell you to anyway :) )</p>
+</div>
+</div>
+<div class="section" id="starter-project">
+<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
+<p><a href="https://classroom.github.com/a/QPjx_ZYD">Assignment 1 Starter Repository</a></p>
+</div>
+<div class="section" id="how-we-will-grade-your-submission">
+<h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
+<p>This assignment will be graded on a 100 point scale, with the 100 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<dl class="simple myst">
+<dt>Requirements and Function | 90 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+</dd>
+<dd><p>Are there any bugs or errors?</p>
+</dd>
+<dt>Quality and Design        | 10 pts</dt><dd><p>Is the code well designed?</p>
+</dd>
+<dd><p>Is the code clearly documented?</p>
+</dd>
+</dl>
+<p>As this is your first assignment using the following grading rubric, we will make an effort to draw attention to where your program fails to meet the grading criteria. However, as we move on, you will be expected to learn from our feedback and address the concerns that we raise in your code.</p>
 </div>
 </div>
 </div>
