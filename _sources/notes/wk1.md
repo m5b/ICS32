@@ -82,7 +82,7 @@ Let's answer that question by starting with a slightly more robust program. We'l
 
 def run():
   a = input()
-	b = input()
+  b = input()
 
 if __name__ == '__main__':
   run()
@@ -98,9 +98,9 @@ def add(a, b):
 
 def run():
   a = input()
-	b = input()
-	r = add(a,b)
-	print(r)
+  b = input()
+  r = add(a,b)
+  print(r)
 
 if __name__ == '__main__':
   run()
@@ -128,9 +128,9 @@ Notice how now that the program operates through multiple function calls, the tr
 
 if __name__ == '__main__':
   try:
-		run()
+    run()
   except:
-		print("An error has occurred")
+    print("An error has occurred")
 
 ```
 
@@ -164,9 +164,9 @@ def add(a, b):
 
 def run():
   a = input()
-	b = input()
-	r = add(a,b)
-	print(r)
+  b = input()
+  r = add(a,b)
+  print(r)
 
 if __name__ == '__main__':
   run()
@@ -180,9 +180,9 @@ We'll be talking a lot about abstraction, the process of unifying code to reduce
 
 def is_int(val):
   try:
-		int(val)
-		return True
-	except ValueError:
+    int(val)
+    return True
+  except ValueError:
     return False
 
 ```
@@ -194,9 +194,9 @@ Notice that we have also specified the exact error type that we want to handle i
 
 def is_int(val):
   try:
-		int(val)
-		return True
-	except ValueError:
+    int(val)
+    return True
+  except ValueError:
     return False
 
 def add(a, b):
@@ -204,12 +204,12 @@ def add(a, b):
 
 def run():
   a = input()
-	b = input()
-	if is_int(a) == False or is_int(b) == False:
+  b = input()
+  if is_int(a) == False or is_int(b) == False:
     print("Unable to perform operation with supplied values")
-	else:
-		r = add(a,b)
-		print(r)
+  else:
+    r = add(a,b)
+    print(r)
 
 if __name__ == '__main__':
   run()
