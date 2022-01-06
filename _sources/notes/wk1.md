@@ -21,7 +21,8 @@ Normally weekly notes will be released at beginning of each week. Since this is 
 
 #### Thursday
 
-Coming Soon
+<a href="https://uci.zoom.us/rec/share/dkzVNnfbafzv0sq4LgW28iCERPqD7esAn0pSxipvL5zZh3SuEPMwH4xQM5btGcon.-7wneKpayZzbcleO">Recording</a>
+
 
 ### Recorded Lectures
 
