@@ -824,6 +824,13 @@
 </pre></div>
 </div>
 <p>The revised program above will now print the contents of the file that was added using the <strong><code class="docutils literal notranslate"><span class="pre">write</span></code></strong> command. You have likely noticed the addition of the letters <strong><code class="docutils literal notranslate"><span class="pre">w</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">r</span></code></strong> to the <strong><code class="docutils literal notranslate"><span class="pre">open</span></code></strong> function in the final version of the program here. “w” implies that you intend to perform a write operation with the file that is opened and “r” implies that you intend to perform a read operation. Since <strong><code class="docutils literal notranslate"><span class="pre">open</span></code></strong> defaults to read mode, if you only intend to perform a read operation, then the use of “r” is unnecessary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One consequence of opening a file in write mode is that all existing contents of the file will be deleted. If you plan on <em>appending</em> content to an existing file, then you will need to use the “a” parameter option when opening a file:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <p>Alright, that’s it for files and file systems! The code discussed here should provide you with nearly everything you need to know to assemble a program that traverses, reads, writes, and creates files and directories in a file system. There are few operations that we have intentionally not covered (<em>e.g.,</em> delete operations). This lecture should provide you with enough of the building blocks that, when combined with the Python documentation for the <strong><code class="docutils literal notranslate"><span class="pre">pathlib</span></code></strong> module, will allow you to identify and implement any remaining tasks on your own.</p>
 </div>
 </div>

@@ -536,6 +536,14 @@ if p1.exists(): # check to see if temp_file exists
 
 The revised program above will now print the contents of the file that was added using the **`write`** command. You have likely noticed the addition of the letters **`w`** and **`r`** to the **`open`** function in the final version of the program here. "w" implies that you intend to perform a write operation with the file that is opened and "r" implies that you intend to perform a read operation. Since **`open`** defaults to read mode, if you only intend to perform a read operation, then the use of "r" is unnecessary.
 
+```{note}
+
+One consequence of opening a file in write mode is that all existing contents of the file will be deleted. If you plan on _appending_ content to an existing file, then you will need to use the "a" parameter option when opening a file:
+
+```python3
+f = p1.open('a')
+```
+
 Alright, that's it for files and file systems! The code discussed here should provide you with nearly everything you need to know to assemble a program that traverses, reads, writes, and creates files and directories in a file system. There are few operations that we have intentionally not covered (_e.g.,_ delete operations). This lecture should provide you with enough of the building blocks that, when combined with the Python documentation for the **`pathlib`** module, will allow you to identify and implement any remaining tasks on your own.
 
 
