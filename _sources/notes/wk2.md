@@ -7,171 +7,43 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 2 Overview
 
-By now you should have turned in your first python program for ICS 32 and be well on your way with the next one. Congrats! Completing Assignment 1 will require that you start to build a fundamental understanding of concepts that are a bit more complex than what you have learned so far. If you haven't already, be sure to read the overview for [Assignment 1](../assignments/a1.html) and watched the lectures posted in the [Week 1 Notes](../notes/wk1) before you dive into the lecture materials for this week.
+Welcome to week 2! Hopefully by now you have all settled in to the structure and organization of this course. At this point, you should have at least a basic understanding of what is required of you for [assignment 1](../assignments/a1.md). If not, head over to the assignment overview page and carefully read through the requirements. If any of requirements sound unfamiliar to you, you will want to thoroughly explore the lecture and materials provided below. 
 
-### Thursday Live Class
+The recorded lectures for this week will cover the following topics:
+: {ref}`lectures:modules`
+: {ref}`lectures:files`
+: {ref}`lectures:recursion`
 
-<a href="https://uci.zoom.us/rec/share/cKQYT2nNtSBpwDMIwfABr0XVGzzIL9ErTSfi7eEyp860rfUeEhQPZL_s0-AdR_9g.dPRDrB-RmNQ7RUhH?startTime=1633630225000">Recording</a>
+You might also take a look at the [lab schedule](../assignments/lab.md) for week 2 and see if any of the topics align with your learning needs.
 
-##### Live Class Demo Code
-<a href="../resources/input_processor_demo.py" title="Input Processing Demo">Input Processing Demo</a>
- 
-<a href="../resources/input_regex_processor.py" title="Regex Processor Example">Regex Processor Example</a>
+See you in class!
 
-
-Quick Links:
-: {ref}`lecture-materials-2`
-: {ref}`quiz-results-2`
-
-(lecture-materials-2)=
 ## Lecture Materials
 
-Lectures for Week 2
-: {ref}`lectures:testing`
-: {ref}`lectures:modules`
+### Live Class
 
-(lectures:testing)=
-### Some Notes on Testing 
+#### Tuesday
 
-Although we will be diving into testing more formally around the mid-point of the quarter, I wanted to give you some preliminary notes on how to think about testing your code right now. We can discuss the topics here in a bit more detail after quiz in our next class.
+Updated 1/11
 
-#### Notes
+#### Thursday
 
-Now that you have assignment 0 wrapped up, let's take a minute to reflect on the experience. 
+Updated 1/13
 
-Reviewing the discussions many of you have had over the past week on Zulip, it looks like you are starting to recognize the complexity that goes into writing even a small program. 
-
-Interpreting and implementing program requirements is an essential part of the programming process that will become more familiar to you as you work through this course and many others. However, even with practice, you will find that it is important to develop strategies to reduce the uncertainty that accompanies the application of requirements. 
-
-In a way, the validity checker for assignments 0 and 1 "tests" your program for you. It offered some sense of confidence that your program was functioning according to the assignment requirements. For the remaining assignments in this class, you will be responsible for checking the validity of your programs. So in this lecture, I want to talk about one of the ways that programmers go about accomplishing this goal.
-
-In large programming projects where teams of programmers work together to write software, the practice of writing tests is quite common. In fact, there are programming paradigms such as Agile, Cleanroom, Spiral, and Waterfall that have integrated testing directly into their methodologies. We won't be learning about paradigms and models in this class, but it's important to recognize how pervasive testing is throughout the software development industry. As you might imagine, this pervasiveness exists because the process of writing tests against your code, works. Tests can significantly reduce the development time, code complexity, and bug tracking.
-
-##### So how do we start?
-
-Well, the first thing we do is create a hypothesis about how our program and the functions within it, are expected to behave. For example, one test might be to input a value and observe the output. Does the output align with the expectations set in the program requirements? If so, then the test can be said to 'pass.' If it doesn't, then obviously the test fails, but how do we determine why? This was a source of confusion for many of you while using the assignment 1 validity checker as the validity checker could only report a failure when the program did not return an expected output. A better test might have examined the input and output at the level of functions rather than the program.
-
-Testing individual functions, however, does require some planning. If the functions in your program perform many operations, it can be difficult to configure a test that can be relied upon. So one of the benefits of thinking about tests before or in tandem with your program design is that the responsibilities of your functions will inevitably be scoped to a manageable size.
-
-##### So how do we test at the level of functions?
-
-Let's take, for example, a program that manages an email list. We'll assume that one of the requirements for this program is to support removing certain email addresses from the mail list.
-
-We'll start by adapting this small function written by Alex Thornton for ICS 32. The **'remove_from'** function accepts two parameters: a list and a value. It returns the same list, except without the passed value, if it exists.
-
-```ipython3
-def remove_from(the_list: list, value) -> list:
-	new_list = []
-
-	for element in the_list:
-		if element != value:
-			new_list.append(element)
-		
-	return new_list
-```
-
-At least, that's what we hope it does. Rather than assume it does and continue to build our email list management program, we should test it first:
-
-```code
-
->>> emails = ["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
->>> remove_from(emails, "user2@example.com")
-["user1@example.com", "user3@example.com", "user4@example.com"]
->>> emails
-["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
->>> remove_from(emails, "user4@example.com")
-["user1@example.com", "user2@example.com", "user3@example.com"]
->>> emails
-["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
-
-```
-
-So far so good. We start with a test list, then pass some test conditions to the function to see if it returns the results we expect. Here, after each call to **`remove_from`** we receive a new list with the value we passed to it missing. But have we tested every possible condition? What happens if a passed value does not exist?
-
-```code
-
->>> emails = ["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
->>> remove_from(emails, "user5@example.com")
-["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
-
-```
-
-Is that what we want to happen? What if our program needs to confirm that a removal actually occurred? Well, we could compare **`emails`** to the results, or we could give that responsibility to the **`remove_from`** function:
-
-
-```ipython3
-def remove_from(the_list: list, value) -> list:
-	new_list = []
-
-	for element in the_list:
-		if element != value:
-			new_list.append(element)
-		else:
-			raise ValueError('value not found in list')
-		
-	return new_list
-```
-
-So now we have a function that will raise an exception if the passed value does not exist, providing us with a convention (exceptions) that we can use to handle this new condition. 
-
-```code
-
->>> emails = ["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"]
->>> remove_from(emails, "user5@example.com")
-Traceback (most recent call last):
-  File "maillist.py", line 39, in <module> 
-		remove_from(emails, "user5@example.com")
-	File "maillist.py", line 33, in remove_from
-		raise ValueError('value not found in list')
-ValueError: value not found in list
-
-```
-Can you think of any others? What happens if the email list has multiple emails with the same address? Currently, all instances of value will be removed from the new list, but what if we only wanted to remove duplicates? By writing tests against our functions, we expose conditions that we might not otherwise think to consider.
-
-Now, having to write these tests cases each time we want to test a program can quickly become unwieldy. Fortunately, Python gives us a way to automate much of the work!
-
-The **`assert`** statement is a convenient shortcut for inserting debugging tests into your program. Here we test a normal case, or case that represents typical behavior for the remove_from function:
-
-```ipython3
-assert remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user4@example.com") == ["user1@example.com", "user2@example.com", "user3@example.com"]
-
-```
-
-And here we test an error case, or case that generates a result we don't expect:
-
-```ipython3
-try:
-	remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user5@example.com")
-	assert False, "ValueError should have been thrown"
-except ValueError:
-	pass
-```
-
-If both assertions pass, then we should not expect to see anything from the shell when running the program. However, if an assertion fails, the debugger will notify you of the failure:
-
-```ipython3
->>> assert remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user4@example.com") == ["user1@example.com", "user2@example.com", "user3@example.com"]
-
-Traceback (most recent call last):
-  File "maillist.py", line 38, in <module>
-	    assert remove_from(["user1@example.com", "user2@example.com", "user3@example.com", "user4@example.com"], "user4@example.com") == ["user1@example.com", "user2@example.com", "user2@example.com"]
-AssertionError
-```
-
-We will get into the more formal test driven approach to software development in a few more weeks, once you have had a chance to experience working with larger, more complex programs. But for now, focus on thinking about the how the code you write should behave, and then write some assertion statements to confirm that it behaves as you expected. I think you will find that new edge conditions will arise that you might not have otherwise considered. And remember, testing is not about quantity! A program with 100 tests is not necessarily better than one with 10. Your goal should be to identify _different_ conditions worth testing, not _variations_ on the same test.
+### Recorded Lectures
 
 (lectures:modules)=
-### Modules
+#### Modules
 
-In upcoming assignments, you will be required to start organizing your code a bit more than you have for [a0](../assignments/a0) and [a1](../assignments/a1). One way to organize code is to divide it into multiple files, or modules. In this lecture, we'll be focusing on how you should go about fulfilling this requirement.
+In upcoming assignments, you will be required to start organizing your code a bit more than you have for [a0](../assignments/a0) and [a1](../assignments/a1). One way to organize code is to divide it into multiple **`.py`** files, which when imported to another file, are called modules. In this lecture, we'll discuss strategies for importing modules and organizing and creating your own.
+
+##### Lecture Recording
+
+[Modules Lecture]()
+
+##### Lecture Notes
 
 The code that we write to create a program in Python is stored in plain text files. Aside from some common conventions such as file extensions (**`.py`**), syntax, and indentation, Python files are no different then any other plain text file that you might write. So far, you have probably written most of your Python programs in a single file with a **`.py`** extension. Generally speaking, this is a good practice. Having all of your code in a single file simplifies things quite a bit. When all of your code (and tests!) is in one location you don't have worry about connecting multiple files. However, as your programs grow in complexity and size, you will discover that managing all of your code in a single file quickly turns into a time consuming challenge. So let's turn to the lecture to learn how we can improve the readability and reuse of our code with modules.
-
-#### Videos
-
-[Modules Lecture](https://uci.yuja.com/V/Video?v=2060971&node=7796023&a=1224073848&autoplay=1)
-
-#### Working with Modules
 
 In Python, a module is nothing more than a file with the **`.py`** extension. However, unlike the programs you have written so far, a module does not produce output when executed directly from the shell. Let's take a look at the following example:
 
@@ -217,7 +89,7 @@ print(result)
 
 Notice that the first line of code is an **`import`** statement followed by the name of our basicmath python module. We don't need to specify the **`.py`** extension as it is implied that we are importing Python files. So, in the same way that you "imported" the **`Path`** module into your program for a1, we are able to import python files that we write. 
 
-##### Scope
+###### Scope
 
 Another important convention to consider in this code is how the add and subtract functions are accessed. You will see that when the variables are passed to the basicmath functions, the name of the module must first be referenced. Python, as well as most programming languages, operate under a concept called _scope_. Scope refers to the availability of classes (we will cover these in more detail later in the quarter), functions, and variables at a given point of execution in a program. In the example above, notice how the variable **`result`** is used in the add and subtract functions of the **`basicmath`** module as well as the **`mathrunner`** program. We can reuse variable names in this way due to Python's scoping rules. **`result`** is locally scoped to the add and subtract functions, meaning that it only exists in the moment that each of those functions is being called. Now, if we wanted to make use of **`result`** outside of the add and subtract functions, we could modify the basicmath program like so:
 
@@ -305,11 +177,11 @@ There we go! So by setting the scope of the **`result`** variable inside each fu
 Scope refers to the availability of a particular object in a program. That availability is interepreted locally first and then globally.
 ```
 
-##### Definition Access
+###### Definition Access
 
 When writing modules that contain many functions performing many different types of operations you will find that you need some of those functions to perform operations _within_ your module, but you might not necessarily want those functions to be called _outside_ of your module. In programming terms, we describe these two types of functions as _private_ and _public_. While some programming languages do provide modifiers for declaring this intention at the point of compilation, Python does not. Rather, all functions in Python are public by default. There is no way to prevent another program from calling functions in your module that should not be called!
 
-To get around this feature, and the absence of such modifiers is considered a feature in Python, programmers have adopted some formal conventions for communicating _intent_. When writing functions that you don't intend to be used outside your module, they should be prepended with a single underscore (**`_`**) character. This convention is used for functions, constants, and classes in Python:
+To get around this feature, and the absence of such modifiers is considered a feature in Python, programmers have adopted some formal conventions for communicating _intent_. When writing functions that you don't intend to be used outside your module, they should be prepended with a single underscore character. This convention is used for functions, constants, and classes in Python:
 
 ```ipython3
 # Specifying private intent
@@ -324,7 +196,7 @@ class _myprivateclass():
 We will be looking more closely at your use of naming conventions like private and public access as we move forward with assignments this quarter. Not only do we want to you to continue to adopt formal Python programming conventions, but thinking about access will help you to improve the structure of your modules. So start considering what operations in your program need to be conducted outside the scope of your module and more importantly, what code should not be accessed.
 
 
-##### Namespaces
+###### Namespaces
 
 As your programs grow in size and complexity the importance of understanding scope will become increasingly relevant. Without the ability to scope the objects that we create, every Python programmer would have to create unique object names! Imagine if object naming behaved like Internet domain names, each one having to be recorded in a central registry to avoid duplicates. Through scope, and a convention called _namespaces_, most programming languages can avoid this unnecessary complication. A namespace is a dictionary-like collection of symbolic names tied to the object in which they are currently defined.
 
@@ -362,31 +234,501 @@ Global
 Built-In
 : The built-in namespace consists of all of the Python objects that are available to your program at runtime. Try running **`dir(__builtins__)`** on the IDLE shell to see the full list of built-ins. Many of the names should look familiar to you.
 
-I have included the following tip originally written by Alex Thornton, who also teaches this class at UCI. I think it's a great explanation of how modules make use of the **`__name__`** variable in Python and wanted to share it with you.
+Speaking of built-ins, let's take a quick look at one that you have likely already started to observe in some of the code discussed in the course, **`__name__`**.
 
-```{admonition} Alex Thornton's Explanation of Executable Modules
-:class: tip
-When you load a module in IDLE and execute it (by pressing F5), the code in that module is executed. If it generates any observable result, like printing output or asking the user for input, you'll see that in the interpreter. Otherwise, you'll see a standard >>> interpreter prompt, and all of the module's definitions will now be available — so, for example, if the module defines a function, you could now call it.
+When you open a Python module (e.g., .py) in your editor (IDLE, VS Code, etc) of choice, the code stored within that module is loaded and, depending on how the code is arranged, executed. Take the following module, **`my_module.py`** as an example:
 
-As we've seen, modules in Python have names. We can check the name of the currently-executing module at any time by accessing the global variable **`__name__`**, which is present in every module.
+```python3
+# my_module.py
 
-In general, the names of modules are indicated by their filenames; a module written in a file **`boo.py`** has the name **`boo`**. But there's one special case that we haven't talked about: When you execute a module in Python (i.e., by pressing F5 in IDLE), it's given the special name **`__main__`** while it runs. (Anything you define in the Python interpreter will be considered part of the **`__main__`** module, as well.)
+def my_func_1():
+  pass
 
-This little fact can be a useful way of differentiating between whether a module has been executed (i.e., is it the "entry point" of a program?) or whether it's been imported. In general, importing a module shouldn't suddenly cause things to happen — output to be generated, input to be read, and so on — but should, instead, simply make definitions available that weren't previously. Even executable modules, the ones we expect to be able to execute as programs, should behave differently when imported than they do when executed.
-s
-To facilitate this distinction, we can simply check the module's name by accessing the **`__name__`** variable. If its value is **`__main__`**, the module has been executed; if not, the module has been imported. So, in an executable module, we typically write the code that causes things to happen when the module is executed in an **`if __name__ == '__main__':`** block, so that it will only happen if the module has been executed. Meanwhile, if the module is imported, its definitions will become available to another module, but there will otherwise be no effect.
+def my_func_2():
+  pass
+
+def my_func_3():
+  pass
+
+def start():
+  my_func_1()
+  my_func_2()
+  my_func_3()
+
 ```
 
-(quiz-results-2)=
-## Quiz Results
+If we were to load this module into IDLE and run it, what would happen?
 
-Released after class on Thursday
+Since all we have specified is a set of functions, neglecting to call any of those functions, there would not be any operations for the Python interpreter to execute. Intuitively, you might think the following modification would solve the problem:
 
-<!--
-If you are participating in the late quiz, feel free to watch the video linked below as you move through the quiz. Link to the late quiz can be found in Zulip #announcements. If you get any of the answers wrong, watch the video as there may be useful discussion related to the answers available!
+```python3
+# my_module.py
 
-[Live Quiz and Discussion]()
+def my_func_1():
+  pass
 
-<a href="../resources/QZ_Week_2_Quiz_Results.pdf">Quiz Results</a>
-//-->
+def my_func_2():
+  pass
 
+def my_func_3():
+  pass
+
+def start():
+  my_func_1()
+  my_func_2()
+  my_func_3()
+
+start()
+
+```
+
+Certainly, when this revised module is loaded into IDLE and run, it would execute as expected. But wait, what if you decide that you want to use this module in another program? Say, for example, you really need access to **`my_func_1`**?
+
+```python3
+# my_other_module.py
+
+import my_module
+
+my_module.my_func_1()
+
+```
+
+It is quite likely that when running this module, you do not want to also have the **`start`** function execute from the imported module. Even if you do, someone else using your module, might not! Fortunately, Python has thought of this scenario and provided a mechanism from preventing it from happening. The **`__name__`** built-in variable is present in every module as a global variable and contains the file name of a particular module. So in the first example, **`__name__`** would be equal to **`my_module`** and **`my_other_module`** in the second example.
+
+So how can we use this built-in variable to solve the module problem discussed above? Well, when a module has been executed, Python assigns it a new special name called **`__main__`**. We can use this convention to detect whether or not a particular module has been imported or executed. So let's revise the **`my_module`** module to take advantage of the **`__name__`** built-in:
+
+```python3
+# my_module.py
+
+def my_func_1():
+  pass
+
+def my_func_2():
+  pass
+
+def my_func_3():
+  pass
+
+def start():
+  my_func_1()
+  my_func_2()
+  my_func_3()
+
+if __name__ == '__main__':
+  start()
+
+```
+By introducing a simple conditional check, we are now able to determine if the module has been executed. If it has, then we can safely run the **`start`** function as intended. Likewise, the module has been imported, the **`start`** function will not be called. 
+
+```{admonition} A Tip for Future Assignments
+:class: tip
+
+We see mistakes related to the above scenario quite frequently in student assignments for this course. In later assignments we will import the modules you are required to write for testing in our grading tools. Take caution to avoid undesired calls to your module functions by using the **`main`** check described here whenever appropriate. 
+
+```
+
+(lectures:files)=
+#### Files and File Systems
+
+In desktop computing, the term _file_ is used to represent a resource or object that stores data one some type of storage device (_e.g.,_ thumb drive, network, hard drive, cdrom). The type of data that is stored can include general information, settings, image data, video data, and audio data. When you create a new _.py_ document, you are creating a file. When you download a song or video from the Internet, you are adding a file to your computer. Files are managed through a system of data structures and interfaces that handle their physical and logical organization in a computer. While files and the data they encapsulate are designed to work on a variety of different file system, the file system is unique to the operating environment of the computer. This means that while you and I are both able to open and make uses of a _.py_ file (or any file for that matter), the file system that manages that file could be quite different.
+
+##### Lecture Recording
+
+##### Lecture Notes
+
+Although there are [many different types of file systems](https://en.wikipedia.org/wiki/List_of_file_systems) that have been created and are in use today, most modern computer operating systems run on one of two types: Windows or Posix. As you might expect, Windows is the specification for computers that run the Microsoft Windows operating system. Posix is used by Unix-like systems, which include Linux and macOS. To work with files in a file system in Python, we need to make some conscious decisions about how we write code. We'll get into the nature of these decisions in just a bit, but for now, let's run a quick test to see which type of file system we are using.
+
+Open up a Python shell and enter the following code:
+
+```python3
+
+>>> from pathlib import Path
+>>> p = Path(".")
+>>> p
+
+```
+
+The first line of code is an import statement that allows us to call functions from an external module. We'll talk more about importing modules in the Modules lecture, for now all you need to understand is that by importing the **`Path`** namespace from the **`pathlib`** module, we can make use of a **`Path`** object in our code. The second line instantiates a Path object at the current directory. Finally, the third line will print the type of object stored in the **`p`** variable.
+
+If we run this code from a Python shell on a computer running Microsoft Windows, we will see the following output:
+
+```python3
+WindowsPath('.')
+```
+
+And if we run it on a Unix-like system (_e.g.,_ macOS) we will see:
+
+```python3
+PosixPath('.')
+```
+
+Interesting. So the same code run on two different computing operating systems produces different results! Before we dive into why this happens, take a minute and run one of the following two code blocks in your Python shell.
+
+If you are using a Microsoft Windows system, run the following code:
+
+```python3
+>>> import pathlib 
+>>> p = pathlib.PosixPath(".")
+>>> p
+```
+
+And if you are using a macOS or Linux system, run the following code:
+
+```python3
+>>> import pathlib 
+>>> p = pathlib.WindowsPath(".")
+>>> p
+```
+
+What happened? You should have received a traceback similar to the following (output when running WindowsPath on a Linux system):
+
+```python3
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    p = pathlib.WindowsPath('.')
+  File "/usr/lib64/python3.10/pathlib.py", line 960, in __new__
+    raise NotImplementedError("cannot instantiate %r on your system"
+NotImplementedError: cannot instantiate 'WindowsPath' on your system
+```
+
+What this tells us is that we cannot perform Windows-like operations on a Posix system and vice-versa. Okay, so then, why did the first example work regardless of operating system? Well, thankfully Python _abstracts_ (there's that word again!) this complexity away for us and wraps it up in an object called **`Path`**. The following diagram is from the [Python docs on the pathlib module.](https://docs.python.org/3/library/pathlib.html?highlight=windowspath#pathlib.WindowsPath) 
+
+```{image} ../resources/pathlib-inheritance.png
+:alt: PurePath inheritance hierarchy diagram
+```
+
+Looking at this diagram we can see that both **`PosixPath`** and **`WindowsPath`** are of the common type **`Path`**. When we make use of the **`Path`** object in our code, it determines which type of file system it is accessing and automatically implements the correct xPath object. 
+
+```{note}
+We're not going to worry about the _pure_ instances of the pathlib module in this course. If you are curious you can read more on the link to Python docs above. For now, it's probably easiest to think about the pure versions as a set of rules or specifications for implementing xPath objects, whereas the non-pure versions are _concrete_ implementations that we can use in our programs.
+```
+For most cases, you will want to use **`Path`** whenever possible when working directly with the file system. So let's look at some of things a **`Path`** object can do.
+
+The code snippets we have looked at so far have _instantiated_ or created an _instance_ of a **`Path`** object with a directory parameter.
+
+```python3
+#files_demo.py
+
+from pathlib import Path
+
+p1 = Path()
+p2 = Path('.')
+
+# or
+
+p3 = Path('c:\\users\\marks')
+
+```
+
+In the code snippet above, **`p1`** and **`p2`** are the same. If you do not provide a parameter to Path it will default to the current directory (_e.g.,_ '.'). **`p3`** is an example of instantiating Path to a specific directory. The directory that you specify, then, will be the directory that you will work from using the variable to which you have assigned the Path object.
+
+###### Exploring the Contents of a Directory
+
+One of the more common tasks you will perform when working with the **`Path`** object is to look at the contents of a directory. We can use the **`iterdir`** function to help us with this task:
+
+```python3
+#files_demo.py
+
+from pathlib import Path
+
+p = Path('.') # we'll work with current directory, but feel free to add your preferred directory here.
+
+for obj in p.iterdir():
+  print(obj)
+
+```
+
+Running this code will print a **`Path`** object, stored in the **`obj`** variable, for each item in the directory used to create the **`p`** variable. Since this output will be different for each computer system, your results will vary, but you should expect to see the names of files and directories in your current working directory. If nothing prints, then make sure there are file objects in your current working directory or use a different directory when creating the Path object.
+
+**`iterdir`** will iterate over all objects in a directory, both files and directories. So if we want to understand the type of Path object, there are two functions that can help: **`is_file`** and **`is_dir`**. Let's see how they work.
+
+```python3
+
+files = 0
+dirs = 0
+
+for obj in p.iterdir():
+  if obj.is_file():
+		files = files + 1
+  elif obj.is_dir():
+    dirs = dirs + 1
+
+print(f"There are {files} files and {dirs} in {p})
+
+```
+
+Both functions will return a boolean value indicating whether or not the Path object represents a file or directory. There are many more functions and properties of the Path object available to help understand the data it represents. We won't cover all of them in great detail here as they all more or less operate through the same behavior. Rather, you should visit the [Python docs](https://docs.python.org/3/library/pathlib.html) to learn more. But, before we move on, let's take a look at a few of the most useful properties for the work we will be doing throughout this course.
+
+```python3
+
+p1 = Path(".") / "temp_dir"
+
+if not p1.exists(): # check to see if temp_dir exists
+  p1.mkdir() # if temp_dir does not exist, create it
+
+p1 = p1 / "temp_file.txt" # append a file name to the current path
+
+if not p1.exists(): # check to see if temp_file.txt exists
+  p1.touch() # if temp_file.txt does not exist, create it
+
+print(p1.name) # get the name of the object (file name or directory name)
+print(p1.suffix) # get the suffix (.py, .doc, etc) of the file object
+
+```
+
+In the code above, we have a simple program that first changes the file system path from the current working directory (".") to a directory called **`temp_dir`** located within the current working directory. With the update path, it then checks if **`temp_dir`** exists by calling the **`exists`** function. If it doesn't exist, then the **`mkdir`** function is called to create the new directory. The next line performs a similar task to create the file **`temp_file.txt`**. With the updated path, it checks to see if **`temp_file.txt`** actually exists by calling the **`exists`** function. If it doesn't exist, then the **`touch`** function is called to create it. Finally, we print two properties of the path object, **`name`** and **`suffix`** to learn more about the file. Go ahead and run this code on your system, but before you do, what do you think will be printed by those last two print statements?
+
+One more thing, notice the use of the forward slash, **`/`**, between the instantiation of the Path object and the file name (and directory name) string. This is a syntactic shorthand for the **`joinpath`** function. Let's update the fourth line of the program above to use **`joinpath`**:
+
+```python3
+
+p1 = p1.joinpath("temp_file.txt") # append a file name to the current path
+
+```
+
+Both approaches accomplish the same thing, but you might decide that using the **`/`** symbol is a little less work. Either approach works and ensures that when you combine paths they will safely work on both Windows and Posix systems. You should avoid using string concatenation on paths at all costs. For example, the following operation might work on your computer (if you are on Windows):
+
+```python3
+
+p1 = Path(".") + "//" + "temp_file.txt" # append a file name to the current path
+
+```
+
+But it will not work on a Posix system, removing all of the benefits of working with the **`Path`** object!
+
+So now that we know how to locate, create, and learn about files and directories, let's talk about how to work with the files that we find and create. 
+
+###### Working with Files
+
+When writing Python programs that work with files, you will likely need to be able to read and write information to and from a file. To read or write, we must first open the file that is being used for our work. Thankfully, the **`Path`** object makes this fairly straightforward by providing an **`open`** function on file objects. Let's continue to extend our small program from the previous section:
+
+```python3
+
+p1 = Path(".") / "temp_dir" / "temp_file.txt"
+
+if p1.exists(): # check to see if temp_file exists
+  f = p1.open() 
+  print(f.readline())
+  f.close()
+
+```
+
+This very simple program opens the file represented by the **`Path`** object in the variable **`p1`** and assigns the open file to the variable **`f`**. It then reads the first line in the file and prints the content to the shell. Finally, when all operations are complete, the file object is closed by calling the **`close`** function on the file object.
+
+If you run this code you will find that nothing is actually printed! Assuming you have been following along, then your **`temp_file.txt`** file doesn't have any information in it yet. So let's add some:
+
+```python3
+
+p1 = Path(".") / "temp_dir" / "temp_file.txt"
+
+if p1.exists(): # check to see if temp_file exists
+  f = p1.open('w')
+  f.write("Hello New File!")
+  f.close()
+
+  f = p1.open('r') 
+  print(f.readline())
+  f.close()
+
+```
+
+The revised program above will now print the contents of the file that was added using the **`write`** command. You have likely noticed the addition of the letters **`w`** and **`r`** to the **`open`** function in the final version of the program here. "w" implies that you intend to perform a write operation with the file that is opened and "r" implies that you intend to perform a read operation. Since **`open`** defaults to read mode, if you only intend to perform a read operation, then the use of "r" is unnecessary.
+
+Alright, that's it for files and file systems! The code discussed here should provide you with nearly everything you need to know to assemble a program that traverses, reads, writes, and creates files and directories in a file system. There are few operations that we have intentionally not covered (_e.g.,_ delete operations). This lecture should provide you with enough of the building blocks that, when combined with the Python documentation for the **`pathlib`** module, will allow you to identify and implement any remaining tasks on your own.
+
+
+(lectures:recursion)=
+#### Recursion
+
+```{note}
+
+This is a loosely adapted version of the recursion lecture. I say quite a bit more in the actual lecture, so I encourage you to watch. However, consider this your companion to the video and reference.
+
+```
+In this lecture we are going to talk about recursion. 
+
+```{image} ../resources/onions.jpg
+:alt: A selection of different colored onions, some cut to reveal the layers inside
+```
+
+Let's start with an example. Take the onion, as you might imagine every onion develops differently. They are different sizes and they have different amounts of outer and inner layers. So each time we peel a new onion, the work effort to remove all of the layers down to the core will be different. If we think of the action required to remove one outer layer of an onion as a single operation, then one onion might require 10 peel operations. Another might require 15. And another might only need 5.
+
+So given a basket of onions to peel, as you might imagine, if we were to peel each onion by hand, that would be a lot of work! 
+
+But, perhaps we can automate the work to save us some time, effort, and the inevitable onion tears...
+
+So let's imagine that the onion is a Python object that we can write some code to peel.
+
+```{note}
+Don't worry too much about the Onion object. You can take a look at by expanding the following section, but for now, just assume that the Onion object has a random number of layers, can remove layers one at a time, and can report whether or not it still has layers.
+```
+
+```{toggle}
+
+```ipython3
+import random
+
+class Onion:
+    layers = 0
+
+    def __init__(self):
+        self.layers = random.randrange(5, 15)
+    
+    def removelayer(self):
+        if self.layers > 0:
+            self.layers -= 1
+
+    def is_layer(self) -> bool:
+       return self.layers > 0 
+```
+
+The countlayers() function looks like a pretty good way to go about peeling the layers off of our onion object, right? In fact, it is! Although the onion is not the perfect metaphor for recursive properties, it provides us with a constrained conceptual model that we can build upon.
+
+
+```ipython3
+def countlayers():
+    onions = Onion(), Onion(), Onion()
+    layers = 0
+
+    for onion in onions:
+        while onion.is_layer():
+            onion.removelayer()
+            layers += 1
+
+    print(layers)
+
+```
+
+Okay, so let's talk about what we mean when we say recursive.
+
+In programming languages, a recursive function call means that you call a function from within that same function. So you can see what that looks like in this pseudo code here:
+
+
+```ipython3
+def recurse():
+    recurse()   # <- Recursive function call
+
+
+def main():
+    recurse()   # <- Normal function call
+
+
+```
+
+Take a minute and think about why the pseudo code here is problematic.
+
+Imagine what would happen if we were to run the main function right now?
+
+We would actually receive a RecursionError exception. Effectively what we did was put the program into an infinite loop! That's bad. So when we write recursive functions, we need to take care that our code contains a _terminal condition_, something to ensure that at some point the recursive call will end.
+
+Let's take a look at the onion peeler again, this time we will make some modifications to apply recursive principles rather than nested loops.
+
+```ipython3
+
+def peel(onion, layer_count) -> int:
+    onion.removelayer()
+
+    if onion.is_layer():
+        return peel(onion, layer_count + 1) # recursive call
+    else:
+        return layer_count
+
+def countlayers_recursively():
+    onions = Onion(), Onion(), Onion()
+    layers = 0
+
+    for onion in onions:
+        layers +=  peel(onion, 0)
+    
+    print(layers)
+
+```
+
+So the code we have written here, is probably not the best case for demonstrating the value of recursion, but I think by approaching it this way, internalizing the goal of using recursive logic is a little easier.
+
+Fortunately, the onion is not a very complex structure, so the advantages of recursion are less apparent here. So let's think of another metaphor that is complex.
+
+How about a tree?
+
+```{image} ../resources/royal-oak-commons.jpg
+:alt: An acient oak tree from the Royal Oak Commons
+```
+Slightly more complex, right? So let's say you want to count the leaves on a tree...think about how you might do that without recursion. Each branch has the possibility to contain infinite branches with infinite leaves! Of course, a real tree is constrained by physical and environmental conditions, so there are some finite bounds, but a computational tree, given enough memory, is limitless.
+
+Let's take a more practical look using nested lists.
+
+```{note}
+sum functions adapted from Alex Thornton
+```
+
+```ipython3
+def simple_sum(num_list: [int]) -> int:
+    total = 0
+
+    for n in num_list:
+        total += n
+    
+    return total
+
+print(simple_sum([1,2,3,4,5,6]))
+
+def list_sum(num_list: [[int]]) -> int:
+    total = 0
+
+    for l in num_list:
+        for n in l:
+            total += n
+    
+    return total
+
+print(list_sum([[1],[2,3],[4,5,6]]))
+
+def complex_sum(num_list: [int or [int]]) -> int:
+    total = 0
+
+    for obj in num_list:
+        if type(obj) == list:
+            for n in obj:
+                total += n
+        else:
+            total += obj # if not a list, must be integer
+
+    return total
+
+print(complex_sum([1,2,[3,4],[5],6]))
+
+```
+
+Running each of these functions right now, is probably unnecessary. You can assume that each will return a sum of the integers passed as function parameter. But, feel free to take a minute to run each if you would like.
+
+Rather, pay attention to the increasing complexity of each function as we increase the complexity of our list parameter. Notice how each parameter creates additional rules to take into account, and how each function requires additional logic to handle the complexity.
+
+By the time we get to complex_sum, we are working with two nested levels and a single integer. But, like the tree with infinite branches and leaves, what happens when we need to add a third level of nested lists? How about a fourth level?
+
+This is where recursion becomes truly invaluable. We can replace all three of the sum functions here and any additional functions required to support deeper nesting, with a single recursive function.
+
+```ipython3
+def recursive_sum(nested_list) -> int:
+    total = 0
+
+    for obj in nested_list:
+        if type(obj) == list:
+            total += recursive_sum(obj)  # <- recursive call
+        else:
+            total += obj # if not a list, must be integer
+    
+    return total
+
+print(recursive_sum([1,2,3,4,5,6]))
+print(recursive_sum([[1],[2,3],[4,5,6]]))
+print(recursive_sum([1,2,[3,4],[5],6]))
+
+```
+
+Pretty cool, right?
+
+Okay, one final thought. Guess what else is like a tree with branches or an infinitely nestable list (toggle to reveal the answer)?
+
+```{toggle}
+The computer file system! (ahem, a1)
+```
