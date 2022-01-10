@@ -27,7 +27,7 @@ The following lab schedule is mostly set. However, if we determine that during t
 |          | Monday | Wednesday | Friday |
 | -------- | --------- | --------- |--------- |
 | Wk 1 | No Lab | No Lab | inputs and functions|
-| Wk 2 | working with files | exceptions | recursion |
+| Wk 2 | exceptions | working with files | recursion |
 | Wk 3 | No Lab | testing with assert | working with modules |
 | Wk 4 | namespaces and naming | writing and using classes | create a protocol |
 | Wk 5 | No Lab | No Lab | No Lab|
