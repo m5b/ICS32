@@ -39,7 +39,7 @@ In upcoming assignments, you will be required to start organizing your code a bi
 
 ##### Lecture Recording
 
-[Modules Lecture]()
+[Modules Lecture](https://uci.yuja.com/V/Video?v=4095673&node=13933957&a=1611108908&autoplay=1)
 
 ##### Lecture Notes
 
@@ -334,6 +334,8 @@ In desktop computing, the term _file_ is used to represent a resource or object 
 
 ##### Lecture Recording
 
+[Files and File Systems Lecture](https://uci.yuja.com/V/Video?v=4095677&node=13933969&a=348545738&autoplay=1)
+
 ##### Lecture Notes
 
 Although there are [many different types of file systems](https://en.wikipedia.org/wiki/List_of_file_systems) that have been created and are in use today, most modern computer operating systems run on one of two types: Windows or Posix. As you might expect, Windows is the specification for computers that run the Microsoft Windows operating system. Posix is used by Unix-like systems, which include Linux and macOS. To work with files in a file system in Python, we need to make some conscious decisions about how we write code. We'll get into the nature of these decisions in just a bit, but for now, let's run a quick test to see which type of file system we are using.
@@ -540,11 +542,12 @@ Alright, that's it for files and file systems! The code discussed here should pr
 (lectures:recursion)=
 #### Recursion
 
-```{note}
+##### Lecture Recording
 
-This is a loosely adapted version of the recursion lecture. I say quite a bit more in the actual lecture, so I encourage you to watch. However, consider this your companion to the video and reference.
+[Recursion Lecture](https://uci.yuja.com/V/Video?v=1979985&node=7608221&a=2127709291&autoplay=1)
 
-```
+##### Lecture Notes
+
 In this lecture we are going to talk about recursion. 
 
 ```{image} ../resources/onions.jpg
