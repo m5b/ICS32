@@ -28,7 +28,7 @@ See you in class!
 
 #### Thursday
 
-Updated 1/13
+[Class Recording](https://uci.zoom.us/rec/share/WK3MJBhxOV8R7DNnhlHwpTaagalGxGMvyjbekVoDBse_XFuKtCvdzYaavxA2cn8V.4LdSqgn10k4-RYV8)
 
 ### Recorded Lectures
 
