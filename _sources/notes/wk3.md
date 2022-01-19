@@ -26,8 +26,7 @@ See you in class!
 
 #### Tuesday
 
-[Class Recording]()
-(Posted 1/18)
+[Class Recording](https://uci.zoom.us/rec/share/cXcFpLTcspfx7nzsPbPV2KSuXUlkkOdnfEeKTDYNt1xNLakrqIx93dt-QZxwTU1L.hcUQBrUNmQEhyguN?startTime=1642538210000)
 
 #### Thursday
 
