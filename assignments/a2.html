@@ -275,6 +275,57 @@
   <a class="reference internal nav-link" href="#program-requirements">
    Program Requirements
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-1-extending-a1">
+     Part 1: Extending A1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-managing-data-with-the-profile-module">
+     Part 2: Managing Data with the Profile Module
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-3-the-user-interface">
+     Part 3: The User Interface
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#user-interface-requirements">
+       User Interface Requirements
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#admin-mode">
+         Admin Mode
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-additional-considerations">
+     Some Additional Considerations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-for-submission">
+     Preparing for Submission
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starter-project">
+     Starter Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-we-will-grade-your-submission">
+     How we will grade your submission
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -313,9 +364,222 @@
 </div>
 <div class="section" id="program-requirements">
 <h2>Program Requirements<a class="headerlink" href="#program-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Unlike the previous assignment, you will have a lot more flexibility in how you design your program’s user interface. You will not receive a validity checker for this assignment, so the input and output of your program is largely up to you. However, there are some conditions:</p>
+<ul class="simple">
+<li><p>You must divide your program into <strong>at least two modules</strong>, not including the Profile module that is provided in the starter code. Your modules should be named and loosely modeled after the descriptions below.</p>
+<ol class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong>: Your first module will be the entry point to your program.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ui.py</span></code></strong>: A module that is responsible for processing all commands in the official input command format (see next item).</p></li>
+</ol>
+</li>
+<li><p>You <strong>must retain</strong> the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span> <span class="p">[[</span><span class="o">-</span><span class="p">]</span><span class="n">OPTION</span><span class="p">]</span> <span class="p">[</span><span class="n">INPUT</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You <strong>must use</strong> the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification (more on that below).</p></li>
+<li><p>You <strong>must support</strong> the ability to enter an “admin” mode when your program starts. The admin mode should function similarly to assignment 1, where instead of a user interface the user can enter any supported command according to the input command format used for in this course.</p></li>
+<li><p>All modules that you edit must include the following comment on the first three lines:</p></li>
+</ul>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># NAME</span>
+<span class="c1"># EMAIL</span>
+<span class="c1"># STUDENT ID</span>
+
+</pre></div>
+</div>
+<p>Otherwise, you are free to design your program any way you like. This means if you would like to provide more helpful feedback after error conditions, for example, you are free to do so.</p>
+<p>The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The full assignment will be released during week 3.</p>
+<p>A good approach to ensuring reliability is by writing your own tests!</p>
+</div>
+<div class="section" id="part-1-extending-a1">
+<h3>Part 1: Extending A1<a class="headerlink" href="#part-1-extending-a1" title="Permalink to this headline">¶</a></h3>
+<p>Your program should extend the <strong><code class="docutils literal notranslate"><span class="pre">C</span></code></strong> (create) command from a1. However, now when a user enters the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong>, your program should create a new file and automatically append it with the extension (or suffix) <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> (we will learn more about why it’s called ‘dsu’ in the next assignment). The use of the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong> should also prompt the user using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> function to collect the following data:</p>
+<ul class="simple">
+<li><p><strong>username</strong>: a unique name to associate the user with posts.</p></li>
+<li><p><strong>password</strong>: a password to protect access to user journal entries.</p></li>
+<li><p><strong>bio</strong>: a brief description about the user.</p></li>
+</ul>
+<p>The collected data should be contained in a Profile object while the user is running the program and saved to the file system when the program exits (though, saving can and should occur whenever data is changed). The <strong><code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code></strong> has built-in functionality for saving data stored in a Profile object, all you have to do is supply the filename collected from the user (e.g., specified by the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong> or collected from an <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong>) as a parameter to the <strong><code class="docutils literal notranslate"><span class="pre">save_profile</span></code></strong> method.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Extend the ‘C’ create DSU file command to collect profile information about the user and store the profile information using the Profile module.</p>
+</div>
+<p>Once implemented, a user should be able to enter the following command into your program and start using it to write journal entries (“myjournal” is the journal name chosen by your user).</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span> <span class="o">-</span><span class="n">n</span> <span class="n">myjournal</span>
+</pre></div>
+</div>
+<p>When the input command above is entered into your program it should respond by performing the data collection discussed earlier. This is your opportunity to design your own user interface, so we will not provide any examples here!</p>
+<p>At this point, your program should allow a user to search for and load a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file using the input command conventions established in a1 and the new features you have added to the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong>. But what happens when a user wants to use an existing <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file? To support the use of existing files, you will need to add code for loading a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file.</p>
+<p>As you might recall, in a1 you performed a very similar operation when you implemented the ‘R’ command. We don’t want to change the behavior of the ‘R’ command, as there may be conditions in which a user might like to check the contents of a DSU file before loading it. Therefore, you will need to add a new input command to support loading an existing DSU file. Conceptually we can think of the task as ‘opening’ a file, similar to how you might open a <strong><code class="docutils literal notranslate"><span class="pre">docx</span></code></strong> file in Microsoft Word, so let’s use the input command <strong><code class="docutils literal notranslate"><span class="pre">O</span></code></strong> for ‘Open’:</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support loading DSU files.</p>
+<p>O - Open an existing file of the type <strong><code class="docutils literal notranslate"><span class="pre">dsu</span></code></strong></p>
+</div>
+<p>When implemented, a user should be able to enter the following command into your program and start using the program to write journal entries.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span>\<span class="n">myjournal</span><span class="o">.</span><span class="n">dsu</span>
+</pre></div>
+</div>
+<p>Since you already have collected the required user data (username, password, bio), you do not need to add any additional input functions for this feature. However, you might consider adding some type of output to the user that the requested <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file has been successfully loaded. For example, you might print a simple confirmation message or you might print a message that outputs the username, password, and bio associated with the <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file. It’s up to you.</p>
+</div>
+<div class="section" id="part-2-managing-data-with-the-profile-module">
+<h3>Part 2: Managing Data with the Profile Module<a class="headerlink" href="#part-2-managing-data-with-the-profile-module" title="Permalink to this headline">¶</a></h3>
+<p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code></strong> that is included in your starter code to store the data you collect from the user. The Profile module has two primary functions:</p>
+<ol class="simple">
+<li><p>Provides properties to store user input.</p></li>
+<li><p>Provides encode and decode functions to support saving profile data to a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file using the JSON format.</p></li>
+</ol>
+<p>We will not be explicitly covering the functionality of the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">module</span></code></strong> in class. To understand how to use it, you will be required to learn the module on your own by reviewing its code, code comments, and discussion with the class. Don’t worry, the module is well documented and includes code snippets that demonstrate how each class method should work.</p>
+<p>A good starting place to understand how the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module works is to create a test file that imports the module. Write some sample code using the two classes available to you in the module. You are free to share any sample tests you write with your classmates on Zulip.</p>
+<p>Here are a few tasks you might try in your test program:</p>
+<ul class="simple">
+<li><p>Create a new Profile object and save it.</p></li>
+<li><p>Open an existing Profile file (created in previous task).</p></li>
+<li><p>Add username and password to Profile object, save the object, check the DSU file to confirm.</p></li>
+<li><p>Create a Post and add it to a Profile object, save the object, check the DSU file to confirm.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Code Reading Tip</p>
+<p>Asking questions and working with others is a critical component to becoming a successful programmer. So rather than tell you exactly how to use the Profile class, I want you to help each other figure it out. Although you are <strong>not allowed</strong> to share the code you write for this assignment with each other, you are allowed to share what you learn about the Profile module. My only requirement is that you do so publicly using the a2-qa channel in Zulip. We will keep an eye on conversation and make sure you are all headed in the right direction.</p>
+</div>
+<p>Once you have a good understanding of how the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module works you are ready to implement the required features in your program. So far you have created the ability to create or open a <strong><code class="docutils literal notranslate"><span class="pre">DSU</span></code></strong> file. Next you will need to introduce some editing capability so that your users can store data in their journal.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support editing a DSU file.</p>
+<p>E - Edit the DSU file loaded by C or O commands</p>
+</div>
+<p>The edit command will be used in combination with the different options supported by the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support editing a DSU file.</p>
+<p>-usr [USERNAME]</p>
+<p>-pwd [PASSWORD]</p>
+<p>-bio [BIO]</p>
+<p>-addpost [NEW POST]</p>
+<p>-delpost [ID]</p>
+</div>
+<p>Your program should support either one option at a time or any combination of options for a single print command.</p>
+<p>Finally, a user should always be able to review the contents of their journal. To support this feature, you will create one final command for printing the data that has been stored in a DSU file.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command to user interface to support printing data in a DSU file.</p>
+<p>P - Print data in the DSU file loaded by C or O commands</p>
+</div>
+<p>The print command will be used in combination with the different options supported by the <strong><code class="docutils literal notranslate"><span class="pre">Profile</span></code></strong> module.</p>
+<div class="admonition-program-feature admonition">
+<p class="admonition-title">Program Feature</p>
+<p>Add new command options to user interface to support printing a DSU file.</p>
+<p>-usr Prints the username stored in the profile object</p>
+<p>-pwd Prints the password stored in the profile object</p>
+<p>-bio Prints the bio stored in the profile object</p>
+<p>-posts Prints all posts stored in the profile object with id (using list index is fine)</p>
+<p>-post [ID] Prints post identified by ID</p>
+<p>-all Prints all content stored in the profile object</p>
+</div>
+<p>Like the E command, your program should support either one option at a time or any combination of options for a single print command. When all program features have been implemented, the following code should run in your program:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># create a new journal called &#39;myjournal&#39; (could also use O for existing file)</span>
+<span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">mark</span> <span class="o">-</span><span class="n">n</span> <span class="n">myjournal</span>
+
+<span class="c1"># add a username and password to &#39;myjournal&#39;</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">usr</span> <span class="s2">&quot;mark b&quot;</span> <span class="o">-</span><span class="n">pwd</span> <span class="s2">&quot;password123&quot;</span>
+
+<span class="c1"># add a bio to &#39;myjournal&#39;</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">bio</span> <span class="s2">&quot;Hi my name is Mark, this is my bio.&quot;</span>
+
+<span class="c1"># add a post to &#39;myjournal&#39;</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">addpost</span> <span class="s2">&quot;Hello, this is my first post!&quot;</span>
+
+<span class="c1"># print the contents of &#39;myjournal&#39;</span>
+<span class="n">P</span> <span class="o">-</span><span class="nb">all</span>
+
+<span class="c1"># delete a post in &#39;myjournal&#39; by id</span>
+<span class="n">E</span> <span class="o">-</span><span class="n">delpost</span> <span class="mi">1</span>
+
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the E and P commands, any combination of options is valid. So for example, a single E command can contain all available options in a single input.</p>
+</div>
+</div>
+<div class="section" id="part-3-the-user-interface">
+<h3>Part 3: The User Interface<a class="headerlink" href="#part-3-the-user-interface" title="Permalink to this headline">¶</a></h3>
+<p>“User interface” is a term used to describe the inputs and outputs that a person can use to interpret and control your program. In Python, a simple user interface can be programmed using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">print</span></code></strong> functions. You created a user interface for assignment 1, but you were required to follow a very specific set of rules for both input and output. Although your program did have an interface it was not very user friendly. A user was required to know how to write input commands without any help from the program.</p>
+<p>For this assignment we will be loosening control quite a bit and allow you to create your own custom input and output. This means that you will create a friendly <strong><code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">interface</span></code></strong> that informs users how to interact with your program. Your user interface should provide prompts that clearly instruct the user on how to use your program. A good place to start is with a printed menu that lists the various input options that your program understands. You might find it helpful to write out your program flow on paper first, then write the code to implement what you have written.</p>
+<p>Ultimately, how you decide to create your interface is up to you, but it should replace the difficult to use input commands with some type of friendly interaction. For example, the following replaces the C and L commands with an instructive prompt:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load):
+&gt;&gt;&gt; l
+&gt;&gt;&gt; Great! What is the name of the file you would like to load?
+&gt;&gt;&gt; /path/to/my/file/MY_FILE_NAME.dsu
+</pre></div>
+</div>
+<p>Which ever format you decide to use, remember, your program must still accept and handle the input command structure from a1 and Part 2 when in admin mode.</p>
+<div class="section" id="user-interface-requirements">
+<h4>User Interface Requirements<a class="headerlink" href="#user-interface-requirements" title="Permalink to this headline">¶</a></h4>
+<p>As discussed, you are allowed to design your user interface however you like, but there are a few requirements that must also be met.</p>
+<div class="section" id="admin-mode">
+<h5>Admin Mode<a class="headerlink" href="#admin-mode" title="Permalink to this headline">¶</a></h5>
+<p>You may be wondering how the input commands will work if you design a custom user interface. Well, you will support input commands by implementing an administrator mode. The entry point of your program should enter into administrator mode when receiving the user input <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong>. When in administrator mode your user interface should be disabled so that your program only responds to input commands. So building on an earlier example, the following output should work in your program:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load): admin
+ &gt; 
+</pre></div>
+</div>
+<p>Notice that if the keyword <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong> is entered, even if it is not one of the options required by the input, the program falls back to <strong>input command functionality</strong>. In admin mode, a user could enter any of the input commands required for this assignment and expect to see only the output generated by the input command. So, in the case of the print command, your program should print the desired output according to the command option. For other commands, like edit or open, any custom print output that you have created can continue to function normally. The only difference is that in admin mode your program no longer needs to ask the user for input.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When in admin mode, your program MUST NOT print any messages using the input() function! You can, however, still print messages using print().</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="some-additional-considerations">
+<h3>Some Additional Considerations<a class="headerlink" href="#some-additional-considerations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Usernames and passwords must not contain whitespace</p></li>
+<li><p>If the user creates a new DSU file, but that file already exists, you should load the file instead</p></li>
+<li><p>If the user exits program before data collection is complete, do not create a file</p></li>
+<li><p>If the user attempts to load a file that is not in a valid DSU file format, this is an error</p></li>
+<li><p>Any user input that is an empty string or whitespace should not be added to a file</p></li>
+<li><p>When processing the E command, if one option has an error, you should stop the operation rather than continue processing options</p></li>
+<li><p>E commands should support both single and double quotes for relevant options</p></li>
+</ul>
+</div>
+<div class="section" id="preparing-for-submission">
+<h3>Preparing for Submission<a class="headerlink" href="#preparing-for-submission" title="Permalink to this headline">¶</a></h3>
+<p>As this program will be growing in complexity for the rest of the quarter, you should start getting used to writing tests. A good place to start is to ensure that your program is properly loading and saving profile data after it has been supplied by the user. Here are a few additional conditions to consider (HINT: the autograder will likely test these!):</p>
+<ul class="simple">
+<li><p>Create a file using an existing file name</p></li>
+<li><p>Open file that does not exist</p></li>
+<li><p>Open dsu file that does not follow the Profile format</p></li>
+</ul>
+</div>
+<div class="section" id="starter-project">
+<h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
+<p><a href="https://classroom.github.com/a/H5WHVpiz">Assignment 2 Starter Repository</a></p>
+</div>
+<div class="section" id="how-we-will-grade-your-submission">
+<h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>
+<p>This assignment will be graded on a 150 point scale, with the 150 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:</p>
+<dl class="simple myst">
+<dt>Requirements and Function | 100 pts</dt><dd><p>Does the program do what it is supposed to do?</p>
+</dd>
+<dd><p>Does the input_processing module function independently of the rest of the program?</p>
+</dd>
+<dd><p>Are there any bugs or errors?</p>
+</dd>
+<dt>Module Usage | 30 pts</dt><dd><p>Are all required modules named and used as specified?</p>
+</dd>
+<dt>Quality and Design        | 20 pts</dt><dd><p>Is the code well designed?</p>
+</dd>
+<dd><p>Is the code clearly documented?</p>
+</dd>
+</dl>
+<p>Now that you have successfully completed on large program, we will start to look at the quality and design criteria a little more closely. If you have not been putting time into organizing and documenting your code, now is a good time to start.</p>
 </div>
 </div>
 </div>

@@ -26,7 +26,7 @@ Unlike the previous assignment, you will have a lot more flexibility in how you 
 
 * You must divide your program into __at least two modules__, not including the Profile module that is provided in the starter code. Your modules should be named and loosely modeled after the descriptions below.
 	1. **`a2.py`**: Your first module will be the entry point to your program.
-	2. **`input_processor.py`**: A module that is responsible for processing all commands in the official input command format (see next item). 
+	2. **`ui.py`**: A module that is responsible for processing all commands in the official input command format (see next item). 
 * You __must retain__ the input command format for any new commands your program may need, which if you recall looks like this:
  
 ```ipython3
@@ -34,7 +34,7 @@ Unlike the previous assignment, you will have a lot more flexibility in how you 
 ```
 
 * You __must use__ the **`Profile.py`** module that accompanies this assignment without modification (more on that below).
-* You __must support__ the ability to enter an "admin" mode at any point in your program. The admin mode should function similarly to assignment 1, where instead of a user interface the user can enter any supported command according to the input command format used for in this course.
+* You __must support__ the ability to enter an "admin" mode when your program starts. The admin mode should function similarly to assignment 1, where instead of a user interface the user can enter any supported command according to the input command format used for in this course.
 * All modules that you edit must include the following comment on the first three lines:
 
 ```python3
@@ -47,8 +47,11 @@ Unlike the previous assignment, you will have a lot more flexibility in how you 
 
 Otherwise, you are free to design your program any way you like. This means if you would like to provide more helpful feedback after error conditions, for example, you are free to do so.
 
-The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2 by writing some tests.
+The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2. 
 
+```{note}
+A good approach to ensuring reliability is by writing your own tests!
+```
 
 ### Part 1: Extending A1
 
@@ -201,32 +204,26 @@ E -delpost 1
 
 ```
 
+```{note}
+For the E and P commands, any combination of options is valid. So for example, a single E command can contain all available options in a single input.
+```
+
 ### Part 3: The User Interface
 
 "User interface" is a term used to describe the inputs and outputs that a person can use to interpret and control your program. In Python, a simple user interface can be programmed using the **`input`** and **`print`** functions. You created a user interface for assignment 1, but you were required to follow a very specific set of rules for both input and output. Although your program did have an interface it was not very user friendly. A user was required to know how to write input commands without any help from the program. 
 
 For this assignment we will be loosening control quite a bit and allow you to create your own custom input and output. This means that you will create a friendly **`user interface`** that informs users how to interact with your program. Your user interface should provide prompts that clearly instruct the user on how to use your program. A good place to start is with a printed menu that lists the various input options that your program understands. You might find it helpful to write out your program flow on paper first, then write the code to implement what you have written.
 
-Your user interface can either use or act independently of the required input commands that you created in Part 2. So for example, you might make use of the input commands using an output similar to the following:
+Ultimately, how you decide to create your interface is up to you, but it should replace the difficult to use input commands with some type of friendly interaction. For example, the following replaces the C and L commands with an instructive prompt:
 
 ```python3
- > Welcome! Please start by either creating or loading a DSU file using the following commands:
- > To create enter:
- > C /path/to/your/file -n YOUR_FILE_NAME
- > To open enter:
- > O /path/to/your/file/YOUR_FILE_NAME.dsu
+>>> Welcome! Do you want to create or load a DSU file (type 'c' to create or 'l' to load):
+>>> l
+>>> Great! What is the name of the file you would like to load?
+>>> /path/to/my/file/MY_FILE_NAME.dsu
 ```
 
-Or you might decide to simplify things for your user with something similar to the following:
-
-```python3
- > Welcome! Do you want to create or load a DSU file (type 'c' to create or 'l' to load):
- > l
- > Great! What is the name of the file you would like to load?
- > /path/to/your/file/YOUR_FILE_NAME.dsu
-```
-
-Which ever format you decide to use, remember, your program must still accept and handle the input command structure from a1 and Part 2.
+Which ever format you decide to use, remember, your program must still accept and handle the input command structure from a1 and Part 2 when in admin mode.
 
 #### User Interface Requirements
 
@@ -234,25 +231,36 @@ As discussed, you are allowed to design your user interface however you like, bu
 
 ##### Admin Mode
 
-You may be wondering how the input commands will work if you design a custom user interface. Well, you will support input commands by implementing an administrator mode. At any given point of input your program should be able to enter administrator mode when receiving the user input **`admin`**. When in administrator mode your user interface should be disabled so that your program only responds to input commands. So building on an earlier example, the following output should work in your program:
+You may be wondering how the input commands will work if you design a custom user interface. Well, you will support input commands by implementing an administrator mode. The entry point of your program should enter into administrator mode when receiving the user input **`admin`**. When in administrator mode your user interface should be disabled so that your program only responds to input commands. So building on an earlier example, the following output should work in your program:
 
 ```python3
  > Welcome! Do you want to create or load a DSU file (type 'c' to create or 'l' to load): admin
  > 
 ```
 
-Notice that if the keyword **`admin`** is entered, even if it is not one of the options required by the input, the program falls back to input command functionality. In admin mode, a user could enter any of the input commands required for this assignment and expect to see only the output generated by the input command. So, in the case of the print command, your program should print the desired output according to the command option. For other commands, like edit or open, any custom print output that you have created can continue to function normally. The only difference is that in admin mode your program no longer needs to ask the user for input.
+Notice that if the keyword **`admin`** is entered, even if it is not one of the options required by the input, the program falls back to __input command functionality__. In admin mode, a user could enter any of the input commands required for this assignment and expect to see only the output generated by the input command. So, in the case of the print command, your program should print the desired output according to the command option. For other commands, like edit or open, any custom print output that you have created can continue to function normally. The only difference is that in admin mode your program no longer needs to ask the user for input.
+
+```{note}
+When in admin mode, your program MUST NOT print any messages using the input() function! You can, however, still print messages using print().
+```
+
+### Some Additional Considerations
+
+* Usernames and passwords must not contain whitespace
+* If the user creates a new DSU file, but that file already exists, you should load the file instead
+* If the user exits program before data collection is complete, do not create a file
+* If the user attempts to load a file that is not in a valid DSU file format, this is an error
+* Any user input that is an empty string or whitespace should not be added to a file
+* When processing the E command, if one option has an error, you should stop the operation rather than continue processing options
+* E commands should support both single and double quotes for relevant options
 
 ### Preparing for Submission
 
 As this program will be growing in complexity for the rest of the quarter, you should start getting used to writing tests. A good place to start is to ensure that your program is properly loading and saving profile data after it has been supplied by the user. Here are a few additional conditions to consider (HINT: the autograder will likely test these!):
 
 * Create a file using an existing file name
-* Create a file and exit before data collection is complete
 * Open file that does not exist
 * Open dsu file that does not follow the Profile format
-* Delete a file that is currently opened
-
 
 ### Starter Project
 

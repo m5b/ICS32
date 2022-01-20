@@ -304,6 +304,11 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-additional-considerations">
+     Some Additional Considerations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#preparing-for-submission">
      Preparing for Submission
     </a>
@@ -362,7 +367,7 @@
 <li><p>You must divide your program into <strong>at least two modules</strong>, not including the Profile module that is provided in the starter code. Your modules should be named and loosely modeled after the descriptions below.</p>
 <ol class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">a2.py</span></code></strong>: Your first module will be the entry point to your program.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">input_processor.py</span></code></strong>: A module that is responsible for processing all commands in the official input command format (see next item).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ui.py</span></code></strong>: A module that is responsible for processing all commands in the official input command format (see next item).</p></li>
 </ol>
 </li>
 <li><p>You <strong>must retain</strong> the input command format for any new commands your program may need, which if you recall looks like this:</p></li>
@@ -372,7 +377,7 @@
 </div>
 <ul class="simple">
 <li><p>You <strong>must use</strong> the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification (more on that below).</p></li>
-<li><p>You <strong>must support</strong> the ability to enter an “admin” mode at any point in your program. The admin mode should function similarly to assignment 1, where instead of a user interface the user can enter any supported command according to the input command format used for in this course.</p></li>
+<li><p>You <strong>must support</strong> the ability to enter an “admin” mode when your program starts. The admin mode should function similarly to assignment 1, where instead of a user interface the user can enter any supported command according to the input command format used for in this course.</p></li>
 <li><p>All modules that you edit must include the following comment on the first three lines:</p></li>
 </ul>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
@@ -383,7 +388,11 @@
 </pre></div>
 </div>
 <p>Otherwise, you are free to design your program any way you like. This means if you would like to provide more helpful feedback after error conditions, for example, you are free to do so.</p>
-<p>The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2 by writing some tests.</p>
+<p>The program you will be creating is divided into two parts. Start by reading through both parts so that you have a clear picture of what the complete program should do, then focus on completing part 1 first. Ensure that part 1 is reliably working before continuing on to part 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A good approach to ensuring reliability is by writing your own tests!</p>
+</div>
 <div class="section" id="part-1-extending-a1">
 <h3>Part 1: Extending A1<a class="headerlink" href="#part-1-extending-a1" title="Permalink to this headline">¶</a></h3>
 <p>Your program should extend the <strong><code class="docutils literal notranslate"><span class="pre">C</span></code></strong> (create) command from a1. However, now when a user enters the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong>, your program should create a new file and automatically append it with the extension (or suffix) <strong><code class="docutils literal notranslate"><span class="pre">.dsu</span></code></strong> (we will learn more about why it’s called ‘dsu’ in the next assignment). The use of the <strong><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">command</span></code></strong> should also prompt the user using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> function to collect the following data:</p>
@@ -491,50 +500,60 @@
 
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the E and P commands, any combination of options is valid. So for example, a single E command can contain all available options in a single input.</p>
+</div>
 </div>
 <div class="section" id="part-3-the-user-interface">
 <h3>Part 3: The User Interface<a class="headerlink" href="#part-3-the-user-interface" title="Permalink to this headline">¶</a></h3>
 <p>“User interface” is a term used to describe the inputs and outputs that a person can use to interpret and control your program. In Python, a simple user interface can be programmed using the <strong><code class="docutils literal notranslate"><span class="pre">input</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">print</span></code></strong> functions. You created a user interface for assignment 1, but you were required to follow a very specific set of rules for both input and output. Although your program did have an interface it was not very user friendly. A user was required to know how to write input commands without any help from the program.</p>
 <p>For this assignment we will be loosening control quite a bit and allow you to create your own custom input and output. This means that you will create a friendly <strong><code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">interface</span></code></strong> that informs users how to interact with your program. Your user interface should provide prompts that clearly instruct the user on how to use your program. A good place to start is with a printed menu that lists the various input options that your program understands. You might find it helpful to write out your program flow on paper first, then write the code to implement what you have written.</p>
-<p>Your user interface can either use or act independently of the required input commands that you created in Part 2. So for example, you might make use of the input commands using an output similar to the following:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Please start by either creating or loading a DSU file using the following commands:
- &gt; To create enter:
- &gt; C /path/to/your/file -n YOUR_FILE_NAME
- &gt; To open enter:
- &gt; O /path/to/your/file/YOUR_FILE_NAME.dsu
+<p>Ultimately, how you decide to create your interface is up to you, but it should replace the difficult to use input commands with some type of friendly interaction. For example, the following replaces the C and L commands with an instructive prompt:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load):
+&gt;&gt;&gt; l
+&gt;&gt;&gt; Great! What is the name of the file you would like to load?
+&gt;&gt;&gt; /path/to/my/file/MY_FILE_NAME.dsu
 </pre></div>
 </div>
-<p>Or you might decide to simplify things for your user with something similar to the following:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load):
- &gt; l
- &gt; Great! What is the name of the file you would like to load?
- &gt; /path/to/your/file/YOUR_FILE_NAME.dsu
-</pre></div>
-</div>
-<p>Which ever format you decide to use, remember, your program must still accept and handle the input command structure from a1 and Part 2.</p>
+<p>Which ever format you decide to use, remember, your program must still accept and handle the input command structure from a1 and Part 2 when in admin mode.</p>
 <div class="section" id="user-interface-requirements">
 <h4>User Interface Requirements<a class="headerlink" href="#user-interface-requirements" title="Permalink to this headline">¶</a></h4>
 <p>As discussed, you are allowed to design your user interface however you like, but there are a few requirements that must also be met.</p>
 <div class="section" id="admin-mode">
 <h5>Admin Mode<a class="headerlink" href="#admin-mode" title="Permalink to this headline">¶</a></h5>
-<p>You may be wondering how the input commands will work if you design a custom user interface. Well, you will support input commands by implementing an administrator mode. At any given point of input your program should be able to enter administrator mode when receiving the user input <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong>. When in administrator mode your user interface should be disabled so that your program only responds to input commands. So building on an earlier example, the following output should work in your program:</p>
+<p>You may be wondering how the input commands will work if you design a custom user interface. Well, you will support input commands by implementing an administrator mode. The entry point of your program should enter into administrator mode when receiving the user input <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong>. When in administrator mode your user interface should be disabled so that your program only responds to input commands. So building on an earlier example, the following output should work in your program:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span> &gt; Welcome! Do you want to create or load a DSU file (type &#39;c&#39; to create or &#39;l&#39; to load): admin
  &gt; 
 </pre></div>
 </div>
-<p>Notice that if the keyword <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong> is entered, even if it is not one of the options required by the input, the program falls back to input command functionality. In admin mode, a user could enter any of the input commands required for this assignment and expect to see only the output generated by the input command. So, in the case of the print command, your program should print the desired output according to the command option. For other commands, like edit or open, any custom print output that you have created can continue to function normally. The only difference is that in admin mode your program no longer needs to ask the user for input.</p>
+<p>Notice that if the keyword <strong><code class="docutils literal notranslate"><span class="pre">admin</span></code></strong> is entered, even if it is not one of the options required by the input, the program falls back to <strong>input command functionality</strong>. In admin mode, a user could enter any of the input commands required for this assignment and expect to see only the output generated by the input command. So, in the case of the print command, your program should print the desired output according to the command option. For other commands, like edit or open, any custom print output that you have created can continue to function normally. The only difference is that in admin mode your program no longer needs to ask the user for input.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When in admin mode, your program MUST NOT print any messages using the input() function! You can, however, still print messages using print().</p>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="some-additional-considerations">
+<h3>Some Additional Considerations<a class="headerlink" href="#some-additional-considerations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Usernames and passwords must not contain whitespace</p></li>
+<li><p>If the user creates a new DSU file, but that file already exists, you should load the file instead</p></li>
+<li><p>If the user exits program before data collection is complete, do not create a file</p></li>
+<li><p>If the user attempts to load a file that is not in a valid DSU file format, this is an error</p></li>
+<li><p>Any user input that is an empty string or whitespace should not be added to a file</p></li>
+<li><p>When processing the E command, if one option has an error, you should stop the operation rather than continue processing options</p></li>
+<li><p>E commands should support both single and double quotes for relevant options</p></li>
+</ul>
 </div>
 <div class="section" id="preparing-for-submission">
 <h3>Preparing for Submission<a class="headerlink" href="#preparing-for-submission" title="Permalink to this headline">¶</a></h3>
 <p>As this program will be growing in complexity for the rest of the quarter, you should start getting used to writing tests. A good place to start is to ensure that your program is properly loading and saving profile data after it has been supplied by the user. Here are a few additional conditions to consider (HINT: the autograder will likely test these!):</p>
 <ul class="simple">
 <li><p>Create a file using an existing file name</p></li>
-<li><p>Create a file and exit before data collection is complete</p></li>
 <li><p>Open file that does not exist</p></li>
 <li><p>Open dsu file that does not follow the Profile format</p></li>
-<li><p>Delete a file that is currently opened</p></li>
 </ul>
 </div>
 <div class="section" id="starter-project">
