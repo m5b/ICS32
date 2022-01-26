@@ -29,9 +29,9 @@ The following lab schedule is mostly set. However, if we determine that during t
 | Wk 1 | No Lab | No Lab | inputs and functions|
 | Wk 2 | exceptions | working with files | recursion |
 | Wk 3 | No Lab | testing with assert | working with modules |
-| Wk 4 | namespaces and naming | writing and using classes | create a protocol |
+| Wk 4 | namespaces and naming | writing and using classes | inheritance |
 | Wk 5 | No Lab | No Lab | No Lab|
-| Wk 6 | sockets | inheritance | managing data |
+| Wk 6 | sockets | create a protocol | managing data |
 | Wk 7 | HTTP requests | request processing | exception handling strategies |
 | Wk 8 | No Lab | advanced inheritance | understanding python objects |
 | Wk 9 | responsive GUI's | callback functions | Tkinter event loop |
