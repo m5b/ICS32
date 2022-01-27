@@ -63,7 +63,7 @@ As we move through each week, notes will be added from both prerecorded lectures
 The following schedule is subject to change throughout the quarter.
 ```
 
-Although we are an in-person class for the fall quarter, we will focus our time together on learning exercises rather than the traditional lecture.
+Although we are an remote for the first few weeks, we will return to partial in-person class as soon as allowed. When we do return to in-person, we will focus our time together on learning exercises rather than the traditional lecture.
 
 You can expect a typical week to look similar to the following:
 
@@ -75,12 +75,12 @@ Tue
 ^^^
 Pre-recorded Lecture
 
-In-person Class
+In-person Class (starting week 5)
 
 ---
 Thu
 ^^^
-In-person Class
+Remote Class
 
 ````
 
@@ -90,17 +90,17 @@ In-person Class
 :card: border-1
 Mon
 ^^^
-In-person Labs
+Remote Labs
 
 ---
 Wed
 ^^^
-In-person Labs
+Remote Labs
 
 ---
 Fri
 ^^^
-In-person Labs
+Remote Labs
 ````
 
 Labs will be held remotely until we return to campus. We will update lab locations in week 3, assuming all goes according to plan. Although week to week lab attendance is optional, you will be required to complete a minimum of 8 labs over the course of the quarter to receive full lab credit. To learn more about labs and view the lab schedule visit the [lab overview](../assignments/lab.md) page.
