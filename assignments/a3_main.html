@@ -293,6 +293,13 @@
     <a class="reference internal nav-link" href="#part-2">
      Part 2
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#additional-considerations">
+       Additional Considerations
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#starter-project">
@@ -359,7 +366,7 @@
 </div>
 <ul class="simple">
 <li><p>You must use the <strong><code class="docutils literal notranslate"><span class="pre">Profile.py</span></code></strong> module that accompanies this assignment without modification to store information about your user and the DSP Server.</p></li>
-<li><p>You do not have to use the <strong><code class="docutils literal notranslate"><span class="pre">input_processor.py</span></code></strong> module you created for a2. However, since you will add new user interactions to your program, it makes sense to continue building out this module.</p></li>
+<li><p>You should continue to use the <strong><code class="docutils literal notranslate"><span class="pre">ui.py</span></code></strong> module you created for a2. Since you will add new user interactions to your program, it makes sense to continue building out this module. However, you will not be graded on your use of this module for this assignment.</p></li>
 <li><p>All modules that you edited must include the following comment on the first three lines:</p></li>
 </ul>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>
@@ -388,10 +395,13 @@
 <span class="sd">  :param message: The message to be sent to the server.</span>
 <span class="sd">  :param bio: Optional, a bio for the user.</span>
 <span class="sd">  &#39;&#39;&#39;</span>
-  <span class="k">pass</span>
+  
+	<span class="o">//</span> <span class="n">TODO</span><span class="p">:</span> <span class="k">return</span> <span class="n">either</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">results</span> <span class="n">of</span> <span class="n">required</span> <span class="n">operation</span>
+	<span class="k">return</span> 
 </pre></div>
 </div>
 <p>You must ensure that the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function specified above can successfully communicate with the DSP server using the parameters specified. You <strong>must not</strong> change the signature of this function. If you do, you will likely not pass the grading tool that we use.</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function should include proper error handling. If an exception occurs, it should be handled and the function should return a <strong><code class="docutils literal notranslate"><span class="pre">False</span></code></strong> condition. Any code that calls the <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function should not be required to handle an exception. This means that you will have to understand and properly handle all of the different exceptions that can be raised by the code that you use in the function.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>The <strong><code class="docutils literal notranslate"><span class="pre">send</span></code></strong> function does not have to include all the code required to communicate with the server. In fact, if you try to do everything with this function you will likely run into design problems. Instead, think about each of the steps that this function must perform and consider how thye might be organized into smaller single task functions.</p>
@@ -399,7 +409,7 @@
 <p>The tool that we will use for grading will import your <strong><code class="docutils literal notranslate"><span class="pre">ds_client.py</span></code></strong> module and call this function with randomly generated values. When called, the information we supply should either successfully transmit the data to the DSP Server or, in the case of incorrect data, gracefully inform our program what went wrong.</p>
 <div class="admonition-program-feature admonition">
 <p class="admonition-title">Program Feature</p>
-<p>Connect to, send, and receive information with a remote DSP server</p>
+<p>Connect to, send, and receive information from a remote DSP server.</p>
 </div>
 <p>When communicating with a server using sockets, it is common to establish a protocol for exchanging messages. A protocol is a predefined system of rules to transfer information between two or more systems. For this assignment, your program will need to support the DSP protocol to successfully communicate with the DSP server. Your protocol handling code should be placed in the <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol.py</span></code></strong> module.</p>
 <p>The DSP protocol supports the following send commands:</p>
@@ -498,6 +508,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">DataTuple</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The code above is a starting point. You must replace ‘foo’, ‘baz’, etc. with the keys represented by the keys used in the DSP protocol. You are also free to modify this code in any way that you want.</p>
 <p>Finally, if you have made it this far, you are probably wondering about the information required to connect to the DSP server. Since this project page is public and I would like to avoid undesirable traffic aimed at my server, server details will be communicated via Zulip only. In the meantime, you should be able to run some client side tests using the echo server covered in lecture.</p>
 </div>
 <div class="section" id="part-2">
@@ -524,10 +535,22 @@
 <p>Extend your journal user interface to allow the user to post journal entries to a DSP server.</p>
 </div>
 <p>The ICS32 DSP website is where you can view user posts published by your program. You don’t need to do anything with this website in your program, it’s simply here so that you can verify that posts you’ve published are successful. Alright, so let’s get started!</p>
+<div class="section" id="additional-considerations">
+<h4>Additional Considerations<a class="headerlink" href="#additional-considerations" title="Permalink to this headline">¶</a></h4>
+<p>Here are a few additional items to consider when working on this assignment:</p>
+<ol class="simple">
+<li><p>You are free to either print the messages received from the server directly to your interface or you may customize them to be more ‘user friendly’</p></li>
+<li><p>We no longer require you to support the command input structure of a1 and a2 for publishing posts online. You are free to extend your program with new options or you may build your own user interface to support posting online.</p></li>
+<li><p>The timestamp property is only used locally. While you do need to provide some value for your message exchanges with the server, the server applies its own timestamp based on when new posts are received. You can thank your ICS 32 forebearers for this constraint.</p></li>
+<li><p>A user should be able to publish a change to bio independent of posts or at the same time as a post.</p></li>
+<li><p>You should not allow a user to publish posts or bio’s that are empty or just whitespace.</p></li>
+<li><p>You should collect the server location when a new profile is created and use it for all posts and bio changes while the profile is active. You should not prompt the user for a server location each time they want to publish a post or bio.</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="starter-project">
 <h3>Starter Project<a class="headerlink" href="#starter-project" title="Permalink to this headline">¶</a></h3>
-<p><a href="https://classroom.github.com/a/09MqKJt1">Assignment 3 Starter Repository</a></p>
+<p><a href="https://classroom.github.com/a/4D1dRxdw">Assignment 3 Starter Repository</a></p>
 </div>
 <div class="section" id="how-we-will-grade-your-submission">
 <h3>How we will grade your submission<a class="headerlink" href="#how-we-will-grade-your-submission" title="Permalink to this headline">¶</a></h3>

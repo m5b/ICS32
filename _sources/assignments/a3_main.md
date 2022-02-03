@@ -36,7 +36,7 @@ As with the previous assignment, you have a lot of flexibility with how you desi
 [COMMAND] [INPUT] [[-]OPTION] [INPUT]
 ```
 * You must use the **`Profile.py`** module that accompanies this assignment without modification to store information about your user and the DSP Server.
-* You do not have to use the **`input_processor.py`** module you created for a2. However, since you will add new user interactions to your program, it makes sense to continue building out this module. 
+* You should continue to use the **`ui.py`** module you created for a2. Since you will add new user interactions to your program, it makes sense to continue building out this module. However, you will not be graded on your use of this module for this assignment.
 * All modules that you edited must include the following comment on the first three lines:
 
 ```python3
@@ -72,11 +72,15 @@ def send(server:str, port:int, username:str, password:str, message:str, bio:str=
   :param message: The message to be sent to the server.
   :param bio: Optional, a bio for the user.
   '''
-  pass
+  
+	// TODO: return either True or False depending on results of required operation
+	return 
 
 ```
 
 You must ensure that the **`send`** function specified above can successfully communicate with the DSP server using the parameters specified. You __must not__ change the signature of this function. If you do, you will likely not pass the grading tool that we use.
+
+The **`send`** function should include proper error handling. If an exception occurs, it should be handled and the function should return a **`False`** condition. Any code that calls the **`send`** function should not be required to handle an exception. This means that you will have to understand and properly handle all of the different exceptions that can be raised by the code that you use in the function.
 
 ```{admonition} Tip
 :class: tip
@@ -88,7 +92,7 @@ The **`send`** function does not have to include all the code required to commun
 The tool that we will use for grading will import your **`ds_client.py`** module and call this function with randomly generated values. When called, the information we supply should either successfully transmit the data to the DSP Server or, in the case of incorrect data, gracefully inform our program what went wrong.
 
 ```{admonition} Program Feature
-Connect to, send, and receive information with a remote DSP server
+Connect to, send, and receive information from a remote DSP server.
 ```
 
 When communicating with a server using sockets, it is common to establish a protocol for exchanging messages. A protocol is a predefined system of rules to transfer information between two or more systems. For this assignment, your program will need to support the DSP protocol to successfully communicate with the DSP server. Your protocol handling code should be placed in the **`ds_protocol.py`** module.
@@ -210,6 +214,8 @@ print(extract_json(json_msg))
 >>> DataTuple(foo='value1', baz='value2')
 ```
 
+The code above is a starting point. You must replace 'foo', 'baz', etc. with the keys represented by the keys used in the DSP protocol. You are also free to modify this code in any way that you want.
+
 Finally, if you have made it this far, you are probably wondering about the information required to connect to the DSP server. Since this project page is public and I would like to avoid undesirable traffic aimed at my server, server details will be communicated via Zulip only. In the meantime, you should be able to run some client side tests using the echo server covered in lecture. 
 
 ### Part 2
@@ -243,10 +249,19 @@ Extend your journal user interface to allow the user to post journal entries to 
 
 The ICS32 DSP website is where you can view user posts published by your program. You don't need to do anything with this website in your program, it's simply here so that you can verify that posts you've published are successful. Alright, so let's get started!
 
+#### Additional Considerations
+
+Here are a few additional items to consider when working on this assignment:
+1. You are free to either print the messages received from the server directly to your interface or you may customize them to be more 'user friendly'
+2. We no longer require you to support the command input structure of a1 and a2 for publishing posts online. You are free to extend your program with new options or you may build your own user interface to support posting online.
+3. The timestamp property is only used locally. While you do need to provide some value for your message exchanges with the server, the server applies its own timestamp based on when new posts are received. You can thank your ICS 32 forebearers for this constraint.
+4. A user should be able to publish a change to bio independent of posts or at the same time as a post.
+5. You should not allow a user to publish posts or bio's that are empty or just whitespace.
+6. You should collect the server location when a new profile is created and use it for all posts and bio changes while the profile is active. You should not prompt the user for a server location each time they want to publish a post or bio.
 
 ### Starter Project
 
-<a href="https://classroom.github.com/a/09MqKJt1">Assignment 3 Starter Repository</a>
+<a href="https://classroom.github.com/a/4D1dRxdw">Assignment 3 Starter Repository</a>
 
 ### How we will grade your submission
 																		
