@@ -179,6 +179,11 @@
    Week 5
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes/wk6.html">
+   Week 6
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -405,7 +410,7 @@
 </pre></div>
 </div>
 <p>That’s better. Now each widget retains access to the same attributes, but those attributes only need to be coded and maintained in a single location. If we decide to create a new widget, all we have to do is inherit from <strong><code class="docutils literal notranslate"><span class="pre">BaseWidget</span></code></strong>.</p>
-<p>Let’s take a look at an example from the <span class="xref myst">Web API</span> lecture. In that lecture, we implemented a custom <strong><code class="docutils literal notranslate"><span class="pre">HTTPRequestHandler</span></code></strong> called <strong><code class="docutils literal notranslate"><span class="pre">ICSHTTPRequestHandler</span></code></strong>:</p>
+<p>Let’s take a look at an example from the <a class="reference internal" href="notes/wk6.html"><span class="doc std std-doc">Web API</span></a> lecture. In that lecture, we implemented a custom <strong><code class="docutils literal notranslate"><span class="pre">HTTPRequestHandler</span></code></strong> called <strong><code class="docutils literal notranslate"><span class="pre">ICSHTTPRequestHandler</span></code></strong>:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ICSHTTPRequestHandler</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s2">&quot; received.&quot;</span><span class="p">)</span>
