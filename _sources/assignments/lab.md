@@ -22,6 +22,10 @@ A few tips when attending labs:
 
 ## Lab Schedule
 
+```{note}
+Lab schedule last revised 2/7.
+```
+
 The following lab schedule is mostly set. However, if we determine that during the quarter there are concepts that are not resonating with a significant portion of the class, we may revise a lab topic to accommodate. We will make an announcement when any changes to the lab schedule occur.
 
 |          | Monday | Wednesday | Friday |
