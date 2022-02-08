@@ -31,11 +31,11 @@ The following lab schedule is mostly set. However, if we determine that during t
 | Wk 3 | No Lab | testing with assert | working with modules |
 | Wk 4 | namespaces and naming | writing and using classes | inheritance |
 | Wk 5 | No Lab | No Lab | No Lab|
-| Wk 6 | sockets | create a protocol | managing data |
-| Wk 7 | HTTP requests | request processing | exception handling strategies |
-| Wk 8 | No Lab | advanced inheritance | understanding python objects |
-| Wk 9 | responsive GUI's | callback functions | Tkinter event loop |
-													
+| Wk 6 | open/qa | sockets | create a protocol |
+| Wk 7 | managing data | HTTP requests | request processing | 
+| Wk 8 | No Lab | advanced inheritance | exception handling strategies | 
+| Wk 9 | understanding python objects | callback functions | responsive GUI's |
+| Wk 10 | Tkinter event loop | open | open
 
 The topics presented here are intentionally high-level and abstract. You will find out what the actual exercise for each topic will be when you arrive at the lab, not before. If you need special accommodations (time, remote, alternative material delivery) for labs, please let us know. We are willing to work with you on an individual level to ensure that you are able complete the required labs.
 
