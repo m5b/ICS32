@@ -19,8 +19,9 @@ The lectures for this week will help you get started with assignment 3.
 
 #### Tuesday
 
-[Class Recording]()
-posted on 2/8
+[Class Recording](https://uci.zoom.us/rec/share/0w_10HmNP8AzjXT0WLzpSMuh2jC9PxRpdfWeY_DsT5GPMeO6WzW2J-2ZX_2PeXtr.-o3fe3r2HR3tJk7_?startTime=1644352813000)
+
+<a href="../resources/dsuserver_lite.py">DSUServer Lite</a>
 
 #### Thursday
 
