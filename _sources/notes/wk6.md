@@ -25,8 +25,9 @@ The lectures for this week will help you get started with assignment 3.
 
 #### Thursday
 
-[Class Recording]()
-posted on 2/10
+[Class Recording](https://uci.zoom.us/rec/share/BR-oB-QGqJsto3dGYWK9SAYEbDoC3agscGUGHljvd8reK6zvBRqA5-sqcT7V3Y9E.6qJ7ygubciO8BvGW?startTime=1644526535000)
+
+Note: To avoid the chaos, skip forward to 15:40.
 
 ### Recorded Lectures
 
