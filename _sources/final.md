@@ -34,6 +34,7 @@ directmessage
 {"token":"user_token", "directmessage": "all"}
 ```
 
+## Part 1
 Recall from **`a3`** that **`user_token`** is retrieved by sending a successful join command. So in order to send a direct message you must first join the server.
 
 The DS server will respond to **`directmessage`** requests with the following **`ok`** response messages:
@@ -137,7 +138,7 @@ The layout used in this wireframe is nearly identical to the layout provided to 
 
 ![tkinterreal](resources/final_project_chat_example.png)
 
-One possible version of the Social Messenger app is pictured above. In this version, the add user requirement has been moved to the settings menu. To see this version in action, watch the class recording for [week 6](notes/wk6.md).
+One possible version of the Social Messenger app is pictured above. In this version, the add user requirement has been moved to the settings menu. To see this version in action, watch the class recording for [week 7](notes/wk7.md).
 
 In addition to the requirements described above, there are a few other tasks you must complete:
 
@@ -145,6 +146,40 @@ In addition to the requirements described above, there are a few other tasks you
 2. Your conversations must be visually separated in some way (e.g., left/right align, color, identifier, etc).
 3. Selecting a new contact in the treeview should display any recent messages with that contact in the message window.
 4. Your GUI must include at least one "flourish." A flourish is some feature that goes beyond the core requirements for a functional program. Past assignment flourishes have included a dark mode toggle, chat bubbles, profile switcher, and a profile wizard. This is your chance to have some fun with the project and make your final program unique. Feel free to ask us if your idea flourish will count for this requirement.
+
+## Schedule
+
+The following schedule is a recommendation for how to go about carrying out this assignment. We will not hold you to this schedule (save for the deadline!), but we strongly advise you to stick to it if you want to complete the assignment on time.
+
+Week 7
+: Thoroughly read through the assignment and decide if you want to work with a group.
+: Find one or two partners, meet, and assign roles. You should also establish a meeting time at least once a week.
+
+Week 8
+: Familiarize your self with the various requirments. Install PDOC and try it out. Get in the habit of writing comments in a format supported by PDOC.
+: Complete Part 1.
+
+Week 9
+: Start working on Part 2 and Part 3. How you divide these two parts up will depend on the size and structure of your group (if you have one). Although both part 2 and 3 can be completed independently of each other, they will eventually need to interact. So if you are in a group discuss _how_ they will interact, divide, and conquer.
+: Start planning your 'flourish' for Part 4.
+
+Week 10
+: Part 2 and 3 should be completed early in the week. You will need most of the time this week to connect the work from parts 1-3 to the graphical interface.
+: Complete part 4 by end of week.
+
+Week 11 (Finals week)
+: At this point you should have the program functioning. Plan to use the last few days of the quarter to test as much as possible.
+: Prepare your code, tests, README, and documentation for submission. Zip everything up, then unzip in a new location and test again. Make sure everything works. Make sure you did not forget to 'add' something to your submission.
+
+This project will take about three full weeks to complete, so start early, work on it frequently, and test...test...test.
+
+
+## Starter Repository
+Unlike previous assignments, you will not be provided with a starter repository that contains partial code. It is your responsibility to follow the conventions used in this course to create, name, comment, and use the modules necessary to create this program. If you do not name a required module correctly, we will not fix it for you. So pay particular attention to the names that you assign to modules. We will use grading tools to test some of your code, if our tool cannot find a required file, you will lose points.
+
+We have provided an empty repository that includes a README file for your convenience. You are free to use this repository to manage your code if you would like, but it is not required.
+
+[Starter Repository](https://classroom.github.com/a/H3OuVwFW)
 
 ## Final Submission
 
@@ -177,11 +212,10 @@ You will submit all files required to run your project, your two **`test_`** pro
 You will not be graded on the visual quality of your GUI. Getting TKinter to render perfectly on all platforms is difficult and we do not expect you to test across multiple platforms. So do your best to ensure that all of your UI elements can be accessed, but don't worry too much about perfect rendering.
 ```
 
-This assignment will be graded on a 200 point scale, with the 200 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:
+This assignment will be graded on a 150 point scale, with the 150 points being allocated completely to whether or not you submitted something that meets all of the above requirements. The following rubric will be used:
 
-Requirements (150 points)
+Requirements (100 points)
 : Does the program fulfill the requirements described in each part of the assignment?
-: Does the program run without error?
 : Are there any bugs or errors?
 
 Validity (25 points)
@@ -192,4 +226,3 @@ Documentation (25 points)
 
 Your final submission should include all materials described in Parts 1-4, zipped and uploaded to the Canvas submission page by the due date. Since this is the last assignment for the course, there will be no late submissions accepted.
 
-```
