@@ -279,8 +279,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1">
-   Part 1
+  <a class="reference internal nav-link" href="#part-1-implement-direct-messaging-protocol">
+   Part 1: Implement Direct Messaging Protocol
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -357,8 +357,23 @@
 </div>
 <p>For your final project you will develop a module that enables a program to send and receive direct messages with another user on the DSP platform. You will then incorporate this module into a graphical user interface (GUI) using Tkinter. There is a significant amount of work required to make this program feature complete, so you should get started early and gradually build your program step by step. To help you get started, the requirements for your final program have been divided into several parts. You are encouraged to follow each part in order. If you are working in a group, assigning a single part to each group member is a good way to divide the work equitably as each part can be written and tested independently of the final program.</p>
 </div>
-<div class="section" id="part-1">
-<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-1-implement-direct-messaging-protocol">
+<h2>Part 1: Implement Direct Messaging Protocol<a class="headerlink" href="#part-1-implement-direct-messaging-protocol" title="Permalink to this headline">¶</a></h2>
+<p>To communicate with another user on the DSP platform, your program will need to make use of new protocol messages. To support these new messages, your program should extend your <strong><code class="docutils literal notranslate"><span class="pre">ds_protocol</span></code></strong> module to support direct messaging with the following commands:</p>
+<dl class="simple myst">
+<dt>directmessage</dt><dd><p>Accepts a message to be sent directly to another user.</p>
+</dd>
+</dl>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Send a directmessage to another DS user</span>
+<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;entry&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="s2">&quot;recipient&quot;</span><span class="p">:</span><span class="s2">&quot;ohhimark&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1603167689.3928561&quot;</span><span class="p">}}</span>
+
+<span class="c1"># Request unread message from the DS server</span>
+<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">}</span>
+
+<span class="c1"># Request all messages from the DS server</span>
+<span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;user_token&quot;</span><span class="p">,</span> <span class="s2">&quot;directmessage&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>Recall from <strong><code class="docutils literal notranslate"><span class="pre">a3</span></code></strong> that <strong><code class="docutils literal notranslate"><span class="pre">user_token</span></code></strong> is retrieved by sending a successful join command. So in order to send a direct message you must first join the server.</p>
 <p>The DS server will respond to <strong><code class="docutils literal notranslate"><span class="pre">directmessage</span></code></strong> requests with the following <strong><code class="docutils literal notranslate"><span class="pre">ok</span></code></strong> response messages:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sending of direct message was successful</span>

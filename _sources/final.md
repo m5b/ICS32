@@ -34,7 +34,24 @@ directmessage
 {"token":"user_token", "directmessage": "all"}
 ```
 
-## Part 1
+## Part 1: Implement Direct Messaging Protocol
+
+To communicate with another user on the DSP platform, your program will need to make use of new protocol messages. To support these new messages, your program should extend your **`ds_protocol`** module to support direct messaging with the following commands:
+
+directmessage
+: Accepts a message to be sent directly to another user. 
+
+```ipython3
+# Send a directmessage to another DS user
+{"token":"user_token", "directmessage": {"entry": "Hello World!","recipient":"ohhimark", "timestamp": "1603167689.3928561"}}
+
+# Request unread message from the DS server
+{"token":"user_token", "directmessage": "new"}
+
+# Request all messages from the DS server
+{"token":"user_token", "directmessage": "all"}
+```
+
 Recall from **`a3`** that **`user_token`** is retrieved by sending a successful join command. So in order to send a direct message you must first join the server.
 
 The DS server will respond to **`directmessage`** requests with the following **`ok`** response messages:
