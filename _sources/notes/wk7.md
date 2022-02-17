@@ -23,8 +23,7 @@ If you are still wrapping your head around networking and sockets, you are free 
 
 #### Tuesday
 
-[Class Recording]()
-Lecture recording will post on 2/16
+[Class Recording](https://uci.zoom.us/rec/share/HAZ_LHqVuSBy6cSnsgB3m2kCBJW3i1Ilnitg4r7eJGIXdSxHo1qM9cTq3JoF43OZ.uSIst8fSrFOxDSwP?startTime=1644957249000)
 
 
 #### Thursday
