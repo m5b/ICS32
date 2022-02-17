@@ -338,7 +338,7 @@ Additionally, all modules that you create or edit must include the following com
 
 ### Starter Project
 
-<a href="https://classroom.github.com/a/DJg05tcx">Assignment 4 Starter Repository</a>
+<a href="">Assignment 4 Starter Repository</a>
 
 ### How we will grade your submission
 																		
