@@ -318,7 +318,7 @@ httpd.serve_forever()
 
 ```
 
-The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are conducting a deep dive into the **`http`** library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.
+The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are not conducting a deep dive into the **`http`** library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.
 
 To build a minimal viable HTTP server in Python, we can rely on the **`http`** and **`socketserver`** modules to manage most of the heavy lifting. The only code we will need to create is a custom request handler and a few lines to start the TCPServer that is included in the **`socketserver`** module. Python's **`http`** module includes a couple of request handlers for basic requests (**`SimpleHTTPRequestHandler`** and **`CGIHTTPRequestHandler`**), but neither of these support POST requests by default. So we have to create our own! Fortunately, the **`http`** module also provides a **`BaseHTTPRequestHandler`** that we can build upon (more on that in the Advanced Inheritance lecture).
 

@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Final Project: Chatting with Friends" href="../final.html" />
+    <link rel="next" title="Week 8 Notes" href="wk8.html" />
     <link rel="prev" title="Week 6 Notes" href="wk6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -189,6 +189,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Week 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wk8.html">
+   Week 8
   </a>
  </li>
 </ul>
@@ -639,7 +644,7 @@
 <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are conducting a deep dive into the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.</p>
+<p>The server here is quite rudimentary, it can only handle the very specific requests that we will be sending to it using the client POST request program above. Since we are not conducting a deep dive into the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> library for this course, we will only take a cursory pass at the code here. However, if you would like to build out this small HTTP server program a little more, feel free to use this code.</p>
 <p>To build a minimal viable HTTP server in Python, we can rely on the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">socketserver</span></code></strong> modules to manage most of the heavy lifting. The only code we will need to create is a custom request handler and a few lines to start the TCPServer that is included in the <strong><code class="docutils literal notranslate"><span class="pre">socketserver</span></code></strong> module. Python’s <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> module includes a couple of request handlers for basic requests (<strong><code class="docutils literal notranslate"><span class="pre">SimpleHTTPRequestHandler</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">CGIHTTPRequestHandler</span></code></strong>), but neither of these support POST requests by default. So we have to create our own! Fortunately, the <strong><code class="docutils literal notranslate"><span class="pre">http</span></code></strong> module also provides a <strong><code class="docutils literal notranslate"><span class="pre">BaseHTTPRequestHandler</span></code></strong> that we can build upon (more on that in the Advanced Inheritance lecture).</p>
 <p>The <strong><code class="docutils literal notranslate"><span class="pre">ICSHTTPRequestHandler</span></code></strong> class overrides the inherited method <strong><code class="docutils literal notranslate"><span class="pre">do_POST</span></code></strong> to process incoming POST requests. The details of how this is done, are bit out of scope for this course, but you’ll notice that we are essentially extracting the data from the request, preparing and sending a response to the client, and then printing the data to the console. In a real application, we would likely need to do something other than print to console though. A traditional HTTP server might send that data to another process to be interpreted or stored somewhere.</p>
 <p>The lecture video will contain a running example of all of these programs, but you are STRONGLY encouraged to try running them yourself too! If you would like to learn a little bit more about how to work with HTTP data in Python, you can start by <a class="reference external" href="https://docs.python.org/3/howto/urllib2.html#data">reading the overview at docs.python.org</a>.</p>
@@ -683,10 +688,10 @@
             <p class="prev-next-title">Week 6 Notes</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../final.html" title="next page">
+    <a class='right-next' id="next-link" href="wk8.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Final Project: Chatting with Friends</p>
+        <p class="prev-next-title">Week 8 Notes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
