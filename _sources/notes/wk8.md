@@ -9,6 +9,7 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 
 The lectures for this week will help you with assignment 3 and get you ready for assignment 4.
+
 : {ref}`lectures:adv_inheritance`
 
 ## Lecture Materials
@@ -17,8 +18,7 @@ The lectures for this week will help you with assignment 3 and get you ready for
 
 #### Tuesday
 
-[Class Recording]()
-Lecture recording will post on 2/16
+[Class Recording](https://uci.zoom.us/rec/play/O_SUJRGPxuGDG6EMRL60tqKf_nEwqvCd1jCvYQACqyR9E3PkKdJOGecl2CvVn9a7Mtoi0XO6kcuKZqQ.affjnJb0JgSEdQbi?continueMode=true&_x_zm_rtaid=5d3zhtehQPC5yLIFTPfFTQ.1645593351975.c4df82b9dd3d921fc28ac28d9e251c1f&_x_zm_rhtaid=721)
 
 
 #### Thursday
