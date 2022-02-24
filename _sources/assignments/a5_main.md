@@ -8,6 +8,10 @@ For the past two months, partnering organizations (e.g., ICS 32 students :) ) ha
 
 So for this assignment you will need to update your program to support the new authentication process for the DSP server and integrate your existing code into a new graphical interface using the [Tkinter](https://docs.python.org/3/library/tkinter.html) graphical toolkit. 
 
+```{note}
+This will be your second pair assignment. You are allowed to work on this assignment with at least 1 other student. Canvas groups have been created for you. If you plan on working with a partner you both MUST join a Canvas group. Once you have joined a group the leader will be responsible for assignment submission, so only one person in your group will submit.
+```
+
 ### Summary of Program Requirements
 * Subclass the Profile class in your DS program to support encryption and public key authentication.
 * Read and understand documentation for a 3rd party library.
@@ -554,9 +558,10 @@ It might be nice to add some GUI updates for usability in the **`self._is_online
 
 And that's it. Most of what has been shared here is code you have already written. This is just a quick overview that covers one of many ways to go about implementing it.
 
+
 ### Extra Credit
 
-For this final assignment in ICS32 you will have the opportunity to receive extra credit. To receive a 4 extra credit points you must add at least one of the following features to your Tkinter GUI. You may **add up to 3** features for a total of 12 extra credit.
+For this final assignment in ICS32 you will have the opportunity to receive extra credit. To receive a 2 extra credit points you must add at least one of the following features to your Tkinter GUI. You may **add up to 3** features for a total of 6 extra credit.
 
 1. Add title support for posts.
 2. Add a settings menu item and interface for username and password management.
@@ -626,7 +631,7 @@ Additionally, all modules that you create or edit must include the following com
 
 ### Starter Project
 
-<a href="https://classroom.github.com/a/MZB2DBhp">Assignment 5 Starter Repository</a>
+<a href="https://classroom.github.com/a/wmn7f_gp">Assignment 5 Starter Repository</a>
 
 ### How we will grade your submission
 																		
@@ -643,10 +648,10 @@ Quality and Design        | 30 pts
 : Is the code well designed?
 : Is the code clearly documented?
 
-Extra Credit | 12 pts 
-: Is one extra credit feature implemented and functioning as intended? 4 pts
-: Is a second extra credit feature implemented and functioning as intended? 4 pts
-: Is a third extra credit feature implemented and functioning as intended? 4 pts
+Extra Credit | 6 pts 
+: Is one extra credit feature implemented and functioning as intended? 2 pts
+: Is a second extra credit feature implemented and functioning as intended? 2 pts
+: Is a third extra credit feature implemented and functioning as intended? 2 pts
 
 By now you should be clearly documenting your code and expending effort to ensure that your code design follows the conventions we have been discussing throughout the class. Therefore, we will continue to take a strict stance on quality and design for this assignment. 
 
