@@ -62,7 +62,7 @@ The DS server will respond to **`directmessage`** requests with the following **
 
 # Response to request for **`all`** and **`new`** messages. Timestamp is time in seconds 
 # of when the message was originally sent.
-{"response": {"type": "ok", "messages": [{"message":"Hello User 1!", "from":"markb" "timestamp":"1603167689.3928561"},{"message":"Bzzzzz", "from":"thebeemoviescript" "timestamp":"1603167689.3928561"}]}}
+{"response": {"type": "ok", "messages": [{"message":"Hello User 1!", "from":"markb", "timestamp":"1603167689.3928561"},{"message":"Bzzzzz", "from":"thebeemoviescript" "timestamp":"1603167689.3928561"}]}}
 ```
 
 To process these new response messages you will need to extend the message conversion code that you wrote for **`a3`**. How you solve this requirement is up to you, but a good approach will likely include adding a function to your **`ds_protocol`** that converts JSON messages to a list or dictionary.
