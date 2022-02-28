@@ -23,7 +23,7 @@ A few tips when attending labs:
 ## Lab Schedule
 
 ```{note}
-Lab schedule last revised 2/7.
+Lab schedule last revised 2/28.
 ```
 
 The following lab schedule is mostly set. However, if we determine that during the quarter there are concepts that are not resonating with a significant portion of the class, we may revise a lab topic to accommodate. We will make an announcement when any changes to the lab schedule occur.
@@ -36,9 +36,9 @@ The following lab schedule is mostly set. However, if we determine that during t
 | Wk 4 | namespaces and naming | writing and using classes | inheritance |
 | Wk 5 | No Lab | No Lab | No Lab|
 | Wk 6 | open/qa | sockets | create a protocol |
-| Wk 7 | managing data | HTTP requests | request processing | 
-| Wk 8 | No Lab | advanced inheritance | exception handling strategies | 
-| Wk 9 | understanding python objects | callback functions | responsive GUI's |
+| Wk 7 | managing data | HTTP requests | request processing (canceled) | 
+| Wk 8 | No Lab | advanced inheritance | PDOC | 
+| Wk 9 | exception handling strategies | callback functions | responsive GUI's |
 | Wk 10 | Tkinter event loop | open | open
 
 The topics presented here are intentionally high-level and abstract. You will find out what the actual exercise for each topic will be when you arrive at the lab, not before. If you need special accommodations (time, remote, alternative material delivery) for labs, please let us know. We are willing to work with you on an individual level to ensure that you are able complete the required labs.
