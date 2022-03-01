@@ -7,7 +7,6 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 8 Overview
 
-
 The lectures for this week will help you with assignment 3 and get you ready for assignment 4.
 
 : {ref}`lectures:adv_inheritance`

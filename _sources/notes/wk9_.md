@@ -7,7 +7,8 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 9 Overview
 
-The lectures for this week will get you ready for assignment 5. This week, we will use our in class time for slightly more formal lectures rather than QA. So you will not have to watch an pre-recorded lectures this week. However, I have included some notes that will prepare you for one of the quirks of moving your journaling program from the command line to the GUI.
+
+The lectures for this week will get you ready for assignment 5.
 
 : {ref}`lectures:objectcopy`
 
