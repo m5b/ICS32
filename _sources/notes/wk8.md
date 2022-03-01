@@ -23,8 +23,8 @@ The lectures for this week will help you with assignment 3 and get you ready for
 
 #### Thursday
 
-[Class Recording]()
-Lecture recording will post on 2/18
+[Class Recording](https://uci.zoom.us/rec/share/tO7X_g5bpIDfxhuKLze7iJ38uZ5Kj4wkoRKlwpqKEEdwSRKGMI9fn3MYnfrrVySL.DmqYdNcGVn8p8uw2?startTime=1645734995000)
+
 
 ### Recorded Lectures
 
