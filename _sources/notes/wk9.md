@@ -7,9 +7,11 @@ Keep an eye weekly pages as they might be updated throughout the week.
 
 ## Week 9 Overview
 
-The lectures for this week will get you ready for assignment 5. This week, we will use our in class time for slightly more formal lectures rather than QA. So you will not have to watch an pre-recorded lectures this week. However, I have included some notes that will prepare you for one of the quirks of moving your journaling program from the command line to the GUI.
+The lectures for this week will get you ready for assignment 5. This week, we will use our in class time for slightly more formal lectures rather than QA. So you will not have to watch an pre-recorded lectures this week. 
 
-: {ref}`lectures:objectcopy`
+However, I have included some notes that will prepare you for one of the quirks of moving your journaling program from the command line to the GUI:
+
+{ref}`lectures:objectcopy`
 
 ## Lecture Materials
 
@@ -17,9 +19,8 @@ The lectures for this week will get you ready for assignment 5. This week, we wi
 
 #### Tuesday
 
-[Class Recording]()
+[Class Recording](https://uci.zoom.us/rec/share/YT7NrkpKX5zyx7IYIV-jkqLJSRIWNJRSMBE5Ge9PD10pjMcDVoKhvzvMOjMzwQ-H.LuimYbQ29bkbZczV)
 
-Will post after class on 3/1
 
 #### Thursday
 
