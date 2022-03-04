@@ -397,10 +397,10 @@
 <p>Your main entry point to your program will be from a module called <strong><code class="docutils literal notranslate"><span class="pre">a4.py</span></code></strong>. As with a3, you will not have a validity checker to use for testing and you will be largely responsible for program input and output. You are encouraged to continue to bring the user interface and other functions you created in your <strong><code class="docutils literal notranslate"><span class="pre">a1.py</span></code></strong> through <strong><code class="docutils literal notranslate"><span class="pre">a3.py</span></code></strong> modules, but you will not be re-graded on the features you implemented for those assignments.</p>
 <p>Your final program should contain the following new modules:</p>
 <ol class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API. See <a class="reference internal" href="../prep/a4.html#section-part1"><span class="std std-ref">Part 1</span></a></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the <a class="reference external" href="http://Last.FM">Last.FM</a> API. See <a class="reference internal" href="../prep/a4.html#section-part2"><span class="std std-ref">Part 2</span></a></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit. See <a class="reference internal" href="../prep/a4.html#section-extracredit"><span class="std std-ref">Extra Credit</span></a></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">WebAPI.py</span></code></strong>: A base class module that provides access to common features for your API modules. See <a class="reference internal" href="../prep/a4.html#section-part3"><span class="std std-ref">Part 3: The Refactor!</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">OpenWeather.py</span></code></strong>: A module for interacting with the OpenWeather API. See <a class="reference internal" href="#section-part1"><span class="std std-ref">Part 1</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LastFM.py</span></code></strong>: A module for interacting with the <a class="reference external" href="http://Last.FM">Last.FM</a> API. See <a class="reference internal" href="#section-part2"><span class="std std-ref">Part 2</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ExtraCreditAPI.py</span></code></strong>: A module for interacting with an API of your choice, should you choose to earn extra credit. See <a class="reference internal" href="#section-extracredit"><span class="std std-ref">Extra Credit</span></a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">WebAPI.py</span></code></strong>: A base class module that provides access to common features for your API modules. See <a class="reference internal" href="#section-part3"><span class="std std-ref">Part 3: The Refactor!</span></a></p></li>
 </ol>
 <p>Since the code you write for this assignment will still be dependent on communication with the server, you should also include all modules you created or used for assignment 3.</p>
 <div class="admonition note">
@@ -628,7 +628,7 @@
 <span class="n">test_api</span><span class="p">(</span><span class="s2">&quot;Testing the weather: @weather&quot;</span><span class="p">,</span> <span class="n">MY_APIKEY</span><span class="p">,</span> <span class="n">open_weather</span><span class="p">)</span>
 <span class="c1"># expected output should include the original message transcluded with the default weather value for the @weather keyword.</span>
 
-<span class="n">test_api</span><span class="p">(</span><span class="s2">&quot;Testing lastFM: @lastfm, MY_APIKEY, lastfm)</span>
+<span class="n">test_api</span><span class="p">(</span><span class="s2">&quot;Testing lastFM: @lastfm&quot;</span><span class="p">,</span> <span class="n">MY_APIKEY</span><span class="p">,</span> <span class="n">lastfm</span><span class="p">)</span>
 <span class="c1"># expected output include the original message transcluded with the default music data assigned to the @lastfm keyword</span>
 </pre></div>
 </div>
