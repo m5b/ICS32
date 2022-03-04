@@ -24,9 +24,14 @@ However, I have included some notes that will prepare you for one of the quirks 
 
 #### Thursday
 
-[Class Recording]()
+[Class Recording](https://uci.zoom.us/rec/share/Cwg3bjvV-BmHrbzHHbdTge0pj3AOhDCTnOgd0-d2_aidUthfQte67LTr6qj_yQ65.2f0EJJW48_4_JRVI?startTime=1646339613000)
 
-Will post after class on 3/3
+<a href="../resources/gui_lecture.pdf">Slides</a>
+
+<a href="../resources/a5-lecture-solution-eventloop.py">Event Loop Demo</a>
+
+<a href="../resources/tkinter_geometry.py">Tkinter Geometry Demo</a>
+
 
 ### Recorded Lectures
 
